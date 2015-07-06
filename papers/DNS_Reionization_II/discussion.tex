@@ -1,0 +1,100 @@
+\section{Discussion}
+\label{Discussion}
+
+% circle back to literature, say if results agree, if so how, why that might be.  Raicevic Theuns, Volker
+% Springel <2010+>, Finaltor paper address the similiarities/differences.  At the results level identify the 
+% relavant papers.  Trac Gnedin review 2009
+
+% May 6, 2013
+% - Say how the descriptive language will help discover details in the mountain of data.  Say it acts like a filter for search results or use some other analogy.
+% - Both the % of volume and the ionization level is important.
+% - It enables the many faceted IGM to tell in more detail the whole story of inside/out/middle story
+% - Mention why Finlator's alphaB(T=1e4K) was not included, giving us ambiguous values of the clumping factor (values below 1)
+% - Mention the possible effect of a different SED, affecting both how much photon it takes to reionize the same volume, time it takes to reionize the volume, and the temperature of the volume in equilibrium etc... (many more other effects since non-linear?)
+% - talk about sanity check error made about assuming less volume being considered, it's the opposite.
+% - talk about HMF and it is a little discrepant?
+
+In the literature, many simulations including radiation transfer ones, result in an ionized universe by redshift of around 6, in agreement with the Gunn-Peterson trough \citep{GunnPeterson1965, FanEtAl2006, TracCen2007}.  Using our model of FLD Radiation Transfer, we find in our fiducial model with appropriate parameters, that 99.9\% of the universe can be ``Well Ionized'' simply from PopII stars by redshift of around 5.5, in rough agreement with both the observation and theory communities.  We are able to tune the SFR density to be on par with those described \cite{BouwensEtAl2011}, and be close to the curve fit by \citep{HaardtMadau2012}.  Moreover, our use of self consistent radiation transfer, N-body, and hydrodynamic simulation allow us to discuss the many physical processes that go on with confidence.  These include the number of photons emitted without assumptions of the local environment and approximations done with clumping factors \citep{IlievEtAl2006,PawlikEtAl2009, RaicevicTheuns2011}. This lets us investigate the photon to hydrogen ratio for specific levels of ionization for the universe.
+
+We have identified at least two quantitative ways to think about the EoR.  Mainly, when talking about the ionization state of hydrogen in the universe, we should specify the ionization level.  In this paper we choose three specific levels, when the hydrogen is 10\% (Ionized), ionized to 1E3 (Well Ionized), or ionized to 1E5 (Fully Ionized).  Secondly, when discussing the ionization volume fraction, we should also specify the percentages of the simulated volume. Often, there can be tiny patchy regions that are low in hydrogen ionization level, making it difficult to achieve  Well Ionized and Fully Ionized levels for 100.0\% of the volume.
+
+The reason why we advocate for the adoption of quantitative language is best demonstrated with the question of whether reionization happened from Inside-out (dense region near the source gets ionized first) or Outside-in (radiation escapes into the void first, then ionize the dense source
+region later).  The answer of the question heavily depends on the level of ionization.  If we set the definition of ionized to reaching a ionization level of just ``Ionized", then the Inside-out story fits the description best, if we set the level to ``Well" or to ``Fully Ionized", then we see an Outside-in scenario.  With the above few simple designations for the levels of ionization, we can convey the complex story that is the epoch of reionization, which goes beyond the inside/outside scenario (\S\ref{IOOI}).
+
+The possible scientific discoveries cannot be underestimated, when the whole spectrum of data is considered.  There are probably discoveries that people overlooked when they think of the IGM as being in a binary phase.  That is why we urge the community to start describing the IGM as a spectrum, not a two phase, neutral or ionized medium.
+% cite WMAP, instantaneous ionization models, or uniform ionization models
+% TracCen2007: Must resolve virial temp of 1e4K haloes to capture clustering of sources and H {\footnotesize II} region
+% Komatsu et al WMAP data for instantaneous reionization
+% Barkana and Loeb 2004 need ~100Mpc to capture density fluctuations
+% DM+RT Trac and Gnedin 2009 "Computer Simulations..."
+% ShullEtAl2012 "a negligible amount of recombination occurs in cells containing mostly neutral gas"
+
+In terms of Equation \eqref{eq:updatedNdot}, we find that the H {\footnotesize II} clumping factor ``may" be a good approximator at predicting roughly when the universe reaches the ``Well Ionized'' level, but to obtain a precise redshift, prediction based on clumping factor does not seem to be well-suited for the task.  The clumping factor has always been viewed as a way to approximate the recombination rate, therefore it should be viewed as a way to give only rough estimate, not a precise point in time as to when EoR ends.  Ultimately, radiation transfer simulations are always preferable over using the clumping factor estimates \citep{RaicevicTheuns2011}.  
+
+We find that restricting the volume of the clumping factor calculation may also restrict the validity or representativeness of the resulting recombination estimate.  Using data from our self-consistent radiation hydrodynamic simulation, the more thresholds we apply the smaller amount of volume we consider.  By applying thresholds \citep{PawlikEtAl2009, RaicevicTheuns2011, ShullEtAl2012, FinlatorEtAl2012}, the methods do not increase the accuracy of predicting the end of EoR from our data. If semi-analytic models of reionization want to use clumping factors in Equation \eqref{eq:updatedNdot}, then we recommend the original derivation for the clumping factor described in Equation \eqref{eq:clumpingfactor} in \S\ref{Madau}.  We get values of around 1.5 when calculating C$_\mathrm{RR}$ with all five thresholds applied, and that drops the estimate of  recombination count resuting in a much earlier end to EoR.
+
+Looking at various clumping factors directly, the one that is perhaps surprising is C$_\mathrm{RR}$.  We believe the reason why we are getting such a low value for the clumping factor has to do with the recombination rate coefficient's sensitivity and dependence on temperature.  This is mainly attributed to the negative power of the temperature dependence of the recombination coefficient.  The number densities along with the recombination coefficient makes the quantity C$_\mathrm{RR}$ small.  
+
+One thing to keep in mind is that, besides the hydrodynamical densities being affected by the addition of radiation transport through Jean's smoothing, there are other effects that may change the clumping factor.  One of these effects, is the temperature of the gas also come into play in affecting the case B recombination coefficients.  By having a different temperature, the amount of recombinations in the IGM can potentially be very different.  The temperature in this case, will depend heavily on the amount of star formation near by and the SED of the sources, because they are all part of the feedback cycle.  We have explored the idea of taking the same SED but with the highest photon energy bin (beyond 4 Ryd) zeroed.  The net result is a slight increase in number of ionization because more of the gray energy is distributed to the 1 Ryd bin, but the resulting IGM is in a lower equilibrium temperature.  This lower IGM temperture in turn leads to more clumping, hence a higher value for the calculated value of C$_\mathrm{RR}$.  however, we are not displaying those results since it still does not improve the solution to beyond the estimate from Equation \eqref{eq:clumpingfactor}.
+
+Back in \S\ref{Madau}, we showed how one can arrive at an effective recombination time that depends on volume averaged quantity and the clumping factor.  This is useful in the case for semi-analytic models because the only thing they need from the hydrodynamical 3D simulations is the clumping factor.  Unfortunately, one of the the assumptions made is that the IGM is at an equilibrium temperature of $10^4$K, although close, is not the case most of the time in this evolving system.  We see variation in the IGM temperature and recombination time even after our simulated universe is Well Ionized in Figures \ref{NeutralPhase}, \ref{recomb}.  One cannot easily decouple the elements of $\langle n_\mathrm{H\,II} n_\mathrm{e} \alpha_B(T)\rangle$ from each other, so the actual effective recombination time one would get would be $t_{rec,eff}=\frac{\langle n_\mathrm{H\,II}\rangle}{\langle n_\mathrm{H\,II} n_\mathrm{e} \alpha_B(T)\rangle}$ instead, without invoking the clumping factor for simulations that have the temperature information to calculate all those quantities.  We want to avoid showing the effective recombination time as a volume averaged, or mean quantity, because one has to be careful to avoid an easily-made mathematical fallacy. One cannot go from $t_{rec}= [n_\mathrm{e}\alpha_B]^{-1}$ to $\langle t_{rec} \rangle=[\langle n_\mathrm{e} \rangle\alpha_B]^{-1}$ even if $\alpha_B$ is a constant, because $\langle\frac{1}{n_\mathrm{e}}\rangle \neq \frac{1}{\langle n_\mathrm{e}\rangle}$.
+
+On a final note, for grid based cosmological simulations, the use of Adaptive Mesh Refinement (AMR) increases the effective resolution.  This may have unintended consequences for the clumping factor values.  It is worth studying further whether there is consensus that clumping factors can offer convergent results independent of the resolution with the use of AMR.
+
+% smaller temp  smaller jean smoothing bigger C
+% T^-0.845 if T4 is smaller more recombination
+% if T4 is smaller, or closer to 1e4, then substituting T4 with 1 will be a better approximation
+
+%We have demonstrated that by using variations on the definition of the
+%clumping factor, we can attain reionization times that vary by a wide
+%range ($\Delta$z$\approx$1.5).  Although some of these definitions
+%result in a redshift of reionization that is consistent with other
+%works, the range of possible results underscores the need for a less
+%ambiguous definition for the clumping factor.  With an agreed upon
+%level of ionization for completion of reionization, and a universal
+%way of calculating the clumping factor, the community can then compare
+%``apples to apples'' when discussing the epoch of reionization.   
+%The net effect of thresholding and using local versions of the
+%clumping factor decreases the recombination rate and 
+%shifts the estimated recombination rate toward the actual value.  
+%In our simulation, the effect of having a smaller recombination rate is 
+%achieved self consistently and accurately due to Jean's smoothing on 
+%the baryons in the presence of radiation.  Hence, for simulations that
+%do not have radiation transport, corrections will be needed to adapt their
+%results to simulations that do have radiation transport.  
+
+%The corrections will differ for different types of simulations, 
+%whether it is semi-analytical, N-body only, N-body with hydrodynamics, 
+%N-body hydro with background or post-processed radiation transport.
+%Ideally it will adjust the redshift of reionization indicated by the crossing of 
+%the photon production rate curve and the recombination rate curve 
+%(The "FromSim" and one of the clumping factor derived curves in 
+%Figure \ref{Photon_vs_Redshift} respectively).  However, all the correction 
+%would be moot if everyone has a different definition of what level of 
+%ionization constitutes completely ionized, which again brings up the 
+%need for a universal consensus on the language of reionization.
+
+%Essentially, we have found that the denser regions are ionized first,
+%but only to a small degree to around Well Ionized levels, while the less dense 
+%regions get ionized beyond Well Ionized earlier on.  After 99\% of the volume 
+%reaches at least Ionized level, then even the highest density regions are 
+%beginning to cross over below Well Ionized level.  At the same time, some 
+%rare high density peaks undergoing continued cycles of recombination and 
+%reionization due to bursts of star formation, so on the y-axis they go up and down
+%reflected in the phase diagram of Figure \ref{DensityHIHFraction}.
+%Eventually, even the high density regions reach levels of ionization 
+%beyond Well Ionized, besides the afor mentioned densest few cells undergoing %recombinations/reionization cycles. Thus, the level of ionization is a critical part in
+%understanding what goes on near the dense sources and the
+%intergalactic void during the epoch of reionization.  
+
+
+%Kim Griest: use stronger/defininite language
+%Matt: don't use too strong of language
+%May need update on photon budget from Finlator
+%Risa Wechsler suggest to come up with a correction for C based estimate
+%cite YT, mention XSEDE resources
+%cite where eq2 comes from and what they assumed
+%calibrate N dot for both BSM800 and SED800
+%compare contrast with http://arxiv.org/abs/1008.4459
+
+%{\bf [Mike]}

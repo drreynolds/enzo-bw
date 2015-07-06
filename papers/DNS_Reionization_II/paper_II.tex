@@ -1,0 +1,111 @@
+%\documentclass[onecolumn]{emulateapj}
+\documentclass{emulateapj}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{CJKutf8}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+
+\textheight 9truein
+\textwidth 6.5truein
+\addtolength{\oddsidemargin}{+0.25in}
+\addtolength{\evensidemargin}{+0.25in}
+\addtolength{\topmargin}{+0.5in}
+
+% These commands needed to make the aligned equations
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\vb}{{\bf v}_b}
+\newcommand{\xvec}{{\bf x}}
+\newcommand{\Omegabar}{\bar{\Omega}}
+\newcommand{\rhob}{\rho_b}
+\newcommand{\dt}{\Delta t}
+\newcommand{\Eot}{E^{OT}}
+\newcommand{\Ef}{E_f}
+\newcommand{\sighat}{\hat{\sigma}}
+\newcommand{\Fnu}{{\bf F}_{\nu}}
+\newcommand{\Pnu}{\overline{\bf P}_{\nu}}
+\newcommand{\R}{I\!\!R}
+\newcommand{\Rthree}{\R^3}
+\newcommand{\eh}{e_h}
+\newcommand{\ec}{e_c}
+\newcommand{\Edd}{\mathcal F}
+\newcommand{\Eddnu}{\Edd_{\nu}}
+\newcommand{\mn}{{\tt n}}
+\newcommand{\mB}{\mathcal B}
+\newcommand{\mC}{{\mathcal C}}
+\newcommand{\mL}{{\mathcal L}}
+\newcommand{\mD}{{\mathcal D}}
+\newcommand{\mDnu}{\mD_{\nu}}
+\newcommand{\mCnu}{\mC_{\nu}}
+\newcommand{\mLnu}{{\mathcal L}_{\nu}}
+\newcommand{\mCe}{\mC_e}
+\newcommand{\mLe}{\mL_e}
+\newcommand{\mCn}{\mC_{\mn}}
+\newcommand{\mLn}{\mL_{\mn}}
+\newcommand{\chibar}{\bar{\chi}}
+\newcommand{\ngammadot}{\dot{N}_{\gamma}}
+\newcommand{\hi}{H {\footnotesize I}~}
+\newcommand{\hii}{H {\footnotesize II}~}
+
+\begin{document}
+
+\title{Direct Numerical Simulation of Reionization. II: Recombinations, Clumping Factors, and the Photon Budget for Reionization}
+
+
+\author{Geoffrey C. So \begin{CJK}{UTF8}{bkai}(蘇治平)\end{CJK}\altaffilmark{1}}
+\author{Michael L. Norman\altaffilmark{1,2}}
+\author{Daniel R. Reynolds\altaffilmark{3}}
+\author{Robert P. Harkness\altaffilmark{2,4}}
+
+\affiliation{
+\altaffilmark{1}CASS, University of California, San Diego, 9500 Gilman Drive La Jolla, CA 92093-0424\\
+\altaffilmark{2}SDSC, University of California, San Diego, 9500 Gilman Drive La Jolla, CA 92093-0505\\ 
+\altaffilmark{3}Southern Methodist University, 6425 Boaz Ln, Dallas, TX 75205\\
+\altaffilmark{4}NICS, Oak Ridge National Laboratory, 1 Bethel Valley Rd, Oak Ridge, TN 37831\\
+}
+
+
+\begin{abstract}
+We use a fully self-consistent cosmological simulation including dark
+matter dynamics, multispecies hydrodynamics, chemical ionization,
+flux limited diffusion radiation transport, and a parameterized model of star formation and feedback (thermal and radiative) to investigate the epoch of hydrogen
+reionization in detail. Our numerical method is
+scalable with respect to the number of radiation sources, size of the mesh, and the
+number of computer processors employed, and is described in Paper I of this series. 
+This scalability permits us to simulate cosmological reionization in moderately large cosmological
+volumes (L $\sim100$ Mpc) while directly modeling the sources and sinks of ionizing 
+radiation,  
+including radiative feedback effects such as photoevaporation of gas from halos, 
+Jeans smoothing of the IGM, and enhanced recombination due to small scale clumping. 
+
+%In this the first of several application papers, we investigate in a volume of moderate size the mechanics of reionization from stellar sources forming in high-z galaxies, the role of gas clumping, and the photon budget required to complete reionization.  We simulate a WMAP7 $\Lambda$CDM cosmological model in a 20 Mpc comoving cube, resolved with $800^3$ uniform fluid cells and dark matter particles. Star formation and feedback is handled through a subgrid model calibrated to the observed high redshift star formation rate density. Because we simulate the nonequilibrium ionization state of the gas as a function of space and time, we can ask when our simulated volume has been ionized to a given ionization fraction. We find that 99.9\% of the volume achieves 10, 99.9, 99.999 \% ionization fraction (volume-weighted) at $z=$ 5.61, 5.55, 5.32. We find that the ionized volume fraction vs. redshift curves for 10\% and 99.9\% ionization fraction mirror one another quite closely, but that the curve for 99.999\% ionization fraction is delayed by roughly $\Delta z = 1$.  We calculate the redshift evolution of the volume average clumping factors for dark matter, baryons, and H {\footnotesize II} with and without thresholding, and find that the unthresholded H {\footnotesize II} clumping factor is the best predictor of the redshift reionization completion using the formula of \cite{MadauEtAl1999}.  Finally, we calculate the number of ionizing photons per H atom ($\gamma_{ion}$/H) required to ionize the full volume to a given fractional ionization threshold, and find $\gamma_{ion}$/H $\approx$ 4.1, 4.29, 5.1 for $f_\mathrm{H\,II} = 10, 99.9, 99.999$\%.
+
+In this the first of several application papers, we investigate in a volume of modest size the mechanics of reionization from stellar sources forming in high-z galaxies, the utility of various formulations for the gas clumping factor on accurately estimating the effective recombination time in the IGM, and the photon budget required to achieve reionization. We also test the accuracy of the static and time-dependent models of Madau et al. as predictors of reionization completion/maintenance.  We simulate a WMAP7 $\Lambda$CDM cosmological model in a 20 Mpc comoving cube, resolved with $800^3$ uniform fluid cells and dark matter particles. By tuning our star formation recipe to approximately match the observed high redshift star formation rate density and galaxy luminosity function, we have created a fully coupled radiation hydrodynamical realization of hydrogen reionization which begins to ionize at $z \approx 10$ and completes at $z \approx 5.8$ without further tuning. We find that roughly 2 ionizing photons per H atom are required to convert the neutral IGM to a highly ionized state, which supports the ``photon starved'' reionization scenario discussed by Bolton \& Haehnelt. The complicated events during reionization that lead to this number can be generally described as inside-out, but in reality the narrative depends on the level of ionization of the gas one attributes to as ionized.  We find that the formula for the ionizing photon production rate $\dot{\mathcal{N}}_{ion}(z)$ needed to maintain the IGM in an ionized state derived by Madau et al. should not be used to predict the epoch of reionization completion because it ignores history-dependent terms in the global ionization balance which are not ignorable. We find that the time-dependent model for the ionized volume fraction $Q_{\hii}$ is more predictive, but overestimates the redshift of reionization completion $z_{reion}$ by $\Delta z \approx 1$. We propose a revised formulation of the time-dependent model which agrees with our simulation to $O(1\%)$ accuracy. Finally, we use our simulation data to estimate a global ionizing escape fraction due to circumgalactic gas resolved on our mesh $\bar{f}_{esc}(CGM) \approx 0.7$. 
+
+\end{abstract}
+\keywords{cosmology: theory -- intergalactic medium -- reionization -- large-scale structure of universe -- methods: numerical -- radiative transfer}
+
+
+\maketitle
+
+
+\input{introduction.tex}
+\input{method.tex}
+\input{results.tex}
+\input{clumping.tex}
+\input{escape.tex}
+\input{qdot.tex}
+\input{discussion_new.tex}
+\input{conclusions.tex}
+
+
+\bibliography{ref}
+\bibliographystyle{apj}
+\end{document}

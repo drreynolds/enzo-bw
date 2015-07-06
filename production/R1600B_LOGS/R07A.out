@@ -1,0 +1,2906 @@
+Warning: no access to tty (Bad file descriptor).
+Thus no job control in this shell.
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    unlimited
+coredumpsize unlimited
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  12590 
+memorylocked 512 kbytes
+maxproc      62804 
+MPI_Init: NumberOfProcessors = 1000
+=========================
+ENZO CVS VERSION 0.0.0
+=========================
+Density               0  1
+TotalEnergy           1  0
+InternalEnergy        2  0
+Pressure              3  0
+Velocity1             4  0
+Velocity2             5  0
+Velocity2             5  0
+ElectronDensity       7  1
+HIDensity             8  1
+HIIDensity            9  1
+HeIDensity            10  1
+HeIIDensity           11  1
+HeIIIDensity          12  1
+HMDensity             13  1
+H2IDensity            14  1
+H2IIDensity           15  1
+DIDensity             16  1
+DIIDensity            17  1
+HDIDensity            18  1
+Metallicity           19  1
+ExtraType0            20  1
+ExtraType1            21  1
+GravPotential         22  0
+Acceleration0         23  0
+Acceleration1         24  0
+Acceleration2         25  0
+CIDensity             38  1
+CIIDensity            39  1
+OIDensity             40  1
+OIIDensity            41  1
+SiIDensity            42  1
+SiIIDensity           43  1
+SiIIIDensity          44  1
+CHIDensity            45  1
+CH2IDensity           46  1
+CH3IIDensity          47  1
+C2IDensity            48  1
+COIDensity            49  1
+HCOIIDensity          50  1
+OHIDensity            51  1
+H2OIDensity           52  1
+O2IDensity            53  1
+Mach                  54  0
+PreShockTemperature   55  0
+PreShockDensity       56  0
+CRDensity             57  0
+gParticlePosition     26  0
+gParticleVelocity     27  0
+gParticleMass         28  0
+gParticleAcceleration 29  0
+gParticleNumber       30  0
+gParticleType         31  0
+gParticleAttribute    32  0
+gPotentialField       33  0
+gAccelerationField    34  0
+gGravitatingMassField 35  0
+gFlaggingField        36  0
+gVelocity             37  0
+RadiationFreq0        58  0
+RadiationFreq1        59  0
+RadiationFreq2        60  0
+RadiationFreq3        61  0
+RadiationFreq4        62  0
+RadiationFreq5        63  0
+RadiationFreq6        64  0
+RadiationFreq7        65  0
+RadiationFreq8        66  0
+RadiationFreq9        67  0
+EmissivityField       68  0
+kphHI                 69  1
+PhotoGamma            70  0
+kphHeI                71  1
+kphHeII               72  1
+kdissH2I              73  1
+FieldUndefined        74  0
+Reading parameter file Dumps/RD0029/RD0029
+InitializeRateData: NumberOfTemperatureBins = 600
+Entering gFLDSplit::Initialize routine
+FLD Initialize: tasks have 4 available OpenMP threads
+gFLDSplit::Initialize p0: ErScale = 1e-07, ecScale = 0.0001, NiScale = 1000
+gFLDSplit::Initialize p0: rank = 3, Nchem = 3, HFrac = 0.76
+gFLDSplit::Initialize p0: layout = (10,10,10)
+gFLDSplit::Initialize p0: location = (0,0,0)
+gFLDSplit::Initialize p0: EdgeVals = (0:0.1,0:0.1,0:0.1)
+gFLDSplit::Initialize p0: OnBdry = (1:0,1:0,1:0)
+gFLDSplit::Initialize p0: BdryType = (0:0,0:0,0:0)
+gFLDSplit::Initialize p0: NBors = (991:999,910:990,100:900)
+gFLDSplit::Initialize p0: SolvIndices = (0:159,0:159,0:159)
+gFLDSplit::Initialize p0: SolvOff = (0,0,0)
+gFLDSplit::Initialize p0: LocDims = (160,160,160)
+gFLDSplit::Initialize p0: ArrDims = (166,166,166)
+gFLDSplit::Initialize p0: GhDims = (3:3,3:3,3:3)
+Entering gFLDSplit::ComputeRadiationIntegrals
+  Computed Radiation Integrals:
+    intSigE          = 1.0026863194547069e+00
+    intSigESigHI     = 2.5961374468353215e-18
+    intSigESigHInu   = 6.4212045457124416e-34
+    intSigESigHeI    = 1.0690973150225692e-18
+    intSigESigHeInu  = 1.3703963360120224e-34
+    intSigESigHeII   = 2.6959887920352641e-20
+    intSigESigHeIInu = 1.5886253265121675e-36
+  Initialize: outputting parameters to log file
+InitializeLocal: Starting problem initialization.
+InitializeLocal: Finished problem initialization.
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.031628     time = 55.441433088489    cycle = 988    z = 4.9999997708887
+Level[0]: dt = 0.0316275  0  (0.0316275/0.0316275)
+PrepareGreens: Start = 0 0 0  Dim = 80 160 160
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05136e-29,  max = 2.05481e-25
+   current internal (physical) quantities:
+      Eg rms = 4.3523945e-04 (7.43e-20), max = 9.9379963e+00 (1.70e-15)
+      ec rms = 3.2193466e-03 (1.02e+12), max = 6.4577005e+00 (2.05e+15)
+    nHeI rms = 1.8581715e-04 (5.97e-05), max = 4.5013094e-01 (1.45e-01)
+   nHeII rms = 3.3834321e-06 (1.09e-06), max = 1.0569622e-03 (3.39e-04)
+
+ subcycled rad 0: dt=3.2e-02, t=5.5e+01 (hydro dt=3.2e-02, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.7e-14 (tol = 1.0e-08, |rhs| = 6.8e+05), its = (5,12)
+ ======================================================================
+
+RadHydro cumulative time = 233.372 (HYPRE = 190.522,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 697101
+CommunicationTransferParticles: moved = 42
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.001220     time = 55.473060606147    cycle = 989    z = 4.99770951392
+Level[0]: dt = 0.00121978  0  (0.00121978/0.00121978)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05224e-29,  max = 2.05274e-25
+   current internal (physical) quantities:
+      Eg rms = 3.0729472e-03 (5.24e-19), max = 2.5713575e+01 (4.38e-15)
+      ec rms = 3.2182602e-03 (1.02e+12), max = 6.4507544e+00 (2.05e+15)
+    nHeI rms = 1.8581457e-04 (5.96e-05), max = 4.4995654e-01 (1.44e-01)
+   nHeII rms = 3.3046860e-06 (1.06e-06), max = 9.8939513e-04 (3.17e-04)
+
+ subcycled rad 0: dt=1.2e-03, t=5.5e+01 (hydro dt=1.2e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.1e-15 (tol = 1.0e-08, |rhs| = 1.3e+02), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 324.208 (HYPRE = 275.543,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 26872
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.001342     time = 55.474280390756    cycle = 990    z = 4.9976212285771
+Level[0]: dt = 0.00134176  0  (0.00134176/0.00134176)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05222e-29,  max = 2.04812e-25
+   current internal (physical) quantities:
+      Eg rms = 3.1603600e-03 (5.39e-19), max = 2.6030656e+01 (4.44e-15)
+      ec rms = 3.2184139e-03 (1.02e+12), max = 6.4482184e+00 (2.05e+15)
+    nHeI rms = 1.8581365e-04 (5.96e-05), max = 4.4986238e-01 (1.44e-01)
+   nHeII rms = 3.2257966e-06 (1.03e-06), max = 9.5214473e-04 (3.05e-04)
+
+ subcycled rad 0: dt=1.3e-03, t=5.5e+01 (hydro dt=1.3e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 9.1e-16 (tol = 1.0e-08, |rhs| = 9.4e+01), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 419.831 (HYPRE = 364.459,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 29711
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.001476     time = 55.475622153826    cycle = 991    z = 4.9975241184244
+Level[0]: dt = 0.00147594  0  (0.00147594/0.00147594)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.0523e-29,  max = 2.04797e-25
+   current internal (physical) quantities:
+      Eg rms = 3.2401451e-03 (5.52e-19), max = 2.6225508e+01 (4.47e-15)
+      ec rms = 3.2185745e-03 (1.02e+12), max = 6.4453159e+00 (2.05e+15)
+    nHeI rms = 1.8581438e-04 (5.96e-05), max = 4.4985577e-01 (1.44e-01)
+   nHeII rms = 3.1463791e-06 (1.01e-06), max = 8.8103020e-04 (2.83e-04)
+
+ subcycled rad 0: dt=1.5e-03, t=5.5e+01 (hydro dt=1.5e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 7.3e-16 (tol = 1.0e-08, |rhs| = 6.1e+01), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 510.841 (HYPRE = 449.087,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 32756
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.001624     time = 55.477098093203    cycle = 992    z = 4.9974173017627
+Level[0]: dt = 0.00162353  0  (0.00162353/0.00162353)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05238e-29,  max = 2.04657e-25
+   current internal (physical) quantities:
+      Eg rms = 3.3156518e-03 (5.65e-19), max = 2.6369430e+01 (4.49e-15)
+      ec rms = 3.2187623e-03 (1.02e+12), max = 6.4419982e+00 (2.05e+15)
+    nHeI rms = 1.8581645e-04 (5.96e-05), max = 4.4989992e-01 (1.44e-01)
+   nHeII rms = 3.0665451e-06 (9.84e-07), max = 8.4142668e-04 (2.70e-04)
+
+ subcycled rad 0: dt=1.6e-03, t=5.5e+01 (hydro dt=1.6e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.5e-16 (tol = 1.0e-08, |rhs| = 4.4e+01), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 607.406 (HYPRE = 538.918,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 35711
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.001786     time = 55.478721626518    cycle = 993    z = 4.9972998088872
+Level[0]: dt = 0.00178589  0  (0.00178589/0.00178589)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05227e-29,  max = 2.04045e-25
+   current internal (physical) quantities:
+      Eg rms = 3.3888805e-03 (5.78e-19), max = 2.6503154e+01 (4.52e-15)
+      ec rms = 3.2189793e-03 (1.02e+12), max = 6.4381310e+00 (2.05e+15)
+    nHeI rms = 1.8581960e-04 (5.96e-05), max = 4.4996268e-01 (1.44e-01)
+   nHeII rms = 2.9864852e-06 (9.58e-07), max = 8.2951241e-04 (2.66e-04)
+
+ subcycled rad 0: dt=1.8e-03, t=5.5e+01 (hydro dt=1.8e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.4e-16 (tol = 1.0e-08, |rhs| = 3.6e+01), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 704.037 (HYPRE = 628.733,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 39368
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.001964     time = 55.480507513165    cycle = 994    z = 4.9971705733208
+Level[0]: dt = 0.00196448  0  (0.00196448/0.00196448)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05247e-29,  max = 2.04138e-25
+   current internal (physical) quantities:
+      Eg rms = 3.4611126e-03 (5.90e-19), max = 2.6605711e+01 (4.53e-15)
+      ec rms = 3.2192019e-03 (1.02e+12), max = 6.4336878e+00 (2.04e+15)
+    nHeI rms = 1.8582369e-04 (5.96e-05), max = 4.5002621e-01 (1.44e-01)
+   nHeII rms = 2.9064057e-06 (9.32e-07), max = 8.2549126e-04 (2.65e-04)
+
+ subcycled rad 0: dt=2.0e-03, t=5.5e+01 (hydro dt=2.0e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 5.1e-16 (tol = 1.0e-08, |rhs| = 3.4e+01), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 803.376 (HYPRE = 721.02,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 43214
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.002161     time = 55.482471988476    cycle = 995    z = 4.9970284221792
+Level[0]: dt = 0.00216092  0  (0.00216092/0.00216092)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05229e-29,  max = 2.03663e-25
+   current internal (physical) quantities:
+      Eg rms = 3.5333175e-03 (6.02e-19), max = 2.6720919e+01 (4.55e-15)
+      ec rms = 3.2194644e-03 (1.02e+12), max = 6.4285935e+00 (2.04e+15)
+    nHeI rms = 1.8582866e-04 (5.96e-05), max = 4.5008718e-01 (1.44e-01)
+   nHeII rms = 2.8265005e-06 (9.07e-07), max = 8.2544130e-04 (2.65e-04)
+
+ subcycled rad 0: dt=2.2e-03, t=5.5e+01 (hydro dt=2.2e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.4e-15 (tol = 1.0e-08, |rhs| = 3.4e+01), its = (3,6)
+ ======================================================================
+
+RadHydro cumulative time = 897.429 (HYPRE = 808.212,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 47532
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.002377     time = 55.484632911318    cycle = 996    z = 4.99687206558
+Level[0]: dt = 0.00237702  0  (0.00237702/0.00237702)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05231e-29,  max = 2.03411e-25
+   current internal (physical) quantities:
+      Eg rms = 3.6064854e-03 (6.15e-19), max = 2.6825033e+01 (4.57e-15)
+      ec rms = 3.2197689e-03 (1.02e+12), max = 6.4344198e+00 (2.04e+15)
+    nHeI rms = 1.8583447e-04 (5.96e-05), max = 4.5014743e-01 (1.44e-01)
+   nHeII rms = 2.7469490e-06 (8.81e-07), max = 8.2431785e-04 (2.64e-04)
+
+ subcycled rad 0: dt=2.4e-03, t=5.5e+01 (hydro dt=2.4e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.1e-17 (tol = 1.0e-08, |rhs| = 3.9e+01), its = (3,7)
+ ======================================================================
+
+RadHydro cumulative time = 1006.62 (HYPRE = 910.611,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 52422
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.002615     time = 55.487009926444    cycle = 997    z = 4.996700085004
+Level[0]: dt = 0.00261472  0  (0.00261472/0.00261472)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05212e-29,  max = 2.02972e-25
+   current internal (physical) quantities:
+      Eg rms = 3.6811596e-03 (6.27e-19), max = 2.6892122e+01 (4.58e-15)
+      ec rms = 3.2200891e-03 (1.02e+12), max = 6.4416644e+00 (2.05e+15)
+    nHeI rms = 1.8584114e-04 (5.96e-05), max = 4.5020909e-01 (1.44e-01)
+   nHeII rms = 2.6679177e-06 (8.56e-07), max = 8.2388839e-04 (2.64e-04)
+
+ subcycled rad 0: dt=2.6e-03, t=5.5e+01 (hydro dt=2.6e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.1e-16 (tol = 1.0e-08, |rhs| = 4.2e+01), its = (3,7)
+ ======================================================================
+
+RadHydro cumulative time = 1122.63 (HYPRE = 1019.41,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 58439
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.002876     time = 55.489624643083    cycle = 998    z = 4.9965109205055
+Level[0]: dt = 0.00287619  0  (0.00287619/0.00287619)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05242e-29,  max = 2.02406e-25
+   current internal (physical) quantities:
+      Eg rms = 3.7579475e-03 (6.40e-19), max = 2.6936962e+01 (4.59e-15)
+      ec rms = 3.2204605e-03 (1.02e+12), max = 6.4492256e+00 (2.05e+15)
+    nHeI rms = 1.8584871e-04 (5.96e-05), max = 4.5027439e-01 (1.44e-01)
+   nHeII rms = 2.5895600e-06 (8.30e-07), max = 8.6158003e-04 (2.76e-04)
+
+ subcycled rad 0: dt=2.9e-03, t=5.5e+01 (hydro dt=2.9e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.7e-15 (tol = 1.0e-08, |rhs| = 5.0e+01), its = (3,7)
+ ======================================================================
+
+RadHydro cumulative time = 1234.97 (HYPRE = 1124.57,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 63193
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.003164     time = 55.492500831386    cycle = 999    z = 4.9963028566584
+Level[0]: dt = 0.00316381  0  (0.00316381/0.00316381)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05235e-29,  max = 2.01845e-25
+   current internal (physical) quantities:
+      Eg rms = 3.8375289e-03 (6.54e-19), max = 2.7015833e+01 (4.60e-15)
+      ec rms = 3.2208909e-03 (1.02e+12), max = 6.4569434e+00 (2.05e+15)
+    nHeI rms = 1.8585721e-04 (5.96e-05), max = 4.5034401e-01 (1.44e-01)
+   nHeII rms = 2.5120168e-06 (8.05e-07), max = 9.6010278e-04 (3.08e-04)
+
+ subcycled rad 0: dt=3.2e-03, t=5.5e+01 (hydro dt=3.2e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.0e-16 (tol = 1.0e-08, |rhs| = 5.7e+01), its = (3,8)
+ ======================================================================
+
+RadHydro cumulative time = 1360.25 (HYPRE = 1242.49,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 69909
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.003480     time = 55.495664638519    cycle = 1000    z = 4.9960740071162
+Level[0]: dt = 0.00348019  0  (0.00348019/0.00348019)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05233e-29,  max = 2.01642e-25
+   current internal (physical) quantities:
+      Eg rms = 3.9203740e-03 (6.68e-19), max = 2.7087226e+01 (4.61e-15)
+      ec rms = 3.2213436e-03 (1.02e+12), max = 6.4647415e+00 (2.05e+15)
+    nHeI rms = 1.8586670e-04 (5.96e-05), max = 4.5041810e-01 (1.44e-01)
+   nHeII rms = 2.4354137e-06 (7.81e-07), max = 1.0695437e-03 (3.43e-04)
+
+ subcycled rad 0: dt=3.5e-03, t=5.5e+01 (hydro dt=3.5e-03, t=5.5e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.3e-15 (tol = 1.0e-08, |rhs| = 6.5e+01), its = (3,8)
+ ======================================================================
+
+RadHydro cumulative time = 1490.42 (HYPRE = 1359.15,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 76897
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.003828     time = 55.499144826366    cycle = 1001    z = 4.9958222976504
+Level[0]: dt = 0.00382821  0  (0.00382821/0.00382821)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05236e-29,  max = 2.01104e-25
+   current internal (physical) quantities:
+      Eg rms = 4.0071366e-03 (6.82e-19), max = 2.7137176e+01 (4.62e-15)
+      ec rms = 3.2218622e-03 (1.02e+12), max = 6.4726360e+00 (2.06e+15)
+    nHeI rms = 1.8587725e-04 (5.96e-05), max = 4.5049716e-01 (1.44e-01)
+   nHeII rms = 2.3598613e-06 (7.56e-07), max = 1.1904506e-03 (3.82e-04)
+
+ subcycled rad 0: dt=3.8e-03, t=5.6e+01 (hydro dt=3.8e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 6.4e-16 (tol = 1.0e-08, |rhs| = 7.9e+01), its = (3,9)
+ ======================================================================
+
+RadHydro cumulative time = 1632.41 (HYPRE = 1493.67,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 84918
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.004211     time = 55.502973032997    cycle = 1002    z = 4.9955454475201
+Level[0]: dt = 0.00421103  0  (0.00421103/0.00421103)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05251e-29,  max = 2.01876e-25
+   current internal (physical) quantities:
+      Eg rms = 4.0982401e-03 (6.98e-19), max = 2.7241441e+01 (4.64e-15)
+      ec rms = 3.2224509e-03 (1.02e+12), max = 6.4803308e+00 (2.06e+15)
+    nHeI rms = 1.8588895e-04 (5.96e-05), max = 4.5058173e-01 (1.44e-01)
+   nHeII rms = 2.2854557e-06 (7.32e-07), max = 1.3240729e-03 (4.24e-04)
+
+ subcycled rad 0: dt=4.2e-03, t=5.6e+01 (hydro dt=4.2e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 8.0e-15 (tol = 1.0e-08, |rhs| = 9.7e+01), its = (3,9)
+ ======================================================================
+
+RadHydro cumulative time = 1775.3 (HYPRE = 1628.68,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 92986
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.004632     time = 55.507184060291    cycle = 1003    z = 4.9952409490112
+Level[0]: dt = 0.00463213  0  (0.00463213/0.00463213)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05225e-29,  max = 2.01056e-25
+   current internal (physical) quantities:
+      Eg rms = 4.1939766e-03 (7.14e-19), max = 2.7308603e+01 (4.65e-15)
+      ec rms = 3.2230740e-03 (1.02e+12), max = 6.4876983e+00 (2.06e+15)
+    nHeI rms = 1.8590188e-04 (5.96e-05), max = 4.5067206e-01 (1.44e-01)
+   nHeII rms = 2.2122784e-06 (7.09e-07), max = 1.4741533e-03 (4.72e-04)
+
+ subcycled rad 0: dt=4.6e-03, t=5.6e+01 (hydro dt=4.6e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.6e-15 (tol = 1.0e-08, |rhs| = 1.1e+02), its = (3,10)
+ ======================================================================
+
+RadHydro cumulative time = 1925.97 (HYPRE = 1771.28,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 102401
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.005095     time = 55.511816190315    cycle = 1004    z = 4.9949060449701
+Level[0]: dt = 0.00509534  0  (0.00509534/0.00509534)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05215e-29,  max = 1.99401e-25
+   current internal (physical) quantities:
+      Eg rms = 4.2947902e-03 (7.31e-19), max = 2.7386787e+01 (4.66e-15)
+      ec rms = 3.2237808e-03 (1.02e+12), max = 6.4946363e+00 (2.06e+15)
+    nHeI rms = 1.8591616e-04 (5.96e-05), max = 4.5076605e-01 (1.44e-01)
+   nHeII rms = 2.1403960e-06 (6.86e-07), max = 1.6393451e-03 (5.25e-04)
+
+ subcycled rad 0: dt=5.1e-03, t=5.6e+01 (hydro dt=5.1e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.0e-15 (tol = 1.0e-08, |rhs| = 1.3e+02), its = (3,11)
+ ======================================================================
+
+RadHydro cumulative time = 2090.87 (HYPRE = 1927.89,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 112960
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.005605     time = 55.516911533341    cycle = 1005    z = 4.9945377041386
+Level[0]: dt = 0.00560488  0  (0.00560488/0.00560488)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05233e-29,  max = 1.98505e-25
+   current internal (physical) quantities:
+      Eg rms = 4.4007860e-03 (7.49e-19), max = 2.7424256e+01 (4.67e-15)
+      ec rms = 3.2245772e-03 (1.02e+12), max = 6.5009756e+00 (2.07e+15)
+    nHeI rms = 1.8593188e-04 (5.96e-05), max = 4.5086360e-01 (1.44e-01)
+   nHeII rms = 2.0698623e-06 (6.63e-07), max = 1.8236354e-03 (5.84e-04)
+
+ subcycled rad 0: dt=5.6e-03, t=5.6e+01 (hydro dt=5.6e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.5e-19 (tol = 1.0e-08, |rhs| = 1.5e+02), its = (4,12)
+ ======================================================================
+
+RadHydro cumulative time = 2283.09 (HYPRE = 2112.03,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 124017
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.006165     time = 55.52251641067    cycle = 1006    z = 4.9941325940805
+Level[0]: dt = 0.00616537  0  (0.00616537/0.00616537)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.0523e-29,  max = 1.96092e-25
+   current internal (physical) quantities:
+      Eg rms = 4.5122070e-03 (7.68e-19), max = 2.7439798e+01 (4.67e-15)
+      ec rms = 3.2254172e-03 (1.02e+12), max = 6.5070156e+00 (2.07e+15)
+    nHeI rms = 1.8594921e-04 (5.96e-05), max = 4.5096250e-01 (1.44e-01)
+   nHeII rms = 2.0007192e-06 (6.41e-07), max = 2.0287551e-03 (6.50e-04)
+
+ subcycled rad 0: dt=6.2e-03, t=5.6e+01 (hydro dt=6.2e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.8e-14 (tol = 1.0e-08, |rhs| = 1.8e+02), its = (3,12)
+ ======================================================================
+
+RadHydro cumulative time = 2448.73 (HYPRE = 2269.38,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 136595
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.006782     time = 55.528681775731    cycle = 1007    z = 4.9936870514719
+Level[0]: dt = 0.0067819  0  (0.0067819/0.0067819)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05199e-29,  max = 1.94485e-25
+   current internal (physical) quantities:
+      Eg rms = 4.6293433e-03 (7.88e-19), max = 2.7453188e+01 (4.67e-15)
+      ec rms = 3.2263715e-03 (1.02e+12), max = 6.5129229e+00 (2.07e+15)
+    nHeI rms = 1.8596827e-04 (5.95e-05), max = 4.5106167e-01 (1.44e-01)
+   nHeII rms = 1.9329984e-06 (6.19e-07), max = 2.2565326e-03 (7.23e-04)
+
+ subcycled rad 0: dt=6.8e-03, t=5.6e+01 (hydro dt=6.8e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.5e-18 (tol = 1.0e-08, |rhs| = 2.0e+02), its = (4,12)
+ ======================================================================
+
+RadHydro cumulative time = 2642.84 (HYPRE = 2455,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 150084
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.007460     time = 55.535463677299    cycle = 1008    z = 4.9931970495051
+Level[0]: dt = 0.00746009  0  (0.00746009/0.00746009)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05208e-29,  max = 1.93756e-25
+   current internal (physical) quantities:
+      Eg rms = 4.7525105e-03 (8.08e-19), max = 2.7497328e+01 (4.68e-15)
+      ec rms = 3.2274492e-03 (1.03e+12), max = 6.5175555e+00 (2.07e+15)
+    nHeI rms = 1.8598924e-04 (5.95e-05), max = 4.5115842e-01 (1.44e-01)
+   nHeII rms = 1.8667219e-06 (5.98e-07), max = 2.5066074e-03 (8.02e-04)
+
+ subcycled rad 0: dt=7.5e-03, t=5.6e+01 (hydro dt=7.5e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 7.5e-17 (tol = 1.0e-08, |rhs| = 2.3e+02), its = (4,12)
+ ======================================================================
+
+RadHydro cumulative time = 2843.47 (HYPRE = 2647.49,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 165217
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.008206     time = 55.542923769024    cycle = 1009    z = 4.9926581621363
+Level[0]: dt = 0.0082061  0  (0.0082061/0.0082061)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05218e-29,  max = 1.92302e-25
+   current internal (physical) quantities:
+      Eg rms = 4.8818299e-03 (8.30e-19), max = 2.7529244e+01 (4.68e-15)
+      ec rms = 3.2285895e-03 (1.03e+12), max = 6.5207317e+00 (2.07e+15)
+    nHeI rms = 1.8601228e-04 (5.95e-05), max = 4.5124352e-01 (1.44e-01)
+   nHeII rms = 1.8019067e-06 (5.77e-07), max = 2.7864410e-03 (8.92e-04)
+
+ subcycled rad 0: dt=8.2e-03, t=5.6e+01 (hydro dt=8.2e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.3e-15 (tol = 1.0e-08, |rhs| = 2.8e+02), its = (4,12)
+ ======================================================================
+
+RadHydro cumulative time = 3034.75 (HYPRE = 2829.98,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 181701
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.009027     time = 55.551129869921    cycle = 1010    z = 4.9920655248824
+Level[0]: dt = 0.00902671  0  (0.00902671/0.00902671)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05248e-29,  max = 1.91492e-25
+   current internal (physical) quantities:
+      Eg rms = 5.0176194e-03 (8.53e-19), max = 2.7554795e+01 (4.68e-15)
+      ec rms = 3.2298780e-03 (1.03e+12), max = 6.5224662e+00 (2.07e+15)
+    nHeI rms = 1.8603761e-04 (5.95e-05), max = 4.5130739e-01 (1.44e-01)
+   nHeII rms = 1.7385613e-06 (5.56e-07), max = 3.0905813e-03 (9.89e-04)
+
+ subcycled rad 0: dt=9.0e-03, t=5.6e+01 (hydro dt=9.0e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.1e-13 (tol = 1.0e-08, |rhs| = 3.2e+02), its = (4,12)
+ ======================================================================
+
+RadHydro cumulative time = 3228.15 (HYPRE = 3014.85,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 200079
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.009929     time = 55.560156580907    cycle = 1011    z = 4.9914137918473
+Level[0]: dt = 0.00992938  0  (0.00992938/0.00992938)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05243e-29,  max = 1.89415e-25
+   current internal (physical) quantities:
+      Eg rms = 5.1598365e-03 (8.77e-19), max = 2.7554297e+01 (4.68e-15)
+      ec rms = 3.2313316e-03 (1.03e+12), max = 6.5201021e+00 (2.07e+15)
+    nHeI rms = 1.8606544e-04 (5.95e-05), max = 4.5134663e-01 (1.44e-01)
+   nHeII rms = 1.6766931e-06 (5.36e-07), max = 3.4296379e-03 (1.10e-03)
+
+ subcycled rad 0: dt=9.9e-03, t=5.6e+01 (hydro dt=9.9e-03, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.3e-12 (tol = 1.0e-08, |rhs| = 3.8e+02), its = (4,12)
+ ======================================================================
+
+RadHydro cumulative time = 3421.99 (HYPRE = 3199.02,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 219606
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.010922     time = 55.570085962993    cycle = 1012    z = 4.9906970886328
+Level[0]: dt = 0.0109223  0  (0.0109223/0.0109223)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.0525e-29,  max = 1.87665e-25
+   current internal (physical) quantities:
+      Eg rms = 5.3081955e-03 (9.02e-19), max = 2.7546540e+01 (4.68e-15)
+      ec rms = 3.2328720e-03 (1.03e+12), max = 6.5131102e+00 (2.07e+15)
+    nHeI rms = 1.8609599e-04 (5.95e-05), max = 4.5134609e-01 (1.44e-01)
+   nHeII rms = 1.6163091e-06 (5.17e-07), max = 3.8082909e-03 (1.22e-03)
+
+ subcycled rad 0: dt=1.1e-02, t=5.6e+01 (hydro dt=1.1e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.6e-14 (tol = 1.0e-08, |rhs| = 4.6e+02), its = (5,12)
+ ======================================================================
+
+RadHydro cumulative time = 3650.23 (HYPRE = 3418.38,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 242165
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.012015     time = 55.581008283287    cycle = 1013    z = 4.9899089607596
+Level[0]: dt = 0.0120146  0  (0.0120146/0.0120146)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05256e-29,  max = 1.85205e-25
+   current internal (physical) quantities:
+      Eg rms = 5.4623897e-03 (9.27e-19), max = 2.7559984e+01 (4.68e-15)
+      ec rms = 3.2346106e-03 (1.03e+12), max = 6.5022442e+00 (2.07e+15)
+    nHeI rms = 1.8612951e-04 (5.95e-05), max = 4.5129604e-01 (1.44e-01)
+   nHeII rms = 1.5574175e-06 (4.98e-07), max = 4.2309013e-03 (1.35e-03)
+
+ subcycled rad 0: dt=1.2e-02, t=5.6e+01 (hydro dt=1.2e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.5e-13 (tol = 1.0e-08, |rhs| = 5.3e+02), its = (5,12)
+ ======================================================================
+
+RadHydro cumulative time = 3873.57 (HYPRE = 3632.55,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 265107
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.013216     time = 55.59302283561    cycle = 1014    z = 4.9890423171946
+Level[0]: dt = 0.013216  0  (0.013216/0.013216)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05299e-29,  max = 1.82145e-25
+   current internal (physical) quantities:
+      Eg rms = 5.6216950e-03 (9.54e-19), max = 2.7485113e+01 (4.66e-15)
+      ec rms = 3.2365779e-03 (1.03e+12), max = 6.4852014e+00 (2.06e+15)
+    nHeI rms = 1.8616625e-04 (5.95e-05), max = 4.5117114e-01 (1.44e-01)
+   nHeII rms = 1.5000459e-06 (4.79e-07), max = 4.7090915e-03 (1.50e-03)
+
+ subcycled rad 0: dt=1.3e-02, t=5.6e+01 (hydro dt=1.3e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 5.9e-12 (tol = 1.0e-08, |rhs| = 6.5e+02), its = (5,12)
+ ======================================================================
+
+RadHydro cumulative time = 4094.87 (HYPRE = 3844.42,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 292386
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.014538     time = 55.606238843165    cycle = 1015    z = 4.9880893685509
+Level[0]: dt = 0.0145376  0  (0.0145376/0.0145376)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05392e-29,  max = 1.79187e-25
+   current internal (physical) quantities:
+      Eg rms = 5.7853127e-03 (9.81e-19), max = 2.7476303e+01 (4.66e-15)
+      ec rms = 3.2386472e-03 (1.03e+12), max = 6.4610753e+00 (2.05e+15)
+    nHeI rms = 1.8620653e-04 (5.95e-05), max = 4.5093486e-01 (1.44e-01)
+   nHeII rms = 1.4442242e-06 (4.61e-07), max = 5.2528665e-03 (1.68e-03)
+
+ subcycled rad 0: dt=1.5e-02, t=5.6e+01 (hydro dt=1.5e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.2e-13 (tol = 1.0e-08, |rhs| = 8.2e+02), its = (6,12)
+ ======================================================================
+
+RadHydro cumulative time = 4358.6 (HYPRE = 4098.68,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 321994
+CommunicationTransferParticles: moved = 4
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.015991     time = 55.620776451476    cycle = 1016    z = 4.9870415594926
+Level[0]: dt = 0.0159914  0  (0.0159914/0.0159914)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05514e-29,  max = 1.77763e-25
+   current internal (physical) quantities:
+      Eg rms = 5.9526583e-03 (1.01e-18), max = 2.7546776e+01 (4.67e-15)
+      ec rms = 3.2409881e-03 (1.03e+12), max = 6.4320604e+00 (2.04e+15)
+    nHeI rms = 1.8625061e-04 (5.94e-05), max = 4.5054974e-01 (1.44e-01)
+   nHeII rms = 1.3900218e-06 (4.44e-07), max = 5.8841735e-03 (1.88e-03)
+
+ subcycled rad 0: dt=1.6e-02, t=5.6e+01 (hydro dt=1.6e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.7e-12 (tol = 1.0e-08, |rhs| = 9.8e+02), its = (6,12)
+ ======================================================================
+
+RadHydro cumulative time = 4615.69 (HYPRE = 4345.48,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 353252
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.017591     time = 55.636767820619    cycle = 1017    z = 4.9858894948451
+Level[0]: dt = 0.0175905  0  (0.0175905/0.0175905)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05565e-29,  max = 1.75573e-25
+   current internal (physical) quantities:
+      Eg rms = 6.1220671e-03 (1.04e-18), max = 2.7513888e+01 (4.66e-15)
+      ec rms = 3.2436337e-03 (1.03e+12), max = 6.3953687e+00 (2.03e+15)
+    nHeI rms = 1.8629887e-04 (5.94e-05), max = 4.4998564e-01 (1.44e-01)
+   nHeII rms = 1.3375147e-06 (4.27e-07), max = 6.6072255e-03 (2.11e-03)
+
+ subcycled rad 0: dt=1.8e-02, t=5.6e+01 (hydro dt=1.8e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.9e-11 (tol = 1.0e-08, |rhs| = 1.1e+03), its = (6,12)
+ ======================================================================
+
+RadHydro cumulative time = 4870.81 (HYPRE = 4590.61,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 387687
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.019350     time = 55.654358326675    cycle = 1018    z = 4.9846228588773
+Level[0]: dt = 0.0193496  0  (0.0193496/0.0193496)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05654e-29,  max = 1.71629e-25
+   current internal (physical) quantities:
+      Eg rms = 6.2928553e-03 (1.07e-18), max = 2.7467830e+01 (4.65e-15)
+      ec rms = 3.2464435e-03 (1.03e+12), max = 6.3494602e+00 (2.02e+15)
+    nHeI rms = 1.8635159e-04 (5.94e-05), max = 4.4910121e-01 (1.43e-01)
+   nHeII rms = 1.2868567e-06 (4.10e-07), max = 7.4504515e-03 (2.37e-03)
+
+ subcycled rad 0: dt=1.9e-02, t=5.6e+01 (hydro dt=1.9e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.9e-12 (tol = 1.0e-08, |rhs| = 1.4e+03), its = (7,12)
+ ======================================================================
+
+RadHydro cumulative time = 5163.72 (HYPRE = 4872.67,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 427778
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.021285     time = 55.673707883337    cycle = 1019    z = 4.9832303271876
+Level[0]: dt = 0.0212845  0  (0.0212845/0.0212845)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05712e-29,  max = 1.72559e-25
+   current internal (physical) quantities:
+      Eg rms = 6.4642030e-03 (1.09e-18), max = 2.7534348e+01 (4.66e-15)
+      ec rms = 3.2495996e-03 (1.03e+12), max = 6.3298852e+00 (2.01e+15)
+    nHeI rms = 1.8640909e-04 (5.94e-05), max = 4.4772930e-01 (1.43e-01)
+   nHeII rms = 1.2382175e-06 (3.94e-07), max = 8.4144580e-03 (2.68e-03)
+
+ subcycled rad 0: dt=2.1e-02, t=5.6e+01 (hydro dt=2.1e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.6e-11 (tol = 1.0e-08, |rhs| = 1.7e+03), its = (7,12)
+ ======================================================================
+
+RadHydro cumulative time = 5454.5 (HYPRE = 5152.03,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 469182
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.023413     time = 55.694992395666    cycle = 1020    z = 4.9816994705938
+Level[0]: dt = 0.023413  0  (0.023413/0.023413)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05706e-29,  max = 1.75201e-25
+   current internal (physical) quantities:
+      Eg rms = 6.6345936e-03 (1.12e-18), max = 2.7518612e+01 (4.65e-15)
+      ec rms = 3.2531505e-03 (1.03e+12), max = 6.2967433e+00 (2.00e+15)
+    nHeI rms = 1.8647173e-04 (5.93e-05), max = 4.4576088e-01 (1.42e-01)
+   nHeII rms = 1.1918008e-06 (3.79e-07), max = 9.5210162e-03 (3.03e-03)
+
+ subcycled rad 0: dt=2.3e-02, t=5.6e+01 (hydro dt=2.3e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.7e-12 (tol = 1.0e-08, |rhs| = 1.9e+03), its = (8,12)
+ ======================================================================
+
+RadHydro cumulative time = 5777.81 (HYPRE = 5463.84,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 518639
+CommunicationTransferParticles: moved = 26
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.025754     time = 55.718405359227    cycle = 1021    z = 4.9800166503929
+Level[0]: dt = 0.0257543  0  (0.0257543/0.0257543)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.05903e-29,  max = 1.81524e-25
+   current internal (physical) quantities:
+      Eg rms = 6.8033380e-03 (1.15e-18), max = 2.7495134e+01 (4.65e-15)
+      ec rms = 3.2569230e-03 (1.03e+12), max = 6.2420426e+00 (1.98e+15)
+    nHeI rms = 1.8653989e-04 (5.93e-05), max = 4.4297970e-01 (1.41e-01)
+   nHeII rms = 1.1481475e-06 (3.65e-07), max = 1.0875488e-02 (3.46e-03)
+
+ subcycled rad 0: dt=2.6e-02, t=5.6e+01 (hydro dt=2.6e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.9e-11 (tol = 1.0e-08, |rhs| = 2.5e+03), its = (8,12)
+ ======================================================================
+
+RadHydro cumulative time = 6100.01 (HYPRE = 5773.97,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 568962
+CommunicationTransferParticles: moved = 33
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.028330     time = 55.744159619144    cycle = 1022    z = 4.9781669043293
+Level[0]: dt = 0.0283297  0  (0.0283297/0.0283297)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.06081e-29,  max = 1.85703e-25
+   current internal (physical) quantities:
+      Eg rms = 6.9692487e-03 (1.18e-18), max = 2.7441950e+01 (4.63e-15)
+      ec rms = 3.2611763e-03 (1.04e+12), max = 6.1682660e+00 (1.96e+15)
+    nHeI rms = 1.8661399e-04 (5.93e-05), max = 4.3917559e-01 (1.40e-01)
+   nHeII rms = 1.1076677e-06 (3.52e-07), max = 1.2449802e-02 (3.96e-03)
+
+ subcycled rad 0: dt=2.8e-02, t=5.6e+01 (hydro dt=2.8e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 6.6e-12 (tol = 1.0e-08, |rhs| = 3.0e+03), its = (9,12)
+ ======================================================================
+
+RadHydro cumulative time = 6451.2 (HYPRE = 6112.26,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 625873
+CommunicationTransferParticles: moved = 42
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 7
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.031163     time = 55.772489305053    cycle = 1023    z = 4.9761338225819
+Level[0]: dt = 0.0311627  0  (0.0311627/0.0311627)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.06333e-29,  max = 1.90285e-25
+   current internal (physical) quantities:
+      Eg rms = 7.1318498e-03 (1.20e-18), max = 2.7381482e+01 (4.62e-15)
+      ec rms = 3.2659476e-03 (1.04e+12), max = 6.3507179e+00 (2.02e+15)
+    nHeI rms = 1.8669437e-04 (5.93e-05), max = 4.3406528e-01 (1.38e-01)
+   nHeII rms = 1.0706636e-06 (3.40e-07), max = 1.4157802e-02 (4.49e-03)
+
+ subcycled rad 0: dt=3.1e-02, t=5.6e+01 (hydro dt=3.1e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.3e-11 (tol = 1.0e-08, |rhs| = 3.6e+03), its = (9,12)
+ ======================================================================
+
+RadHydro cumulative time = 6816.96 (HYPRE = 6465.05,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 689839
+CommunicationTransferParticles: moved = 39
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.034279     time = 55.803651959553    cycle = 1024    z = 4.973899413062
+Level[0]: dt = 0.0342789  0  (0.0342789/0.0342789)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.0662e-29,  max = 1.92675e-25
+   current internal (physical) quantities:
+      Eg rms = 7.2906540e-03 (1.23e-18), max = 2.7317852e+01 (4.60e-15)
+      ec rms = 3.2710140e-03 (1.04e+12), max = 6.4729837e+00 (2.06e+15)
+    nHeI rms = 1.8678145e-04 (5.92e-05), max = 4.2718656e-01 (1.35e-01)
+   nHeII rms = 1.0370267e-06 (3.29e-07), max = 1.5832154e-02 (5.02e-03)
+
+ subcycled rad 0: dt=3.4e-02, t=5.6e+01 (hydro dt=3.4e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 9.4e-12 (tol = 1.0e-08, |rhs| = 4.1e+03), its = (10,12)
+ ======================================================================
+
+RadHydro cumulative time = 7215.2 (HYPRE = 6850.04,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 757312
+CommunicationTransferParticles: moved = 40
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.037707     time = 55.837930879503    cycle = 1025    z = 4.9714439552979
+Level[0]: dt = 0.0377068  0  (0.0377068/0.0377068)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.06886e-29,  max = 1.94015e-25
+   current internal (physical) quantities:
+      Eg rms = 7.4451723e-03 (1.25e-18), max = 2.7266198e+01 (4.59e-15)
+      ec rms = 3.2767109e-03 (1.04e+12), max = 6.4521148e+00 (2.05e+15)
+    nHeI rms = 1.8687559e-04 (5.92e-05), max = 4.1814547e-01 (1.32e-01)
+   nHeII rms = 1.0064962e-06 (3.19e-07), max = 1.7365145e-02 (5.50e-03)
+
+ subcycled rad 0: dt=3.8e-02, t=5.6e+01 (hydro dt=3.8e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.9e-11 (tol = 1.0e-08, |rhs| = 4.9e+03), its = (10,12)
+ ======================================================================
+
+RadHydro cumulative time = 7607.73 (HYPRE = 7228.46,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 834624
+CommunicationTransferParticles: moved = 64
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.041477     time = 55.875637691448    cycle = 1026    z = 4.9687458421808
+Level[0]: dt = 0.0414775  0  (0.0414775/0.0414775)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07144e-29,  max = 1.9735e-25
+   current internal (physical) quantities:
+      Eg rms = 7.5953222e-03 (1.28e-18), max = 2.7149612e+01 (4.56e-15)
+      ec rms = 3.2831343e-03 (1.04e+12), max = 6.3400159e+00 (2.01e+15)
+    nHeI rms = 1.8697732e-04 (5.91e-05), max = 4.0655926e-01 (1.29e-01)
+   nHeII rms = 9.7835976e-07 (3.09e-07), max = 1.8573497e-02 (5.87e-03)
+
+ subcycled rad 0: dt=4.1e-02, t=5.6e+01 (hydro dt=4.1e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 9.1e-12 (tol = 1.0e-08, |rhs| = 5.7e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 8032.05 (HYPRE = 7638.08,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 914825
+CommunicationTransferParticles: moved = 66
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 8
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.043561     time = 55.917115184587    cycle = 1027    z = 4.9657814088526
+Level[0]: dt = 0.0435605  0  (0.0435605/0.0435605)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07367e-29,  max = 1.99519e-25
+   current internal (physical) quantities:
+      Eg rms = 7.7404643e-03 (1.30e-18), max = 2.7022223e+01 (4.53e-15)
+      ec rms = 3.2895524e-03 (1.04e+12), max = 6.1947344e+00 (1.97e+15)
+    nHeI rms = 1.8708197e-04 (5.91e-05), max = 3.9156439e-01 (1.24e-01)
+   nHeII rms = 9.5351300e-07 (3.01e-07), max = 1.9519388e-02 (6.16e-03)
+
+ subcycled rad 0: dt=4.4e-02, t=5.6e+01 (hydro dt=4.4e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.6e-11 (tol = 1.0e-08, |rhs| = 6.3e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 8457.2 (HYPRE = 8048.38,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 960226
+CommunicationTransferParticles: moved = 82
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044022     time = 55.960675717606    cycle = 1028    z = 4.9626720285992
+Level[0]: dt = 0.0440218  0  (0.0440218/0.0440218)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07293e-29,  max = 1.98814e-25
+   current internal (physical) quantities:
+      Eg rms = 7.8751698e-03 (1.32e-18), max = 2.6854188e+01 (4.50e-15)
+      ec rms = 3.2960913e-03 (1.05e+12), max = 6.1998471e+00 (1.97e+15)
+    nHeI rms = 1.8718668e-04 (5.90e-05), max = 3.7811417e-01 (1.19e-01)
+   nHeII rms = 9.3193546e-07 (2.94e-07), max = 2.0109097e-02 (6.34e-03)
+
+ subcycled rad 0: dt=4.4e-02, t=5.6e+01 (hydro dt=4.4e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.6e-11 (tol = 1.0e-08, |rhs| = 6.2e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 8885.1 (HYPRE = 8461.28,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 970595
+CommunicationTransferParticles: moved = 77
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044458     time = 56.004697475814    cycle = 1029    z = 4.9595338076154
+Level[0]: dt = 0.0444584  0  (0.0444584/0.0444584)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07444e-29,  max = 1.99683e-25
+   current internal (physical) quantities:
+      Eg rms = 7.9970069e-03 (1.34e-18), max = 2.6735411e+01 (4.47e-15)
+      ec rms = 3.3028239e-03 (1.05e+12), max = 6.2286966e+00 (1.98e+15)
+    nHeI rms = 1.8729159e-04 (5.89e-05), max = 3.6937645e-01 (1.16e-01)
+   nHeII rms = 9.1301323e-07 (2.87e-07), max = 2.0435582e-02 (6.43e-03)
+
+ subcycled rad 0: dt=4.4e-02, t=5.6e+01 (hydro dt=4.4e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.3e-11 (tol = 1.0e-08, |rhs| = 6.7e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 9312.74 (HYPRE = 8873.57,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 979336
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044922     time = 56.049155878811    cycle = 1030    z = 4.9563686149763
+Level[0]: dt = 0.0449224  0  (0.0449224/0.0449224)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07508e-29,  max = 1.96783e-25
+   current internal (physical) quantities:
+      Eg rms = 8.1069163e-03 (1.35e-18), max = 2.6596405e+01 (4.44e-15)
+      ec rms = 3.3093980e-03 (1.05e+12), max = 6.1531605e+00 (1.95e+15)
+    nHeI rms = 1.8739684e-04 (5.89e-05), max = 3.5821821e-01 (1.13e-01)
+   nHeII rms = 8.9630139e-07 (2.82e-07), max = 2.0567223e-02 (6.46e-03)
+
+ subcycled rad 0: dt=4.5e-02, t=5.6e+01 (hydro dt=4.5e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.7e-11 (tol = 1.0e-08, |rhs| = 6.8e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 9739.25 (HYPRE = 9284.64,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 991473
+CommunicationTransferParticles: moved = 78
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044438     time = 56.094078251943    cycle = 1031    z = 4.9531746232259
+Level[0]: dt = 0.0444384  0  (0.0444384/0.0444384)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07661e-29,  max = 1.96282e-25
+   current internal (physical) quantities:
+      Eg rms = 8.2072586e-03 (1.37e-18), max = 2.6321881e+01 (4.39e-15)
+      ec rms = 3.3158139e-03 (1.05e+12), max = 5.9756360e+00 (1.90e+15)
+    nHeI rms = 1.8749804e-04 (5.88e-05), max = 3.4601508e-01 (1.09e-01)
+   nHeII rms = 8.8162849e-07 (2.77e-07), max = 2.0588412e-02 (6.46e-03)
+
+ subcycled rad 0: dt=4.4e-02, t=5.6e+01 (hydro dt=4.4e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.2e-11 (tol = 1.0e-08, |rhs| = 6.5e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 10162.3 (HYPRE = 9692.21,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 978873
+CommunicationTransferParticles: moved = 66
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044388     time = 56.138516667897    cycle = 1032    z = 4.9500192185337
+Level[0]: dt = 0.0443883  0  (0.0443883/0.0443883)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07608e-29,  max = 1.965e-25
+   current internal (physical) quantities:
+      Eg rms = 8.2988991e-03 (1.38e-18), max = 2.6251347e+01 (4.37e-15)
+      ec rms = 3.3223709e-03 (1.06e+12), max = 5.7651207e+00 (1.83e+15)
+    nHeI rms = 1.8759953e-04 (5.88e-05), max = 3.3352009e-01 (1.04e-01)
+   nHeII rms = 8.6869005e-07 (2.72e-07), max = 2.0555467e-02 (6.44e-03)
+
+ subcycled rad 0: dt=4.4e-02, t=5.6e+01 (hydro dt=4.4e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.1e-11 (tol = 1.0e-08, |rhs| = 6.5e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 10586.2 (HYPRE = 10100.5,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 978449
+CommunicationTransferParticles: moved = 78
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044675     time = 56.182904986681    cycle = 1033    z = 4.9468715102068
+Level[0]: dt = 0.0446749  0  (0.0446749/0.0446749)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07706e-29,  max = 1.97516e-25
+   current internal (physical) quantities:
+      Eg rms = 8.3833519e-03 (1.39e-18), max = 2.6130655e+01 (4.34e-15)
+      ec rms = 3.3289202e-03 (1.06e+12), max = 5.9399087e+00 (1.89e+15)
+    nHeI rms = 1.8770486e-04 (5.87e-05), max = 3.2117707e-01 (1.00e-01)
+   nHeII rms = 8.5769521e-07 (2.68e-07), max = 2.0502567e-02 (6.41e-03)
+
+ subcycled rad 0: dt=4.5e-02, t=5.6e+01 (hydro dt=4.5e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.2e-11 (tol = 1.0e-08, |rhs| = 6.6e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 11018.5 (HYPRE = 10517.4,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 983366
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 11
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.045060     time = 56.22757984594    cycle = 1034    z = 4.9437076505805
+Level[0]: dt = 0.0450599  0  (0.0450599/0.0450599)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07651e-29,  max = 1.96794e-25
+   current internal (physical) quantities:
+      Eg rms = 8.4621625e-03 (1.40e-18), max = 2.6005297e+01 (4.31e-15)
+      ec rms = 3.3357524e-03 (1.06e+12), max = 6.0144073e+00 (1.91e+15)
+    nHeI rms = 1.8781126e-04 (5.86e-05), max = 3.0875308e-01 (9.64e-02)
+   nHeII rms = 8.4844295e-07 (2.65e-07), max = 2.0447530e-02 (6.38e-03)
+
+ subcycled rad 0: dt=4.5e-02, t=5.6e+01 (hydro dt=4.5e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.4e-11 (tol = 1.0e-08, |rhs| = 6.7e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 11434.8 (HYPRE = 10918.2,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 993866
+CommunicationTransferParticles: moved = 80
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.045604     time = 56.272639783909    cycle = 1035    z = 4.9405207465932
+Level[0]: dt = 0.0456035  0  (0.0456035/0.0456035)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07687e-29,  max = 1.93203e-25
+   current internal (physical) quantities:
+      Eg rms = 8.5358690e-03 (1.41e-18), max = 2.5880976e+01 (4.29e-15)
+      ec rms = 3.3427992e-03 (1.06e+12), max = 5.9240996e+00 (1.88e+15)
+    nHeI rms = 1.8791941e-04 (5.86e-05), max = 2.9664408e-01 (9.25e-02)
+   nHeII rms = 8.4108584e-07 (2.62e-07), max = 2.0407989e-02 (6.36e-03)
+
+ subcycled rad 0: dt=4.6e-02, t=5.6e+01 (hydro dt=4.6e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.8e-11 (tol = 1.0e-08, |rhs| = 6.9e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 11860 (HYPRE = 11327.8,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1003671
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.045313     time = 56.318243303701    cycle = 1036    z = 4.9372997101169
+Level[0]: dt = 0.0453133  0  (0.0453133/0.0453133)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07652e-29,  max = 1.91251e-25
+   current internal (physical) quantities:
+      Eg rms = 8.6056867e-03 (1.42e-18), max = 2.5765612e+01 (4.26e-15)
+      ec rms = 3.3493006e-03 (1.06e+12), max = 5.7295140e+00 (1.82e+15)
+    nHeI rms = 1.8802479e-04 (5.85e-05), max = 2.8482150e-01 (8.86e-02)
+   nHeII rms = 8.3559587e-07 (2.60e-07), max = 2.0391305e-02 (6.35e-03)
+
+ subcycled rad 0: dt=4.5e-02, t=5.6e+01 (hydro dt=4.5e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.5e-11 (tol = 1.0e-08, |rhs| = 6.9e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 12283.9 (HYPRE = 11736.2,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 997676
+CommunicationTransferParticles: moved = 72
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 19
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.045327     time = 56.363556571882    cycle = 1037    z = 4.9341034626135
+Level[0]: dt = 0.0453274  0  (0.0453274/0.0453274)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07384e-29,  max = 1.85915e-25
+   current internal (physical) quantities:
+      Eg rms = 8.6706312e-03 (1.43e-18), max = 2.5688252e+01 (4.24e-15)
+      ec rms = 3.3561279e-03 (1.07e+12), max = 5.9148216e+00 (1.88e+15)
+    nHeI rms = 1.8813371e-04 (5.85e-05), max = 2.7322773e-01 (8.49e-02)
+   nHeII rms = 8.3169545e-07 (2.58e-07), max = 2.0386042e-02 (6.33e-03)
+
+ subcycled rad 0: dt=4.5e-02, t=5.6e+01 (hydro dt=4.5e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.3e-11 (tol = 1.0e-08, |rhs| = 6.7e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 12714.2 (HYPRE = 12151,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 997029
+CommunicationTransferParticles: moved = 89
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 10
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.045655     time = 56.408883923973    cycle = 1038    z = 4.9309104889155
+Level[0]: dt = 0.0456546  0  (0.0456546/0.0456546)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07224e-29,  max = 1.81207e-25
+   current internal (physical) quantities:
+      Eg rms = 8.7323372e-03 (1.44e-18), max = 2.5752920e+01 (4.24e-15)
+      ec rms = 3.3631997e-03 (1.07e+12), max = 5.9745308e+00 (1.90e+15)
+    nHeI rms = 1.8824377e-04 (5.84e-05), max = 2.6131558e-01 (8.11e-02)
+   nHeII rms = 8.2904899e-07 (2.57e-07), max = 2.0382436e-02 (6.32e-03)
+
+ subcycled rad 0: dt=4.6e-02, t=5.6e+01 (hydro dt=4.6e-02, t=5.6e+01)
+ ----------------------------------------------------------------------
+   lin resid = 2.6e-11 (tol = 1.0e-08, |rhs| = 7.0e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 13164.4 (HYPRE = 12585.5,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1005186
+CommunicationTransferParticles: moved = 96
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046198     time = 56.454538477159    cycle = 1039    z = 4.9276987713032
+Level[0]: dt = 0.0461978  0  (0.0461978/0.0461978)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07127e-29,  max = 1.76795e-25
+   current internal (physical) quantities:
+      Eg rms = 8.7915371e-03 (1.45e-18), max = 2.5813923e+01 (4.25e-15)
+      ec rms = 3.3701305e-03 (1.07e+12), max = 6.1362946e+00 (1.95e+15)
+    nHeI rms = 1.8835572e-04 (5.83e-05), max = 2.4929066e-01 (7.72e-02)
+   nHeII rms = 8.2745669e-07 (2.56e-07), max = 2.0399579e-02 (6.32e-03)
+
+ subcycled rad 0: dt=4.6e-02, t=5.7e+01 (hydro dt=4.6e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.0e-11 (tol = 1.0e-08, |rhs| = 7.0e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 13588.7 (HYPRE = 12994.2,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1014876
+CommunicationTransferParticles: moved = 87
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 18
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046808     time = 56.500736255336    cycle = 1040    z = 4.9244532271302
+Level[0]: dt = 0.0468076  0  (0.0468076/0.0468076)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07074e-29,  max = 1.71741e-25
+   current internal (physical) quantities:
+      Eg rms = 8.8489229e-03 (1.45e-18), max = 2.5846577e+01 (4.25e-15)
+      ec rms = 3.3772812e-03 (1.07e+12), max = 6.0996362e+00 (1.94e+15)
+    nHeI rms = 1.8846964e-04 (5.83e-05), max = 2.3718561e-01 (7.33e-02)
+   nHeII rms = 8.2684487e-07 (2.56e-07), max = 2.0412532e-02 (6.31e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.6e-11 (tol = 1.0e-08, |rhs| = 7.5e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 14023 (HYPRE = 13413,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1027414
+CommunicationTransferParticles: moved = 77
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 15
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046741     time = 56.547543858722    cycle = 1041    z = 4.9211693330411
+Level[0]: dt = 0.0467409  0  (0.0467409/0.0467409)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07131e-29,  max = 1.66361e-25
+   current internal (physical) quantities:
+      Eg rms = 8.9041151e-03 (1.46e-18), max = 2.5880280e+01 (4.24e-15)
+      ec rms = 3.3842990e-03 (1.08e+12), max = 5.9373525e+00 (1.89e+15)
+    nHeI rms = 1.8858136e-04 (5.82e-05), max = 2.2515538e-01 (6.95e-02)
+   nHeII rms = 8.2678130e-07 (2.55e-07), max = 2.0426618e-02 (6.31e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.4e-11 (tol = 1.0e-08, |rhs| = 7.5e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 14443.6 (HYPRE = 13817.8,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1025166
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046573     time = 56.594284717713    cycle = 1042    z = 4.9178946237249
+Level[0]: dt = 0.0465728  0  (0.0465728/0.0465728)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07177e-29,  max = 1.62709e-25
+   current internal (physical) quantities:
+      Eg rms = 8.9572382e-03 (1.47e-18), max = 2.5906141e+01 (4.24e-15)
+      ec rms = 3.3909608e-03 (1.08e+12), max = 5.7875742e+00 (1.84e+15)
+    nHeI rms = 1.8869331e-04 (5.82e-05), max = 2.1352488e-01 (6.58e-02)
+   nHeII rms = 8.2725400e-07 (2.55e-07), max = 2.0444633e-02 (6.30e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.2e-11 (tol = 1.0e-08, |rhs| = 7.4e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 14864.9 (HYPRE = 14223.1,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1024217
+CommunicationTransferParticles: moved = 77
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 9
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046927     time = 56.640857497713    cycle = 1043    z = 4.9146361550559
+Level[0]: dt = 0.046927  0  (0.046927/0.046927)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07115e-29,  max = 1.6368e-25
+   current internal (physical) quantities:
+      Eg rms = 9.0087346e-03 (1.47e-18), max = 2.5836768e+01 (4.22e-15)
+      ec rms = 3.3980057e-03 (1.08e+12), max = 5.9988809e+00 (1.91e+15)
+    nHeI rms = 1.8880926e-04 (5.81e-05), max = 2.0219679e-01 (6.22e-02)
+   nHeII rms = 8.2770014e-07 (2.55e-07), max = 2.0446619e-02 (6.29e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.5e-11 (tol = 1.0e-08, |rhs| = 7.6e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 15292 (HYPRE = 14634.1,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1029460
+CommunicationTransferParticles: moved = 89
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.047437     time = 56.687784514745    cycle = 1044    z = 4.9113574000507
+Level[0]: dt = 0.0474374  0  (0.0474374/0.0474374)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07131e-29,  max = 1.62207e-25
+   current internal (physical) quantities:
+      Eg rms = 9.0588444e-03 (1.48e-18), max = 2.5857516e+01 (4.22e-15)
+      ec rms = 3.4053456e-03 (1.08e+12), max = 6.1038341e+00 (1.94e+15)
+    nHeI rms = 1.8892676e-04 (5.80e-05), max = 1.9077494e-01 (5.86e-02)
+   nHeII rms = 8.2749648e-07 (2.54e-07), max = 2.0414649e-02 (6.27e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.1e-11 (tol = 1.0e-08, |rhs| = 7.8e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 15716.1 (HYPRE = 15041.7,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1041927
+CommunicationTransferParticles: moved = 82
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.047189     time = 56.735221935575    cycle = 1045    z = 4.9080475622392
+Level[0]: dt = 0.0471889  0  (0.0471889/0.0471889)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07131e-29,  max = 1.60674e-25
+   current internal (physical) quantities:
+      Eg rms = 9.1076632e-03 (1.48e-18), max = 2.5736208e+01 (4.19e-15)
+      ec rms = 3.4122008e-03 (1.08e+12), max = 6.0819855e+00 (1.93e+15)
+    nHeI rms = 1.8904154e-04 (5.80e-05), max = 1.7957942e-01 (5.51e-02)
+   nHeII rms = 8.2694641e-07 (2.54e-07), max = 2.0399304e-02 (6.26e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.7e-11 (tol = 1.0e-08, |rhs| = 7.7e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 16135.5 (HYPRE = 15445.5,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1033876
+CommunicationTransferParticles: moved = 82
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046806     time = 56.782410823887    cycle = 1046    z = 4.9047596224608
+Level[0]: dt = 0.0468058  0  (0.0468058/0.0468058)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.0712e-29,  max = 1.58224e-25
+   current internal (physical) quantities:
+      Eg rms = 9.1545304e-03 (1.49e-18), max = 2.5667607e+01 (4.18e-15)
+      ec rms = 3.4191033e-03 (1.09e+12), max = 5.9778067e+00 (1.90e+15)
+    nHeI rms = 1.8915614e-04 (5.79e-05), max = 1.6887435e-01 (5.17e-02)
+   nHeII rms = 8.2579416e-07 (2.53e-07), max = 2.0359860e-02 (6.23e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.2e-11 (tol = 1.0e-08, |rhs| = 7.6e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 16566 (HYPRE = 15860.3,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1025507
+CommunicationTransferParticles: moved = 90
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.021623     time = 56.829216579784    cycle = 1047    z = 4.9015028580018
+Level[0]: dt = 0.0216226  0  (0.0216226/0.0216226)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07226e-29,  max = 1.56991e-25
+   current internal (physical) quantities:
+      Eg rms = 9.1936034e-03 (1.49e-18), max = 2.5765702e+01 (4.18e-15)
+      ec rms = 3.4213321e-03 (1.09e+12), max = 5.8968210e+00 (1.87e+15)
+    nHeI rms = 1.8920938e-04 (5.78e-05), max = 1.6410497e-01 (5.02e-02)
+   nHeII rms = 8.2470773e-07 (2.52e-07), max = 2.0246612e-02 (6.19e-03)
+
+ subcycled rad 0: dt=2.2e-02, t=5.7e+01 (hydro dt=2.2e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 1.2e-12 (tol = 1.0e-08, |rhs| = 1.8e+03), its = (8,12)
+ ======================================================================
+
+RadHydro cumulative time = 16891.8 (HYPRE = 16174.3,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 473266
+CommunicationTransferParticles: moved = 25
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 3
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046986     time = 56.850839215811    cycle = 1048    z = 4.8999998497617
+Level[0]: dt = 0.0469864  0  (0.0469864/0.0469864)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07281e-29,  max = 1.54364e-25
+   current internal (physical) quantities:
+      Eg rms = 9.2205684e-03 (1.50e-18), max = 2.5616983e+01 (4.16e-15)
+      ec rms = 3.4292246e-03 (1.09e+12), max = 6.0923568e+00 (1.94e+15)
+    nHeI rms = 1.8932642e-04 (5.78e-05), max = 1.5423043e-01 (4.71e-02)
+   nHeII rms = 8.2329296e-07 (2.51e-07), max = 2.0184404e-02 (6.16e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.3e-11 (tol = 1.0e-08, |rhs| = 7.4e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 17327.3 (HYPRE = 16594.2,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1030588
+CommunicationTransferParticles: moved = 100
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.047329     time = 56.89782563094    cycle = 1049    z = 4.8967370541044
+Level[0]: dt = 0.0473292  0  (0.0473292/0.0473292)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07283e-29,  max = 1.53053e-25
+   current internal (physical) quantities:
+      Eg rms = 9.2648818e-03 (1.50e-18), max = 2.5574482e+01 (4.14e-15)
+      ec rms = 3.4364276e-03 (1.09e+12), max = 6.1693959e+00 (1.96e+15)
+    nHeI rms = 1.8944621e-04 (5.78e-05), max = 1.4481375e-01 (4.42e-02)
+   nHeII rms = 8.2167184e-07 (2.51e-07), max = 2.0076740e-02 (6.12e-03)
+
+ subcycled rad 0: dt=4.7e-02, t=5.7e+01 (hydro dt=4.7e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.5e-11 (tol = 1.0e-08, |rhs| = 7.4e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 17777.5 (HYPRE = 17028.5,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1038138
+CommunicationTransferParticles: moved = 113
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.047749     time = 56.945154833446    cycle = 1050    z = 4.8934549759556
+Level[0]: dt = 0.0477489  0  (0.0477489/0.0477489)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07173e-29,  max = 1.50537e-25
+   current internal (physical) quantities:
+      Eg rms = 9.3081427e-03 (1.51e-18), max = 2.5525950e+01 (4.13e-15)
+      ec rms = 3.4438473e-03 (1.09e+12), max = 6.0523068e+00 (1.92e+15)
+    nHeI rms = 1.8956740e-04 (5.77e-05), max = 1.3585388e-01 (4.14e-02)
+   nHeII rms = 8.1955348e-07 (2.49e-07), max = 1.9956705e-02 (6.07e-03)
+
+ subcycled rad 0: dt=4.8e-02, t=5.7e+01 (hydro dt=4.8e-02, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 3.9e-11 (tol = 1.0e-08, |rhs| = 7.4e+03), its = (11,12)
+ ======================================================================
+
+RadHydro cumulative time = 18195.9 (HYPRE = 17431.1,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1045654
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 13
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.002144     time = 56.992903686179    cycle = 1051    z = 4.8901483847146
+Level[0]: dt = 0.00214431  0  (0.00214431/0.00214431)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 1.07233e-29,  max = 1.50062e-25
+   current internal (physical) quantities:
+      Eg rms = 9.3386970e-03 (1.51e-18), max = 2.5559894e+01 (4.13e-15)
+      ec rms = 3.4423401e-03 (1.09e+12), max = 6.0372865e+00 (1.92e+15)
+    nHeI rms = 1.8957271e-04 (5.76e-05), max = 1.3544976e-01 (4.12e-02)
+   nHeII rms = 8.1936069e-07 (2.49e-07), max = 1.9923988e-02 (6.05e-03)
+
+ subcycled rad 0: dt=2.1e-03, t=5.7e+01 (hydro dt=2.1e-03, t=5.7e+01)
+ ----------------------------------------------------------------------
+   lin resid = 4.5e-14 (tol = 1.0e-08, |rhs| = 3.9e+01), its = (3,9)
+ ======================================================================
+
+RadHydro cumulative time = 18306.1 (HYPRE = 17535.5,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 46803
+CommunicationTransferParticles: moved = 0
+Stopping on top grid time limit.
+Communication: processor 1 CommunicationTime = 1485.287643
+Time     = 56.995048   CycleNumber =   1052    Wallclock   = 21707.398691
+StopTime = 56.995048   StopCycle   = 200000
+Communication: processor 0 CommunicationTime = 1417.673547
+Communication: processor 994 CommunicationTime = 1428.781514
+Communication: processor 995 CommunicationTime = 1398.516715
+Communication: processor 770 CommunicationTime = 1422.348677
+Communication: processor 771 CommunicationTime = 1398.729162
+Communication: processor 674 CommunicationTime = 1400.718705
+Communication: processor 675 CommunicationTime = 1388.358774
+Communication: processor 579 CommunicationTime = 1330.861900
+Communication: processor 578 CommunicationTime = 1381.440201
+Communication: processor 547 CommunicationTime = 1461.716225
+Communication: processor 546 CommunicationTime = 1512.026332
+Communication: processor 515 CommunicationTime = 1474.115938
+Communication: processor 514 CommunicationTime = 1430.208743
+Communication: processor 450 CommunicationTime = 1349.981683
+Communication: processor 451 CommunicationTime = 1317.639613
+Communication: processor 387 CommunicationTime = 1384.228905
+Communication: processor 386 CommunicationTime = 1378.945006
+Communication: processor 355 CommunicationTime = 1220.490584
+Communication: processor 354 CommunicationTime = 1326.468706
+Communication: processor 322 CommunicationTime = 1397.582109
+Communication: processor 323 CommunicationTime = 1492.662955
+Communication: processor 291 CommunicationTime = 1494.499193
+Communication: processor 290 CommunicationTime = 1353.970372
+Communication: processor 259 CommunicationTime = 1432.540530
+Communication: processor 258 CommunicationTime = 1522.505871
+Communication: processor 195 CommunicationTime = 1413.181046
+Communication: processor 194 CommunicationTime = 1321.333682
+Communication: processor 130 CommunicationTime = 1453.583570
+Communication: processor 131 CommunicationTime = 1466.316908
+Communication: processor 99 CommunicationTime = 1392.052222
+Communication: processor 98 CommunicationTime = 1141.835624
+Communication: processor 66 CommunicationTime = 1485.339357
+Communication: processor 67 CommunicationTime = 1529.874462
+Communication: processor 34 CommunicationTime = 1345.462122
+Communication: processor 35 CommunicationTime = 1286.366080
+Communication: processor 3 CommunicationTime = 1455.248422
+Communication: processor 2 CommunicationTime = 1478.127743
+Communication: processor 998 CommunicationTime = 1116.142477
+Communication: processor 999 CommunicationTime = 1300.110439
+Communication: processor 962 CommunicationTime = 1468.040889
+Communication: processor 963 CommunicationTime = 1459.074935
+Communication: processor 930 CommunicationTime = 1390.988767
+Communication: processor 931 CommunicationTime = 1388.250105
+Communication: processor 898 CommunicationTime = 1322.031836
+Communication: processor 899 CommunicationTime = 1272.131649
+Communication: processor 866 CommunicationTime = 1423.123946
+Communication: processor 867 CommunicationTime = 1328.253258
+Communication: processor 835 CommunicationTime = 1415.107403
+Communication: processor 834 CommunicationTime = 1210.252199
+Communication: processor 803 CommunicationTime = 1293.677490
+Communication: processor 802 CommunicationTime = 1267.817613
+Communication: processor 800 CommunicationTime = 1346.997446
+Communication: processor 801 CommunicationTime = 1128.111385
+Communication: processor 738 CommunicationTime = 1392.450560
+Communication: processor 739 CommunicationTime = 1329.771786
+Communication: processor 706 CommunicationTime = 1273.538942
+Communication: processor 707 CommunicationTime = 1304.304763
+Communication: processor 704 CommunicationTime = 1397.792621
+Communication: processor 705 CommunicationTime = 1239.058071
+Communication: processor 643 CommunicationTime = 1388.239504
+Communication: processor 642 CommunicationTime = 1427.451329
+Communication: processor 610 CommunicationTime = 1341.864734
+Communication: processor 611 CommunicationTime = 1481.637704
+Communication: processor 608 CommunicationTime = 1378.596420
+Communication: processor 609 CommunicationTime = 1387.975138
+Communication: processor 576 CommunicationTime = 1433.127258
+Communication: processor 577 CommunicationTime = 1393.484412
+Communication: processor 544 CommunicationTime = 1299.622392
+Communication: processor 545 CommunicationTime = 1288.502887
+Communication: processor 482 CommunicationTime = 1329.370083
+Communication: processor 483 CommunicationTime = 1390.277786
+Communication: processor 480 CommunicationTime = 1421.942329
+Communication: processor 481 CommunicationTime = 1471.892120
+Communication: processor 418 CommunicationTime = 1392.855391
+Communication: processor 419 CommunicationTime = 1429.195574
+Communication: processor 417 CommunicationTime = 1323.643412
+Communication: processor 416 CommunicationTime = 1488.135758
+Communication: processor 385 CommunicationTime = 1341.452710
+Communication: processor 384 CommunicationTime = 1358.230718
+Communication: processor 352 CommunicationTime = 1398.573181
+Communication: processor 320 CommunicationTime = 1334.094927
+Communication: processor 321 CommunicationTime = 1333.691734
+Communication: processor 285 CommunicationTime = 1287.461879
+Communication: processor 284 CommunicationTime = 1411.889081
+Communication: processor 226 CommunicationTime = 1375.389131
+Communication: processor 227 CommunicationTime = 1393.826768
+Communication: processor 225 CommunicationTime = 1366.039544
+Communication: processor 162 CommunicationTime = 1381.978122
+Communication: processor 163 CommunicationTime = 1306.517724
+Communication: processor 160 CommunicationTime = 1401.784049
+Communication: processor 161 CommunicationTime = 1330.341137
+Communication: processor 129 CommunicationTime = 1459.672852
+Communication: processor 128 CommunicationTime = 1487.490498
+Communication: processor 97 CommunicationTime = 1277.120012
+Communication: processor 64 CommunicationTime = 1383.505535
+Communication: processor 65 CommunicationTime = 1483.732756
+Communication: processor 32 CommunicationTime = 1489.428176
+Communication: processor 997 CommunicationTime = 1332.152200
+Communication: processor 996 CommunicationTime = 1458.634864
+Communication: processor 992 CommunicationTime = 1432.646184
+Communication: processor 993 CommunicationTime = 1476.709449
+Communication: processor 960 CommunicationTime = 1354.108788
+Communication: processor 961 CommunicationTime = 1503.020214
+Communication: processor 928 CommunicationTime = 1363.193465
+Communication: processor 929 CommunicationTime = 1374.864872
+Communication: processor 896 CommunicationTime = 1319.630330
+Communication: processor 897 CommunicationTime = 1220.394638
+Communication: processor 864 CommunicationTime = 1386.693846
+Communication: processor 865 CommunicationTime = 1348.755521
+Communication: processor 832 CommunicationTime = 1282.874250
+Communication: processor 833 CommunicationTime = 1236.164668
+Communication: processor 796 CommunicationTime = 1421.506342
+Communication: processor 797 CommunicationTime = 1390.293559
+Communication: processor 768 CommunicationTime = 1417.043826
+Communication: processor 736 CommunicationTime = 1404.204990
+Communication: processor 737 CommunicationTime = 1338.865434
+Communication: processor 702 CommunicationTime = 1395.163369
+Communication: processor 703 CommunicationTime = 1421.647728
+Communication: processor 672 CommunicationTime = 1347.283140
+Communication: processor 673 CommunicationTime = 1452.422146
+Communication: processor 641 CommunicationTime = 1510.736017
+Communication: processor 640 CommunicationTime = 1512.247861
+Communication: processor 605 CommunicationTime = 1234.328027
+Communication: processor 604 CommunicationTime = 1380.468921
+Communication: processor 570 CommunicationTime = 1490.193738
+Communication: processor 541 CommunicationTime = 1476.037333
+Communication: processor 540 CommunicationTime = 1412.215430
+Communication: processor 513 CommunicationTime = 1419.866735
+Communication: processor 477 CommunicationTime = 1464.105541
+Communication: processor 476 CommunicationTime = 1411.885671
+Communication: processor 448 CommunicationTime = 1427.750453
+Communication: processor 449 CommunicationTime = 1408.464979
+Communication: processor 411 CommunicationTime = 1203.610305
+Communication: processor 410 CommunicationTime = 1394.107737
+Communication: processor 369 CommunicationTime = 1497.471265
+Communication: processor 368 CommunicationTime = 1475.404275
+Communication: processor 346 CommunicationTime = 1442.263220
+Communication: processor 347 CommunicationTime = 1323.994454
+Communication: processor 312 CommunicationTime = 1379.149820
+Communication: processor 313 CommunicationTime = 1424.410686
+Communication: processor 281 CommunicationTime = 1438.509411
+Communication: processor 280 CommunicationTime = 1275.572020
+Communication: processor 256 CommunicationTime = 1377.421330
+Communication: processor 257 CommunicationTime = 1440.642005
+Communication: processor 220 CommunicationTime = 1379.822439
+Communication: processor 193 CommunicationTime = 1430.239831
+Communication: processor 192 CommunicationTime = 1459.615855
+Communication: processor 157 CommunicationTime = 1471.645035
+Communication: processor 156 CommunicationTime = 1375.435000
+Communication: processor 125 CommunicationTime = 1372.673044
+Communication: processor 94 CommunicationTime = 1422.426876
+Communication: processor 95 CommunicationTime = 1364.911438
+Communication: processor 61 CommunicationTime = 1501.330320
+Communication: processor 60 CommunicationTime = 1283.463469
+Communication: processor 29 CommunicationTime = 1403.995116
+Communication: processor 28 CommunicationTime = 1429.828547
+Communication: processor 988 CommunicationTime = 1312.959139
+Communication: processor 989 CommunicationTime = 1413.769885
+Communication: processor 958 CommunicationTime = 1383.341662
+Communication: processor 959 CommunicationTime = 1245.368805
+Communication: processor 926 CommunicationTime = 1334.397140
+Communication: processor 927 CommunicationTime = 1457.827158
+Communication: processor 894 CommunicationTime = 1492.290002
+Communication: processor 895 CommunicationTime = 1335.757448
+Communication: processor 857 CommunicationTime = 1222.582831
+Communication: processor 856 CommunicationTime = 1348.078604
+Communication: processor 829 CommunicationTime = 1346.693523
+Communication: processor 793 CommunicationTime = 1480.067641
+Communication: processor 792 CommunicationTime = 1473.685980
+Communication: processor 766 CommunicationTime = 1224.034315
+Communication: processor 767 CommunicationTime = 1183.338227
+Communication: processor 732 CommunicationTime = 1304.959651
+Communication: processor 700 CommunicationTime = 1381.575847
+Communication: processor 670 CommunicationTime = 1451.759313
+Communication: processor 671 CommunicationTime = 1450.602714
+Communication: processor 636 CommunicationTime = 1330.789145
+Communication: processor 637 CommunicationTime = 1438.305491
+Communication: processor 602 CommunicationTime = 1414.469536
+Communication: processor 603 CommunicationTime = 1406.673079
+Communication: processor 567 CommunicationTime = 1346.096634
+Communication: processor 566 CommunicationTime = 1365.562321
+Communication: processor 538 CommunicationTime = 1519.951068
+Communication: processor 539 CommunicationTime = 1335.349818
+Communication: processor 510 CommunicationTime = 1430.014141
+Communication: processor 511 CommunicationTime = 1319.154630
+Communication: processor 474 CommunicationTime = 1398.034141
+Communication: processor 475 CommunicationTime = 1340.622464
+Communication: processor 447 CommunicationTime = 1430.022574
+Communication: processor 446 CommunicationTime = 1440.808269
+Communication: processor 409 CommunicationTime = 1298.650062
+Communication: processor 408 CommunicationTime = 1382.236317
+Communication: processor 344 CommunicationTime = 1265.346790
+Communication: processor 299 CommunicationTime = 1405.413337
+Communication: processor 298 CommunicationTime = 1077.131716
+Communication: processor 278 CommunicationTime = 1387.810719
+Communication: processor 249 CommunicationTime = 1420.711506
+Communication: processor 216 CommunicationTime = 1374.292738
+Communication: processor 217 CommunicationTime = 1311.088854
+Communication: processor 189 CommunicationTime = 1374.732306
+Communication: processor 188 CommunicationTime = 1369.220158
+Communication: processor 155 CommunicationTime = 1453.686712
+Communication: processor 154 CommunicationTime = 1359.077530
+Communication: processor 119 CommunicationTime = 1384.573816
+Communication: processor 118 CommunicationTime = 1397.397552
+Communication: processor 93 CommunicationTime = 1370.059657
+Communication: processor 92 CommunicationTime = 1410.872821
+Communication: processor 55 CommunicationTime = 1438.671964
+Communication: processor 54 CommunicationTime = 1422.891612
+Communication: processor 25 CommunicationTime = 1330.578418
+Communication: processor 24 CommunicationTime = 1268.942140
+Communication: processor 987 CommunicationTime = 1281.404478
+Communication: processor 986 CommunicationTime = 1430.601665
+Communication: processor 957 CommunicationTime = 1462.824241
+Communication: processor 956 CommunicationTime = 1280.442025
+Communication: processor 925 CommunicationTime = 1374.439339
+Communication: processor 893 CommunicationTime = 1484.679646
+Communication: processor 892 CommunicationTime = 1445.752191
+Communication: processor 854 CommunicationTime = 1390.248057
+Communication: processor 855 CommunicationTime = 1408.042867
+Communication: processor 821 CommunicationTime = 1494.796551
+Communication: processor 820 CommunicationTime = 1245.506140
+Communication: processor 790 CommunicationTime = 1340.398965
+Communication: processor 791 CommunicationTime = 1398.908567
+Communication: processor 765 CommunicationTime = 1172.668957
+Communication: processor 764 CommunicationTime = 1312.018159
+Communication: processor 730 CommunicationTime = 1483.342607
+Communication: processor 699 CommunicationTime = 1349.373315
+Communication: processor 698 CommunicationTime = 1256.575838
+Communication: processor 669 CommunicationTime = 1403.594061
+Communication: processor 668 CommunicationTime = 1435.700871
+Communication: processor 634 CommunicationTime = 1349.165418
+Communication: processor 635 CommunicationTime = 1373.476973
+Communication: processor 600 CommunicationTime = 1464.967440
+Communication: processor 601 CommunicationTime = 1405.871985
+Communication: processor 565 CommunicationTime = 1478.142799
+Communication: processor 537 CommunicationTime = 1455.406388
+Communication: processor 536 CommunicationTime = 1360.617950
+Communication: processor 508 CommunicationTime = 1272.872501
+Communication: processor 509 CommunicationTime = 1224.763802
+Communication: processor 472 CommunicationTime = 1394.068151
+Communication: processor 445 CommunicationTime = 1358.113597
+Communication: processor 444 CommunicationTime = 1414.317866
+Communication: processor 407 CommunicationTime = 1343.710756
+Communication: processor 406 CommunicationTime = 1430.642928
+Communication: processor 343 CommunicationTime = 1175.169789
+Communication: processor 342 CommunicationTime = 1387.508818
+Communication: processor 277 CommunicationTime = 1419.117124
+Communication: processor 245 CommunicationTime = 1373.995787
+Communication: processor 213 CommunicationTime = 1477.043394
+Communication: processor 185 CommunicationTime = 1431.753116
+Communication: processor 184 CommunicationTime = 1351.780935
+Communication: processor 152 CommunicationTime = 1342.384675
+Communication: processor 153 CommunicationTime = 1418.106150
+Communication: processor 117 CommunicationTime = 1313.071033
+Communication: processor 91 CommunicationTime = 1445.257301
+Communication: processor 53 CommunicationTime = 1430.230643
+Communication: processor 52 CommunicationTime = 1456.349662
+Communication: processor 21 CommunicationTime = 1530.838298
+Communication: processor 985 CommunicationTime = 1360.826526
+Communication: processor 984 CommunicationTime = 1388.010184
+Communication: processor 955 CommunicationTime = 1428.479414
+Communication: processor 954 CommunicationTime = 1415.501426
+Communication: processor 923 CommunicationTime = 1475.365005
+Communication: processor 891 CommunicationTime = 1168.808868
+Communication: processor 890 CommunicationTime = 1410.601633
+Communication: processor 850 CommunicationTime = 1196.312347
+Communication: processor 851 CommunicationTime = 1483.614574
+Communication: processor 819 CommunicationTime = 1211.349101
+Communication: processor 818 CommunicationTime = 1020.362140
+Communication: processor 789 CommunicationTime = 1338.941422
+Communication: processor 761 CommunicationTime = 1420.141912
+Communication: processor 760 CommunicationTime = 1414.991229
+Communication: processor 729 CommunicationTime = 1441.315487
+Communication: processor 728 CommunicationTime = 1283.016629
+Communication: processor 696 CommunicationTime = 1415.200088
+Communication: processor 697 CommunicationTime = 1429.482269
+Communication: processor 666 CommunicationTime = 1439.358379
+Communication: processor 632 CommunicationTime = 1370.879332
+Communication: processor 633 CommunicationTime = 1405.463580
+Communication: processor 599 CommunicationTime = 1187.238611
+Communication: processor 598 CommunicationTime = 1342.981948
+Communication: processor 535 CommunicationTime = 1323.535941
+Communication: processor 534 CommunicationTime = 1209.494414
+Communication: processor 506 CommunicationTime = 1443.605872
+Communication: processor 507 CommunicationTime = 1338.221113
+Communication: processor 469 CommunicationTime = 1480.656615
+Communication: processor 442 CommunicationTime = 1373.537335
+Communication: processor 341 CommunicationTime = 1408.544787
+Communication: processor 340 CommunicationTime = 1436.368163
+Communication: processor 274 CommunicationTime = 1303.216650
+Communication: processor 275 CommunicationTime = 1415.426694
+Communication: processor 241 CommunicationTime = 1424.755996
+Communication: processor 240 CommunicationTime = 1420.451006
+Communication: processor 210 CommunicationTime = 1384.345117
+Communication: processor 180 CommunicationTime = 1251.139436
+Communication: processor 181 CommunicationTime = 1486.138530
+Communication: processor 151 CommunicationTime = 1320.482479
+Communication: processor 113 CommunicationTime = 1463.737257
+Communication: processor 89 CommunicationTime = 1323.191401
+Communication: processor 88 CommunicationTime = 1405.007885
+Communication: processor 19 CommunicationTime = 1469.775686
+Communication: processor 18 CommunicationTime = 1232.789234
+Communication: processor 982 CommunicationTime = 1430.891223
+Communication: processor 983 CommunicationTime = 1330.841748
+Communication: processor 953 CommunicationTime = 1378.187543
+Communication: processor 952 CommunicationTime = 1451.620614
+Communication: processor 920 CommunicationTime = 1346.618241
+Communication: processor 921 CommunicationTime = 1470.317082
+Communication: processor 889 CommunicationTime = 1342.047963
+Communication: processor 888 CommunicationTime = 1281.970913
+Communication: processor 849 CommunicationTime = 1343.218356
+Communication: processor 817 CommunicationTime = 1327.892148
+Communication: processor 816 CommunicationTime = 1469.584872
+Communication: processor 757 CommunicationTime = 1235.992035
+Communication: processor 756 CommunicationTime = 1408.632607
+Communication: processor 726 CommunicationTime = 1331.272622
+Communication: processor 664 CommunicationTime = 1391.128042
+Communication: processor 665 CommunicationTime = 1496.321059
+Communication: processor 629 CommunicationTime = 1390.967793
+Communication: processor 533 CommunicationTime = 1252.252945
+Communication: processor 505 CommunicationTime = 1290.508609
+Communication: processor 504 CommunicationTime = 1241.895091
+Communication: processor 466 CommunicationTime = 1346.955190
+Communication: processor 440 CommunicationTime = 1411.834377
+Communication: processor 441 CommunicationTime = 1278.196487
+Communication: processor 339 CommunicationTime = 1473.596137
+Communication: processor 237 CommunicationTime = 1372.455053
+Communication: processor 236 CommunicationTime = 1409.154683
+Communication: processor 209 CommunicationTime = 1399.217969
+Communication: processor 208 CommunicationTime = 1341.448546
+Communication: processor 178 CommunicationTime = 1501.243770
+Communication: processor 110 CommunicationTime = 1441.815401
+Communication: processor 111 CommunicationTime = 1531.448219
+Communication: processor 86 CommunicationTime = 1481.219135
+Communication: processor 87 CommunicationTime = 1400.718778
+Communication: processor 17 CommunicationTime = 1261.793084
+Communication: processor 981 CommunicationTime = 1472.802279
+Communication: processor 951 CommunicationTime = 1327.221638
+Communication: processor 950 CommunicationTime = 1280.387189
+Communication: processor 918 CommunicationTime = 1239.048159
+Communication: processor 887 CommunicationTime = 1133.965071
+Communication: processor 847 CommunicationTime = 1321.645302
+Communication: processor 755 CommunicationTime = 1423.959979
+Communication: processor 725 CommunicationTime = 1318.611713
+Communication: processor 724 CommunicationTime = 1357.378927
+Communication: processor 529 CommunicationTime = 1403.696043
+Communication: processor 528 CommunicationTime = 1352.846541
+Communication: processor 502 CommunicationTime = 1144.590965
+Communication: processor 464 CommunicationTime = 1454.701717
+Communication: processor 438 CommunicationTime = 1444.198326
+Communication: processor 439 CommunicationTime = 1345.558311
+Communication: processor 337 CommunicationTime = 1400.364135
+Communication: processor 201 CommunicationTime = 1493.966624
+Communication: processor 200 CommunicationTime = 1477.698934
+Communication: processor 109 CommunicationTime = 1406.720381
+Communication: processor 84 CommunicationTime = 1389.574281
+Communication: processor 85 CommunicationTime = 1372.084819
+Communication: processor 14 CommunicationTime = 1361.155100
+Communication: processor 15 CommunicationTime = 1371.955370
+Communication: processor 949 CommunicationTime = 1226.433103
+Communication: processor 948 CommunicationTime = 1360.559140
+Communication: processor 917 CommunicationTime = 1123.009335
+Communication: processor 916 CommunicationTime = 1353.747252
+Communication: processor 885 CommunicationTime = 1247.155337
+Communication: processor 884 CommunicationTime = 1331.835673
+Communication: processor 845 CommunicationTime = 1443.830154
+Communication: processor 753 CommunicationTime = 1526.469818
+Communication: processor 752 CommunicationTime = 1475.255032
+Communication: processor 526 CommunicationTime = 1384.540567
+Communication: processor 501 CommunicationTime = 1336.946196
+Communication: processor 500 CommunicationTime = 1470.729178
+Communication: processor 461 CommunicationTime = 1334.792840
+Communication: processor 437 CommunicationTime = 1347.220853
+Communication: processor 436 CommunicationTime = 1399.920662
+Communication: processor 335 CommunicationTime = 1354.935895
+Communication: processor 334 CommunicationTime = 1385.486794
+Communication: processor 199 CommunicationTime = 1379.604519
+Communication: processor 107 CommunicationTime = 1196.394702
+Communication: processor 106 CommunicationTime = 1444.680460
+Communication: processor 83 CommunicationTime = 1303.849374
+Communication: processor 13 CommunicationTime = 1502.539343
+Communication: processor 947 CommunicationTime = 1431.130578
+Communication: processor 915 CommunicationTime = 1398.225925
+Communication: processor 883 CommunicationTime = 1470.604892
+Communication: processor 882 CommunicationTime = 1375.299009
+Communication: processor 837 CommunicationTime = 1298.473764
+Communication: processor 836 CommunicationTime = 1417.681031
+Communication: processor 749 CommunicationTime = 1399.323137
+Communication: processor 525 CommunicationTime = 1349.432693
+Communication: processor 498 CommunicationTime = 1411.556461
+Communication: processor 499 CommunicationTime = 1383.595197
+Communication: processor 457 CommunicationTime = 1351.670311
+Communication: processor 456 CommunicationTime = 1355.312783
+Communication: processor 435 CommunicationTime = 1319.693344
+Communication: processor 333 CommunicationTime = 1417.903360
+Communication: processor 197 CommunicationTime = 1294.047404
+Communication: processor 196 CommunicationTime = 1470.996196
+Communication: processor 105 CommunicationTime = 1352.025075
+Communication: processor 104 CommunicationTime = 1429.927127
+Communication: processor 81 CommunicationTime = 1443.150010
+Communication: processor 11 CommunicationTime = 1527.550312
+Communication: processor 10 CommunicationTime = 1449.907168
+Communication: processor 945 CommunicationTime = 1422.803768
+Communication: processor 944 CommunicationTime = 1459.772990
+Communication: processor 913 CommunicationTime = 1503.902781
+Communication: processor 912 CommunicationTime = 1523.654473
+Communication: processor 881 CommunicationTime = 1486.553897
+Communication: processor 862 CommunicationTime = 1472.060779
+Communication: processor 863 CommunicationTime = 1447.977435
+Communication: processor 746 CommunicationTime = 1478.621291
+Communication: processor 747 CommunicationTime = 1353.274649
+Communication: processor 522 CommunicationTime = 1388.026864
+Communication: processor 523 CommunicationTime = 1363.719868
+Communication: processor 497 CommunicationTime = 1210.369275
+Communication: processor 478 CommunicationTime = 1419.929386
+Communication: processor 479 CommunicationTime = 1490.546534
+Communication: processor 433 CommunicationTime = 1297.465394
+Communication: processor 331 CommunicationTime = 1381.356676
+Communication: processor 330 CommunicationTime = 1467.799500
+Communication: processor 224 CommunicationTime = 1400.748891
+Communication: processor 101 CommunicationTime = 1492.305611
+Communication: processor 100 CommunicationTime = 1479.132348
+Communication: processor 78 CommunicationTime = 1448.688074
+Communication: processor 79 CommunicationTime = 1238.236644
+Communication: processor 8 CommunicationTime = 1081.465388
+Communication: processor 941 CommunicationTime = 1145.679973
+Communication: processor 940 CommunicationTime = 1251.022637
+Communication: processor 910 CommunicationTime = 1320.914352
+Communication: processor 877 CommunicationTime = 1149.302165
+Communication: processor 861 CommunicationTime = 1486.446362
+Communication: processor 860 CommunicationTime = 1429.116615
+Communication: processor 744 CommunicationTime = 1360.766762
+Communication: processor 518 CommunicationTime = 1212.615478
+Communication: processor 495 CommunicationTime = 1413.618124
+Communication: processor 473 CommunicationTime = 1449.161312
+Communication: processor 429 CommunicationTime = 1516.421959
+Communication: processor 328 CommunicationTime = 1422.326574
+Communication: processor 329 CommunicationTime = 1495.719396
+Communication: processor 223 CommunicationTime = 1452.451273
+Communication: processor 222 CommunicationTime = 1428.784861
+Communication: processor 127 CommunicationTime = 1396.257992
+Communication: processor 126 CommunicationTime = 1324.791869
+Communication: processor 77 CommunicationTime = 1505.466657
+Communication: processor 76 CommunicationTime = 1440.110773
+Communication: processor 7 CommunicationTime = 1229.121640
+Communication: processor 939 CommunicationTime = 1330.574008
+Communication: processor 938 CommunicationTime = 1395.012499
+Communication: processor 909 CommunicationTime = 1215.186685
+Communication: processor 908 CommunicationTime = 1199.199368
+Communication: processor 874 CommunicationTime = 1281.463597
+Communication: processor 859 CommunicationTime = 1296.240417
+Communication: processor 858 CommunicationTime = 1409.364488
+Communication: processor 743 CommunicationTime = 1481.528224
+Communication: processor 517 CommunicationTime = 1409.262342
+Communication: processor 516 CommunicationTime = 1480.808416
+Communication: processor 493 CommunicationTime = 1386.253843
+Communication: processor 492 CommunicationTime = 1391.171635
+Communication: processor 471 CommunicationTime = 1363.181128
+Communication: processor 470 CommunicationTime = 1455.553768
+Communication: processor 427 CommunicationTime = 1323.727512
+Communication: processor 324 CommunicationTime = 1489.900527
+Communication: processor 221 CommunicationTime = 1432.149920
+Communication: processor 124 CommunicationTime = 1221.143283
+Communication: processor 74 CommunicationTime = 1390.378177
+Communication: processor 5 CommunicationTime = 1267.310370
+Communication: processor 4 CommunicationTime = 1427.331191
+Communication: processor 937 CommunicationTime = 1461.372760
+Communication: processor 907 CommunicationTime = 1250.172390
+Communication: processor 873 CommunicationTime = 1408.711142
+Communication: processor 872 CommunicationTime = 1450.446156
+Communication: processor 853 CommunicationTime = 1430.085203
+Communication: processor 852 CommunicationTime = 1445.483177
+Communication: processor 741 CommunicationTime = 1504.653157
+Communication: processor 740 CommunicationTime = 1414.855134
+Communication: processor 542 CommunicationTime = 1316.527681
+Communication: processor 491 CommunicationTime = 1481.897583
+Communication: processor 490 CommunicationTime = 1352.386202
+Communication: processor 468 CommunicationTime = 1409.422874
+Communication: processor 425 CommunicationTime = 1402.055672
+Communication: processor 424 CommunicationTime = 1478.099679
+Communication: processor 353 CommunicationTime = 1415.747699
+Communication: processor 219 CommunicationTime = 1466.332906
+Communication: processor 218 CommunicationTime = 1444.600948
+Communication: processor 123 CommunicationTime = 1508.620071
+Communication: processor 122 CommunicationTime = 1435.322056
+Communication: processor 73 CommunicationTime = 1332.149192
+Communication: processor 72 CommunicationTime = 1349.120736
+Communication: processor 33 CommunicationTime = 1378.185043
+Communication: processor 935 CommunicationTime = 1349.016804
+Communication: processor 934 CommunicationTime = 1408.319499
+Communication: processor 905 CommunicationTime = 1402.872525
+Communication: processor 904 CommunicationTime = 1362.580708
+Communication: processor 871 CommunicationTime = 1506.595011
+Communication: processor 848 CommunicationTime = 1428.197479
+Communication: processor 769 CommunicationTime = 1413.807912
+Communication: processor 532 CommunicationTime = 1436.295741
+Communication: processor 489 CommunicationTime = 1509.089576
+Communication: processor 467 CommunicationTime = 1321.333868
+Communication: processor 422 CommunicationTime = 1344.637072
+Communication: processor 350 CommunicationTime = 1430.850369
+Communication: processor 351 CommunicationTime = 1491.071865
+Communication: processor 215 CommunicationTime = 1398.098251
+Communication: processor 214 CommunicationTime = 1396.953101
+Communication: processor 121 CommunicationTime = 1475.282733
+Communication: processor 120 CommunicationTime = 1394.935178
+Communication: processor 70 CommunicationTime = 1347.998978
+Communication: processor 31 CommunicationTime = 1443.147742
+Communication: processor 30 CommunicationTime = 1432.238815
+Communication: processor 933 CommunicationTime = 1376.842367
+Communication: processor 932 CommunicationTime = 1322.731485
+Communication: processor 902 CommunicationTime = 1262.103950
+Communication: processor 903 CommunicationTime = 1444.059226
+Communication: processor 869 CommunicationTime = 1297.313418
+Communication: processor 868 CommunicationTime = 1406.102911
+Communication: processor 846 CommunicationTime = 1435.431014
+Communication: processor 762 CommunicationTime = 1424.601418
+Communication: processor 763 CommunicationTime = 1462.501311
+Communication: processor 531 CommunicationTime = 1513.567757
+Communication: processor 530 CommunicationTime = 1430.637838
+Communication: processor 487 CommunicationTime = 1443.856828
+Communication: processor 486 CommunicationTime = 1399.079095
+Communication: processor 465 CommunicationTime = 1378.319815
+Communication: processor 421 CommunicationTime = 1374.815822
+Communication: processor 420 CommunicationTime = 1321.137698
+Communication: processor 349 CommunicationTime = 1494.217547
+Communication: processor 348 CommunicationTime = 1469.926355
+Communication: processor 212 CommunicationTime = 1462.470190
+Communication: processor 116 CommunicationTime = 1378.257020
+Communication: processor 69 CommunicationTime = 1374.882778
+Communication: processor 27 CommunicationTime = 1413.818444
+Communication: processor 26 CommunicationTime = 1382.943344
+Communication: processor 946 CommunicationTime = 1417.935734
+Communication: processor 901 CommunicationTime = 1404.729408
+Communication: processor 886 CommunicationTime = 1385.008338
+Communication: processor 844 CommunicationTime = 1421.732018
+Communication: processor 759 CommunicationTime = 1384.027572
+Communication: processor 758 CommunicationTime = 1453.156202
+Communication: processor 527 CommunicationTime = 1321.600975
+Communication: processor 485 CommunicationTime = 1397.609158
+Communication: processor 484 CommunicationTime = 1319.276559
+Communication: processor 463 CommunicationTime = 1427.210299
+Communication: processor 462 CommunicationTime = 1452.381789
+Communication: processor 443 CommunicationTime = 1352.176912
+Communication: processor 345 CommunicationTime = 1372.797378
+Communication: processor 211 CommunicationTime = 1479.612321
+Communication: processor 115 CommunicationTime = 1355.237687
+Communication: processor 114 CommunicationTime = 1462.687012
+Communication: processor 96 CommunicationTime = 1429.911180
+Communication: processor 22 CommunicationTime = 1515.282732
+Communication: processor 23 CommunicationTime = 1488.193315
+Communication: processor 943 CommunicationTime = 1447.459511
+Communication: processor 942 CommunicationTime = 1306.993494
+Communication: processor 924 CommunicationTime = 1413.319977
+Communication: processor 880 CommunicationTime = 1444.971513
+Communication: processor 843 CommunicationTime = 1392.919699
+Communication: processor 842 CommunicationTime = 1393.734952
+Communication: processor 754 CommunicationTime = 1369.260720
+Communication: processor 524 CommunicationTime = 1312.268914
+Communication: processor 512 CommunicationTime = 1383.626453
+Communication: processor 460 CommunicationTime = 1341.891096
+Communication: processor 434 CommunicationTime = 1342.605367
+Communication: processor 338 CommunicationTime = 1416.952646
+Communication: processor 207 CommunicationTime = 1404.843871
+Communication: processor 112 CommunicationTime = 1486.598839
+Communication: processor 90 CommunicationTime = 1404.562610
+Communication: processor 20 CommunicationTime = 1432.703162
+Communication: processor 936 CommunicationTime = 1408.614763
+Communication: processor 922 CommunicationTime = 1510.095606
+Communication: processor 879 CommunicationTime = 1430.640630
+Communication: processor 878 CommunicationTime = 1339.132474
+Communication: processor 841 CommunicationTime = 1452.458345
+Communication: processor 840 CommunicationTime = 1314.313426
+Communication: processor 750 CommunicationTime = 1381.971119
+Communication: processor 751 CommunicationTime = 1498.120249
+Communication: processor 521 CommunicationTime = 1439.173817
+Communication: processor 520 CommunicationTime = 1474.950438
+Communication: processor 503 CommunicationTime = 1205.527084
+Communication: processor 459 CommunicationTime = 1433.946613
+Communication: processor 458 CommunicationTime = 1412.749952
+Communication: processor 432 CommunicationTime = 1281.432683
+Communication: processor 336 CommunicationTime = 1474.837041
+Communication: processor 205 CommunicationTime = 1379.169086
+Communication: processor 204 CommunicationTime = 1346.873484
+Communication: processor 108 CommunicationTime = 1189.872263
+Communication: processor 82 CommunicationTime = 1321.753739
+Communication: processor 16 CommunicationTime = 1260.245698
+Communication: processor 919 CommunicationTime = 1225.470230
+Communication: processor 876 CommunicationTime = 1346.800310
+Communication: processor 838 CommunicationTime = 1418.092420
+Communication: processor 839 CommunicationTime = 1373.071864
+Communication: processor 748 CommunicationTime = 1452.491274
+Communication: processor 519 CommunicationTime = 1425.709983
+Communication: processor 496 CommunicationTime = 1324.343750
+Communication: processor 454 CommunicationTime = 1393.666811
+Communication: processor 455 CommunicationTime = 1316.188468
+Communication: processor 431 CommunicationTime = 1415.116047
+Communication: processor 430 CommunicationTime = 1443.081236
+Communication: processor 332 CommunicationTime = 1315.910320
+Communication: processor 203 CommunicationTime = 1474.263024
+Communication: processor 202 CommunicationTime = 1462.763889
+Communication: processor 102 CommunicationTime = 1474.356964
+Communication: processor 103 CommunicationTime = 1537.714643
+Communication: processor 80 CommunicationTime = 1453.333480
+Communication: processor 12 CommunicationTime = 1533.625268
+Communication: processor 914 CommunicationTime = 1365.467143
+Communication: processor 875 CommunicationTime = 1174.060569
+Communication: processor 745 CommunicationTime = 1468.620257
+Communication: processor 543 CommunicationTime = 1415.307900
+Communication: processor 494 CommunicationTime = 1499.439425
+Communication: processor 453 CommunicationTime = 1395.266743
+Communication: processor 452 CommunicationTime = 1430.198549
+Communication: processor 428 CommunicationTime = 1426.347356
+Communication: processor 327 CommunicationTime = 1410.318259
+Communication: processor 326 CommunicationTime = 1462.703524
+Communication: processor 198 CommunicationTime = 1338.196635
+Communication: processor 75 CommunicationTime = 1451.674026
+Communication: processor 9 CommunicationTime = 1427.330464
+Communication: processor 911 CommunicationTime = 1481.298397
+Communication: processor 870 CommunicationTime = 1389.798079
+Communication: processor 742 CommunicationTime = 1484.930463
+Communication: processor 488 CommunicationTime = 1496.695845
+Communication: processor 426 CommunicationTime = 1430.320509
+Communication: processor 325 CommunicationTime = 1407.147185
+Communication: processor 206 CommunicationTime = 1415.458224
+Communication: processor 71 CommunicationTime = 1390.528411
+Communication: processor 6 CommunicationTime = 1334.273664
+Communication: processor 906 CommunicationTime = 1356.080421
+Communication: processor 423 CommunicationTime = 1453.039491
+Communication: processor 68 CommunicationTime = 1448.906880
+Communication: processor 900 CommunicationTime = 1325.950645
+Communication: processor 297 CommunicationTime = 1320.141892
+Communication: processor 296 CommunicationTime = 1488.438025
+Communication: processor 366 CommunicationTime = 1370.205357
+Communication: processor 367 CommunicationTime = 1311.018692
+Communication: processor 979 CommunicationTime = 1276.022577
+Communication: processor 815 CommunicationTime = 1318.736924
+Communication: processor 814 CommunicationTime = 1322.285986
+Communication: processor 785 CommunicationTime = 1401.336332
+Communication: processor 784 CommunicationTime = 1209.474560
+Communication: processor 721 CommunicationTime = 1499.520869
+Communication: processor 720 CommunicationTime = 1453.963894
+Communication: processor 695 CommunicationTime = 1408.468845
+Communication: processor 662 CommunicationTime = 1365.502935
+Communication: processor 663 CommunicationTime = 1364.809496
+Communication: processor 626 CommunicationTime = 1173.345117
+Communication: processor 627 CommunicationTime = 1298.707264
+Communication: processor 597 CommunicationTime = 1273.038059
+Communication: processor 562 CommunicationTime = 1369.794658
+Communication: processor 405 CommunicationTime = 1468.269997
+Communication: processor 365 CommunicationTime = 1343.957409
+Communication: processor 364 CommunicationTime = 1355.138102
+Communication: processor 318 CommunicationTime = 1443.485645
+Communication: processor 319 CommunicationTime = 1486.242802
+Communication: processor 273 CommunicationTime = 1524.498150
+Communication: processor 272 CommunicationTime = 1384.428983
+Communication: processor 234 CommunicationTime = 1261.227923
+Communication: processor 177 CommunicationTime = 1455.770964
+Communication: processor 176 CommunicationTime = 1492.969025
+Communication: processor 149 CommunicationTime = 1437.616193
+Communication: processor 148 CommunicationTime = 1494.205819
+Communication: processor 50 CommunicationTime = 1290.227655
+Communication: processor 51 CommunicationTime = 1334.057519
+Communication: processor 977 CommunicationTime = 1302.391314
+Communication: processor 976 CommunicationTime = 1381.374691
+Communication: processor 813 CommunicationTime = 1397.793310
+Communication: processor 812 CommunicationTime = 1421.218350
+Communication: processor 783 CommunicationTime = 1437.018156
+Communication: processor 717 CommunicationTime = 1146.843823
+Communication: processor 716 CommunicationTime = 1358.052545
+Communication: processor 693 CommunicationTime = 1406.584295
+Communication: processor 692 CommunicationTime = 1396.518276
+Communication: processor 661 CommunicationTime = 1430.874199
+Communication: processor 624 CommunicationTime = 1369.415038
+Communication: processor 625 CommunicationTime = 1407.897552
+Communication: processor 594 CommunicationTime = 1382.998498
+Communication: processor 595 CommunicationTime = 1356.815084
+Communication: processor 561 CommunicationTime = 1417.472980
+Communication: processor 560 CommunicationTime = 1480.735739
+Communication: processor 402 CommunicationTime = 1289.968673
+Communication: processor 403 CommunicationTime = 1376.496771
+Communication: processor 361 CommunicationTime = 1479.651302
+Communication: processor 317 CommunicationTime = 1304.970724
+Communication: processor 316 CommunicationTime = 1412.157177
+Communication: processor 269 CommunicationTime = 1405.696551
+Communication: processor 233 CommunicationTime = 1463.778705
+Communication: processor 232 CommunicationTime = 1352.931107
+Communication: processor 175 CommunicationTime = 1485.950135
+Communication: processor 146 CommunicationTime = 1303.078793
+Communication: processor 147 CommunicationTime = 1378.697758
+Communication: processor 49 CommunicationTime = 1103.701522
+Communication: processor 48 CommunicationTime = 1425.569441
+Communication: processor 973 CommunicationTime = 1398.082556
+Communication: processor 972 CommunicationTime = 1373.376857
+Communication: processor 810 CommunicationTime = 1250.141467
+Communication: processor 811 CommunicationTime = 1397.878862
+Communication: processor 778 CommunicationTime = 1423.209643
+Communication: processor 779 CommunicationTime = 1471.784544
+Communication: processor 714 CommunicationTime = 1321.132355
+Communication: processor 691 CommunicationTime = 1373.043948
+Communication: processor 659 CommunicationTime = 1466.514186
+Communication: processor 621 CommunicationTime = 1460.741966
+Communication: processor 593 CommunicationTime = 1340.037550
+Communication: processor 592 CommunicationTime = 1388.873871
+Communication: processor 553 CommunicationTime = 1392.339167
+Communication: processor 552 CommunicationTime = 1363.047131
+Communication: processor 401 CommunicationTime = 1374.856784
+Communication: processor 400 CommunicationTime = 1466.126864
+Communication: processor 357 CommunicationTime = 1304.026922
+Communication: processor 356 CommunicationTime = 1372.356210
+Communication: processor 314 CommunicationTime = 1459.338145
+Communication: processor 315 CommunicationTime = 1442.871326
+Communication: processor 266 CommunicationTime = 1404.606855
+Communication: processor 231 CommunicationTime = 1441.655097
+Communication: processor 230 CommunicationTime = 1491.400179
+Communication: processor 170 CommunicationTime = 1385.800830
+Communication: processor 171 CommunicationTime = 1362.292526
+Communication: processor 145 CommunicationTime = 1435.227670
+Communication: processor 144 CommunicationTime = 1334.211938
+Communication: processor 46 CommunicationTime = 1449.903393
+Communication: processor 47 CommunicationTime = 1510.818521
+Communication: processor 970 CommunicationTime = 1430.820618
+Communication: processor 971 CommunicationTime = 1516.552461
+Communication: processor 808 CommunicationTime = 858.833542
+Communication: processor 809 CommunicationTime = 1000.995274
+Communication: processor 777 CommunicationTime = 1272.479110
+Communication: processor 712 CommunicationTime = 1406.306407
+Communication: processor 713 CommunicationTime = 1392.948361
+Communication: processor 688 CommunicationTime = 1254.140728
+Communication: processor 689 CommunicationTime = 1380.812473
+Communication: processor 656 CommunicationTime = 1416.603755
+Communication: processor 657 CommunicationTime = 1391.626298
+Communication: processor 618 CommunicationTime = 1332.660349
+Communication: processor 586 CommunicationTime = 1330.867710
+Communication: processor 587 CommunicationTime = 1264.478821
+Communication: processor 551 CommunicationTime = 1434.292433
+Communication: processor 550 CommunicationTime = 1526.074549
+Communication: processor 398 CommunicationTime = 1350.794585
+Communication: processor 383 CommunicationTime = 1392.400663
+Communication: processor 382 CommunicationTime = 1361.940146
+Communication: processor 310 CommunicationTime = 1361.353842
+Communication: processor 311 CommunicationTime = 1430.771493
+Communication: processor 261 CommunicationTime = 1436.916524
+Communication: processor 260 CommunicationTime = 1460.423025
+Communication: processor 229 CommunicationTime = 1424.152260
+Communication: processor 228 CommunicationTime = 1513.757779
+Communication: processor 168 CommunicationTime = 1506.566580
+Communication: processor 169 CommunicationTime = 1375.247375
+Communication: processor 143 CommunicationTime = 1457.735798
+Communication: processor 45 CommunicationTime = 1449.822114
+Communication: processor 44 CommunicationTime = 1441.551704
+Communication: processor 968 CommunicationTime = 1383.647333
+Communication: processor 969 CommunicationTime = 1275.954749
+Communication: processor 807 CommunicationTime = 1193.030929
+Communication: processor 806 CommunicationTime = 1352.805875
+Communication: processor 774 CommunicationTime = 1297.610812
+Communication: processor 775 CommunicationTime = 1368.789500
+Communication: processor 709 CommunicationTime = 1255.976056
+Communication: processor 708 CommunicationTime = 1202.271204
+Communication: processor 685 CommunicationTime = 1410.911501
+Communication: processor 655 CommunicationTime = 1438.083285
+Communication: processor 654 CommunicationTime = 1349.422182
+Communication: processor 616 CommunicationTime = 1408.845661
+Communication: processor 585 CommunicationTime = 1464.691218
+Communication: processor 584 CommunicationTime = 1448.429720
+Communication: processor 549 CommunicationTime = 1467.399827
+Communication: processor 397 CommunicationTime = 1327.607959
+Communication: processor 381 CommunicationTime = 1405.870835
+Communication: processor 380 CommunicationTime = 1377.617355
+Communication: processor 309 CommunicationTime = 1388.202801
+Communication: processor 308 CommunicationTime = 1423.715797
+Communication: processor 289 CommunicationTime = 1277.557631
+Communication: processor 288 CommunicationTime = 1364.364339
+Communication: processor 255 CommunicationTime = 1390.924034
+Communication: processor 254 CommunicationTime = 1244.777991
+Communication: processor 166 CommunicationTime = 1465.111714
+Communication: processor 141 CommunicationTime = 1435.600714
+Communication: processor 140 CommunicationTime = 1509.753879
+Communication: processor 43 CommunicationTime = 1351.670764
+Communication: processor 42 CommunicationTime = 1346.623308
+Communication: processor 967 CommunicationTime = 1452.975040
+Communication: processor 966 CommunicationTime = 1419.560062
+Communication: processor 805 CommunicationTime = 1341.391035
+Communication: processor 773 CommunicationTime = 1396.400484
+Communication: processor 772 CommunicationTime = 1402.659997
+Communication: processor 734 CommunicationTime = 1381.336349
+Communication: processor 735 CommunicationTime = 1422.077932
+Communication: processor 682 CommunicationTime = 1353.247241
+Communication: processor 683 CommunicationTime = 1371.166633
+Communication: processor 653 CommunicationTime = 1457.214781
+Communication: processor 615 CommunicationTime = 1434.786826
+Communication: processor 614 CommunicationTime = 1331.678391
+Communication: processor 583 CommunicationTime = 1360.260316
+Communication: processor 574 CommunicationTime = 1441.227427
+Communication: processor 394 CommunicationTime = 1499.618696
+Communication: processor 395 CommunicationTime = 1460.495118
+Communication: processor 378 CommunicationTime = 1452.793110
+Communication: processor 379 CommunicationTime = 1443.862275
+Communication: processor 306 CommunicationTime = 1444.598543
+Communication: processor 307 CommunicationTime = 1435.882251
+Communication: processor 287 CommunicationTime = 1392.334543
+Communication: processor 286 CommunicationTime = 1461.789949
+Communication: processor 253 CommunicationTime = 1509.841443
+Communication: processor 252 CommunicationTime = 1458.519498
+Communication: processor 165 CommunicationTime = 1475.022599
+Communication: processor 164 CommunicationTime = 1432.509626
+Communication: processor 139 CommunicationTime = 1385.858769
+Communication: processor 138 CommunicationTime = 1532.587025
+Communication: processor 41 CommunicationTime = 1403.856488
+Communication: processor 40 CommunicationTime = 1491.094760
+Communication: processor 964 CommunicationTime = 1416.059624
+Communication: processor 830 CommunicationTime = 1343.733485
+Communication: processor 831 CommunicationTime = 1469.743014
+Communication: processor 798 CommunicationTime = 1362.652993
+Communication: processor 799 CommunicationTime = 1226.899957
+Communication: processor 733 CommunicationTime = 1407.949126
+Communication: processor 681 CommunicationTime = 1411.848629
+Communication: processor 680 CommunicationTime = 1489.873508
+Communication: processor 651 CommunicationTime = 1461.288680
+Communication: processor 613 CommunicationTime = 1418.038093
+Communication: processor 612 CommunicationTime = 1427.971098
+Communication: processor 581 CommunicationTime = 1428.850297
+Communication: processor 572 CommunicationTime = 1397.256963
+Communication: processor 390 CommunicationTime = 1339.308647
+Communication: processor 391 CommunicationTime = 1448.051267
+Communication: processor 376 CommunicationTime = 1310.117224
+Communication: processor 377 CommunicationTime = 1459.848298
+Communication: processor 305 CommunicationTime = 1422.416473
+Communication: processor 304 CommunicationTime = 1468.729513
+Communication: processor 282 CommunicationTime = 1421.990171
+Communication: processor 283 CommunicationTime = 1476.815493
+Communication: processor 251 CommunicationTime = 1506.419291
+Communication: processor 250 CommunicationTime = 1429.124631
+Communication: processor 190 CommunicationTime = 1409.969145
+Communication: processor 191 CommunicationTime = 1516.410364
+Communication: processor 136 CommunicationTime = 1373.215207
+Communication: processor 137 CommunicationTime = 1428.585609
+Communication: processor 38 CommunicationTime = 1503.355937
+Communication: processor 990 CommunicationTime = 1453.690066
+Communication: processor 991 CommunicationTime = 1451.123589
+Communication: processor 828 CommunicationTime = 1140.906017
+Communication: processor 794 CommunicationTime = 1337.087011
+Communication: processor 795 CommunicationTime = 1285.626321
+Communication: processor 731 CommunicationTime = 1523.481637
+Communication: processor 678 CommunicationTime = 1360.650643
+Communication: processor 679 CommunicationTime = 1339.387547
+Communication: processor 649 CommunicationTime = 1446.864266
+Communication: processor 648 CommunicationTime = 1478.525492
+Communication: processor 638 CommunicationTime = 1451.267880
+Communication: processor 639 CommunicationTime = 1476.653975
+Communication: processor 606 CommunicationTime = 1352.735195
+Communication: processor 607 CommunicationTime = 1291.452696
+Communication: processor 571 CommunicationTime = 1440.125531
+Communication: processor 389 CommunicationTime = 1440.583879
+Communication: processor 388 CommunicationTime = 1484.092448
+Communication: processor 374 CommunicationTime = 1356.155509
+Communication: processor 303 CommunicationTime = 1423.514838
+Communication: processor 302 CommunicationTime = 1416.477478
+Communication: processor 279 CommunicationTime = 1391.640316
+Communication: processor 248 CommunicationTime = 1503.723565
+Communication: processor 187 CommunicationTime = 1395.224880
+Communication: processor 186 CommunicationTime = 1466.177608
+Communication: processor 135 CommunicationTime = 1255.794229
+Communication: processor 134 CommunicationTime = 1294.055092
+Communication: processor 37 CommunicationTime = 1530.566369
+Communication: processor 36 CommunicationTime = 1461.268628
+Communication: processor 980 CommunicationTime = 1490.049780
+Communication: processor 826 CommunicationTime = 1462.150825
+Communication: processor 827 CommunicationTime = 1321.929008
+Communication: processor 788 CommunicationTime = 1278.840409
+Communication: processor 727 CommunicationTime = 1317.297181
+Communication: processor 677 CommunicationTime = 1241.434917
+Communication: processor 676 CommunicationTime = 1363.158824
+Communication: processor 646 CommunicationTime = 1392.091313
+Communication: processor 647 CommunicationTime = 1437.335355
+Communication: processor 631 CommunicationTime = 1500.336772
+Communication: processor 630 CommunicationTime = 1462.101149
+Communication: processor 596 CommunicationTime = 1382.019339
+Communication: processor 569 CommunicationTime = 1409.499634
+Communication: processor 568 CommunicationTime = 1435.557533
+Communication: processor 415 CommunicationTime = 1462.783763
+Communication: processor 414 CommunicationTime = 1465.944310
+Communication: processor 373 CommunicationTime = 1397.891599
+Communication: processor 372 CommunicationTime = 1383.872816
+Communication: processor 301 CommunicationTime = 1442.818384
+Communication: processor 276 CommunicationTime = 1367.230075
+Communication: processor 247 CommunicationTime = 1419.431662
+Communication: processor 246 CommunicationTime = 1377.744090
+Communication: processor 183 CommunicationTime = 1444.449979
+Communication: processor 182 CommunicationTime = 1462.109411
+Communication: processor 133 CommunicationTime = 1445.378409
+Communication: processor 62 CommunicationTime = 1431.647622
+Communication: processor 978 CommunicationTime = 1282.525825
+Communication: processor 824 CommunicationTime = 1424.581723
+Communication: processor 825 CommunicationTime = 1353.267124
+Communication: processor 787 CommunicationTime = 1494.948071
+Communication: processor 786 CommunicationTime = 1455.285944
+Communication: processor 722 CommunicationTime = 1339.923469
+Communication: processor 723 CommunicationTime = 1437.582967
+Communication: processor 701 CommunicationTime = 1363.614436
+Communication: processor 645 CommunicationTime = 1347.952566
+Communication: processor 644 CommunicationTime = 1291.315205
+Communication: processor 628 CommunicationTime = 1439.222714
+Communication: processor 590 CommunicationTime = 1370.801189
+Communication: processor 591 CommunicationTime = 1375.770181
+Communication: processor 564 CommunicationTime = 1447.432583
+Communication: processor 413 CommunicationTime = 1371.075773
+Communication: processor 370 CommunicationTime = 1461.628101
+Communication: processor 371 CommunicationTime = 1460.043104
+Communication: processor 294 CommunicationTime = 1420.079977
+Communication: processor 271 CommunicationTime = 1313.461129
+Communication: processor 270 CommunicationTime = 1368.082519
+Communication: processor 244 CommunicationTime = 1241.492805
+Communication: processor 179 CommunicationTime = 1395.830455
+Communication: processor 159 CommunicationTime = 1469.342812
+Communication: processor 158 CommunicationTime = 1524.118906
+Communication: processor 59 CommunicationTime = 1398.447249
+Communication: processor 58 CommunicationTime = 1452.634558
+Communication: processor 975 CommunicationTime = 1392.451317
+Communication: processor 974 CommunicationTime = 1397.357620
+Communication: processor 822 CommunicationTime = 1421.201934
+Communication: processor 823 CommunicationTime = 1471.980244
+Communication: processor 782 CommunicationTime = 1423.717690
+Communication: processor 719 CommunicationTime = 1381.591479
+Communication: processor 718 CommunicationTime = 1310.136433
+Communication: processor 694 CommunicationTime = 1336.182522
+Communication: processor 667 CommunicationTime = 1218.422143
+Communication: processor 622 CommunicationTime = 1366.865556
+Communication: processor 623 CommunicationTime = 1405.454232
+Communication: processor 589 CommunicationTime = 1313.209299
+Communication: processor 588 CommunicationTime = 1427.093534
+Communication: processor 563 CommunicationTime = 1448.538857
+Communication: processor 404 CommunicationTime = 1413.266785
+Communication: processor 362 CommunicationTime = 1413.325301
+Communication: processor 363 CommunicationTime = 1379.052753
+Communication: processor 293 CommunicationTime = 1474.017889
+Communication: processor 292 CommunicationTime = 1471.682169
+Communication: processor 268 CommunicationTime = 1444.650405
+Communication: processor 242 CommunicationTime = 1400.897228
+Communication: processor 243 CommunicationTime = 1401.389635
+Communication: processor 174 CommunicationTime = 1429.906957
+Communication: processor 150 CommunicationTime = 1445.341120
+Communication: processor 57 CommunicationTime = 1515.973948
+Communication: processor 56 CommunicationTime = 1423.030698
+Communication: processor 965 CommunicationTime = 1447.008671
+Communication: processor 804 CommunicationTime = 1369.485308
+Communication: processor 781 CommunicationTime = 1398.121685
+Communication: processor 780 CommunicationTime = 1417.295054
+Communication: processor 715 CommunicationTime = 1347.703377
+Communication: processor 690 CommunicationTime = 1358.693949
+Communication: processor 660 CommunicationTime = 1484.275106
+Communication: processor 620 CommunicationTime = 1427.308474
+Communication: processor 582 CommunicationTime = 1356.184805
+Communication: processor 559 CommunicationTime = 1436.139338
+Communication: processor 558 CommunicationTime = 1500.250034
+Communication: processor 399 CommunicationTime = 1343.666601
+Communication: processor 360 CommunicationTime = 1441.502403
+Communication: processor 300 CommunicationTime = 1412.446266
+Communication: processor 267 CommunicationTime = 1315.799219
+Communication: processor 238 CommunicationTime = 1475.128158
+Communication: processor 173 CommunicationTime = 1466.427587
+Communication: processor 172 CommunicationTime = 1398.439047
+Communication: processor 142 CommunicationTime = 1412.872455
+Communication: processor 39 CommunicationTime = 1406.151179
+Communication: processor 776 CommunicationTime = 1283.188155
+Communication: processor 711 CommunicationTime = 1474.116492
+Communication: processor 710 CommunicationTime = 1364.398881
+Communication: processor 687 CommunicationTime = 1396.808454
+Communication: processor 686 CommunicationTime = 1321.209243
+Communication: processor 658 CommunicationTime = 1500.458539
+Communication: processor 619 CommunicationTime = 1385.868276
+Communication: processor 580 CommunicationTime = 1477.012204
+Communication: processor 557 CommunicationTime = 1393.735643
+Communication: processor 556 CommunicationTime = 1421.372211
+Communication: processor 396 CommunicationTime = 1477.775919
+Communication: processor 359 CommunicationTime = 1444.613978
+Communication: processor 358 CommunicationTime = 1450.874875
+Communication: processor 295 CommunicationTime = 1424.351072
+Communication: processor 265 CommunicationTime = 1507.363390
+Communication: processor 264 CommunicationTime = 1409.592930
+Communication: processor 235 CommunicationTime = 1295.318308
+Communication: processor 167 CommunicationTime = 1422.388248
+Communication: processor 132 CommunicationTime = 1384.936933
+Communication: processor 63 CommunicationTime = 1416.645846
+Communication: processor 684 CommunicationTime = 1338.055940
+Communication: processor 652 CommunicationTime = 1462.686810
+Communication: processor 617 CommunicationTime = 1308.277819
+Communication: processor 555 CommunicationTime = 1405.655341
+Communication: processor 554 CommunicationTime = 1395.316778
+Communication: processor 393 CommunicationTime = 1402.488610
+Communication: processor 392 CommunicationTime = 1402.345758
+Communication: processor 375 CommunicationTime = 1312.300355
+Communication: processor 262 CommunicationTime = 1416.078247
+Communication: processor 263 CommunicationTime = 1508.703582
+Communication: processor 239 CommunicationTime = 1332.376443
+Communication: processor 650 CommunicationTime = 1488.315114
+Communication: processor 548 CommunicationTime = 1500.599296
+Communication: processor 412 CommunicationTime = 1253.544363
+Communication: processor 575 CommunicationTime = 1451.011232
+Communication: processor 573 CommunicationTime = 1458.307773
+ENZO_Main.C:610 Exiting.
+Application 4187703 resources: utime 0, stime 0

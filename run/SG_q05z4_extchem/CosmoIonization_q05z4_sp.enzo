@@ -1,0 +1,45 @@
+#
+#  Shapiro & Giroux, isothermal, cosmological I-front test
+#
+#  Daniel R. Reynolds, reynolds@smu.edu
+#
+#############################
+# 
+# problem and general modules 
+# 
+ProblemType                = 215           // CosmoIonizationInitialize init
+RadiationFieldType         = 0
+RadiationHydrodynamics     = 2			   
+ImplicitProblem            = 3             // use gFLDSplit module
+RadiativeTransfer          = 1             // use photo-{ionization/heating}
+MultiSpecies               = 1             // use Enzo chemistry
+RadiativeCooling           = 1             // use Enzo chemistry
+ComovingCoordinates        = 1             // Expansion ON
+RadHydroParamfile = CosmoIonization_q05z4_sp.gfld
+CoolDataParameterFile = CoolDataParameters
+#
+# grid and boundary 
+#
+TopGridRank                = 3
+LeftFaceBoundaryCondition  = 1 1 1         // outflow
+RightFaceBoundaryCondition = 1 1 1         // outflow
+TopGridDimensions          = 16 16 16
+#
+# runtime and I/O
+#
+StopCycle                  = 999999
+dtDataDump                 = 0.0675
+ParallelRootGridIO         = 1
+# 
+# cosmology
+# 
+CosmologyOmegaMatterNow    = 0.1           // OmegaBaryonNow + OmegaCDMNow
+CosmologyOmegaLambdaNow    = 0.0           // 1.0-OmegaMatterNow
+CosmologyHubbleConstantNow = 1.0           // [km/s/Mpc]
+CosmologyComovingBoxSize   = 0.3           // 0.3 MPc [Mpc/h]
+CosmologyMaxExpansionRate  = 0.015         // max delta(a)/a
+CosmologyInitialRedshift   = 4.0
+CosmologyFinalRedshift     = 1.0
+GravitationalConstant      = 1
+
+#############################

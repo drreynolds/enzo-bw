@@ -1,0 +1,4334 @@
+Warning: no access to tty (Bad file descriptor).
+Thus no job control in this shell.
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    unlimited
+coredumpsize unlimited
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  12590 
+memorylocked 512 kbytes
+maxproc      62804 
+MPI_Init: NumberOfProcessors = 1000
+=========================
+ENZO CVS VERSION 0.0.0
+=========================
+Density               0  1
+TotalEnergy           1  0
+InternalEnergy        2  0
+Pressure              3  0
+Velocity1             4  0
+Velocity2             5  0
+Velocity2             5  0
+ElectronDensity       7  1
+HIDensity             8  1
+HIIDensity            9  1
+HeIDensity            10  1
+HeIIDensity           11  1
+HeIIIDensity          12  1
+HMDensity             13  1
+H2IDensity            14  1
+H2IIDensity           15  1
+DIDensity             16  1
+DIIDensity            17  1
+HDIDensity            18  1
+Metallicity           19  1
+ExtraType0            20  1
+ExtraType1            21  1
+GravPotential         22  0
+Acceleration0         23  0
+Acceleration1         24  0
+Acceleration2         25  0
+CIDensity             38  1
+CIIDensity            39  1
+OIDensity             40  1
+OIIDensity            41  1
+SiIDensity            42  1
+SiIIDensity           43  1
+SiIIIDensity          44  1
+CHIDensity            45  1
+CH2IDensity           46  1
+CH3IIDensity          47  1
+C2IDensity            48  1
+COIDensity            49  1
+HCOIIDensity          50  1
+OHIDensity            51  1
+H2OIDensity           52  1
+O2IDensity            53  1
+Mach                  54  0
+PreShockTemperature   55  0
+PreShockDensity       56  0
+CRDensity             57  0
+gParticlePosition     26  0
+gParticleVelocity     27  0
+gParticleMass         28  0
+gParticleAcceleration 29  0
+gParticleNumber       30  0
+gParticleType         31  0
+gParticleAttribute    32  0
+gPotentialField       33  0
+gAccelerationField    34  0
+gGravitatingMassField 35  0
+gFlaggingField        36  0
+gVelocity             37  0
+RadiationFreq0        58  0
+RadiationFreq1        59  0
+RadiationFreq2        60  0
+RadiationFreq3        61  0
+RadiationFreq4        62  0
+RadiationFreq5        63  0
+RadiationFreq6        64  0
+RadiationFreq7        65  0
+RadiationFreq8        66  0
+RadiationFreq9        67  0
+EmissivityField       68  0
+kphHI                 69  1
+PhotoGamma            70  0
+kphHeI                71  1
+kphHeII               72  1
+kdissH2I              73  1
+FieldUndefined        74  0
+Reading parameter file Dumps/RD0002/RD0002
+InitializeRateData: NumberOfTemperatureBins = 600
+Entering gFLDSplit::Initialize routine
+FLD Initialize: tasks have 3 available OpenMP threads
+gFLDSplit::Initialize p0: ErScale = 1e-07, ecScale = 0.0001, NiScale = 1000
+gFLDSplit::Initialize p0: rank = 3, Nchem = 3, HFrac = 0.76
+gFLDSplit::Initialize p0: layout = (10,10,10)
+gFLDSplit::Initialize p0: location = (0,0,0)
+gFLDSplit::Initialize p0: EdgeVals = (0:0.1,0:0.1,0:0.1)
+gFLDSplit::Initialize p0: OnBdry = (1:0,1:0,1:0)
+gFLDSplit::Initialize p0: BdryType = (0:0,0:0,0:0)
+gFLDSplit::Initialize p0: NBors = (991:999,910:990,100:900)
+gFLDSplit::Initialize p0: SolvIndices = (0:159,0:159,0:159)
+gFLDSplit::Initialize p0: SolvOff = (0,0,0)
+gFLDSplit::Initialize p0: LocDims = (160,160,160)
+gFLDSplit::Initialize p0: ArrDims = (166,166,166)
+gFLDSplit::Initialize p0: GhDims = (3:3,3:3,3:3)
+Entering gFLDSplit::ComputeRadiationIntegrals
+  Computed Radiation Integrals:
+    intSigE          = 1.0026863194547069e+00
+    intSigESigHI     = 2.5961374468353215e-18
+    intSigESigHInu   = 6.4212045457124416e-34
+    intSigESigHeI    = 1.0690973150225692e-18
+    intSigESigHeInu  = 1.3703963360120224e-34
+    intSigESigHeII   = 2.6959887920352641e-20
+    intSigESigHeIInu = 1.5886253265121675e-36
+  Initialize: outputting parameters to log file
+InitializeLocal: Starting problem initialization.
+InitializeLocal: Finished problem initialization.
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.012390     time = 1.1200457791208    cycle = 109    z = 79.999940272183
+Level[0]: dt = 0.0123897  0  (0.0123897/0.0123897)
+PrepareGreens: Start = 0 0 0  Dim = 80 160 160
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.8777004e-199 (7.88e-212)
+      ec rms = 5.6424166e-05 (1.79e+10), max = 6.2862634e-05 (2.00e+10)
+    nHeI rms = 4.2060578e-05 (3.32e-02), max = 7.9501129e-05 (6.28e-02)
+   nHeII rms = 1.6437838e-18 (1.30e-15), max = 3.0563409e-18 (2.42e-15)
+
+ subcycled rad 0: dt=1.2e-02, t=1.1e+00 (hydro dt=1.2e-02, t=1.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 7.35518 (HYPRE = 4.57718,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 948285
+CommunicationTransferParticles: moved = 64
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 5
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.013629     time = 1.1324354924092    cycle = 110    z = 79.408055683641
+Level[0]: dt = 0.0136287  0  (0.0136287/0.0136287)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.9447350e-199 (1.21e-211)
+      ec rms = 5.5625070e-05 (1.77e+10), max = 6.2173045e-05 (1.97e+10)
+    nHeI rms = 4.2063814e-05 (3.25e-02), max = 7.9947352e-05 (6.18e-02)
+   nHeII rms = 1.6423342e-18 (1.27e-15), max = 3.0682244e-18 (2.37e-15)
+
+ subcycled rad 0: dt=1.4e-02, t=1.1e+00 (hydro dt=1.4e-02, t=1.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 14.1211 (HYPRE = 8.7458,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1039066
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.014992     time = 1.1460641770265    cycle = 111    z = 78.769323886602
+Level[0]: dt = 0.0149916  0  (0.0149916/0.0149916)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.9185840e-199 (1.97e-211)
+      ec rms = 5.4769340e-05 (1.74e+10), max = 6.1608451e-05 (1.96e+10)
+    nHeI rms = 4.2067385e-05 (3.18e-02), max = 8.0437179e-05 (6.07e-02)
+   nHeII rms = 1.6407853e-18 (1.24e-15), max = 3.0813241e-18 (2.33e-15)
+
+ subcycled rad 0: dt=1.5e-02, t=1.2e+00 (hydro dt=1.5e-02, t=1.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 21.1511 (HYPRE = 12.9177,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1141630
+CommunicationTransferParticles: moved = 117
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 21
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.016491     time = 1.1610557301055    cycle = 112    z = 78.081182020998
+Level[0]: dt = 0.0164907  0  (0.0164907/0.0164907)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.8659413e-199 (3.46e-211)
+      ec rms = 5.3855060e-05 (1.71e+10), max = 6.0939066e-05 (1.94e+10)
+    nHeI rms = 4.2071327e-05 (3.09e-02), max = 8.0974545e-05 (5.96e-02)
+   nHeII rms = 1.6391340e-18 (1.21e-15), max = 3.0957564e-18 (2.28e-15)
+
+ subcycled rad 0: dt=1.6e-02, t=1.2e+00 (hydro dt=1.6e-02, t=1.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 27.9574 (HYPRE = 17.0974,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1251823
+CommunicationTransferParticles: moved = 132
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.018140     time = 1.1775464384924    cycle = 113    z = 77.341129077217
+Level[0]: dt = 0.0181398  0  (0.0181398/0.0181398)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.8239113e-198 (6.93e-211)
+      ec rms = 5.2880620e-05 (1.68e+10), max = 6.0133698e-05 (1.91e+10)
+    nHeI rms = 4.2075680e-05 (3.01e-02), max = 8.1563928e-05 (5.83e-02)
+   nHeII rms = 1.6373785e-18 (1.17e-15), max = 3.1116572e-18 (2.22e-15)
+
+ subcycled rad 0: dt=1.8e-02, t=1.2e+00 (hydro dt=1.8e-02, t=1.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 34.7865 (HYPRE = 21.2664,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1372766
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 17
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.019954     time = 1.1956862177179    cycle = 114    z = 76.54676729014
+Level[0]: dt = 0.0199538  0  (0.0199538/0.0199538)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.8521375e-198 (1.79e-210)
+      ec rms = 5.1844777e-05 (1.65e+10), max = 5.9488315e-05 (1.89e+10)
+    nHeI rms = 4.2080487e-05 (2.92e-02), max = 8.2204966e-05 (5.70e-02)
+   nHeII rms = 1.6355177e-18 (1.13e-15), max = 3.1289773e-18 (2.17e-15)
+
+ subcycled rad 0: dt=2.0e-02, t=1.2e+00 (hydro dt=2.0e-02, t=1.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 41.6729 (HYPRE = 25.4372,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1506146
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 20
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.021949     time = 1.2156399748661    cycle = 115    z = 75.695848328404
+Level[0]: dt = 0.0219491  0  (0.0219491/0.0219491)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.8193232e-197 (6.48e-210)
+      ec rms = 5.0746735e-05 (1.61e+10), max = 5.8721323e-05 (1.87e+10)
+    nHeI rms = 4.2085797e-05 (2.82e-02), max = 8.2906402e-05 (5.56e-02)
+   nHeII rms = 1.6335514e-18 (1.10e-15), max = 3.1480118e-18 (2.11e-15)
+
+ subcycled rad 0: dt=2.2e-02, t=1.2e+00 (hydro dt=2.2e-02, t=1.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 48.4752 (HYPRE = 29.61,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1644323
+CommunicationTransferParticles: moved = 244
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.024144     time = 1.237589107729    cycle = 116    z = 74.786323842987
+Level[0]: dt = 0.024144  0  (0.024144/0.024144)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.9530610e-197 (2.39e-209)
+      ec rms = 4.9586211e-05 (1.58e+10), max = 5.7812482e-05 (1.84e+10)
+    nHeI rms = 4.2091667e-05 (2.72e-02), max = 8.3673580e-05 (5.42e-02)
+   nHeII rms = 1.6314807e-18 (1.06e-15), max = 3.1689510e-18 (2.05e-15)
+
+ subcycled rad 0: dt=2.4e-02, t=1.3e+00 (hydro dt=2.4e-02, t=1.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 55.2752 (HYPRE = 33.7826,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1790013
+CommunicationTransferParticles: moved = 283
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 34
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.026558     time = 1.2617331538783    cycle = 117    z = 73.816399668188
+Level[0]: dt = 0.0265585  0  (0.0265585/0.0265585)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.2947358e-196 (1.09e-208)
+      ec rms = 4.8363505e-05 (1.54e+10), max = 5.7090707e-05 (1.81e+10)
+    nHeI rms = 4.2098156e-05 (2.62e-02), max = 8.4511576e-05 (5.26e-02)
+   nHeII rms = 1.6293079e-18 (1.01e-15), max = 3.1919012e-18 (1.99e-15)
+
+ subcycled rad 0: dt=2.7e-02, t=1.3e+00 (hydro dt=2.7e-02, t=1.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 61.8764 (HYPRE = 37.9521,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1954764
+CommunicationTransferParticles: moved = 344
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 46
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.028986     time = 1.2882916046425    cycle = 118    z = 72.784592668812
+Level[0]: dt = 0.0289859  0  (0.0289859/0.0289859)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.6588465e-195 (5.26e-208)
+      ec rms = 4.7079305e-05 (1.50e+10), max = 5.6229484e-05 (1.79e+10)
+    nHeI rms = 4.2105279e-05 (2.52e-02), max = 8.5418359e-05 (5.10e-02)
+   nHeII rms = 1.6270551e-18 (9.72e-16), max = 3.2168446e-18 (1.92e-15)
+
+ subcycled rad 0: dt=2.9e-02, t=1.3e+00 (hydro dt=2.9e-02, t=1.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 69.4299 (HYPRE = 42.124,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2112973
+CommunicationTransferParticles: moved = 424
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 70
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.029638     time = 1.3172775120731    cycle = 119    z = 71.698190617306
+Level[0]: dt = 0.0296381  0  (0.0296381/0.0296381)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.0368627e-194 (3.15e-207)
+      ec rms = 4.5743562e-05 (1.45e+10), max = 5.5157069e-05 (1.75e+10)
+    nHeI rms = 4.2112605e-05 (2.41e-02), max = 8.6338181e-05 (4.93e-02)
+   nHeII rms = 1.6248699e-18 (9.28e-16), max = 3.2423051e-18 (1.85e-15)
+
+ subcycled rad 0: dt=3.0e-02, t=1.3e+00 (hydro dt=3.0e-02, t=1.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 76.566 (HYPRE = 46.2949,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2145763
+CommunicationTransferParticles: moved = 413
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 43
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.017905     time = 1.3469155846878    cycle = 120    z = 70.627784712227
+Level[0]: dt = 0.0179054  0  (0.0179054/0.0179054)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 7.3152967e-194 (2.12e-206)
+      ec rms = 4.4432402e-05 (1.41e+10), max = 5.4131119e-05 (1.72e+10)
+    nHeI rms = 4.2117051e-05 (2.30e-02), max = 8.6894493e-05 (4.75e-02)
+   nHeII rms = 1.6236045e-18 (8.87e-16), max = 3.2577944e-18 (1.78e-15)
+
+ subcycled rad 0: dt=1.8e-02, t=1.4e+00 (hydro dt=1.8e-02, t=1.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 83.4019 (HYPRE = 50.535,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1288787
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 16
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.030708     time = 1.3648209798648    cycle = 121    z = 69.999937908368
+Level[0]: dt = 0.0307078  0  (0.0307078/0.0307078)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.3939841e-193 (9.60e-206)
+      ec rms = 4.3695033e-05 (1.39e+10), max = 5.3939723e-05 (1.71e+10)
+    nHeI rms = 4.2124713e-05 (2.24e-02), max = 8.7833793e-05 (4.67e-02)
+   nHeII rms = 1.6215246e-18 (8.63e-16), max = 3.2839819e-18 (1.75e-15)
+
+ subcycled rad 0: dt=3.1e-02, t=1.4e+00 (hydro dt=3.1e-02, t=1.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 90.1607 (HYPRE = 54.7068,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2193598
+CommunicationTransferParticles: moved = 391
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.031399     time = 1.3955287509789    cycle = 122    z = 68.954537017517
+Level[0]: dt = 0.0313987  0  (0.0313987/0.0313987)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.5900635e-192 (7.01e-205)
+      ec rms = 4.2456854e-05 (1.35e+10), max = 5.2958019e-05 (1.68e+10)
+    nHeI rms = 4.2132596e-05 (2.14e-02), max = 8.8784944e-05 (4.52e-02)
+   nHeII rms = 1.6195085e-18 (8.24e-16), max = 3.3106263e-18 (1.69e-15)
+
+ subcycled rad 0: dt=3.1e-02, t=1.4e+00 (hydro dt=3.1e-02, t=1.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 96.5772 (HYPRE = 58.8897,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2220217
+CommunicationTransferParticles: moved = 387
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 47
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.032105     time = 1.4269274275748    cycle = 123    z = 67.924528573125
+Level[0]: dt = 0.0321051  0  (0.0321051/0.0321051)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.0559333e-191 (5.32e-204)
+      ec rms = 4.1254223e-05 (1.31e+10), max = 5.2271825e-05 (1.66e+10)
+    nHeI rms = 4.2140704e-05 (2.05e-02), max = 8.9747589e-05 (4.37e-02)
+   nHeII rms = 1.6175551e-18 (7.88e-16), max = 3.3377080e-18 (1.63e-15)
+
+ subcycled rad 0: dt=3.2e-02, t=1.5e+00 (hydro dt=3.2e-02, t=1.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 103.45 (HYPRE = 63.0571,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2253583
+CommunicationTransferParticles: moved = 448
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 52
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.032827     time = 1.4590325543415    cycle = 124    z = 66.909685937226
+Level[0]: dt = 0.0328275  0  (0.0328275/0.0328275)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.5374551e-190 (3.80e-203)
+      ec rms = 4.0086049e-05 (1.27e+10), max = 5.1616125e-05 (1.64e+10)
+    nHeI rms = 4.2149046e-05 (1.96e-02), max = 9.0720597e-05 (4.22e-02)
+   nHeII rms = 1.6156629e-18 (7.52e-16), max = 3.3651814e-18 (1.57e-15)
+
+ subcycled rad 0: dt=3.3e-02, t=1.5e+00 (hydro dt=3.3e-02, t=1.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 110.215 (HYPRE = 67.2247,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2279762
+CommunicationTransferParticles: moved = 378
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 50
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.033566     time = 1.4918600256912    cycle = 125    z = 65.909785808862
+Level[0]: dt = 0.0335661  0  (0.0335661/0.0335661)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.3490610e-189 (3.19e-202)
+      ec rms = 3.8951280e-05 (1.24e+10), max = 5.0555727e-05 (1.61e+10)
+    nHeI rms = 4.2157629e-05 (1.88e-02), max = 9.1703829e-05 (4.08e-02)
+   nHeII rms = 1.6138309e-18 (7.19e-16), max = 3.3929597e-18 (1.51e-15)
+
+ subcycled rad 0: dt=3.4e-02, t=1.5e+00 (hydro dt=3.4e-02, t=1.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 116.977 (HYPRE = 71.3896,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2309368
+CommunicationTransferParticles: moved = 429
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 68
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.034321     time = 1.525426093626    cycle = 126    z = 64.924608174947
+Level[0]: dt = 0.0343213  0  (0.0343213/0.0343213)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1215696e-188 (2.54e-201)
+      ec rms = 3.7848904e-05 (1.20e+10), max = 4.9528209e-05 (1.57e+10)
+    nHeI rms = 4.2166461e-05 (1.80e-02), max = 9.2696987e-05 (3.95e-02)
+   nHeII rms = 1.6120581e-18 (6.87e-16), max = 3.4211144e-18 (1.46e-15)
+
+ subcycled rad 0: dt=3.4e-02, t=1.6e+00 (hydro dt=3.4e-02, t=1.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 123.649 (HYPRE = 75.5609,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2354805
+CommunicationTransferParticles: moved = 464
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.035093     time = 1.5597473757815    cycle = 127    z = 63.95393626186
+Level[0]: dt = 0.0350935  0  (0.0350935/0.0350935)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 9.0824913e-188 (1.97e-200)
+      ec rms = 3.6777945e-05 (1.17e+10), max = 4.8917570e-05 (1.55e+10)
+    nHeI rms = 4.2175549e-05 (1.72e-02), max = 9.3698568e-05 (3.82e-02)
+   nHeII rms = 1.6103429e-18 (6.56e-16), max = 3.4496634e-18 (1.41e-15)
+
+ subcycled rad 0: dt=3.5e-02, t=1.6e+00 (hydro dt=3.5e-02, t=1.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 130.447 (HYPRE = 79.7332,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2388805
+CommunicationTransferParticles: moved = 503
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 61
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.035883     time = 1.5948408636513    cycle = 128    z = 62.997556487744
+Level[0]: dt = 0.0358831  0  (0.0358831/0.0358831)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.0914244e-187 (1.68e-199)
+      ec rms = 3.5737461e-05 (1.14e+10), max = 4.8094520e-05 (1.53e+10)
+    nHeI rms = 4.2184901e-05 (1.64e-02), max = 9.4708086e-05 (3.69e-02)
+   nHeII rms = 1.6086847e-18 (6.27e-16), max = 3.4785074e-18 (1.36e-15)
+
+ subcycled rad 0: dt=3.6e-02, t=1.6e+00 (hydro dt=3.6e-02, t=1.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 136.785 (HYPRE = 83.904,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2426371
+CommunicationTransferParticles: moved = 539
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 75
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.036690     time = 1.6307239309968    cycle = 129    z = 62.055258415512
+Level[0]: dt = 0.0366904  0  (0.0366904/0.0366904)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.8239696e-186 (1.75e-198)
+      ec rms = 3.4726545e-05 (1.10e+10), max = 4.7456211e-05 (1.51e+10)
+    nHeI rms = 4.2194526e-05 (1.57e-02), max = 9.5725399e-05 (3.57e-02)
+   nHeII rms = 1.6070828e-18 (5.99e-16), max = 3.5076474e-18 (1.31e-15)
+
+ subcycled rad 0: dt=3.7e-02, t=1.7e+00 (hydro dt=3.7e-02, t=1.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 143.642 (HYPRE = 88.0774,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2458623
+CommunicationTransferParticles: moved = 486
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 62
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.037516     time = 1.6674143424455    cycle = 130    z = 61.126834706542
+Level[0]: dt = 0.0375159  0  (0.0375159/0.0375159)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 9.7970947e-185 (1.86e-197)
+      ec rms = 3.3744318e-05 (1.07e+10), max = 4.7505143e-05 (1.51e+10)
+    nHeI rms = 4.2204432e-05 (1.50e-02), max = 9.6747776e-05 (3.45e-02)
+   nHeII rms = 1.6055358e-18 (5.73e-16), max = 3.5369834e-18 (1.26e-15)
+
+ subcycled rad 0: dt=3.8e-02, t=1.7e+00 (hydro dt=3.8e-02, t=1.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 150.012 (HYPRE = 92.2609,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2487437
+CommunicationTransferParticles: moved = 531
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 76
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.008900     time = 1.7049302622829    cycle = 131    z = 60.212081075059
+Level[0]: dt = 0.00889997  0  (0.00889997/0.00889997)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.2167823e-183 (2.20e-196)
+      ec rms = 3.2768222e-05 (1.04e+10), max = 4.6265486e-05 (1.47e+10)
+    nHeI rms = 4.2206794e-05 (1.44e-02), max = 9.6994072e-05 (3.31e-02)
+   nHeII rms = 1.6051818e-18 (5.47e-16), max = 3.5441109e-18 (1.21e-15)
+
+ subcycled rad 0: dt=8.9e-03, t=1.7e+00 (hydro dt=8.9e-03, t=1.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 157.17 (HYPRE = 96.4372,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 586843
+CommunicationTransferParticles: moved = 31
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 6
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.038560     time = 1.7138302368801    cycle = 132    z = 59.999978883697
+Level[0]: dt = 0.0385602  0  (0.0385602/0.0385602)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.4021699e-183 (6.10e-196)
+      ec rms = 3.2570916e-05 (1.03e+10), max = 4.6382347e-05 (1.47e+10)
+    nHeI rms = 4.2217060e-05 (1.42e-02), max = 9.8020973e-05 (3.31e-02)
+   nHeII rms = 1.6037015e-18 (5.41e-16), max = 3.5736159e-18 (1.21e-15)
+
+ subcycled rad 0: dt=3.9e-02, t=1.8e+00 (hydro dt=3.9e-02, t=1.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 163.613 (HYPRE = 100.693,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2536011
+CommunicationTransferParticles: moved = 556
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.039428     time = 1.7523904810283    cycle = 133    z = 59.10181703684
+Level[0]: dt = 0.0394278  0  (0.0394278/0.0394278)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.2278629e-182 (7.25e-195)
+      ec rms = 3.1649754e-05 (1.01e+10), max = 4.5467474e-05 (1.44e+10)
+    nHeI rms = 4.2227627e-05 (1.36e-02), max = 9.9058140e-05 (3.20e-02)
+   nHeII rms = 1.6022741e-18 (5.17e-16), max = 3.6035352e-18 (1.16e-15)
+
+ subcycled rad 0: dt=3.9e-02, t=1.8e+00 (hydro dt=3.9e-02, t=1.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 170.57 (HYPRE = 104.943,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2577665
+CommunicationTransferParticles: moved = 596
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 92
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.040315     time = 1.7918183024826    cycle = 134    z = 58.216879692555
+Level[0]: dt = 0.0403149  0  (0.0403149/0.0403149)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.6884821e-181 (9.33e-194)
+      ec rms = 3.0754646e-05 (9.77e+09), max = 4.4677401e-05 (1.42e+10)
+    nHeI rms = 4.2238505e-05 (1.30e-02), max = 1.0009279e-04 (3.09e-02)
+   nHeII rms = 1.6008992e-18 (4.94e-16), max = 3.6334431e-18 (1.12e-15)
+
+ subcycled rad 0: dt=4.0e-02, t=1.8e+00 (hydro dt=4.0e-02, t=1.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 177.124 (HYPRE = 109.217,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2624771
+CommunicationTransferParticles: moved = 602
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 79
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.041222     time = 1.8321332206064    cycle = 135    z = 57.344972133582
+Level[0]: dt = 0.041222  0  (0.041222/0.041222)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 7.4080534e-180 (1.16e-192)
+      ec rms = 2.9884833e-05 (9.49e+09), max = 4.4285024e-05 (1.41e+10)
+    nHeI rms = 4.2249704e-05 (1.25e-02), max = 1.0111714e-04 (2.99e-02)
+   nHeII rms = 1.5995760e-18 (4.72e-16), max = 3.6631751e-18 (1.08e-15)
+
+ subcycled rad 0: dt=4.1e-02, t=1.9e+00 (hydro dt=4.1e-02, t=1.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 184.08 (HYPRE = 113.478,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2669044
+CommunicationTransferParticles: moved = 559
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 88
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.042149     time = 1.8733551938895    cycle = 136    z = 56.485902509671
+Level[0]: dt = 0.0421494  0  (0.0421494/0.0421494)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.0583730e-178 (1.59e-191)
+      ec rms = 2.9039581e-05 (9.22e+09), max = 4.3933936e-05 (1.40e+10)
+    nHeI rms = 4.2261235e-05 (1.19e-02), max = 1.0212417e-04 (2.88e-02)
+   nHeII rms = 1.5983036e-18 (4.52e-16), max = 3.6923494e-18 (1.04e-15)
+
+ subcycled rad 0: dt=4.2e-02, t=1.9e+00 (hydro dt=4.2e-02, t=1.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 191.076 (HYPRE = 117.738,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2707188
+CommunicationTransferParticles: moved = 619
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 93
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.043098     time = 1.9155046298249    cycle = 137    z = 55.639481795364
+Level[0]: dt = 0.0430978  0  (0.0430978/0.0430978)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.6107603e-177 (2.31e-190)
+      ec rms = 2.8218180e-05 (8.96e+09), max = 4.3623288e-05 (1.39e+10)
+    nHeI rms = 4.2273109e-05 (1.14e-02), max = 1.0310889e-04 (2.79e-02)
+   nHeII rms = 1.5970821e-18 (4.32e-16), max = 3.7208710e-18 (1.01e-15)
+
+ subcycled rad 0: dt=4.3e-02, t=2.0e+00 (hydro dt=4.3e-02, t=2.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 198.375 (HYPRE = 122.049,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2751928
+CommunicationTransferParticles: moved = 629
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 74
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.044067     time = 1.9586023950072    cycle = 138    z = 54.805523748405
+Level[0]: dt = 0.0440674  0  (0.0440674/0.0440674)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.8889960e-176 (3.97e-189)
+      ec rms = 2.7419943e-05 (8.71e+09), max = 4.3353682e-05 (1.38e+10)
+    nHeI rms = 4.2285336e-05 (1.09e-02), max = 1.0434883e-04 (2.70e-02)
+   nHeII rms = 1.5959101e-18 (4.12e-16), max = 3.7666788e-18 (9.73e-16)
+
+ subcycled rad 0: dt=4.4e-02, t=2.0e+00 (hydro dt=4.4e-02, t=2.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 205.045 (HYPRE = 126.308,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2791567
+CommunicationTransferParticles: moved = 636
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 85
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.045059     time = 2.0026698254584    cycle = 139    z = 53.983844868759
+Level[0]: dt = 0.0450589  0  (0.0450589/0.0450589)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.0724122e-175 (7.98e-188)
+      ec rms = 2.6644204e-05 (8.46e+09), max = 4.3126644e-05 (1.37e+10)
+    nHeI rms = 4.2297928e-05 (1.05e-02), max = 1.0607472e-04 (2.62e-02)
+   nHeII rms = 1.5947870e-18 (3.94e-16), max = 3.8239625e-18 (9.45e-16)
+
+ subcycled rad 0: dt=4.5e-02, t=2.0e+00 (hydro dt=4.5e-02, t=2.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 211.969 (HYPRE = 130.592,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2830897
+CommunicationTransferParticles: moved = 675
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 84
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.046073     time = 2.0477287371854    cycle = 140    z = 53.174264358236
+Level[0]: dt = 0.0460727  0  (0.0460727/0.0460727)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.2042067e-173 (1.51e-186)
+      ec rms = 2.5890318e-05 (8.22e+09), max = 4.2942005e-05 (1.36e+10)
+    nHeI rms = 4.2310899e-05 (1.00e-02), max = 1.0807800e-04 (2.56e-02)
+   nHeII rms = 1.5937125e-18 (3.77e-16), max = 3.8875180e-18 (9.19e-16)
+
+ subcycled rad 0: dt=4.6e-02, t=2.1e+00 (hydro dt=4.6e-02, t=2.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 218.777 (HYPRE = 134.844,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2865472
+CommunicationTransferParticles: moved = 681
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 99
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.047109     time = 2.093801436975    cycle = 141    z = 52.37660408071
+Level[0]: dt = 0.0471093  0  (0.0471093/0.0471093)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.6945374e-172 (3.24e-185)
+      ec rms = 2.5157662e-05 (7.99e+09), max = 4.2800771e-05 (1.36e+10)
+    nHeI rms = 4.2324260e-05 (9.57e-03), max = 1.1015657e-04 (2.49e-02)
+   nHeII rms = 1.5926858e-18 (3.60e-16), max = 3.9535135e-18 (8.94e-16)
+
+ subcycled rad 0: dt=4.7e-02, t=2.1e+00 (hydro dt=4.7e-02, t=2.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 225.965 (HYPRE = 139.11,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2903482
+CommunicationTransferParticles: moved = 725
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 95
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.048169     time = 2.1409107334315    cycle = 142    z = 51.590688522919
+Level[0]: dt = 0.0481692  0  (0.0481692/0.0481692)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.6241721e-171 (7.61e-184)
+      ec rms = 2.4445629e-05 (7.77e+09), max = 4.2704995e-05 (1.36e+10)
+    nHeI rms = 4.2338024e-05 (9.16e-03), max = 1.1232344e-04 (2.43e-02)
+   nHeII rms = 1.5917066e-18 (3.44e-16), max = 4.0224566e-18 (8.70e-16)
+
+ subcycled rad 0: dt=4.8e-02, t=2.2e+00 (hydro dt=4.8e-02, t=2.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 232.474 (HYPRE = 143.367,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2945031
+CommunicationTransferParticles: moved = 736
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 86
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.049253     time = 2.1890799482618    cycle = 143    z = 50.816344755852
+Level[0]: dt = 0.049253  0  (0.049253/0.049253)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.8519823e-169 (2.04e-182)
+      ec rms = 2.3753635e-05 (7.55e+09), max = 4.2654450e-05 (1.35e+10)
+    nHeI rms = 4.2352205e-05 (8.76e-03), max = 1.1456206e-04 (2.37e-02)
+   nHeII rms = 1.5907746e-18 (3.29e-16), max = 4.0937096e-18 (8.47e-16)
+
+ subcycled rad 0: dt=4.9e-02, t=2.2e+00 (hydro dt=4.9e-02, t=2.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 239.39 (HYPRE = 147.628,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 2984096
+CommunicationTransferParticles: moved = 761
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.003517     time = 2.2383329278149    cycle = 144    z = 50.053402396692
+Level[0]: dt = 0.00351691  0  (0.00351691/0.00351691)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.4680359e-168 (5.75e-181)
+      ec rms = 2.3062938e-05 (7.33e+09), max = 4.1491545e-05 (1.32e+10)
+    nHeI rms = 4.2353223e-05 (8.38e-03), max = 1.1472403e-04 (2.27e-02)
+   nHeII rms = 1.5907107e-18 (3.15e-16), max = 4.0988790e-18 (8.11e-16)
+
+ subcycled rad 0: dt=3.5e-03, t=2.2e+00 (hydro dt=3.5e-03, t=2.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 246.485 (HYPRE = 151.889,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 212877
+CommunicationTransferParticles: moved = 2
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.050440     time = 2.2418498328986    cycle = 145    z = 49.999994666742
+Level[0]: dt = 0.0504403  0  (0.0504403/0.0504403)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.0464590e-167 (1.10e-180)
+      ec rms = 2.3034458e-05 (7.32e+09), max = 4.2652168e-05 (1.35e+10)
+    nHeI rms = 4.2367867e-05 (8.36e-03), max = 1.1704391e-04 (2.31e-02)
+   nHeII rms = 1.5898290e-18 (3.14e-16), max = 4.1727692e-18 (8.23e-16)
+
+ subcycled rad 0: dt=5.0e-02, t=2.3e+00 (hydro dt=5.0e-02, t=2.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 253.438 (HYPRE = 156.18,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3043306
+CommunicationTransferParticles: moved = 891
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 110
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.051575     time = 2.2922900871105    cycle = 146    z = 49.249072214725
+Level[0]: dt = 0.0515751  0  (0.0515751/0.0515751)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.9053873e-166 (2.91e-179)
+      ec rms = 2.2382162e-05 (7.11e+09), max = 4.2700506e-05 (1.36e+10)
+    nHeI rms = 4.2382957e-05 (8.00e-03), max = 1.1943574e-04 (2.25e-02)
+   nHeII rms = 1.5889937e-18 (3.00e-16), max = 4.2489416e-18 (8.02e-16)
+
+ subcycled rad 0: dt=5.2e-02, t=2.3e+00 (hydro dt=5.2e-02, t=2.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 260.271 (HYPRE = 160.521,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3094361
+CommunicationTransferParticles: moved = 819
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 107
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.052736     time = 2.3438652003401    cycle = 147    z = 48.50920631562
+Level[0]: dt = 0.0527355  0  (0.0527355/0.0527355)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.9530679e-165 (8.58e-178)
+      ec rms = 2.1748212e-05 (6.91e+09), max = 4.2798580e-05 (1.36e+10)
+    nHeI rms = 4.2398508e-05 (7.65e-03), max = 1.2189969e-04 (2.20e-02)
+   nHeII rms = 1.5882046e-18 (2.87e-16), max = 4.3274298e-18 (7.81e-16)
+
+ subcycled rad 0: dt=5.3e-02, t=2.4e+00 (hydro dt=5.3e-02, t=2.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 267.34 (HYPRE = 164.855,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3139048
+CommunicationTransferParticles: moved = 872
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 94
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.053922     time = 2.3966007047638    cycle = 148    z = 47.780234172943
+Level[0]: dt = 0.053922  0  (0.053922/0.053922)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.1769046e-163 (3.83e-176)
+      ec rms = 2.1132090e-05 (6.71e+09), max = 4.2946635e-05 (1.36e+10)
+    nHeI rms = 4.2414537e-05 (7.32e-03), max = 1.2443562e-04 (2.15e-02)
+   nHeII rms = 1.5874615e-18 (2.74e-16), max = 4.4082534e-18 (7.61e-16)
+
+ subcycled rad 0: dt=5.4e-02, t=2.5e+00 (hydro dt=5.4e-02, t=2.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 274.34 (HYPRE = 169.221,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3172072
+CommunicationTransferParticles: moved = 816
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.055135     time = 2.4505227069078    cycle = 149    z = 47.061995387217
+Level[0]: dt = 0.0551352  0  (0.0551352/0.0551352)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.1072702e-161 (1.85e-174)
+      ec rms = 2.0533295e-05 (6.52e+09), max = 4.3145067e-05 (1.37e+10)
+    nHeI rms = 4.2431060e-05 (7.01e-03), max = 1.2704129e-04 (2.10e-02)
+   nHeII rms = 1.5867642e-18 (2.62e-16), max = 4.4913208e-18 (7.41e-16)
+
+ subcycled rad 0: dt=5.5e-02, t=2.5e+00 (hydro dt=5.5e-02, t=2.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 281.401 (HYPRE = 173.574,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3223400
+CommunicationTransferParticles: moved = 906
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.056376     time = 2.5056579005626    cycle = 150    z = 46.354331920675
+Level[0]: dt = 0.0563757  0  (0.0563757/0.0563757)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1365707e-159 (9.54e-173)
+      ec rms = 1.9951338e-05 (6.34e+09), max = 4.3393720e-05 (1.38e+10)
+    nHeI rms = 4.2448094e-05 (6.70e-03), max = 1.2971814e-04 (2.05e-02)
+   nHeII rms = 1.5861125e-18 (2.50e-16), max = 4.5766546e-18 (7.23e-16)
+
+ subcycled rad 0: dt=5.6e-02, t=2.6e+00 (hydro dt=5.6e-02, t=2.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 288.141 (HYPRE = 177.92,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3266425
+CommunicationTransferParticles: moved = 904
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.057644     time = 2.562033579988    cycle = 151    z = 45.657088062489
+Level[0]: dt = 0.0576441  0  (0.0576441/0.0576441)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 7.2826605e-158 (5.84e-171)
+      ec rms = 1.9385746e-05 (6.16e+09), max = 4.3697952e-05 (1.39e+10)
+    nHeI rms = 4.2465657e-05 (6.41e-03), max = 1.3246320e-04 (2.00e-02)
+   nHeII rms = 1.5855065e-18 (2.39e-16), max = 4.6641326e-18 (7.04e-16)
+
+ subcycled rad 0: dt=5.8e-02, t=2.6e+00 (hydro dt=5.8e-02, t=2.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 5.5e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 298.961 (HYPRE = 185.941,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3316338
+CommunicationTransferParticles: moved = 969
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.058941     time = 2.6196776534145    cycle = 152    z = 44.970110394505
+Level[0]: dt = 0.058941  0  (0.058941/0.058941)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.5238087e-156 (4.24e-169)
+      ec rms = 1.8836061e-05 (5.98e+09), max = 4.4058470e-05 (1.40e+10)
+    nHeI rms = 4.2483768e-05 (6.14e-03), max = 1.3527062e-04 (1.95e-02)
+   nHeII rms = 1.5849460e-18 (2.29e-16), max = 4.7535524e-18 (6.87e-16)
+
+ subcycled rad 0: dt=5.9e-02, t=2.7e+00 (hydro dt=5.9e-02, t=2.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.4e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 314.461 (HYPRE = 198.839,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3364290
+CommunicationTransferParticles: moved = 929
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.060267     time = 2.6786186568478    cycle = 153    z = 44.293247757491
+Level[0]: dt = 0.0602671  0  (0.0602671/0.0602671)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.9817057e-160 (1.45e-173)
+      ec rms = 1.8301836e-05 (5.81e+09), max = 4.4474792e-05 (1.41e+10)
+    nHeI rms = 4.2502444e-05 (5.87e-03), max = 1.3814323e-04 (1.91e-02)
+   nHeII rms = 1.5844311e-18 (2.19e-16), max = 4.8452942e-18 (6.69e-16)
+
+ subcycled rad 0: dt=6.0e-02, t=2.7e+00 (hydro dt=6.0e-02, t=2.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 321.35 (HYPRE = 203.112,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3420964
+CommunicationTransferParticles: moved = 1031
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.061623     time = 2.7388857681834    cycle = 154    z = 43.626351217872
+Level[0]: dt = 0.0616231  0  (0.0616231/0.0616231)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.3188330e-159 (9.26e-173)
+      ec rms = 1.7782639e-05 (5.65e+09), max = 4.4953728e-05 (1.43e+10)
+    nHeI rms = 4.2521708e-05 (5.62e-03), max = 1.4158440e-04 (1.87e-02)
+   nHeII rms = 1.5839615e-18 (2.09e-16), max = 4.9647546e-18 (6.56e-16)
+
+ subcycled rad 0: dt=6.2e-02, t=2.8e+00 (hydro dt=6.2e-02, t=2.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 328.09 (HYPRE = 207.386,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3477845
+CommunicationTransferParticles: moved = 1021
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.062772     time = 2.8005088216379    cycle = 155    z = 42.969274034959
+Level[0]: dt = 0.0627725  0  (0.0627725/0.0627725)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.0151294e-158 (1.35e-171)
+      ec rms = 1.7278000e-05 (5.49e+09), max = 4.5489063e-05 (1.44e+10)
+    nHeI rms = 4.2541503e-05 (5.38e-03), max = 1.4544311e-04 (1.84e-02)
+   nHeII rms = 1.5835393e-18 (2.00e-16), max = 5.0891509e-18 (6.43e-16)
+
+ subcycled rad 0: dt=6.3e-02, t=2.9e+00 (hydro dt=6.3e-02, t=2.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.7e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 338.806 (HYPRE = 215.412,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3506183
+CommunicationTransferParticles: moved = 1136
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.063203     time = 2.863281304011    cycle = 156    z = 42.324262372196
+Level[0]: dt = 0.0632025  0  (0.0632025/0.0632025)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.2958575e-157 (2.76e-170)
+      ec rms = 1.6789223e-05 (5.33e+09), max = 4.6061470e-05 (1.46e+10)
+    nHeI rms = 4.2561611e-05 (5.15e-03), max = 1.4941370e-04 (1.81e-02)
+   nHeII rms = 1.5831678e-18 (1.91e-16), max = 5.2170673e-18 (6.31e-16)
+
+ subcycled rad 0: dt=6.3e-02, t=2.9e+00 (hydro dt=6.3e-02, t=2.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.6e-152), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 349.784 (HYPRE = 223.678,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3512800
+CommunicationTransferParticles: moved = 1111
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 114
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.063696     time = 2.9264838096357    cycle = 157    z = 41.698213076246
+Level[0]: dt = 0.0636958  0  (0.0636958/0.0636958)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.8282471e-155 (1.74e-168)
+      ec rms = 1.6321240e-05 (5.18e+09), max = 4.6694241e-05 (1.48e+10)
+    nHeI rms = 4.2582054e-05 (4.93e-03), max = 1.5349972e-04 (1.78e-02)
+   nHeII rms = 1.5828447e-18 (1.83e-16), max = 5.3486116e-18 (6.19e-16)
+
+ subcycled rad 0: dt=6.4e-02, t=3.0e+00 (hydro dt=6.4e-02, t=3.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.4e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 365.832 (HYPRE = 237.155,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3515441
+CommunicationTransferParticles: moved = 1044
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.064135     time = 2.990179585387    cycle = 158    z = 41.089670785848
+Level[0]: dt = 0.0641349  0  (0.0641349/0.0641349)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 9.2115102e-160 (5.43e-173)
+      ec rms = 1.5872395e-05 (5.04e+09), max = 4.7383186e-05 (1.51e+10)
+    nHeI rms = 4.2602821e-05 (4.72e-03), max = 1.5770296e-04 (1.75e-02)
+   nHeII rms = 1.5825687e-18 (1.75e-16), max = 5.4838161e-18 (6.08e-16)
+
+ subcycled rad 0: dt=6.4e-02, t=3.1e+00 (hydro dt=6.4e-02, t=3.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 372.637 (HYPRE = 241.44,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3509316
+CommunicationTransferParticles: moved = 1018
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 109
+CommunicationTransferParticles: moved = 1
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.055864     time = 3.0543145182761    cycle = 159    z = 40.498378742033
+Level[0]: dt = 0.0558642  0  (0.0558642/0.0558642)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.7351891e-159 (1.54e-172)
+      ec rms = 1.5440573e-05 (4.90e+09), max = 4.7834928e-05 (1.52e+10)
+    nHeI rms = 4.2621063e-05 (4.53e-03), max = 1.6143332e-04 (1.72e-02)
+   nHeII rms = 1.5823665e-18 (1.68e-16), max = 5.6038313e-18 (5.96e-16)
+
+ subcycled rad 0: dt=5.6e-02, t=3.1e+00 (hydro dt=5.6e-02, t=3.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 379.489 (HYPRE = 245.75,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3031512
+CommunicationTransferParticles: moved = 815
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 123
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.064934     time = 3.1101787188318    cycle = 160    z = 39.999950908848
+Level[0]: dt = 0.0649338  0  (0.0649338/0.0649338)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.4855565e-159 (2.44e-172)
+      ec rms = 1.5083670e-05 (4.79e+09), max = 4.8802998e-05 (1.55e+10)
+    nHeI rms = 4.2642433e-05 (4.37e-03), max = 1.6584013e-04 (1.70e-02)
+   nHeII rms = 1.5821734e-18 (1.62e-16), max = 5.7453732e-18 (5.89e-16)
+
+ subcycled rad 0: dt=6.5e-02, t=3.2e+00 (hydro dt=6.5e-02, t=3.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 386.897 (HYPRE = 250.061,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3500793
+CommunicationTransferParticles: moved = 1052
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.065380     time = 3.1751125117478    cycle = 161    z = 39.439031038788
+Level[0]: dt = 0.06538  0  (0.06538/0.06538)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.0593000e-157 (5.53e-171)
+      ec rms = 1.4685147e-05 (4.66e+09), max = 4.9643926e-05 (1.58e+10)
+    nHeI rms = 4.2664139e-05 (4.20e-03), max = 1.7036081e-04 (1.68e-02)
+   nHeII rms = 1.5820225e-18 (1.56e-16), max = 5.8904171e-18 (5.79e-16)
+
+ subcycled rad 0: dt=6.5e-02, t=3.2e+00 (hydro dt=6.5e-02, t=3.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 4.1e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 397.97 (HYPRE = 258.442,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3504841
+CommunicationTransferParticles: moved = 1043
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.065854     time = 3.2404925444849    cycle = 162    z = 38.893247126355
+Level[0]: dt = 0.0658543  0  (0.0658543/0.0658543)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 9.7123271e-156 (4.87e-169)
+      ec rms = 1.4302281e-05 (4.54e+09), max = 5.0534338e-05 (1.61e+10)
+    nHeI rms = 4.2686192e-05 (4.03e-03), max = 1.7501126e-04 (1.65e-02)
+   nHeII rms = 1.5819124e-18 (1.49e-16), max = 6.0395239e-18 (5.70e-16)
+
+ subcycled rad 0: dt=6.6e-02, t=3.3e+00 (hydro dt=6.6e-02, t=3.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.3e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 413.835 (HYPRE = 271.734,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3501992
+CommunicationTransferParticles: moved = 1012
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.066318     time = 3.3063468764691    cycle = 163    z = 38.36174810023
+Level[0]: dt = 0.0663175  0  (0.0663175/0.0663175)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.9473850e-160 (2.38e-173)
+      ec rms = 1.3934086e-05 (4.43e+09), max = 5.1482261e-05 (1.64e+10)
+    nHeI rms = 4.2708593e-05 (3.87e-03), max = 1.7979509e-04 (1.63e-02)
+   nHeII rms = 1.5818419e-18 (1.43e-16), max = 6.1929035e-18 (5.62e-16)
+
+ subcycled rad 0: dt=6.6e-02, t=3.4e+00 (hydro dt=6.6e-02, t=3.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 420.692 (HYPRE = 276.104,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3503834
+CommunicationTransferParticles: moved = 1052
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.066728     time = 3.3726643987669    cycle = 164    z = 37.844047970658
+Level[0]: dt = 0.0667285  0  (0.0667285/0.0667285)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.7838809e-159 (2.22e-172)
+      ec rms = 1.3579863e-05 (4.31e+09), max = 5.2484920e-05 (1.67e+10)
+    nHeI rms = 4.2731330e-05 (3.72e-03), max = 1.8470947e-04 (1.61e-02)
+   nHeII rms = 1.5818099e-18 (1.38e-16), max = 6.3502671e-18 (5.53e-16)
+
+ subcycled rad 0: dt=6.7e-02, t=3.4e+00 (hydro dt=6.7e-02, t=3.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 427.876 (HYPRE = 280.473,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3507942
+CommunicationTransferParticles: moved = 1046
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.067185     time = 3.4393928725049    cycle = 165    z = 37.339986335107
+Level[0]: dt = 0.067185  0  (0.067185/0.067185)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1727974e-157 (5.22e-171)
+      ec rms = 1.3239173e-05 (4.21e+09), max = 5.3541137e-05 (1.70e+10)
+    nHeI rms = 4.2754421e-05 (3.58e-03), max = 1.8974780e-04 (1.59e-02)
+   nHeII rms = 1.5818152e-18 (1.33e-16), max = 6.5115175e-18 (5.46e-16)
+
+ subcycled rad 0: dt=6.7e-02, t=3.5e+00 (hydro dt=6.7e-02, t=3.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 4.1e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 438.75 (HYPRE = 288.733,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3510422
+CommunicationTransferParticles: moved = 949
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 103
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.067530     time = 3.5065779075558    cycle = 166    z = 36.848678932745
+Level[0]: dt = 0.0675305  0  (0.0675305/0.0675305)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 9.0613807e-156 (3.88e-169)
+      ec rms = 1.2911082e-05 (4.10e+09), max = 5.5468456e-05 (1.76e+10)
+    nHeI rms = 4.2777831e-05 (3.45e-03), max = 1.9489411e-04 (1.57e-02)
+   nHeII rms = 1.5818566e-18 (1.28e-16), max = 6.6761128e-18 (5.38e-16)
+
+ subcycled rad 0: dt=6.8e-02, t=3.6e+00 (hydro dt=6.8e-02, t=3.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.4e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 454.122 (HYPRE = 301.556,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3506106
+CommunicationTransferParticles: moved = 1096
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.067939     time = 3.5741083959364    cycle = 167    z = 36.370405788335
+Level[0]: dt = 0.0679395  0  (0.0679395/0.0679395)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.0555511e-160 (1.67e-173)
+      ec rms = 1.2595492e-05 (4.00e+09), max = 5.5829744e-05 (1.77e+10)
+    nHeI rms = 4.2801588e-05 (3.32e-03), max = 2.0015186e-04 (1.55e-02)
+   nHeII rms = 1.5819332e-18 (1.23e-16), max = 6.8441310e-18 (5.31e-16)
+
+ subcycled rad 0: dt=6.8e-02, t=3.6e+00 (hydro dt=6.8e-02, t=3.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 461.094 (HYPRE = 305.934,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3493618
+CommunicationTransferParticles: moved = 1036
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.068362     time = 3.6420478806702    cycle = 168    z = 35.904197306129
+Level[0]: dt = 0.0683618  0  (0.0683618/0.0683618)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.6736414e-159 (1.06e-172)
+      ec rms = 1.2291468e-05 (3.90e+09), max = 5.7075275e-05 (1.81e+10)
+    nHeI rms = 4.2825698e-05 (3.20e-03), max = 2.0550977e-04 (1.54e-02)
+   nHeII rms = 1.5820443e-18 (1.18e-16), max = 7.0151581e-18 (5.24e-16)
+
+ subcycled rad 0: dt=6.8e-02, t=3.7e+00 (hydro dt=6.8e-02, t=3.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 467.94 (HYPRE = 310.303,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3492380
+CommunicationTransferParticles: moved = 1021
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.068794     time = 3.7104096970223    cycle = 169    z = 35.449495503906
+Level[0]: dt = 0.068794  0  (0.068794/0.068794)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.7149906e-157 (6.56e-171)
+      ec rms = 1.1998380e-05 (3.81e+09), max = 6.3123178e-05 (2.01e+10)
+    nHeI rms = 4.2850169e-05 (3.09e-03), max = 2.1095941e-04 (1.52e-02)
+   nHeII rms = 1.5821888e-18 (1.14e-16), max = 7.1888286e-18 (5.18e-16)
+
+ subcycled rad 0: dt=6.9e-02, t=3.8e+00 (hydro dt=6.9e-02, t=3.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 4.9e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 479.043 (HYPRE = 318.831,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3489985
+CommunicationTransferParticles: moved = 1007
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.069218     time = 3.7792036527943    cycle = 170    z = 35.00580025593
+Level[0]: dt = 0.0692184  0  (0.0692184/0.0692184)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.0697330e-156 (2.24e-169)
+      ec rms = 1.1715658e-05 (3.72e+09), max = 6.1768353e-05 (1.96e+10)
+    nHeI rms = 4.2875005e-05 (2.98e-03), max = 2.1647215e-04 (1.50e-02)
+   nHeII rms = 1.5823660e-18 (1.10e-16), max = 7.3642638e-18 (5.11e-16)
+
+ subcycled rad 0: dt=6.9e-02, t=3.8e+00 (hydro dt=6.9e-02, t=3.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.0e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 494.356 (HYPRE = 331.77,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3500518
+CommunicationTransferParticles: moved = 1047
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.069608     time = 3.8484220499603    cycle = 171    z = 34.572749339846
+Level[0]: dt = 0.0696083  0  (0.0696083/0.0696083)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.6099371e-160 (9.28e-174)
+      ec rms = 1.1442835e-05 (3.63e+09), max = 6.9948277e-05 (2.22e+10)
+    nHeI rms = 4.2900194e-05 (2.87e-03), max = 2.2205179e-04 (1.49e-02)
+   nHeII rms = 1.5825749e-18 (1.06e-16), max = 7.5552977e-18 (5.06e-16)
+
+ subcycled rad 0: dt=7.0e-02, t=3.9e+00 (hydro dt=7.0e-02, t=3.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 500.708 (HYPRE = 336.173,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3506391
+CommunicationTransferParticles: moved = 1037
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.070030     time = 3.9180303454169    cycle = 172    z = 34.150156180317
+Level[0]: dt = 0.0700299  0  (0.0700299/0.0700299)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1551669e-159 (3.96e-173)
+      ec rms = 1.1179581e-05 (3.55e+09), max = 7.2837643e-05 (2.31e+10)
+    nHeI rms = 4.2925754e-05 (2.77e-03), max = 2.2833348e-04 (1.47e-02)
+   nHeII rms = 1.5828150e-18 (1.02e-16), max = 7.7830270e-18 (5.03e-16)
+
+ subcycled rad 0: dt=7.0e-02, t=4.0e+00 (hydro dt=7.0e-02, t=4.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 507.497 (HYPRE = 340.563,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3508025
+CommunicationTransferParticles: moved = 1034
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.070406     time = 3.9880602326609    cycle = 173    z = 33.737445221045
+Level[0]: dt = 0.070406  0  (0.070406/0.070406)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.9221442e-158 (1.96e-171)
+      ec rms = 1.0925319e-05 (3.47e+09), max = 7.3157186e-05 (2.32e+10)
+    nHeI rms = 4.2951672e-05 (2.68e-03), max = 2.3559885e-04 (1.47e-02)
+   nHeII rms = 1.5830856e-18 (9.87e-17), max = 8.0166444e-18 (5.00e-16)
+
+ subcycled rad 0: dt=7.0e-02, t=4.1e+00 (hydro dt=7.0e-02, t=4.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.4e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 518.273 (HYPRE = 348.986,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3510402
+CommunicationTransferParticles: moved = 1067
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 182
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.070794     time = 4.058466253343    cycle = 174    z = 33.334517127498
+Level[0]: dt = 0.0707942  0  (0.0707942/0.0707942)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.6045356e-156 (2.11e-169)
+      ec rms = 1.0679799e-05 (3.39e+09), max = 8.1602609e-05 (2.59e+10)
+    nHeI rms = 4.2977956e-05 (2.59e-03), max = 2.4304746e-04 (1.46e-02)
+   nHeII rms = 1.5833859e-18 (9.53e-17), max = 8.2558191e-18 (4.97e-16)
+
+ subcycled rad 0: dt=7.1e-02, t=4.1e+00 (hydro dt=7.1e-02, t=4.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.6e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 533.492 (HYPRE = 361.923,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3509917
+CommunicationTransferParticles: moved = 980
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.071191     time = 4.1292604268488    cycle = 175    z = 32.940945824106
+Level[0]: dt = 0.0711914  0  (0.0711914/0.0711914)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.3477242e-160 (1.03e-173)
+      ec rms = 1.0442572e-05 (3.32e+09), max = 8.6197060e-05 (2.74e+10)
+    nHeI rms = 4.3004615e-05 (2.50e-03), max = 2.5066465e-04 (1.46e-02)
+   nHeII rms = 1.5837155e-18 (9.21e-17), max = 8.4999659e-18 (4.94e-16)
+
+ subcycled rad 0: dt=7.1e-02, t=4.2e+00 (hydro dt=7.1e-02, t=4.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 540.232 (HYPRE = 366.318,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3506895
+CommunicationTransferParticles: moved = 1025
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.071600     time = 4.2004518339788    cycle = 176    z = 32.556346314393
+Level[0]: dt = 0.0716  0  (0.0716/0.0716)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.1246184e-159 (6.34e-173)
+      ec rms = 1.0213231e-05 (3.24e+09), max = 8.5765312e-05 (2.72e+10)
+    nHeI rms = 4.3031657e-05 (2.42e-03), max = 2.5842862e-04 (1.45e-02)
+   nHeII rms = 1.5840738e-18 (8.90e-17), max = 8.7488618e-18 (4.92e-16)
+
+ subcycled rad 0: dt=7.2e-02, t=4.3e+00 (hydro dt=7.2e-02, t=4.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 546.962 (HYPRE = 370.692,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3505277
+CommunicationTransferParticles: moved = 1038
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 142
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.071943     time = 4.2720518342666    cycle = 177    z = 32.180343634168
+Level[0]: dt = 0.0719427  0  (0.0719427/0.0719427)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.1628091e-157 (9.13e-171)
+      ec rms = 9.9913821e-06 (3.17e+09), max = 9.6432556e-05 (3.06e+10)
+    nHeI rms = 4.3059060e-05 (2.34e-03), max = 2.6612500e-04 (1.45e-02)
+   nHeII rms = 1.5844601e-18 (8.61e-17), max = 8.9952096e-18 (4.89e-16)
+
+ subcycled rad 0: dt=7.2e-02, t=4.3e+00 (hydro dt=7.2e-02, t=4.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.4e-152), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 557.992 (HYPRE = 379.319,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3495840
+CommunicationTransferParticles: moved = 1025
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 181
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.072351     time = 4.3439945353061    cycle = 178    z = 31.81297344408
+Level[0]: dt = 0.0723507  0  (0.0723507/0.0723507)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.3303371e-155 (1.77e-168)
+      ec rms = 9.7768978e-06 (3.11e+09), max = 1.0213272e-04 (3.24e+10)
+    nHeI rms = 4.3086856e-05 (2.26e-03), max = 2.7424764e-04 (1.44e-02)
+   nHeII rms = 1.5848742e-18 (8.33e-17), max = 9.2533169e-18 (4.86e-16)
+
+ subcycled rad 0: dt=7.2e-02, t=4.4e+00 (hydro dt=7.2e-02, t=4.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.2e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 573.463 (HYPRE = 392.264,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3495046
+CommunicationTransferParticles: moved = 1021
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.072726     time = 4.4163452181725    cycle = 179    z = 31.453606579419
+Level[0]: dt = 0.0727259  0  (0.0727259/0.0727259)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.1918707e-159 (1.40e-172)
+      ec rms = 9.5692546e-06 (3.04e+09), max = 1.0266328e-04 (3.26e+10)
+    nHeI rms = 4.3115035e-05 (2.19e-03), max = 2.8419644e-04 (1.44e-02)
+   nHeII rms = 1.5853154e-18 (8.06e-17), max = 9.5712004e-18 (4.86e-16)
+
+ subcycled rad 0: dt=7.3e-02, t=4.5e+00 (hydro dt=7.3e-02, t=4.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 580.372 (HYPRE = 396.652,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3496915
+CommunicationTransferParticles: moved = 1031
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.073154     time = 4.4890711311556    cycle = 180    z = 31.102130686778
+Level[0]: dt = 0.0731538  0  (0.0731538/0.0731538)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.0822171e-158 (8.06e-172)
+      ec rms = 9.3682534e-06 (2.98e+09), max = 1.1462144e-04 (3.64e+10)
+    nHeI rms = 4.3143622e-05 (2.12e-03), max = 2.9450920e-04 (1.45e-02)
+   nHeII rms = 1.5857838e-18 (7.80e-17), max = 9.9098899e-18 (4.88e-16)
+
+ subcycled rad 0: dt=7.3e-02, t=4.6e+00 (hydro dt=7.3e-02, t=4.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.6e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 591.064 (HYPRE = 404.937,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3499572
+CommunicationTransferParticles: moved = 1087
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 179
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.073519     time = 4.5622248955561    cycle = 181    z = 30.758032840274
+Level[0]: dt = 0.0735189  0  (0.0735189/0.0735189)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.7495149e-156 (1.45e-169)
+      ec rms = 9.1734621e-06 (2.91e+09), max = 1.2140975e-04 (3.86e+10)
+    nHeI rms = 4.3172599e-05 (2.06e-03), max = 3.0634626e-04 (1.46e-02)
+   nHeII rms = 1.5862786e-18 (7.56e-17), max = 1.0299014e-17 (4.91e-16)
+
+ subcycled rad 0: dt=7.4e-02, t=4.6e+00 (hydro dt=7.4e-02, t=4.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.7e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 606.185 (HYPRE = 417.788,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3495450
+CommunicationTransferParticles: moved = 1086
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.073897     time = 4.635743758631    cycle = 182    z = 30.421359600745
+Level[0]: dt = 0.0738969  0  (0.0738969/0.0738969)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.5106861e-160 (1.11e-173)
+      ec rms = 8.9847872e-06 (2.85e+09), max = 1.2200852e-04 (3.88e+10)
+    nHeI rms = 4.3201975e-05 (1.99e-03), max = 3.1907579e-04 (1.47e-02)
+   nHeII rms = 1.5867996e-18 (7.32e-17), max = 1.0706189e-17 (4.94e-16)
+
+ subcycled rad 0: dt=7.4e-02, t=4.7e+00 (hydro dt=7.4e-02, t=4.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 613.186 (HYPRE = 422.246,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3493330
+CommunicationTransferParticles: moved = 1015
+CommunicationTransferParticles: moved = 134
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 133
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.020938     time = 4.7096406170265    cycle = 183    z = 30.091805377593
+Level[0]: dt = 0.0209381  0  (0.0209381/0.0209381)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.3620340e-159 (1.04e-172)
+      ec rms = 8.7989513e-06 (2.80e+09), max = 1.2868114e-04 (4.09e+10)
+    nHeI rms = 4.3210359e-05 (1.93e-03), max = 3.2279572e-04 (1.44e-02)
+   nHeII rms = 1.5869520e-18 (7.09e-17), max = 1.0825119e-17 (4.84e-16)
+
+ subcycled rad 0: dt=2.1e-02, t=4.7e+00 (hydro dt=2.1e-02, t=4.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 619.704 (HYPRE = 426.61,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 985535
+CommunicationTransferParticles: moved = 73
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 14
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.074310     time = 4.7305787056139    cycle = 184    z = 29.999990853332
+Level[0]: dt = 0.0743095  0  (0.0743095/0.0743095)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.1197178e-157 (7.34e-171)
+      ec rms = 8.7513446e-06 (2.78e+09), max = 1.3827530e-04 (4.39e+10)
+    nHeI rms = 4.3240224e-05 (1.92e-03), max = 3.3624081e-04 (1.49e-02)
+   nHeII rms = 1.5875054e-18 (7.03e-17), max = 1.1253731e-17 (4.99e-16)
+
+ subcycled rad 0: dt=7.4e-02, t=4.8e+00 (hydro dt=7.4e-02, t=4.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 7.6e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 630.103 (HYPRE = 434.536,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3491294
+CommunicationTransferParticles: moved = 985
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.074666     time = 4.8048882249224    cycle = 185    z = 29.679533330009
+Level[0]: dt = 0.0746664  0  (0.0746664/0.0746664)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.9954156e-155 (1.60e-168)
+      ec rms = 8.5757746e-06 (2.72e+09), max = 1.3895923e-04 (4.41e+10)
+    nHeI rms = 4.3270490e-05 (1.86e-03), max = 3.5023589e-04 (1.50e-02)
+   nHeII rms = 1.5880841e-18 (6.82e-17), max = 1.1699049e-17 (5.02e-16)
+
+ subcycled rad 0: dt=7.5e-02, t=4.9e+00 (hydro dt=7.5e-02, t=4.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.7e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 645.511 (HYPRE = 447.562,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3493208
+CommunicationTransferParticles: moved = 1021
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 146
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.075033     time = 4.879554608552    cycle = 186    z = 29.365749992957
+Level[0]: dt = 0.0750335  0  (0.0750335/0.0750335)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.2725027e-159 (1.17e-172)
+      ec rms = 8.4055297e-06 (2.67e+09), max = 1.5472219e-04 (4.91e+10)
+    nHeI rms = 4.3301164e-05 (1.80e-03), max = 3.6476286e-04 (1.52e-02)
+   nHeII rms = 1.5886877e-18 (6.61e-17), max = 1.2160334e-17 (5.06e-16)
+
+ subcycled rad 0: dt=7.5e-02, t=5.0e+00 (hydro dt=7.5e-02, t=5.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 652.37 (HYPRE = 451.962,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3489339
+CommunicationTransferParticles: moved = 958
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 126
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.075458     time = 4.9545880887933    cycle = 187    z = 29.058383422274
+Level[0]: dt = 0.0754576  0  (0.0754576/0.0754576)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.2923825e-158 (9.21e-172)
+      ec rms = 8.2403709e-06 (2.62e+09), max = 1.6374796e-04 (5.20e+10)
+    nHeI rms = 4.3332276e-05 (1.75e-03), max = 3.7981134e-04 (1.53e-02)
+   nHeII rms = 1.5893167e-18 (6.42e-17), max = 1.2637048e-17 (5.10e-16)
+
+ subcycled rad 0: dt=7.5e-02, t=5.0e+00 (hydro dt=7.5e-02, t=5.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.1e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 662.904 (HYPRE = 460.314,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3489758
+CommunicationTransferParticles: moved = 1022
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.075783     time = 5.0300456708749    cycle = 188    z = 28.757005356926
+Level[0]: dt = 0.0757832  0  (0.0757832/0.0757832)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 7.6417576e-156 (1.59e-169)
+      ec rms = 8.0799665e-06 (2.57e+09), max = 1.6464142e-04 (5.23e+10)
+    nHeI rms = 4.3363793e-05 (1.70e-03), max = 3.9532533e-04 (1.55e-02)
+   nHeII rms = 1.5899699e-18 (6.23e-17), max = 1.3127596e-17 (5.14e-16)
+
+ subcycled rad 0: dt=7.6e-02, t=5.1e+00 (hydro dt=7.6e-02, t=5.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.5e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 678.12 (HYPRE = 473.298,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3487398
+CommunicationTransferParticles: moved = 1007
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 135
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.076150     time = 5.1058288288841    cycle = 189    z = 28.461816775475
+Level[0]: dt = 0.0761503  0  (0.0761503/0.0761503)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.1012081e-160 (1.23e-173)
+      ec rms = 7.9243397e-06 (2.52e+09), max = 1.8338435e-04 (5.83e+10)
+    nHeI rms = 4.3395735e-05 (1.65e-03), max = 4.1127439e-04 (1.56e-02)
+   nHeII rms = 1.5906476e-18 (6.05e-17), max = 1.3630668e-17 (5.18e-16)
+
+ subcycled rad 0: dt=7.6e-02, t=5.2e+00 (hydro dt=7.6e-02, t=5.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 685.093 (HYPRE = 477.709,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3492092
+CommunicationTransferParticles: moved = 1048
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.076500     time = 5.1819791655568    cycle = 190    z = 28.172462934003
+Level[0]: dt = 0.0765  0  (0.0765/0.0765)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.2068575e-159 (1.02e-172)
+      ec rms = 7.7732127e-06 (2.47e+09), max = 1.9397994e-04 (6.16e+10)
+    nHeI rms = 4.3428101e-05 (1.60e-03), max = 4.2760035e-04 (1.58e-02)
+   nHeII rms = 1.5913493e-18 (5.87e-17), max = 1.4144707e-17 (5.22e-16)
+
+ subcycled rad 0: dt=7.7e-02, t=5.3e+00 (hydro dt=7.7e-02, t=5.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 692.165 (HYPRE = 482.194,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3486818
+CommunicationTransferParticles: moved = 1030
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.076833     time = 5.2584791942513    cycle = 191    z = 27.888829263025
+Level[0]: dt = 0.0768334  0  (0.0768334/0.0768334)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.6499495e-157 (1.65e-170)
+      ec rms = 7.6264431e-06 (2.42e+09), max = 1.9506893e-04 (6.20e+10)
+    nHeI rms = 4.3460890e-05 (1.56e-03), max = 4.4421555e-04 (1.59e-02)
+   nHeII rms = 1.5920749e-18 (5.71e-17), max = 1.4666425e-17 (5.26e-16)
+
+ subcycled rad 0: dt=7.7e-02, t=5.3e+00 (hydro dt=7.7e-02, t=5.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.8e-152), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 702.72 (HYPRE = 490.737,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3492149
+CommunicationTransferParticles: moved = 1032
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.077167     time = 5.3353125783484    cycle = 192    z = 27.610798402265
+Level[0]: dt = 0.0771667  0  (0.0771667/0.0771667)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.6443600e-154 (4.89e-168)
+      ec rms = 7.4838912e-06 (2.38e+09), max = 2.1654813e-04 (6.88e+10)
+    nHeI rms = 4.3494107e-05 (1.51e-03), max = 4.6105719e-04 (1.61e-02)
+   nHeII rms = 1.5928241e-18 (5.55e-17), max = 1.5194116e-17 (5.29e-16)
+
+ subcycled rad 0: dt=7.7e-02, t=5.4e+00 (hydro dt=7.7e-02, t=5.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 4.1e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 718.109 (HYPRE = 503.677,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3486723
+CommunicationTransferParticles: moved = 1014
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.077576     time = 5.4124793222834    cycle = 193    z = 27.33819778194
+Level[0]: dt = 0.0775759  0  (0.0775759/0.0775759)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.7294882e-158 (4.91e-172)
+      ec rms = 7.3453958e-06 (2.33e+09), max = 2.2879322e-04 (7.27e+10)
+    nHeI rms = 4.3527790e-05 (1.47e-03), max = 4.7803036e-04 (1.62e-02)
+   nHeII rms = 1.5935976e-18 (5.39e-17), max = 1.5724840e-17 (5.32e-16)
+
+ subcycled rad 0: dt=7.8e-02, t=5.5e+00 (hydro dt=7.8e-02, t=5.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.0e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 728.901 (HYPRE = 511.994,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3484182
+CommunicationTransferParticles: moved = 978
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.077858     time = 5.4900552663011    cycle = 194    z = 27.070603564125
+Level[0]: dt = 0.0778583  0  (0.0778583/0.0778583)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.3962161e-157 (5.93e-171)
+      ec rms = 7.2106621e-06 (2.29e+09), max = 2.3021573e-04 (7.31e+10)
+    nHeI rms = 4.3561891e-05 (1.43e-03), max = 4.9512136e-04 (1.63e-02)
+   nHeII rms = 1.5943940e-18 (5.24e-17), max = 1.6257986e-17 (5.35e-16)
+
+ subcycled rad 0: dt=7.8e-02, t=5.6e+00 (hydro dt=7.8e-02, t=5.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.7e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 739.88 (HYPRE = 520.595,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3479201
+CommunicationTransferParticles: moved = 983
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 125
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.078204     time = 5.5679136079928    cycle = 195    z = 26.808297508667
+Level[0]: dt = 0.0782039  0  (0.0782039/0.0782039)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.7048167e-155 (1.14e-168)
+      ec rms = 7.0797710e-06 (2.25e+09), max = 2.5519453e-04 (8.11e+10)
+    nHeI rms = 4.3596442e-05 (1.39e-03), max = 5.1227047e-04 (1.64e-02)
+   nHeII rms = 1.5952139e-18 (5.10e-17), max = 1.6792579e-17 (5.37e-16)
+
+ subcycled rad 0: dt=7.8e-02, t=5.6e+00 (hydro dt=7.8e-02, t=5.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.2e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 755.395 (HYPRE = 533.806,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3473889
+CommunicationTransferParticles: moved = 1005
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.078521     time = 5.64611750191    cycle = 196    z = 26.55090992471
+Level[0]: dt = 0.0785211  0  (0.0785211/0.0785211)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.5578883e-159 (1.08e-172)
+      ec rms = 6.9524695e-06 (2.21e+09), max = 2.6938619e-04 (8.56e+10)
+    nHeI rms = 4.3631437e-05 (1.36e-03), max = 5.2922925e-04 (1.65e-02)
+   nHeII rms = 1.5960567e-18 (4.96e-17), max = 1.7320256e-17 (5.39e-16)
+
+ subcycled rad 0: dt=7.9e-02, t=5.7e+00 (hydro dt=7.9e-02, t=5.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 762.231 (HYPRE = 538.228,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3467593
+CommunicationTransferParticles: moved = 993
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.078938     time = 5.7246385529245    cycle = 197    z = 26.298387829134
+Level[0]: dt = 0.0789382  0  (0.0789382/0.0789382)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.5148566e-158 (1.37e-171)
+      ec rms = 6.8286700e-06 (2.17e+09), max = 2.7117466e-04 (8.61e+10)
+    nHeI rms = 4.3666926e-05 (1.32e-03), max = 5.4816212e-04 (1.66e-02)
+   nHeII rms = 1.5969237e-18 (4.83e-17), max = 1.7964097e-17 (5.43e-16)
+
+ subcycled rad 0: dt=7.9e-02, t=5.8e+00 (hydro dt=7.9e-02, t=5.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.1e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 773.233 (HYPRE = 546.694,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3478325
+CommunicationTransferParticles: moved = 1030
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 147
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.079258     time = 5.8035767914368    cycle = 198    z = 26.050276700759
+Level[0]: dt = 0.0792575  0  (0.0792575/0.0792575)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.6060029e-155 (2.51e-169)
+      ec rms = 6.7080857e-06 (2.13e+09), max = 2.9880443e-04 (9.49e+10)
+    nHeI rms = 4.3702872e-05 (1.29e-03), max = 5.6931537e-04 (1.68e-02)
+   nHeII rms = 1.5978136e-18 (4.70e-17), max = 1.8629482e-17 (5.48e-16)
+
+ subcycled rad 0: dt=7.9e-02, t=5.9e+00 (hydro dt=7.9e-02, t=5.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.9e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 788.757 (HYPRE = 559.776,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3482851
+CommunicationTransferParticles: moved = 1089
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.079601     time = 5.8828343157157    cycle = 199    z = 25.806756913689
+Level[0]: dt = 0.0796009  0  (0.0796009/0.0796009)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.6321731e-159 (2.48e-173)
+      ec rms = 6.5907552e-06 (2.09e+09), max = 3.1375160e-04 (9.97e+10)
+    nHeI rms = 4.3739293e-05 (1.25e-03), max = 5.9014051e-04 (1.69e-02)
+   nHeII rms = 1.5987266e-18 (4.58e-17), max = 1.9282450e-17 (5.52e-16)
+
+ subcycled rad 0: dt=8.0e-02, t=6.0e+00 (hydro dt=8.0e-02, t=6.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 795.332 (HYPRE = 564.18,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3481200
+CommunicationTransferParticles: moved = 1046
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 153
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.079882     time = 5.9624352078663    cycle = 200    z = 25.567624302356
+Level[0]: dt = 0.0798822  0  (0.0798822/0.0798822)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.0670074e-159 (3.06e-173)
+      ec rms = 6.4765216e-06 (2.06e+09), max = 3.1962277e-04 (1.02e+11)
+    nHeI rms = 4.3776167e-05 (1.22e-03), max = 6.1608675e-04 (1.72e-02)
+   nHeII rms = 1.5996622e-18 (4.46e-17), max = 2.0108617e-17 (5.61e-16)
+
+ subcycled rad 0: dt=8.0e-02, t=6.0e+00 (hydro dt=8.0e-02, t=6.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 802.054 (HYPRE = 568.58,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3485910
+CommunicationTransferParticles: moved = 1032
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 124
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.080203     time = 6.0423173587407    cycle = 201    z = 25.332936636087
+Level[0]: dt = 0.0802026  0  (0.0802026/0.0802026)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.5762929e-157 (5.16e-171)
+      ec rms = 6.3653588e-06 (2.02e+09), max = 3.4416190e-04 (1.09e+11)
+    nHeI rms = 4.3813516e-05 (1.19e-03), max = 6.4624571e-04 (1.75e-02)
+   nHeII rms = 1.6006207e-18 (4.35e-17), max = 2.1050418e-17 (5.72e-16)
+
+ subcycled rad 0: dt=8.0e-02, t=6.1e+00 (hydro dt=8.0e-02, t=6.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 7.6e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 812.407 (HYPRE = 576.906,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3484437
+CommunicationTransferParticles: moved = 1044
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 136
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.036226     time = 6.1225199104059    cycle = 202    z = 25.102452873329
+Level[0]: dt = 0.036226  0  (0.036226/0.036226)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.3708543e-154 (1.93e-168)
+      ec rms = 6.2557749e-06 (1.99e+09), max = 4.4092804e-04 (1.40e+11)
+    nHeI rms = 4.3830521e-05 (1.16e-03), max = 6.6048353e-04 (1.75e-02)
+   nHeII rms = 1.6010608e-18 (4.23e-17), max = 2.1495077e-17 (5.68e-16)
+
+ subcycled rad 0: dt=3.6e-02, t=6.2e+00 (hydro dt=3.6e-02, t=6.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.4e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 827.869 (HYPRE = 589.934,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1570211
+CommunicationTransferParticles: moved = 205
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 24
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.080653     time = 6.1587459475951    cycle = 203    z = 24.999989804946
+Level[0]: dt = 0.0806533  0  (0.0806533/0.0806533)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.9447836e-158 (5.48e-172)
+      ec rms = 6.2092941e-06 (1.97e+09), max = 4.6145271e-04 (1.47e+11)
+    nHeI rms = 4.3868567e-05 (1.15e-03), max = 6.9270422e-04 (1.81e-02)
+   nHeII rms = 1.6020523e-18 (4.19e-17), max = 2.2498992e-17 (5.88e-16)
+
+ subcycled rad 0: dt=8.1e-02, t=6.2e+00 (hydro dt=8.1e-02, t=6.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 6.2e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 838.645 (HYPRE = 597.905,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3475077
+CommunicationTransferParticles: moved = 1093
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 168
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.081040     time = 6.2393991988151    cycle = 204    z = 24.775434390129
+Level[0]: dt = 0.0810396  0  (0.0810396/0.0810396)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.4530613e-157 (8.73e-171)
+      ec rms = 6.1050926e-06 (1.94e+09), max = 4.6357583e-04 (1.47e+11)
+    nHeI rms = 4.3907136e-05 (1.12e-03), max = 7.2616026e-04 (1.85e-02)
+   nHeII rms = 1.6030675e-18 (4.08e-17), max = 2.3539127e-17 (5.99e-16)
+
+ subcycled rad 0: dt=8.1e-02, t=6.3e+00 (hydro dt=8.1e-02, t=6.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 9.1e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 849.645 (HYPRE = 606.52,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3475745
+CommunicationTransferParticles: moved = 1077
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 149
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.081326     time = 6.3204387860447    cycle = 205    z = 24.554623657344
+Level[0]: dt = 0.0813259  0  (0.0813259/0.0813259)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.0683435e-154 (2.73e-168)
+      ec rms = 6.0034799e-06 (1.91e+09), max = 5.5704735e-04 (1.77e+11)
+    nHeI rms = 4.3946187e-05 (1.09e-03), max = 7.6060915e-04 (1.89e-02)
+   nHeII rms = 1.6041053e-18 (3.98e-17), max = 2.4607224e-17 (6.11e-16)
+
+ subcycled rad 0: dt=8.1e-02, t=6.4e+00 (hydro dt=8.1e-02, t=6.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.7e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 865.354 (HYPRE = 619.86,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3475485
+CommunicationTransferParticles: moved = 963
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 129
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.081634     time = 6.401764649317    cycle = 206    z = 24.337726115231
+Level[0]: dt = 0.0816339  0  (0.0816339/0.0816339)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.5242655e-158 (3.24e-172)
+      ec rms = 5.9044756e-06 (1.88e+09), max = 5.7635641e-04 (1.83e+11)
+    nHeI rms = 4.3985739e-05 (1.06e-03), max = 7.9603669e-04 (1.93e-02)
+   nHeII rms = 1.6051659e-18 (3.88e-17), max = 2.5703613e-17 (6.22e-16)
+
+ subcycled rad 0: dt=8.2e-02, t=6.5e+00 (hydro dt=8.2e-02, t=6.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.9e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 876.272 (HYPRE = 628.19,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3474469
+CommunicationTransferParticles: moved = 1044
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 160
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.081964     time = 6.4833985434827    cycle = 207    z = 24.124576775309
+Level[0]: dt = 0.0819639  0  (0.0819639/0.0819639)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.0352660e-157 (5.06e-171)
+      ec rms = 5.8079678e-06 (1.84e+09), max = 5.8008086e-04 (1.84e+11)
+    nHeI rms = 4.4025810e-05 (1.04e-03), max = 8.3168687e-04 (1.96e-02)
+   nHeII rms = 1.6062496e-18 (3.79e-17), max = 2.6803871e-17 (6.32e-16)
+
+ subcycled rad 0: dt=8.2e-02, t=6.6e+00 (hydro dt=8.2e-02, t=6.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 6.0e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 887.087 (HYPRE = 636.509,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3475231
+CommunicationTransferParticles: moved = 1013
+CommunicationTransferParticles: moved = 159
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 158
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.082263     time = 6.5653624060071    cycle = 208    z = 23.915018972272
+Level[0]: dt = 0.0822627  0  (0.0822627/0.0822627)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1694730e-154 (1.43e-168)
+      ec rms = 5.7138633e-06 (1.82e+09), max = 6.9903025e-04 (2.22e+11)
+    nHeI rms = 4.4066393e-05 (1.01e-03), max = 8.6722219e-04 (1.99e-02)
+   nHeII rms = 1.6073563e-18 (3.70e-17), max = 2.7896847e-17 (6.42e-16)
+
+ subcycled rad 0: dt=8.2e-02, t=6.6e+00 (hydro dt=8.2e-02, t=6.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.1e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 902.603 (HYPRE = 649.543,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3469447
+CommunicationTransferParticles: moved = 1027
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 145
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.082566     time = 6.6476251378505    cycle = 209    z = 23.709035758606
+Level[0]: dt = 0.0825662  0  (0.0825662/0.0825662)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.5789492e-158 (1.88e-172)
+      ec rms = 5.6220915e-06 (1.79e+09), max = 7.2236011e-04 (2.29e+11)
+    nHeI rms = 4.4107498e-05 (9.89e-04), max = 9.0274623e-04 (2.03e-02)
+   nHeII rms = 1.6084860e-18 (3.61e-17), max = 2.8986831e-17 (6.50e-16)
+
+ subcycled rad 0: dt=8.3e-02, t=6.7e+00 (hydro dt=8.3e-02, t=6.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 909.16 (HYPRE = 653.97,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3466875
+CommunicationTransferParticles: moved = 1036
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.082880     time = 6.7301913179255    cycle = 210    z = 23.506520650458
+Level[0]: dt = 0.0828797  0  (0.0828797/0.0828797)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.4576638e-157 (1.70e-171)
+      ec rms = 5.5325775e-06 (1.76e+09), max = 7.2890177e-04 (2.32e+11)
+    nHeI rms = 4.4149137e-05 (9.66e-04), max = 9.3547105e-04 (2.05e-02)
+   nHeII rms = 1.6096389e-18 (3.52e-17), max = 3.0018565e-17 (6.57e-16)
+
+ subcycled rad 0: dt=8.3e-02, t=6.8e+00 (hydro dt=8.3e-02, t=6.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.0e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 919.918 (HYPRE = 662.308,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3464562
+CommunicationTransferParticles: moved = 1007
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 164
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.083179     time = 6.81307103018    cycle = 211    z = 23.307358440852
+Level[0]: dt = 0.0831794  0  (0.0831794/0.0831794)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.1855267e-155 (5.88e-169)
+      ec rms = 5.4452646e-06 (1.73e+09), max = 8.7996701e-04 (2.80e+11)
+    nHeI rms = 4.4191312e-05 (9.44e-04), max = 9.8286698e-04 (2.10e-02)
+   nHeII rms = 1.6108150e-18 (3.44e-17), max = 3.1561703e-17 (6.74e-16)
+
+ subcycled rad 0: dt=8.3e-02, t=6.9e+00 (hydro dt=8.3e-02, t=6.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 9.6e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 935.592 (HYPRE = 675.438,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3464499
+CommunicationTransferParticles: moved = 1056
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 176
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.083477     time = 6.8962504322319    cycle = 212    z = 23.111494892292
+Level[0]: dt = 0.083477  0  (0.083477/0.083477)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 6.7239822e-159 (7.45e-173)
+      ec rms = 5.3600474e-06 (1.70e+09), max = 9.0786493e-04 (2.88e+11)
+    nHeI rms = 4.4234030e-05 (9.22e-04), max = 1.0464502e-03 (2.18e-02)
+   nHeII rms = 1.6120144e-18 (3.36e-17), max = 3.3506215e-17 (6.98e-16)
+
+ subcycled rad 0: dt=8.3e-02, t=7.0e+00 (hydro dt=8.3e-02, t=7.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 942.725 (HYPRE = 679.888,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3459895
+CommunicationTransferParticles: moved = 1053
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 162
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.083770     time = 6.9797274094298    cycle = 213    z = 22.918849455582
+Level[0]: dt = 0.0837697  0  (0.0837697/0.0837697)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.2128081e-157 (1.31e-171)
+      ec rms = 5.2768791e-06 (1.68e+09), max = 9.2088394e-04 (2.93e+11)
+    nHeI rms = 4.4277296e-05 (9.01e-04), max = 1.1137450e-03 (2.27e-02)
+   nHeII rms = 1.6132370e-18 (3.28e-17), max = 3.5556653e-17 (7.24e-16)
+
+ subcycled rad 0: dt=8.4e-02, t=7.1e+00 (hydro dt=8.4e-02, t=7.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.7e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 953.496 (HYPRE = 688.552,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3454577
+CommunicationTransferParticles: moved = 1026
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 155
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.084068     time = 7.0634971041062    cycle = 214    z = 22.729350362336
+Level[0]: dt = 0.0840678  0  (0.0840678/0.0840678)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.3276949e-155 (3.51e-169)
+      ec rms = 5.1957406e-06 (1.65e+09), max = 1.1137643e-03 (3.54e+11)
+    nHeI rms = 4.4321122e-05 (8.81e-04), max = 1.1845126e-03 (2.35e-02)
+   nHeII rms = 1.6144832e-18 (3.21e-17), max = 3.7703744e-17 (7.49e-16)
+
+ subcycled rad 0: dt=8.4e-02, t=7.1e+00 (hydro dt=8.4e-02, t=7.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 6.6e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 969.295 (HYPRE = 701.539,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3451083
+CommunicationTransferParticles: moved = 1033
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.084291     time = 7.1475648949667    cycle = 215    z = 22.542905413523
+Level[0]: dt = 0.0842911  0  (0.0842911/0.0842911)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 4.8464728e-159 (5.00e-173)
+      ec rms = 5.1164886e-06 (1.63e+09), max = 1.1464258e-03 (3.64e+11)
+    nHeI rms = 4.4365478e-05 (8.61e-04), max = 1.2584180e-03 (2.44e-02)
+   nHeII rms = 1.6157520e-18 (3.14e-17), max = 3.9937223e-17 (7.75e-16)
+
+ subcycled rad 0: dt=8.4e-02, t=7.2e+00 (hydro dt=8.4e-02, t=7.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 975.95 (HYPRE = 705.988,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3451124
+CommunicationTransferParticles: moved = 1008
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.084590     time = 7.2318559643491    cycle = 216    z = 22.359598835591
+Level[0]: dt = 0.0845896  0  (0.0845896/0.0845896)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.0648921e-158 (5.10e-172)
+      ec rms = 5.0391877e-06 (1.60e+09), max = 1.3056942e-03 (4.15e+11)
+    nHeI rms = 4.4410410e-05 (8.42e-04), max = 1.3364952e-03 (2.53e-02)
+   nHeII rms = 1.6170446e-18 (3.07e-17), max = 4.2288407e-17 (8.02e-16)
+
+ subcycled rad 0: dt=8.5e-02, t=7.3e+00 (hydro dt=8.5e-02, t=7.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.7e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 986.782 (HYPRE = 714.313,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3454669
+CommunicationTransferParticles: moved = 1056
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.084950     time = 7.3164456099719    cycle = 217    z = 22.179188052797
+Level[0]: dt = 0.0849503  0  (0.0849503/0.0849503)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1292749e-155 (1.11e-169)
+      ec rms = 4.9637695e-06 (1.58e+09), max = 1.4267707e-03 (4.53e+11)
+    nHeI rms = 4.4455963e-05 (8.23e-04), max = 1.4176797e-03 (2.63e-02)
+   nHeII rms = 1.6183622e-18 (3.00e-17), max = 4.4722503e-17 (8.28e-16)
+
+ subcycled rad 0: dt=8.5e-02, t=7.4e+00 (hydro dt=8.5e-02, t=7.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.0e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1002.25 (HYPRE = 727.191,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3457865
+CommunicationTransferParticles: moved = 1036
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 171
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.085197     time = 7.4013958750573    cycle = 218    z = 22.001473098578
+Level[0]: dt = 0.0851967  0  (0.0851967/0.0851967)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.8058215e-159 (1.74e-173)
+      ec rms = 4.8900097e-06 (1.55e+09), max = 1.5993234e-03 (5.08e+11)
+    nHeI rms = 4.4502085e-05 (8.05e-04), max = 1.5125521e-03 (2.74e-02)
+   nHeII rms = 1.6197032e-18 (2.93e-17), max = 4.7783681e-17 (8.65e-16)
+
+ subcycled rad 0: dt=8.5e-02, t=7.5e+00 (hydro dt=8.5e-02, t=7.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1009.23 (HYPRE = 731.644,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3456315
+CommunicationTransferParticles: moved = 1003
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 137
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.085511     time = 7.4865925770839    cycle = 219    z = 21.82662436449
+Level[0]: dt = 0.085511  0  (0.085511/0.085511)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.7002222e-158 (1.60e-172)
+      ec rms = 4.8179345e-06 (1.53e+09), max = 1.7446661e-03 (5.54e+11)
+    nHeI rms = 4.4548820e-05 (7.88e-04), max = 1.6413689e-03 (2.90e-02)
+   nHeII rms = 1.6210689e-18 (2.87e-17), max = 5.1649645e-17 (9.14e-16)
+
+ subcycled rad 0: dt=8.6e-02, t=7.6e+00 (hydro dt=8.6e-02, t=7.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1016.19 (HYPRE = 736.073,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3455937
+CommunicationTransferParticles: moved = 1020
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.085754     time = 7.5721036003876    cycle = 220    z = 21.654433579936
+Level[0]: dt = 0.0857543  0  (0.0857543/0.0857543)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.5242667e-156 (7.83e-170)
+      ec rms = 4.7476210e-06 (1.51e+09), max = 1.9432511e-03 (6.17e+11)
+    nHeI rms = 4.4596142e-05 (7.71e-04), max = 1.7831730e-03 (3.08e-02)
+   nHeII rms = 1.6224583e-18 (2.81e-17), max = 5.5883761e-17 (9.66e-16)
+
+ subcycled rad 0: dt=8.6e-02, t=7.7e+00 (hydro dt=8.6e-02, t=7.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.9e-152), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1031.72 (HYPRE = 748.992,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3456259
+CommunicationTransferParticles: moved = 1066
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.085982     time = 7.6578579247038    cycle = 221    z = 21.484976999349
+Level[0]: dt = 0.085982  0  (0.085982/0.085982)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.3770180e-159 (1.24e-173)
+      ec rms = 4.6789087e-06 (1.49e+09), max = 2.1664724e-03 (6.88e+11)
+    nHeI rms = 4.4644051e-05 (7.55e-04), max = 1.9382480e-03 (3.28e-02)
+   nHeII rms = 1.6238714e-18 (2.75e-17), max = 6.0484511e-17 (1.02e-15)
+
+ subcycled rad 0: dt=8.6e-02, t=7.7e+00 (hydro dt=8.6e-02, t=7.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1038.83 (HYPRE = 753.503,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3451933
+CommunicationTransferParticles: moved = 987
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 130
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.086287     time = 7.7438399098294    cycle = 222    z = 21.318216227088
+Level[0]: dt = 0.0862867  0  (0.0862867/0.0862867)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.2869484e-158 (1.13e-172)
+      ec rms = 4.6117435e-06 (1.46e+09), max = 2.3995457e-03 (7.62e+11)
+    nHeI rms = 4.4692599e-05 (7.39e-04), max = 2.1071835e-03 (3.48e-02)
+   nHeII rms = 1.6253097e-18 (2.69e-17), max = 6.5464606e-17 (1.08e-15)
+
+ subcycled rad 0: dt=8.6e-02, t=7.8e+00 (hydro dt=8.6e-02, t=7.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1045.71 (HYPRE = 757.973,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3454233
+CommunicationTransferParticles: moved = 1038
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.086554     time = 7.8301266306648    cycle = 223    z = 21.153938115677
+Level[0]: dt = 0.0865536  0  (0.0865536/0.0865536)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.4593100e-156 (2.97e-170)
+      ec rms = 4.5461990e-06 (1.44e+09), max = 2.6455325e-03 (8.40e+11)
+    nHeI rms = 4.4741776e-05 (7.23e-04), max = 2.2872049e-03 (3.70e-02)
+   nHeII rms = 1.6267727e-18 (2.63e-17), max = 7.0759428e-17 (1.14e-15)
+
+ subcycled rad 0: dt=8.7e-02, t=7.9e+00 (hydro dt=8.7e-02, t=7.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 3.6e-152), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1061.13 (HYPRE = 771.009,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3446984
+CommunicationTransferParticles: moved = 1024
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 138
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.086780     time = 7.9166802274984    cycle = 224    z = 20.992155274382
+Level[0]: dt = 0.08678  0  (0.08678/0.08678)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.1922028e-160 (4.36e-174)
+      ec rms = 4.4823226e-06 (1.42e+09), max = 2.8982063e-03 (9.21e+11)
+    nHeI rms = 4.4791571e-05 (7.08e-04), max = 2.4664148e-03 (3.90e-02)
+   nHeII rms = 1.6282601e-18 (2.58e-17), max = 7.5978199e-17 (1.20e-15)
+
+ subcycled rad 0: dt=8.7e-02, t=8.0e+00 (hydro dt=8.7e-02, t=8.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1068 (HYPRE = 775.441,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3440402
+CommunicationTransferParticles: moved = 998
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 148
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.087061     time = 8.0034602342472    cycle = 225    z = 20.832881818528
+Level[0]: dt = 0.0870612  0  (0.0870612/0.0870612)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.7051012e-159 (4.69e-173)
+      ec rms = 4.4199705e-06 (1.40e+09), max = 3.1498685e-03 (1.00e+12)
+    nHeI rms = 4.4842024e-05 (6.94e-04), max = 2.6502223e-03 (4.10e-02)
+   nHeII rms = 1.6297729e-18 (2.52e-17), max = 8.1286291e-17 (1.26e-15)
+
+ subcycled rad 0: dt=8.7e-02, t=8.1e+00 (hydro dt=8.7e-02, t=8.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1074.84 (HYPRE = 779.882,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3442170
+CommunicationTransferParticles: moved = 1041
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.087282     time = 8.0905214115567    cycle = 226    z = 20.675958440539
+Level[0]: dt = 0.0872824  0  (0.0872824/0.0872824)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.2699567e-156 (1.02e-170)
+      ec rms = 4.3588848e-06 (1.38e+09), max = 3.4064114e-03 (1.08e+12)
+    nHeI rms = 4.4893113e-05 (6.80e-04), max = 2.8335042e-03 (4.29e-02)
+   nHeII rms = 1.6313105e-18 (2.47e-17), max = 8.6522793e-17 (1.31e-15)
+
+ subcycled rad 0: dt=8.7e-02, t=8.2e+00 (hydro dt=8.7e-02, t=8.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.4e-152), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1085.57 (HYPRE = 788.223,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3440991
+CommunicationTransferParticles: moved = 991
+CommunicationTransferParticles: moved = 144
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 143
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.087595     time = 8.1778038533507    cycle = 227    z = 20.521436024688
+Level[0]: dt = 0.0875949  0  (0.0875949/0.0875949)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.2701848e-153 (1.00e-167)
+      ec rms = 4.2993843e-06 (1.37e+09), max = 3.6621188e-03 (1.16e+12)
+    nHeI rms = 4.4944903e-05 (6.66e-04), max = 3.0142385e-03 (4.47e-02)
+   nHeII rms = 1.6328747e-18 (2.42e-17), max = 9.1631215e-17 (1.36e-15)
+
+ subcycled rad 0: dt=8.8e-02, t=8.3e+00 (hydro dt=8.8e-02, t=8.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.7e-149), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1101.19 (HYPRE = 801.257,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3438441
+CommunicationTransferParticles: moved = 971
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 131
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.087947     time = 8.2653987803401    cycle = 228    z = 20.369099264137
+Level[0]: dt = 0.0879466  0  (0.0879466/0.0879466)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.9413554e-157 (1.50e-171)
+      ec rms = 4.2413735e-06 (1.35e+09), max = 3.9135791e-03 (1.24e+12)
+    nHeI rms = 4.4997429e-05 (6.53e-04), max = 3.1912852e-03 (4.63e-02)
+   nHeII rms = 1.6344665e-18 (2.37e-17), max = 9.6669310e-17 (1.40e-15)
+
+ subcycled rad 0: dt=8.8e-02, t=8.4e+00 (hydro dt=8.8e-02, t=8.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 2.5e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1112.5 (HYPRE = 809.541,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3438659
+CommunicationTransferParticles: moved = 1000
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 156
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.088144     time = 8.3533454279787    cycle = 229    z = 20.218833801004
+Level[0]: dt = 0.0881445  0  (0.0881445/0.0881445)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 7.6447229e-157 (5.77e-171)
+      ec rms = 4.1843900e-06 (1.33e+09), max = 4.1646885e-03 (1.32e+12)
+    nHeI rms = 4.5050613e-05 (6.40e-04), max = 3.3578874e-03 (4.77e-02)
+   nHeII rms = 1.6360835e-18 (2.32e-17), max = 1.0135055e-16 (1.44e-15)
+
+ subcycled rad 0: dt=8.8e-02, t=8.4e+00 (hydro dt=8.8e-02, t=8.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 6.1e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1141.6 (HYPRE = 817.909,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3435479
+CommunicationTransferParticles: moved = 1009
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 169
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.042758     time = 8.4414899032603    cycle = 230    z = 20.07085273066
+Level[0]: dt = 0.0427578  0  (0.0427578/0.0427578)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.9436604e-154 (1.44e-168)
+      ec rms = 4.1278162e-06 (1.31e+09), max = 4.2549819e-03 (1.35e+12)
+    nHeI rms = 4.5076655e-05 (6.27e-04), max = 3.4370456e-03 (4.78e-02)
+   nHeII rms = 1.6368775e-18 (2.28e-17), max = 1.0356390e-16 (1.44e-15)
+
+ subcycled rad 0: dt=4.3e-02, t=8.5e+00 (hydro dt=4.3e-02, t=8.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.6e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1157.17 (HYPRE = 830.868,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 1661481
+CommunicationTransferParticles: moved = 247
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 37
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.088491     time = 8.4842476588516    cycle = 231    z = 19.999992944489
+Level[0]: dt = 0.0884905  0  (0.0884905/0.0884905)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 7.6131174e-158 (5.57e-172)
+      ec rms = 4.1025889e-06 (1.30e+09), max = 4.5250643e-03 (1.44e+12)
+    nHeI rms = 4.5130870e-05 (6.22e-04), max = 3.5851853e-03 (4.94e-02)
+   nHeII rms = 1.6385334e-18 (2.26e-17), max = 1.0763135e-16 (1.48e-15)
+
+ subcycled rad 0: dt=8.8e-02, t=8.6e+00 (hydro dt=8.8e-02, t=8.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 9.9e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1167.49 (HYPRE = 838.876,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3431128
+CommunicationTransferParticles: moved = 1062
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 161
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.088671     time = 8.5727381913872    cycle = 232    z = 19.855216587906
+Level[0]: dt = 0.0886715  0  (0.0886715/0.0886715)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.0341571e-156 (7.41e-171)
+      ec rms = 4.0489669e-06 (1.29e+09), max = 4.7562247e-03 (1.51e+12)
+    nHeI rms = 4.5185759e-05 (6.09e-04), max = 3.7202538e-03 (5.02e-02)
+   nHeII rms = 1.6402149e-18 (2.21e-17), max = 1.1127681e-16 (1.50e-15)
+
+ subcycled rad 0: dt=8.9e-02, t=8.7e+00 (hydro dt=8.9e-02, t=8.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.4e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1178.61 (HYPRE = 847.285,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3426257
+CommunicationTransferParticles: moved = 1013
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 173
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.088945     time = 8.661409678698    cycle = 233    z = 19.712621005997
+Level[0]: dt = 0.088945  0  (0.088945/0.088945)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.4411689e-154 (3.82e-168)
+      ec rms = 3.9971846e-06 (1.27e+09), max = 4.9770432e-03 (1.58e+12)
+    nHeI rms = 4.5241394e-05 (5.98e-04), max = 3.8409989e-03 (5.08e-02)
+   nHeII rms = 1.6419240e-18 (2.17e-17), max = 1.1447870e-16 (1.51e-15)
+
+ subcycled rad 0: dt=8.9e-02, t=8.8e+00 (hydro dt=8.9e-02, t=8.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 4.9e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1194.29 (HYPRE = 860.729,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3422795
+CommunicationTransferParticles: moved = 966
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.089307     time = 8.7503546963067    cycle = 234    z = 19.572008945613
+Level[0]: dt = 0.0893069  0  (0.0893069/0.0893069)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1559652e-157 (7.95e-172)
+      ec rms = 3.9464820e-06 (1.25e+09), max = 5.1883059e-03 (1.65e+12)
+    nHeI rms = 4.5297844e-05 (5.86e-04), max = 3.9384798e-03 (5.10e-02)
+   nHeII rms = 1.6436629e-18 (2.13e-17), max = 1.1708731e-16 (1.52e-15)
+
+ subcycled rad 0: dt=8.9e-02, t=8.8e+00 (hydro dt=8.9e-02, t=8.8e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 8.5e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1204.95 (HYPRE = 869.095,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3419822
+CommunicationTransferParticles: moved = 977
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 163
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.089518     time = 8.8396616041225    cycle = 235    z = 19.433201081041
+Level[0]: dt = 0.0895176  0  (0.0895176/0.0895176)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.7075789e-157 (1.15e-171)
+      ec rms = 3.8968224e-06 (1.24e+09), max = 5.3907901e-03 (1.71e+12)
+    nHeI rms = 4.5355030e-05 (5.75e-04), max = 4.0042501e-03 (5.08e-02)
+   nHeII rms = 1.6454290e-18 (2.09e-17), max = 1.1875892e-16 (1.51e-15)
+
+ subcycled rad 0: dt=9.0e-02, t=8.9e+00 (hydro dt=9.0e-02, t=8.9e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.7e-153), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1215.85 (HYPRE = 877.541,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3421297
+CommunicationTransferParticles: moved = 983
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 165
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.089808     time = 8.9291791745677    cycle = 236    z = 19.296391543461
+Level[0]: dt = 0.0898083  0  (0.0898083/0.0898083)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 5.1797487e-155 (3.42e-169)
+      ec rms = 3.8496033e-06 (1.22e+09), max = 5.5832915e-03 (1.77e+12)
+    nHeI rms = 4.5413019e-05 (5.65e-04), max = 4.1253270e-03 (5.13e-02)
+   nHeII rms = 1.6472243e-18 (2.05e-17), max = 1.2074728e-16 (1.50e-15)
+
+ subcycled rad 0: dt=9.0e-02, t=9.0e+00 (hydro dt=9.0e-02, t=9.0e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.1e-150), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1231.46 (HYPRE = 890.643,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3421005
+CommunicationTransferParticles: moved = 1038
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 177
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.090006     time = 9.0189874513613    cycle = 237    z = 19.161415516742
+Level[0]: dt = 0.0900062  0  (0.0900062/0.0900062)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.3011484e-158 (8.42e-173)
+      ec rms = 3.8028479e-06 (1.21e+09), max = 5.7328845e-03 (1.82e+12)
+    nHeI rms = 4.5471765e-05 (5.54e-04), max = 4.2772898e-03 (5.21e-02)
+   nHeII rms = 1.6490475e-18 (2.01e-17), max = 1.2460726e-16 (1.52e-15)
+
+ subcycled rad 0: dt=9.0e-02, t=9.1e+00 (hydro dt=9.0e-02, t=9.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1238.45 (HYPRE = 895.099,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3426989
+CommunicationTransferParticles: moved = 985
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 151
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.019389     time = 9.1089936123655    cycle = 238    z = 19.028370856688
+Level[0]: dt = 0.0193889  0  (0.0193889/0.0193889)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.9405460e-157 (1.23e-171)
+      ec rms = 3.7545000e-06 (1.19e+09), max = 5.7053515e-03 (1.81e+12)
+    nHeI rms = 4.5484540e-05 (5.43e-04), max = 4.3111209e-03 (5.15e-02)
+   nHeII rms = 1.6494447e-18 (1.97e-17), max = 1.2546908e-16 (1.50e-15)
+
+ subcycled rad 0: dt=1.9e-02, t=9.1e+00 (hydro dt=1.9e-02, t=9.1e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.8e-154), its = (0,1)
+ ======================================================================
+
+RadHydro cumulative time = 1249.52 (HYPRE = 903.581,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 737252
+CommunicationTransferParticles: moved = 49
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 12
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.090251     time = 9.1283824880895    cycle = 239    z = 18.999997167936
+Level[0]: dt = 0.0902512  0  (0.0902512/0.0902512)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 1.1742721e-155 (7.42e-170)
+      ec rms = 3.7485721e-06 (1.19e+09), max = 5.9144088e-03 (1.88e+12)
+    nHeI rms = 4.5544233e-05 (5.42e-04), max = 4.4523880e-03 (5.30e-02)
+   nHeII rms = 1.6513023e-18 (1.96e-17), max = 1.2898649e-16 (1.53e-15)
+
+ subcycled rad 0: dt=9.0e-02, t=9.2e+00 (hydro dt=9.0e-02, t=9.2e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.6e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1265.26 (HYPRE = 916.468,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3421221
+CommunicationTransferParticles: moved = 1033
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 150
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.090557     time = 9.2186336922531    cycle = 240    z = 18.869233977356
+Level[0]: dt = 0.0905566  0  (0.0905566/0.0905566)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.0962733e-159 (1.92e-173)
+      ec rms = 3.7050898e-06 (1.18e+09), max = 6.1249842e-03 (1.95e+12)
+    nHeI rms = 4.5604785e-05 (5.32e-04), max = 4.5857150e-03 (5.35e-02)
+   nHeII rms = 1.6531907e-18 (1.93e-17), max = 1.3225435e-16 (1.54e-15)
+
+ subcycled rad 0: dt=9.1e-02, t=9.3e+00 (hydro dt=9.1e-02, t=9.3e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1272.37 (HYPRE = 920.923,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3421362
+CommunicationTransferParticles: moved = 987
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 172
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.090769     time = 9.3091903012881    cycle = 241    z = 18.740155176993
+Level[0]: dt = 0.0907692  0  (0.0907692/0.0907692)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 3.2232550e-158 (1.96e-172)
+      ec rms = 3.6628079e-06 (1.16e+09), max = 6.7347339e-03 (2.14e+12)
+    nHeI rms = 4.5666152e-05 (5.22e-04), max = 4.7030251e-03 (5.38e-02)
+   nHeII rms = 1.6551085e-18 (1.89e-17), max = 1.3504923e-16 (1.54e-15)
+
+ subcycled rad 0: dt=9.1e-02, t=9.4e+00 (hydro dt=9.1e-02, t=9.4e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1279.44 (HYPRE = 925.379,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3415072
+CommunicationTransferParticles: moved = 1012
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 157
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.090964     time = 9.3999594605163    cycle = 242    z = 18.612856398129
+Level[0]: dt = 0.0909639  0  (0.0909639/0.0909639)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 8.7845159e-156 (5.24e-170)
+      ec rms = 3.6229686e-06 (1.15e+09), max = 7.1148766e-03 (2.26e+12)
+    nHeI rms = 4.5728343e-05 (5.13e-04), max = 4.8024369e-03 (5.39e-02)
+   nHeII rms = 1.6570559e-18 (1.86e-17), max = 1.4022735e-16 (1.57e-15)
+
+ subcycled rad 0: dt=9.1e-02, t=9.5e+00 (hydro dt=9.1e-02, t=9.5e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 1.2e-151), its = (1,0)
+ ======================================================================
+
+RadHydro cumulative time = 1294.94 (HYPRE = 938.365,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3409330
+CommunicationTransferParticles: moved = 997
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 141
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.091207     time = 9.4909233798916    cycle = 243    z = 18.487323186589
+Level[0]: dt = 0.0912071  0  (0.0912071/0.0912071)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.3050644e-159 (1.35e-173)
+      ec rms = 3.5838018e-06 (1.14e+09), max = 7.5846962e-03 (2.41e+12)
+    nHeI rms = 4.5791405e-05 (5.04e-04), max = 4.9421548e-03 (5.44e-02)
+   nHeII rms = 1.6590343e-18 (1.83e-17), max = 1.4799872e-16 (1.63e-15)
+
+ subcycled rad 0: dt=9.1e-02, t=9.6e+00 (hydro dt=9.1e-02, t=9.6e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1301.71 (HYPRE = 942.834,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3410447
+CommunicationTransferParticles: moved = 987
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 154
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.091419     time = 9.5821305067465    cycle = 244    z = 18.363451460683
+Level[0]: dt = 0.0914193  0  (0.0914193/0.0914193)
+StarParticle: end
+
+ gFLDSplit Evolve:
+   emissivity norm = 0,  max = 0
+   current internal (physical) quantities:
+      Eg rms = 0.0000000e+00 (0.00e+00), max = 2.0097103e-159 (1.15e-173)
+      ec rms = 3.5464266e-06 (1.13e+09), max = 8.3440510e-03 (2.65e+12)
+    nHeI rms = 4.5855334e-05 (4.95e-04), max = 5.2075098e-03 (5.62e-02)
+   nHeII rms = 1.6610435e-18 (1.79e-17), max = 1.5528113e-16 (1.68e-15)
+
+ subcycled rad 0: dt=9.1e-02, t=9.7e+00 (hydro dt=9.1e-02, t=9.7e+00)
+ ----------------------------------------------------------------------
+   lin resid = 0.0e+00 (tol = 1.0e-08, |rhs| = 0.0e+00), its = (0,0)
+ ======================================================================
+
+RadHydro cumulative time = 1308.87 (HYPRE = 947.301,  Chem = 0)
+
+RebuildHierarchy: level = 0
+CommunicationTransferParticles: moved = 3401824
+CommunicationTransferParticles: moved = 1011
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 152
+CommunicationTransferParticles: moved = 0
+TopGrid dt = 0.091734     time = 9.6735498518786    cycle = 245    z = 18.241247754183
+Level[0]: dt = 0.0917341  0  (0.0917341/0.0917341)

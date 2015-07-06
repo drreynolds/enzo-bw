@@ -1,0 +1,433 @@
+
+\section{Numerical Method}
+\label{sec:numerical}
+
+%Overview of Enzo cosmological dynamics code (needs more?)
+
+\subsection{The Enzo Code}
+
+Our radiation hydrodynamical cosmology is built on top of the publicly available hydrodynamic cosmology code {\em Enzo} \citep{EnzoWeb}, whose numerical methods have been documented elsewhere \citep{OSheaEtAl2004,NormanEtAl2007}. Here we provide a brief summary. 
+The basic {\em Enzo} code couples an N-body particle-mesh (PM) solver,
+which is used to follow the evolution of collisionless dark matter, with an
+Eulerian adaptive mesh refinement (AMR) method for ideal gas dynamics. 
+Dark matter is assumed to behave as a collisionless phase fluid, obeying the Vlasov-Poisson equation. We use the second order-accurate Cloud-In-Cell (CIC) formulation, together with leapfrog time integration, which is formally second order-accurate in time. 
+{\em Enzo} hydrodynamics utilizes the piecewise parabolic method (PPM) \citep{ColellaWoodward1984}
+to evolve the mass density field for each chemical species of interest assuming a common velocity field (i.e., multispecies hydrodynamics.) PPM is formally second order-accurate in space and time. 
+The gravitational potential is computed by solving the Poisson
+equation on the uniform Cartesian grid using 3D FFTs. When AMR is
+employed (which is not the case in this work), the subgrid
+gravitational potential is computed using a local multigrid solve of
+the Poisson equation with boundary conditions supplied from the parent
+grid.  
+
+The non-equilibrium chemical and cooling properties of primordial (metal-free) gas
+are determined using optional 6--, 9--, and 12--species models; in this work we restrict ourselves
+to the 6-species model involving 
+$H$, $H^+$, $He$, $He^+$, $He^{++}$, and $e^-$.  This reaction network
+results in a stiff set of rate equations which are solved with the
+first-order semi-implicit method described in \cite{Anninos97}, or a
+new second-order semi-analytic method described below.  
+{\em Enzo} also calculates radiative heating and cooling following atomic line excitation, recombination,
+collisional excitation, free-free transitions, molecular line cooling, and Compton
+scattering of the cosmic microwave background as well as different models for a metagalactic
+ultraviolet background that heats the gas via photoionization and/or photodissociation. 
+
+To this we add our flux-limited diffusion radiation transport solver, which is solved using an optimally scalable geometric multigrid algorithm detailed here. When simulating inhomogeneous reionization, the metagalactic UV radiation field is solved for directly as a function of position and time, rather than input to the code as an externally-evaluated homogeneous background (e.g., \cite{HaardtMadau2012}). 
+
+\subsection{Star Formation and Feedback}
+\label{subsec:starform}
+
+Because star formation occurs on scales not resolved by our uniform mesh simulation, 
+we rely on a subgrid model which we calibrate to observations of star formation in high
+redshift galaxies. The subgrid model is a variant of the Cen \& Ostriker (1992)
+prescription with two important modifications as described in Smith et al. (2011). In the original Cen \& Ostriker recipe, a computational cell forms a collisionless ``star particle" if a number of criterial are met: the baryon density exceeds a certain numerical threshold; the gas velocity divergence is negative, indicating collapse; the local cooling time is less than the dynamical time; and the cell mass exceeds the Jeans mass. In our implementation, the last criterion is removed because it is always met in large scale, fixed-grid simulations, and the overdensity threshold is taken to be $\rho_b/(\rho_{c,0}(1+z)^3) > 100$, where $\rho_{c,0}$ is the critical density at z=0. If the three remaining criteria are met, then a star particle representing a large collection of stars is formed in that timestep and grid cell with a total mass
+
+\begin{equation}
+m_* = f_* m_{cell} \frac{\Delta t}{t_{dyn}},
+\end{equation}
+where $f_*$ is an efficiency parameter we adjust to match observations of the cosmic star formation rate density (SFRD) \citep{Bouwens11}, $m_{cell}$ is the cell baryon mass, $t_{dyn}$ is the dynamical time of the combined baryon and dark matter fluid, and $\Delta t$ is the hydrodynamical timestep. An equivalent amount of mass is removed from the grid cell to maintain mass conservation. 
+
+Although the star particle is formed instantaneously (i.e., within one timestep), the conversion of removed gas into stars is assumed to proceed over a longer timescale, namely $t_{dyn}$, which more accurately reflects the gradual process of star formation. In time $\Delta t$, the amount 
+of mass from a star particle converted into newly formed stars is given by
+
+\begin{equation}
+\Delta m_{SF} = m_* \frac{\Delta t}{t_{dyn}} \frac{t-t_*}{t_{dyn}} e^{-(t-t_*)/t_{dyn}},
+\end{equation}
+where $t$ is the current time and $t_*$ is the formation time of the star particle. To make the 
+connection with Eq. 4, we have $\dot{\rho}_{SF} =\Delta m_{SF}/(V_{cell}\Delta t)$, 
+where $V_{cell}$ is the volume of the grid cell. 
+
+Stellar feedback consists of the injection of thermal energy, gas, metals, and radiation
+to the grid, all in proportion to $\Delta m_{SF}$. The thermal energy $\Delta e_{SF}$, gas
+mass $\Delta m_g$, and metals $\Delta m_Z$ returned to the grid are given by
+
+\begin{equation}
+  \Delta e_{SF} = \Delta m_{SF} c^2 \epsilon_{SN}, \qquad
+  \Delta m_g = \Delta m_{SF} f_{m*}, \qquad
+  \Delta m_Z = \Delta m_{SF} f_{Z*},
+\end{equation}
+
+where $c$ is the speed of light, $\epsilon_{SN}$ is the supernova energy efficiency parameter, and $f_{m*}=0.25, f_{Z*}=0.02$ is the fraction of the stellar mass returned to the grid as gas and metals, respectively. Rather than add
+the energy, gas, and metals to the cell containing the star particle, as was done in
+the original Cen \& Ostriker (1992) paper, we distribute it evenly among the cell and its
+26 nearest neighbors to prevent overcooling. As shown by Smith et al. (2011), this 
+results in a star formation recipe which can be tuned to reproduce the observed SFRD. This is critical for us, as we use the observed high redshift SFRD to calibrate our reionization simulations. 
+
+To calculate the radiation feedback, we define an emissivity field $\eta(x)$ on the grid which accumulates
+the instantaneous emissivities $\eta_i(t)$ of all the star particles within each cell. To calculate the contribution of each star particle $i$ at time $t$ we assume an equation of the same form for supernova energy feedback, but with a different energy conversion efficiency factor $\epsilon_{UV}$. Therefore
+
+\begin{equation}
+\label{eq:emissivity}
+  \eta= \sum_\mathrm{i}\epsilon_\mathrm{uv}\frac{\Delta m_\mathrm{SF} c^2}{V_\mathrm{cell}\Delta t}
+\end{equation}
+
+Emissivity $\eta$ is in units of erg/s/cm$^3$.   The UV efficiency factor $\epsilon_\mathrm{uv}$ is taken from \cite{RicottiEtAl2002} as 4$\pi\times 1.1 \times 10^{-5}$, where the factor $4\pi$ comes from the conversion from mean intensity to radiation energy density.
+
+
+\subsection{Operator Split Solution Procedure}
+
+We implement the model \eqref{eq:gravity}-\eqref{eq:cons_radiation} in
+the open-source community cosmology code, {\em Enzo} \citep{Bryan2014}.  This
+simulation framework utilizes a method-of-lines approach, in which
+space and time are discretized separately.  To this end, we use a
+finite-volume spatial discretization of the modeling equations.  For
+this study, all of our simulations were run in {\em unigrid} mode, so
+that the cosmological volume is discretized using a regular grid.
+Although {\em Enzo} was built to enable block-structured adaptive mesh
+refinement (AMR) using a standard Berger-Colella formalism
+\citep{BergerColella89}, that mode does not currently allow as
+extreme parallel scalability as the unigrid version.  Due to our
+desire to simulate very large cosmological volumes for understanding
+reionization processes, this scalability was paramount.
+
+We discretize in time using an operator split time-stepping approach,
+wherein separate components are treated with solvers that have been
+tuned for their specific physics. To this end, we break apart the
+equations into four distinct components.  The first component
+corresponds to the self-gravity equation \eqref{eq:gravity}, 
+\begin{equation}
+\label{eq:self_gravity}
+  \nabla^2 \phi = \frac{4\pi g}{a}(\rhob + \rho_{dm} - \langle \rho
+  \rangle), 
+\end{equation}
+that solves for the instantaneous gravitational potential $\phi$,
+which contributes to sources in the momentum and energy conservation
+equations.  We perform this solve using our own 3D Fast Fourier Transform
+solver built on the publicly available FFTE library.
+These solves take as sources
+the gridded baryon density and dark matter density fields $\rho_b$
+and $\rho_{dm}$. The former is defined as a grid based Eulerian field. 
+The latter is computed from the dark matter particle positions $\xvec_i^n$
+using the CIC mass assignment algorithm \citep{HockneyEastwood1988}. 
+%After the acceleration vector is computed on the mesh, it is interpolated to the particles' %positions, again using CIC interpolation,
+%and the particles are ``pushed" (i.e., velocities are accelerated)
+%from time $t^{n-1/2}$ to $t^{n+1/2}$ using leapfrog time integration. 
+
+The second component in our splitting approach corresponds to the
+cosmological Euler equations, along with passive advection of other
+comoving density fields,
+\begin{align}
+  \notag
+  \partial_t \rhob + \frac1a \vb \cdot \nabla
+    \rhob &= -\frac1a \rhob \nabla\cdot\vb, \\
+  \notag
+  \partial_t \vb + \frac1a\(\vb\cdot\nabla\)\vb &=
+    -\frac{\dot{a}}{a}\vb - \frac{1}{a\rhob}\nabla p - \frac1a
+    \nabla\phi, \\
+ \label{eq:hydro}
+  \partial_t e + \frac1a\vb\cdot\nabla e &=
+    - \frac{2\dot{a}}{a}e
+    - \frac{1}{a\rhob}\nabla\cdot\left(p\vb\right) 
+    - \frac1a\vb\cdot\nabla\phi, \\
+  \notag
+  \partial_t E + \frac1a \nabla\cdot\(E \vb\) &= 0, \\
+  \notag
+  \partial_t \mn_i + \frac{1}{a}\nabla\cdot\(\mn_i\vb\) &=
+    0, \qquad i=1,\ldots,N_s.
+\end{align}
+We point out that the above energy equation does not include
+photo-heating, chemical cooling, or supernova feedback processes,
+which are included in subsequent components.  These equations are
+solved explicitly using the {\em Piecewise Parabolic Method}
+\citep{ColellaWoodward1984}, to properly track hydrodynamic shocks,
+while obtaining second-order accuracy away from shock
+discontinuities. 
+
+The third solver component corresponds to the grey radiation energy
+equation \eqref{eq:cons_radiation},
+\begin{equation}
+\label{eq:fld}
+  \partial_t E = \nabla\cdot\(D\nabla E\) - \frac{\dot{a}}{a}E - 
+  c \kappa E + \eta. 
+\end{equation}
+Our solver for this component is based on the algorithm described
+in {\bf \cite{ReynoldsHayesPaschosNorman2009} with a modified timestepping algorithm than what is described there.}  Specifically,
+since the time scale for radiation transport is much faster than for
+hydrodynamic motion, we use an implicit $\theta$-method for time
+discretization, allowing both backwards Euler and trapezoidal
+implicit quadrature formulas.  Moreover, we evaluate the limiter $D$
+using the previous-time solution, $E^n$ when calculating the
+time-evolved solution, $E^{n+1}$.  Under these approximations, our
+implicit FLD approximation for the radiative transport results in a
+linear system of equations over the computational domain, as opposed
+to a nonlinear system of equations, as used in our previous work
+\citep{NormanEtAl2007,ReynoldsHayesPaschosNorman2009,NormanReynoldsSo2009}.
+This linear system is posed in residual-correction form, in which we
+solve for the change in the radiation field, $\delta E = E^{n+1}-E^n$,
+over the course of a time step.  To solve this linear system, we
+employ a multigrid-preconditioned conjugate gradient solver from the
+{\em hypre} library \citep{hypre-site}, that allows optimal $\mathcal O(n\log n)$ 
+parallel scalability to the extents of modern supercomputer 
+architectures. Specific parameters used in this solve are found in
+Table \ref{table:HYPRE_params}.
+\begin{table}
+\caption{Parameters used in the {\em hypre} linear solver}
+\label{table:HYPRE_params}
+\centerline{
+\begin{tabular}{p{5cm}p{6cm}}
+\hline\noalign{\smallskip}
+Parameter & Value  \\
+\hline
+Outer Solver & PCG \\
+CG iterations & 50 \\
+CG tolerance & $10^{-8}$ \\
+Inner Preconditioner & PFMG \\
+MG iterations & 12 \\
+MG relaxation type & nonsymmetric Red/Black Gauss-Seidel \\
+MG pre-relaxation sweeps & 1 \\
+MG post-relaxation sweeps & 1 \\
+\hline
+\end{tabular}}
+\end{table}
+
+The fourth physical component within our operator-split formulation
+corresponds to photoionization, photoheating, chemical ionization and
+gas cooling processes,
+\begin{align}
+  \label{eq:heat_chem}
+  \partial_t e &= G - \Lambda, \\
+  \notag
+  \partial_t \mn_i &= \alpha_{i,j} \mn_e \mn_j - \mn_i
+  \Gamma_{i}^{ph}, \qquad i=1,\ldots,N_s.
+\end{align}
+Since these processes occur on time scales commensurate with the
+radiation transport, and much faster than hydrodynamic motion, they
+are also solved implicitly in time, using adaptive-step,
+time-subcycled solves of these spatially-local processes.  
+We have two different algorithms for solving these equations.  The
+first, more loosely coupled, solver uses a single Jacobi
+iteration of a linearly-implicit backwards Euler discretization for
+each species in each cell.  Although this solver does not attempt to
+accurately resolve the nonlinearity in these equations, nor does it
+iterate between the different species in each cell to achieve a fully
+self-consistent solution, its adaptive time stepping strategy enables
+this single iteration to achieve results {\bf that are typically accurate
+to within 10\% relative error, }
+and results in highly efficient calculations.  
+
+Our second solver for the system \eqref{eq:heat_chem} 
+approximates the equations using an implicit quasi-steady-state
+formulation, in which the source terms for the energy equation assume
+a fixed ionization state $(\mn_i^{n-1} + \mn_i^n)/2$, and the
+chemistry equations assume a fixed energy $(e^{n-1}+e^n)/2$ when
+evolving the time step $t^{n-1}\to t^n$.  Under this
+quasi-steady-state approximation, we solve the resulting set of
+differential equations analytically, to obtain the new values $e^n$
+and $\mn_i^n$.  However, since these updated solutions implicitly
+contribute to the source terms for one another, we wrap these
+analytical solvers within a nonlinear Gauss-Seidel iteration to
+achieve full nonlinear convergence.  As a result of this much tighter
+coupling between the gas energy and chemical ionization, this solver
+is more expensive per time step, but may result in a more accurate and
+stable solution than the more loosely-split algorithm.
+
+The fifth solver component computes star formation and feedback processes,
+and evaluates the emissivity field for use in the next step. It corresponds
+to integrating the equations
+\begin{align}
+  \label{eq:SF_mass}
+  \partial_t \rhob =  - \dot{\rho}_{SF}, \\
+  \label{eq:SF_energy}
+  \partial_t e = \dot{e}_{SF}
+\end{align}
+and evaluating Eq. 18 using the procedures described in Sec. 3.2.
+
+These distinct components are coupled together through the potential
+$\phi$ (gravity $\to$ hydrodynamics+DM dynamics), opacity $\kappa$ (chemistry
+$\to$ radiation), emissivity $\eta$ (star formation $\to$ radiation),
+photoheating $G$ (radiation $\to$ energy), cooling $\Lambda$
+(chemistry $\to$ energy), temperature $T$ (energy $\to$ chemistry),
+and photoionization $\Gamma_i^{ph}$ (radiation $\to$ chemistry).  Each
+of these couplings is handled using one of two mechanisms, direct
+manipulation of the solution components ($\Lambda, \kappa, T$), or
+filling new fields over the domain containing each term that are
+passed between modules ($\nabla\phi, \eta, G, \Gamma_i^{ph}$).
+
+\subsection{Radiation Subcycling}
+Since both the radiation \eqref{eq:fld} and chemistry/energy
+\eqref{eq:heat_chem} subsystems evolve at similar time scales that are
+typically much faster than the hydrodynamic time scale, consistency
+between these processes is maintained through an adaptive
+time-stepping strategy, wherein the radiation system limits the
+overall time step selection strategy, using a conservative time step
+to ensure consistency between the physical processes.  This
+additionally ensures that each radiation solve only requires
+relatively minor corrections as time evolves, resulting in a highly
+efficient CG/MG iteration.  The time step estimation algorithm is the
+same as in \cite{ReynoldsHayesPaschosNorman2009}, but in the current
+work we use the time step tolerance $\tau_{tol} = 10^{-4}$, {\bf which
+ensures a relative change-per-step in the radiation field of 0.01\%,
+when measured in a vector RMS norm. }
+
+%{\bf [get runtime values for above statement from Robert/Geoffrey]}.  
+
+
+
+For increased robustness, we have enabled subcycling within the
+radiation solver.  While this technically allows the radiation solver
+to subcycle faster than the coupled processes, we only employ this
+functionality in time steps where the CG/MG solver fails.  This
+situation typically only occurs in the initial step after the first
+stars are created.  Prior to star formation the dynamical time scale
+due to hydrodynamics and gravity is much longer than the time scales
+of radiation transport and chemical ionization after star formation.
+Since we adapt our time step estimates using the behavior in previous
+steps, our estimation strategy does not predict the abrupt change in
+physics when the first stars are created, so the step size estimate from
+the previous step is too large, causing the CG/MG solver to diverge.
+Once this occurs, the radiation subsystem solver decreases its time
+step size and then subcycles to catch up with the overall time step of
+the remaining physics.
+
+When using the loosely-coupled ionization/heating solver, the sequence
+of these processes within a time step $t^{n-1} \to t^n$ are as follows: 
+%% The following is for {\em {\em Enzo}}-2.5
+{\tt
+\begin{quote}
+Set $t_{hydro}=t_{chem}=t_{rad}=t_{dm} = t^{n-1}$.\\
+Set $\Delta t = \min\{\Delta t_{hydro}, \Delta t_{expansion}, \Delta
+t_{rad}\}$, and $t^n = t^{n-1}+\Delta t$.\\
+While ($t_{rad} < t^n$)
+\begin{quote}
+  Try to evolve the $E(t)$ according to \eqref{eq:fld}.\\
+  If failure, set $\Delta t_{rad} = 0.1\Delta t_{rad}$.\\
+  Else set $t_{rad} = t_{rad} + \Delta t_{rad}$ and update $\Delta
+  t_{rad}$ based on accuracy estimates.
+\end{quote}
+Post-process $E(t^n)$ to compute $G$ and $\Gamma_i^{ph}$.\\
+Compute $\phi$ using \eqref{eq:self_gravity}, and post-process to
+generate $\nabla\phi$.\\ 
+Evolve the hydrodynamics sub-system \eqref{eq:hydro}, $t_{hydro} \to
+t_{hydro} + \Delta t$.\\
+While ($t_{chem} < t^n$)
+\begin{quote}
+  Set $\Delta t_{chem}$ based on accuracy estimates. \\
+  Evolve the chemical and gas energy subsystem \eqref{eq:heat_chem},
+  $t_{chem} \to t_{chem} + \Delta t_{chem}$.
+\end{quote}
+Evolve the dark matter particles, $t_{dm} \to t_{dm} + \Delta t$.\\
+Compute $\eta$ using equation \eqref{eq:emissivity}.
+\end{quote}
+}
+%% The following is for {\em {\em Enzo}}-BW
+%% {\tt
+%% \begin{quote}
+%% Set $t_{hydro}=t_{chem}=t_{rad}=t_{dm} = t^{n-1}$.\\
+%% Compute $\eta$ using equation \eqref{eq:emissivity}. \\
+%% Compute $\phi$ using \eqref{eq:self_gravity}, and post-process to
+%% generate $\nabla\phi$.\\ 
+%% Set $\Delta t = \min\{\Delta t_{CFL}, \Delta t_{expansion}, \Delta t_{max}\}$.\\
+%% Evolve the hydrodynamics sub-system \eqref{eq:hydro}, $t_{hydro} \to
+%% t_{hydro} + \Delta t$.\\
+%% While ($t_{chem} < t^n$)
+%% \begin{quote}
+%%   Set $\Delta t_{chem}$ based on accuracy estimates. \\
+%%   Evolve the chemical and gas energy subsystem \eqref{eq:heat_chem},
+%%   $t_{chem} \to t_{chem} + \Delta t_{chem}$.
+%% \end{quote}
+%% While ($t_{rad} < t^n$)
+%% \begin{quote}
+%%   Try to evolve the radiation field according to \eqref{eq:fld}.\\
+%%   If failure, set $\Delta t_{rad} = 0.1*\Delta t_{rad}$.\\
+%%   Else set $t_{rad} = t_{rad} + \Delta t_{rad}$ and update $\Delta t_{rad}$
+%%   based on accuracy estimates.
+%% \end{quote}
+%% Post-process $E(t^n)$ to compute $G$ and $\Gamma_i^{ph}$.\\
+%% Set $\Delta t_{max} = \Delta t_{rad}$.\\
+%% Evolve the dark matter particles, $t_{dm} \to t_{dm} + \Delta t$.
+%% \end{quote}
+%% }
+When using the tightly-coupled ionization/heating
+solver, this sequence of processes differs slightly: 
+%% The following is for {\em {\em Enzo}}-2.5
+{\tt
+\begin{quote}
+Set $t_{hydro}=t_{chem}=t_{rad}=t_{dm} = t^{n-1}$.\\
+Set $\Delta t = \min\{\Delta t_{hydro}, \Delta t_{expansion}, \Delta t_{rad}\}$.\\
+While ($t_{rad} < t^n$)
+\begin{quote}
+  Try to evolve the radiation field according to \eqref{eq:fld}.\\
+  If failure, set $\Delta t_{rad} = 0.1*\Delta t_{rad}$.\\
+  Else
+  \begin{quote}
+    Set $t_{rad} = t_{rad} + \Delta t_{rad}$ and update $\Delta t_{rad}$
+    based on accuracy estimates. \\
+    Post-process $E(t_{rad})$ to compute $G$ and $\Gamma_i^{ph}$.\\
+    While ($t_{chem} < t_{rad}$)
+    \begin{quote}
+      Set $\Delta t_{chem}$ based on accuracy estimates. \\
+      Evolve the chemical/energy subsystem \eqref{eq:heat_chem},
+      $t_{chem} \to t_{chem} + \Delta t_{chem}$.
+    \end{quote}
+  \end{quote}
+\end{quote}
+Compute $\phi$ using \eqref{eq:self_gravity}, and post-process to
+generate $\nabla\phi$.\\ 
+Evolve the hydrodynamics sub-system \eqref{eq:hydro}, $t_{hydro} \to
+t_{hydro} + \Delta t$.\\
+Evolve the dark matter particles, $t_{dm} \to t_{dm} + \Delta t$.\\
+Compute $\eta$ using equation \eqref{eq:emissivity}.
+\end{quote}
+}
+%% The following is for {\em {\em Enzo}}-BW
+%% {\tt
+%% \begin{quote}
+%% Set: $t_{hydro}=t_{chem}=t_{rad}=t_{dm} = t^{n-1}$.\\
+%% Compute $\eta$ using equation \eqref{eq:emissivity}. \\
+%% Compute $\phi$ using \eqref{eq:self_gravity}, and post-process to
+%% generate $\nabla\phi$.\\ 
+%% Set $\Delta t = \min\{\Delta t_{CFL}, \Delta t_{expansion}, \Delta t_{max}\}$.\\
+%% Evolve the hydrodynamics sub-system \eqref{eq:hydro}, $t_{hydro} \to
+%% t_{hydro} + \Delta t$.\\
+%% While ($t_{rad} < t^n$)
+%% \begin{quote}
+%%   Try to evolve the radiation field according to \eqref{eq:fld}.\\
+%%   If failure, set $\Delta t_{rad} = 0.1*\Delta t_{rad}$.\\
+%%   Else
+%%   \begin{quote}
+%%     Set $t_{rad} = t_{rad} + \Delta t_{rad}$ and update $\Delta t_{rad}$
+%%     based on accuracy estimates. \\
+%%     Post-process $E(t_{rad})$ to compute $G$ and $\Gamma_i^{ph}$.\\
+%%     While ($t_{chem} < t_{rad}$)
+%%     \begin{quote}
+%%       Set $\Delta t_{chem}$ based on accuracy estimates. \\
+%%       Evolve the chemical and gas energy subsystem \eqref{eq:heat_chem},
+%%       $t_{chem} \to t_{chem} + \Delta t_{chem}$.
+%%     \end{quote}
+%%   \end{quote}
+%% \end{quote}
+%% Set $\Delta t_{max} = \Delta t_{rad}$.\\
+%% Evolve the dark matter particles, $t_{dm} \to t_{dm} + \Delta t$.
+%% \end{quote}
+%% }
+
+
+%% {\bf [Note: the code can do more than this, allowing prescriptions for
+%%   a desired number of subcycled iterations for chemistry within
+%%   radiation and radiation within hydrodynamics.  However, we don't run
+%%   with those enabled, so I left them out above.]}
+
+
+
+
+

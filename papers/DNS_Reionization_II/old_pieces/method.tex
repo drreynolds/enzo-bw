@@ -1,0 +1,38 @@
+\section{Method}
+\label{Method}
+
+\subsection{Governing Equations}
+
+The basic governing equations in Enzo can be described by the following:  Poisson equation that describes the motion of particles and fluid quantities due to gravity with a modified gravitational potential.  Conservation of mass, momentum, and energy.  Since Enzo 1.5 we've added the effects of radiation transport to the calculation of chemical species and the radiation density field \citep{ReynoldsHayesPaschosNorman2009, HarknessNormanReynoldsSo2011_a}.
+
+\begin{align}
+  \label{eq:gravity}
+  \nabla^2 \phi &= \frac{4\pi g}{a}(\rhob + \rho_{dm} - \langle \rho \rangle), \\
+  \label{eq:cons_mass}
+  \partial_t \rhob + \frac1a \vb \cdot \nabla
+    \rhob &= -\frac1a \rhob \nabla\cdot\vb, \\
+  \label{eq:cons_momentum}
+  \partial_t \vb + \frac1a\(\vb\cdot\nabla\)\vb &=
+    -\frac{\dot{a}}{a}\vb - \frac{1}{a\rhob}\nabla p - \frac1a
+    \nabla\phi, \\
+  \label{eq:cons_energy}
+  \partial_t e + \frac1a\vb\cdot\nabla e &=
+    - \frac{2\dot{a}}{a}e
+    - \frac{1}{a\rhob}\nabla\cdot\left(p\vb\right) \nonumber\\
+    &- \frac1a\vb\cdot\nabla\phi + G - \Lambda \\
+  \label{eq:chemical_ionization}
+  \partial_t \mn_i + \frac{1}{a}\nabla\cdot\(\mn_i\vb\) &=
+    \alpha_{i,j} \mn_e \mn_j - \mn_i \Gamma_{i}^{ph}, \qquad \nonumber\\
+    &i=1,\ldots,N_s \\
+  \label{eq:cons_radiation}
+  \partial_t E + \frac1a \nabla\cdot\(E \vb\) &= 
+    \nabla\cdot\(D\nabla E\) - \frac{\dot{a}}{a}E \nonumber\\
+    &- c \kappa E + \eta.
+\end{align}
+
+Equation \ref{eq:gravity} is describing how the baryon density $\rho_b$ and dark matter density $\rho_{dm}$ should move according to the modified gravitational potential $\phi$, with $a$ being the scale factor, $g$ being the gravitational constant, and $\langle \rho \rangle$ being the cosmic mean density.  The collisionless dark matter density $\rho_{dm}$ is evolved using the Particle
+Mesh method, as described in \citep{HockneyEastwood1988, NormanBryan1999, OSheaEtAl2004}. Equations \ref{eq:cons_mass},\ref{eq:cons_momentum},\ref{eq:cons_energy} are conservation of mass, momentum, and energy respectively in a comoving coordinate system \citep{BryanEtAl1995}.  In the above equations, $\vb\equiv a(t)\dot{\xvec}$ is the proper peculiar baryonic velocity, $p$ is the proper pressure, $e$ is the total energy per unit mass, and $G$ and $\Lambda$ are the heating and cooling coefficients.  Equation \ref{eq:chemical_ionization} describes the chemical balance between the different ionization species (in this particular simulation we only used H{\footnotesize I},H{\footnotesize II},He{\footnotesize I},He{\footnotesize II},He{\footnotesize III}) and electron density.  Here, $\mn_i$ is the number density of the $i^{th}$ chemical species, $\mn_e$ is the electron number density, $\mn_j$ is the ion that reacts with species $i$, and $\alpha_{i,j}$ are the reaction rate coefficient between species $i$ and $j$ \citep{AbelEtAl1997, HuiGnedin1997}, and finally $\Gamma^{ph}_i$ is the photoionization rate.
+
+\subsection{Radiation Transport}
+
+Equation \ref{eq:cons_radiation} we describe the Flux Limited Diffusion (FLD) approximation to radiation transport.  

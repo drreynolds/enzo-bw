@@ -1,0 +1,38 @@
+#
+# DualFLD Parameter File:
+#   Iliev et al. static ionization test
+#
+#  Daniel R. Reynolds, reynolds@smu.edu
+#
+#############################
+#
+# Problem-specific initialization parameters
+# 
+Velocity = 0.0 0.0 0.0              // initial velocity [cm/s]
+Density = 1.67262171e-27            // initial density [g] (desired nH=1e-3)
+Temperature = 1.e2                  // initial temperature [K]
+UVRadiation = 1.e-50                // initial UV radiation energy [erg/cm^3]
+XrayRadiation = 1.e-50              // initial Xray radiation energy [erg/cm^3]
+InitialFractionHII = 1.e-5          // initial HII fraction
+DualFLDXrayOnly = 1                 // no UV
+DualFLDXrBoundaryX0Faces = 1 2      // Dirichlet Neumann (others periodic)
+#DualFLDUVBoundaryX0Faces = 2 2      // Neumann Neumann (others periodic)
+DualFLDChemistry = 1                // hydrogen only
+DualFLDHFraction = 1.0              // hydrogen fraction of total density
+DualFLDXraySpectrum = -1            // monochromatic spectrum
+DualFLDXrayFrequency = 1000.0       // 1000 eV
+#
+# General module and solver parameters
+# 
+DualFLDMaxDt        = 1.e-3
+DualFLDMinDt        = 1.e-8
+DualFLDInitDt       = 1.e-8
+DualFLDDtGrowth     = 5.0
+#DualFLDDtUVFac      = 0.0001        // desired UV change/step
+DualFLDDtXrayFac    = 0.0001        // desired Xray change/step
+DualFLDMGPreRelaxXray  = 3          // MG pre-relaxation sweeps
+DualFLDMGPostRelaxXray = 3          // MG post-relaxation sweeps
+DualFLDMGPreRelaxUV    = 2          // MG pre-relaxation sweeps
+DualFLDMGPostRelaxUV   = 2          // MG post-relaxation sweeps
+
+#############################

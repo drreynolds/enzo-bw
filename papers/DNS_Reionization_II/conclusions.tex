@@ -1,0 +1,45 @@
+\section{Summary and Conclusions}
+\label{Conclusions}
+
+%We use a fully self-consistent simulation including self-gravity, dark matter dynamics, cosmological hydrodynamics, chemical ionization and flux limited diffusion radiation transport, to look at the epoch of reionization in detail.  To describe those details of reionization, we first present a quantitative language that can convey the results under varying definitions of ionization.  From our simulation, we find that clumping factors calculated from different assumptions lead to a wide range of values for the clumping factor $C$. This leads to a time for reionization that can span from z = 7.7 to 6.2, a $\Delta$z$\approx$1.5.  The method for calculating $C$ that most closely matches our definition of 99.9\% of the universe being ``Well Ionized'' is the curve calculated from the actual H {\footnotesize II}. This state of the universe took about 4 photons per hydrogen to achieve.  Or, if we only count the ionizations outside of collapsed objects, (considering only ionizations that happen where $\Delta_b<100$), then the number is around 2 photons per hydrogen.  We have revisited a longstanding question of whether the universe ionized from inside out or outside in, and find that the answer depends on what level of ionization is used to characterize ``ionized''.  Inside regions ionize first, but to lesser degree, and outside regions ionize later but to a higher degree, the last region that is ionized is just remote from ionizing sources. Having a quantitative language when discussing the epoch of reionization will enable the community to compare results in a more meaningful, direct way, and possibly discover previously hidden results.
+
+We now summarize our main results.
+\begin{enumerate}
+\item
+We use a fully self-consistent simulation including self-gravity, dark
+matter dynamics, cosmological hydrodynamics, chemical ionization and
+flux limited diffusion radiation transport, to look at the epoch of hydrogen
+reionization in detail. By tuning our star formation recipe to approximately match the observed high redshift star formation rate density and galaxy luminosity function, we have created a fully coupled radiation hydrodynamical realization of hydrogen reionization which begins to ionize at $z \approx 10$ and completes at $z \approx 5.8$ without further tuning. While our goal is not the detailed prediction of the redshift of ionization completion, the simulation is a realistic enough to analyze in detail the role of recombinations in the clumpy IGM on the progress of reionization. 
+\item
+We find that roughly 2 ionizing photons per H atom are required to convert the neutral IGM to a highly ionized state, which supports the ``photon starved'' reionization scenario discussed by \cite{BoltonHaehnelt2007}.
+\item
+Reionization proceeds initially ``inside-out", meaning that regions of higher mean density  ionize first, consistent with previous studies. However the late stages of reionization are better characterized as ``outside-in" as isolated neutral islands are swept over by externally driven I-fronts. Intermediate stages of reionization exhibit both characteristics as I-fronts propagate from dense regions to voids to filaments of moderate overdensity. In general, the appropriateness of a given descriptor depends on the level of ionization of the gas, and the reionization process is rather more complicated that these simple descriptions imply. 
+\item
+The evolution of the ionized volume fraction with time $Q_{\hii}(z)$ depends on the level of ionization chosen to define a parcel of gas as ionized. The curves for ionization fractions $f_i = 0.1$ and $f_i =0.999$ are very similar, but the curve for $f_i =0.99999$ is significantly lower at a given redshift, amounting to a delay of $\Delta z \approx 1$ relative to the other curves for $Q_{\hii} \ll 1$, smoothly decreasing to 0 as the redshift of overlap is approached.
+
+\item
+Before overlap, 30-40\% of the total recombinations occur outside halos in our simulation, where this refers to gas with $\Delta_b < 100$. After overlap, this fraction decreases to 20\% and continues to decrease to lower redshifts. 
+\item
+Before and after overlap, 3-4\% of the total recombinations occur in voids (defined as $\Delta_b < 1$.) While this is a small fraction of all recombinations, it is about 10\% of recombinations before overlap, increasing to about 20\% by $z=5$. The contribution of voids to the ionization balance of the IGM is therefore not negligible. 
+\item
+The formula for the ionizing photon production rate needed to maintain the IGM in an ionized state derived by \cite{MadauEtAl1999} (Eq. \ref{eq:ndot}) should not be used to predict the epoch of reionization completion because it ignores history-dependent terms in the global ionization balance which are not ignorable. While not originally intended for this purpose, it is being used by observers to assess whether increasingly higher redshift populations of star forming galaxies can account for the ionized state of the IGM. A direct application of the formula to our simulation predicts an overlap redshift of $z=7.4$ compared to the actual value of $z=5.8$. 
+\item
+Estimating the recombination rate density in the IGM before overlap through the use of clumping factors based on density alone is unreliable because it ignores large variations in local ionization state and temperature which increase the effective recombination time compared to density-based estimates. For a currently popular value of the clumping factor $C=3$ \citep{ShullEtAl2012}, the formula for $\bar{t}_{rec}$ from \cite{MadauEtAl1999}(Eq. \ref{eq:tmadau}) understimates by $2\times$ at all redshifts the effective recombination time measured directly from the simulation. If we adjust $C$ downward so that Eq. \ref{eq:tmadau} matches $t_{rec,eff}$ from the simulation, then it is too low by 60\% at $z=6$ due to the aforementioned effects. 
+\item
+The assumption that $\bar{t}_{rec}/t \ll 1$ which underlies the derivation of Eq. \ref{eq:ndot} is never valid over the range of reionization redshifts explored by our simulation (Fig. \ref{treceffhubble}). Depending on how $\bar{t}_{rec}$ is evaluated, $\bar{t}_{rec}/t$ increases from $0.3-0.4$ at $z=9.7$ to $\geq 1$ at overlap. This means that an instantaneous analysis of the ionization balance in the IGM post overlap is invalid because recombination times are so long. 
+\item
+Retaining time-dependent effects is important for the creation of analytic models of global reionization. The analytic model for the evolution of $Q_{\hii}$ introduced by \cite{MadauEtAl1999}(Eq. \ref{eq:dQdt}) retains important time-dependent effects, and predicts well the shape of our simulated curve, but overpredicts $Q_{\hii}$ at all redshifts because it does not take into account that reionization begins in overdense regions consistent with the inside-out paradigm. It also assumes every emitted ionizing photon results in a prompt photoionization, which is not true in our simulation at late times $Q_{\hii}>0.5$. The Madau model, which ignores these effects, predicts a universe which reionizes too soon by $\Delta z \approx 1$. When we introduce correction factors for these effects into Eq. \ref{eq:dQdtdbg} the simulation and model curves agree to approximately 1\% accuracy. We recommend researchers use Eq. \ref{eq:dQdtdbg} for future analytic studies of reionization. 
+\item
+Finally, we present in Figs. \ref{deltabvsQfit5}, \ref{treceffvszfit}, and \ref{RatiovsQfit} fitting functions for the overdensity correction $\delta_b(Q)$, the effective recombination time derived from our simulation, and the ionization efficiency parameter $\gamma(Q)$ which may be useful for other researchers in the field. 
+\end{enumerate}
+
+This research was partially supported by National Science Foundation grants AST-0808184 and AST-1109243
+and Department of Energy INCITE award AST025 to MLN and DRR. Simulations were performed on the {\em Kraken}
+supercomputer operated for the Extreme Science and Engineering Discovery Environment (XSEDE)
+by the National Institute for Computational Science (NICS), ORNL with support from XRAC allocation MCA-TG98N020 to MLN.
+MLN, DRR and GS would like to especially acknowledge the tireless devotion to this project by our co-author Robert Harkness
+who passed away shortly before this manuscript was completed. 
+
+
+
+%%Succinct format, expanded version of the abstract.  What we did and significance is.

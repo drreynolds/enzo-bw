@@ -1,0 +1,162 @@
+\section{Method}
+\label{Method}
+\subsection{Simulation Goals and Parameters}
+We use the Enzo code \citep{TheEnzoCollaboration}, augmented with a flux-limited diffusion radiative transfer solver and a parameterized model of star formation and feedback \citep{NormanEtAl2013} to simulate inhomogeneous hydrogen reionization in a 20 Mpc comoving box in a WMAP7 $\Lambda$CDM cosmological model. Details of the numerical methods and tests are provided in Paper I.  Here we briefly describe the simulation's scientific goals and design considerations to put it into perspective with other reionization simulations. For completeness, the physical equations we solve and the treatment of the ionizing sources and radiation field are included below.
+
+Our principle
+goal is to simulate the physical processes occuring in the IGM outside the virial radii of high redshift galaxies in a {\em representative} realization of inhomogenous reionization. We wish to simulate the early, intermediate, and late phases of reionization  in a radiation hydrodynamic cosmological  framework so that we may study the nonequilibrium ionization/recombination processes in the IGM at reasonably high resolution self-consistently coupled to the dynamics. In this way we can study such effects as optically thick heating behind the I-fronts \citep{AbelHaehnelt1999}, Jeans smoothing \citep{ShapiroEtAl1994,Gnedin2000b}, photoevaporation of dense gas in halos \citep{ShapiroEtAl2004}, and nonequilibrium effects in the low density voids. Because we carry out our simulation on a fixed Eulerian grid, we do not resolve the internal processes of protogalaxies very well. In this sense, our simulation is not converged on all scales. Nonetheless Equations \eqref{eq:gravity} to  \eqref{eq:cons_radiation} are solved everywhere on the mesh self-consistently, including ionization/recombination and radiative transfer inside protogalaxies. The escape of ionizing radiation from galaxies to the IGM is thus simulated directly, and not introduced as a parameter. We use a star formation recipe that can be tuned to closely reproduce the observed high-$z$ galaxy luminosity function (LF), star formation rate density (SFRD), and redshift of reionization completion. This gives us confidence that we are simulating IGM processes in a realistic scenario of reionization. 
+
+We simulate a WMAP7 \citep{JarosikEtAl2011} $\Lambda$CDM cosmological model with the following parameters: 
+$\Omega_{\Lambda} = 0.73$, $\Omega_m = 0.27$, $\Omega_b = 0.047$, 
+$h = 0.7$, $\sigma_8 = 0.82$, $n_s = 0.95$, where the symbols have their usual meanings.  
+A Gaussian random
+field is initialized at $z=99$ using the {\em Enzo} initial conditions generator {\em inits} 
+using the \cite{EisensteinHu1999} fits to the transfer functions.The simulation is performed in a comoving volume of (20 Mpc)$^3$ with a grid
+resolution of $800^3$ and the same number of dark matter particles. This yields a comoving spatial resolution of 25 kpc and
+dark matter particle mass of $4.8 \times 10^5 M_{\odot}$. This resolution yields a dark matter halo mass function that
+is complete down to $M_h = 10^8 M_{\odot}$, which is by design, since this is the mass scale below 
+which gas cooling becomes inefficient. However, due to our limited boxsize, our halo mass function is incomplete above 
+$M_h \approx 10^{11} M_{\odot}$ (see Figure \ref{HMF}). In a forthcoming paper we will report on a simulation of identical design and resolution as this one, but in a volume 64 times as large, which contains the rarer, more massive halos. With regard to resolving the diffuse IGM, our $25$ kpc resolution equals the value recommended by \cite{BryanEtAl1999} to converge on the properties of the Ly $\alpha$ forest at lower redshifts, is $3\times$ better than the optically thin high resolution IGM simulation described in \cite{ShullEtAl2012}, and nearly $4\times$ better than the inhomogeneus reionization simulation described in \cite{TracEtAl2008}. 
+
+As described below in \S\ref{starformationandfeedback}, we use a parameterized model of star formation calibrated to observations of high redshift galaxies. The star formation efficiency parameter $f_*$ is adjusted to match the observed star formation rate density in the interval $6 \leq z \leq 10$ from \cite{BouwensEtAl2011}.  
+The simulation consumed 255,000 core-hrs running on 512 cores of the Cray XT5 system {\em Kraken} operated by the 
+National Institute for Computational Science at ORNL. 
+
+\subsection{Governing Equations}
+\label{GoverningEquations}
+
+The equations of cosmological radiation hydrodynamics implemented in the Enzo code used for this research are given by the following system of partial differential equations (Paper I):
+
+\begin{align}
+  \nabla^2 \phi &= \frac{4\pi g}{a}(\rhob + \rho_\mathrm{dm} - \langle \rho \rangle),
+  \label{eq:gravity}\\
+  \partial_\mathrm{t} \rhob + \frac1a \vb \cdot \nabla
+    \rhob &= -\frac1a \rhob \nabla\cdot\vb -\dot{\rho}_{SF},
+  \label{eq:cons_mass}\\
+  \partial_\mathrm{t} \vb + \frac1a\(\vb\cdot\nabla\)\vb &=
+    -\frac{\dot{a}}{a}\vb - \frac{1}{a\rhob}\nabla p - \frac1a
+    \nabla\phi,
+  \label{eq:cons_momentum}\\
+  \partial_\mathrm{t} e + \frac1a\vb\cdot\nabla e &=
+    - \frac{2\dot{a}}{a}e
+    - \frac{1}{a\rhob}\nabla\cdot\left(p\vb\right) \nonumber\\
+    &- \frac1a\vb\cdot\nabla\phi + G - \Lambda + \dot{e}_{SF}
+  \label{eq:cons_energy}\\
+  \partial_\mathrm{t} \mn_\mathrm{i} + \frac{1}{a}\nabla\cdot\(\mn_\mathrm{i}\vb\) &=
+    \alpha_\mathrm{i,j} \mn_\mathrm{e} \mn_\mathrm{j} - \mn_\mathrm{i} \Gamma_\mathrm{i}^{ph}, \qquad \nonumber\\
+    &i=1,\ldots,N_\mathrm{s}
+  \label{eq:chemical_ionization}\\
+  \partial_\mathrm{t} E + \frac1a \nabla\cdot\(E \vb\) &= 
+    \nabla\cdot\(D\nabla E\) - \frac{\dot{a}}{a}E \nonumber\\
+    &- c \kappa E + \eta
+  \label{eq:cons_radiation}
+\end{align}
+Equation \eqref{eq:gravity} describes the modified gravitational
+potential $\phi$ due to baryon density $\rho_\mathrm{b}$ and dark matter
+density $\rho_\mathrm{dm}$, with $a$ being the cosmological scale factor, $g$
+being the gravitational constant, and $\langle \rho \rangle$ being the
+cosmic mean density.  The collisionless dark matter density
+$\rho_\mathrm{dm}$ is evolved using the Particle Mesh method (equation not
+shown above), as described in 
+\citealt{HockneyEastwood1988, TheEnzoCollaboration}. 
+Equations \eqref{eq:cons_mass}, \eqref{eq:cons_momentum} and
+\eqref{eq:cons_energy} are conservation of mass, momentum and energy,
+respectively, in a comoving coordinate system \citep{BryanEtAl1995,TheEnzoCollaboration}.
+In the above equations, $\vb\equiv a(t)\dot{\xvec}$ is the proper
+peculiar baryonic velocity, $p$ is the proper pressure, $e$ is the
+total energy per unit mass, and $G$ and $\Lambda$ are the heating and
+cooling coefficients.  Equation \eqref{eq:chemical_ionization}
+describes the chemical balance between the different ionization
+species (in this paper we used H {\footnotesize I}, 
+H {\footnotesize II}, He {\footnotesize I}, He {\footnotesize II}, 
+He {\footnotesize III} densities) and electron density. Here, $\mn_\mathrm{i}$ is the
+comoving number density of the $i^{th}$ chemical species, $\mn_\mathrm{e}$ is
+the electron number density, $\mn_\mathrm{j}$ is the ion that reacts with
+species $i$, and $\alpha_\mathrm{i,j}$ are the reaction rate coefficient
+between species $i$ and $j$ \citep{AbelEtAl1997, HuiGnedin1997}, and
+finally $\Gamma^{ph}_\mathrm{i}$ is the photoionization rate for species $i$. 
+
+\subsection{Radiation Transport}
+\label{RadiationTransport}
+
+Equation \eqref{eq:cons_radiation} describes radiation transport in the Flux Limited
+Diffusion (FLD) approximation in an expanding
+cosmological volume \citep{ReynoldsEtAl2009,NormanEtAl2013}.  $E$ is the
+comoving grey radiation energy density.  The {\em flux limiter} $D$ is
+a function of $E$, $\nabla E$, and the opacity $\kappa$
+\citep{Morel2000}, and has the form:
+\begin{align}
+  D &= \mbox{diag}\left(D_1, D_2, D_3\right), \quad\mbox{where} \\
+  D_\mathrm{i} &= c \(9\kappa^2 + R_\mathrm{i}^2\)^{-1/2},\quad\mbox{and} \\
+  R_\mathrm{i} &= \max\left\{\frac{|\partial_\mathrm{x_i} E|}{E},10^{-20}\right\}
+\end{align}
+In the calculation of the grey energy density $E$, we assume
+$E_\nu(\mathbf{x},t,\nu)=\tilde{E}(\mathbf{x},t)\,\chi_E(\nu)$, therefore:
+\begin{align}
+\label{eq:grey_definition}
+  E(\mathbf{x},t) &= \int_{\nu_1}^{\infty} E_\nu(\mathbf{x},t,\nu)\,\mathrm d\nu \nonumber \\
+  &=\tilde{E}(\mathbf{x},t) \int_{\nu_1}^{\infty} \chi_E(\nu)\,\mathrm d\nu,
+\end{align}
+Which separates the dependence of $E$ on coordinate $\mathbf{x}$ and
+time $t$ from frequency $\nu$. Here $\chi_E$ is the spectral energy
+distribution (SED) taken to be that of a Pop II stellar population
+similiar to one from \citep{RicottiEtAl2002}. 
+
+
+\subsection{Star Formation and Feedback}
+\label{starformationandfeedback}
+
+Because star formation occurs on scales not resolved by our uniform mesh simulation, 
+we rely on a subgrid model which we calibrate to observations of star formation in high
+redshift galaxies. The subgrid model is a variant of the \cite{CenOstriker1992}
+prescription with two important modifications as described in \cite{SmithEtAl2011}. In the original \cite{CenOstriker1992} recipe, a computational cell forms a collisionless ``star particle" if a number of criteria are met: the baryon density exceeds a certain numerical threshold; the gas velocity divergence is negative, indicating collapse; the local cooling time is less than the dynamical time; and the cell mass exceeds the Jeans mass. In our implementation, the last criterion is removed because it is always met in large scale, fixed-grid simulations, and the overdensity threshold is taken to be $\rho_b/(\rho_{c,0}(1+z)^3) > 100$, where $\rho_{c,0}$ is the critical density at $z=0$. If the three remaining criteria are met, then a star particle representing a large collection of stars is formed in that timestep and grid cell with a total mass
+
+\begin{equation}
+m_* = f_* m_{cell} \frac{\Delta t}{t_{dyn}},
+\end{equation}
+where $f_*$ is an efficiency parameter we adjust to match observations of the cosmic star formation rate density (SFRD) \citep{BouwensEtAl2011}, $m_{cell}$ is the cell baryon mass, $t_{dyn}$ is the dynamical time of the combined baryon and dark matter fluid, and $\Delta t$ is the hydrodynamical timestep. An equivalent amount of mass is removed from the grid cell to maintain mass conservation. 
+
+Although the star particle is formed instantaneously (i.e., within one timestep), the conversion of removed gas into stars is assumed to proceed over a longer timescale, namely $t_{dyn}$, which more accurately reflects the gradual process of star formation. In time $\Delta t$, the amount 
+of mass from a star particle converted into newly formed stars is given by
+
+\begin{equation}
+\Delta m_{SF} = m_* \frac{\Delta t}{t_{dyn}} \frac{t-t_*}{t_{dyn}} e^{-(t-t_*)/t_{dyn}},
+\end{equation}
+where $t$ is the current time and $t_*$ is the formation time of the star particle. To make the 
+connection with Equation \eqref{eq:cons_momentum}, we have $\dot{\rho}_{SF} =\Delta m_{SF}/(V_{cell}\Delta t)$, 
+where $V_{cell}$ is the volume of the grid cell. 
+
+Stellar feedback consists of the injection of thermal energy, gas, and radiation
+to the grid, all in proportion to $\Delta m_{SF}$. The thermal energy $\Delta e_{SF}$ and gas
+mass $\Delta m_g$ returned to the grid are given by
+
+\begin{equation}
+  \Delta e_{SF} = \Delta m_{SF} c^2 \epsilon_{SN}, \qquad
+  \Delta m_g = \Delta m_{SF} f_{m*}, 
+\end{equation}
+
+where $c$ is the speed of light, $\epsilon_{SN}$ is the supernova energy efficiency parameter, and $f_{m*}=0.25$ is the fraction of the stellar mass returned to the grid as gas. Rather than add
+the energy and gas to the cell containing the star particle, as was done in
+the original \cite{CenOstriker1992} paper, we distribute it evenly among the cell and its
+26 nearest neighbors to prevent overcooling. As shown by \cite{SmithEtAl2011}, this 
+results in a star formation recipe which can be tuned to reproduce the observed SFRD. This is critical for us, as we use the observed high redshift SFRD to calibrate our reionization simulations. 
+
+To calculate the radiation feedback, we define an emissivity field $\eta(x)$ on the grid which accumulates
+the instantaneous emissivities $\eta_i(t)$ of all the star particles within each cell. To calculate the contribution of each star particle $i$ at time $t$ we assume an equation of the same form for supernova energy feedback, but with a different energy conversion efficiency factor $\epsilon_{UV}$. Therefore
+
+\begin{equation}
+\label{eq:emissivity}
+  \eta= \sum_\mathrm{i}\epsilon_\mathrm{uv}\frac{\Delta m_\mathrm{SF} c^2}{V_\mathrm{cell}\Delta t}
+\end{equation}
+
+Emissivity $\eta$ is in units of erg s$^{-1}$cm$^{-3}$.   The UV efficiency factor $\epsilon_\mathrm{uv}$ is taken from \cite{RicottiEtAl2002} as 4$\pi\times 1.1 \times 10^{-5}$, where the factor $4\pi$ comes from the conversion from mean intensity to radiation energy density.
+
+\subsection{Data Analysis}
+\label{DataAnalysis}
+
+Due to the enormous amount of data produced by the simulation (one output file is about 100 GB), 
+we needed a scalable tool suited to the task of organizing and manipulating
+the data into human readable form.  We use the analysis software tool \texttt{yt} \citep{TurkEtAl2011} specifically created for doing this type of vital task.  It is a python based software tool that does ``Detailed data analysis and visualizations, 
+written by working astrophysicists and designed for pragmatic analysis needs."
+\texttt{yt} is open source and publicly available at http://yt-project.org.
+

@@ -1,0 +1,148 @@
+%\documentclass[letterpaper,10pt]{article}
+\documentclass[onecolumn]{emulateapj}
+
+
+
+
+
+\usepackage{geometry}   % See geometry.pdf to learn the layout
+                        % options.  There are lots.
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{soul}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+
+
+%\author{Michael L. Norman\altaffilmark{1,3}}
+%\author{Daniel R. Reynolds\altaffilmark{4}}
+%\author{Geoffrey C. So\altaffilmark{1}}
+%\author{Robert P. Harkness\altaffilmark{2,3}}
+
+%\affiliation{
+%\altaffilmark{1}CASS, University of California, San Diego, 9500 Gilman Drive La Jolla, CA 92093-0424\\
+%\altaffilmark{2}NICS, Oak Ridge National Laboratory, 1 Bethel Valley Rd, Oak Ridge, TN 37831\\
+%\altaffilmark{3}SDSC, University of California, San Diego, 9500 Gilman Drive La Jolla, CA 92093-0505\\ 
+%\altaffilmark{4}Southern Methodist University, 6425 Boaz Ln, Dallas, TX 75205\\
+%}
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\vb}{{\bf v}_b}
+\newcommand{\xvec}{{\bf x}}
+\newcommand{\Omegabar}{\bar{\Omega}}
+\newcommand{\rhob}{\rho_b}
+\newcommand{\dt}{\Delta t}
+\newcommand{\Eot}{E^{OT}}
+\newcommand{\Enu}{E_{\nu}}
+\newcommand{\Fnu}{{\bf F}_{\nu}}
+
+\newcommand{\Pnu}{\overline{\bf P}_{\nu}}
+\newcommand{\Ef}{E_f}
+\newcommand{\sighat}{\hat{\sigma}}
+\newcommand{\R}{I\!\!R}
+\newcommand{\Rthree}{\R^3}
+\newcommand{\eh}{e_h}
+\newcommand{\ec}{e_c}
+\newcommand{\Edd}{\mathcal F}
+\newcommand{\Eddnu}{\Edd_{\nu}}
+\newcommand{\mn}{{\tt n}}
+\newcommand{\mB}{\mathcal B}
+\newcommand{\mC}{{\mathcal C}}
+\newcommand{\mL}{{\mathcal L}}
+\newcommand{\mD}{{\mathcal D}}
+\newcommand{\mDnu}{\mD_{\nu}}
+\newcommand{\mCnu}{\mC_{\nu}}
+\newcommand{\mLnu}{{\mathcal L}_{\nu}}
+\newcommand{\mCe}{\mC_e}
+\newcommand{\mLe}{\mL_e}
+\newcommand{\mCn}{\mC_{\mn}}
+\newcommand{\mLn}{\mL_{\mn}}
+\newcommand{\chibar}{\bar{\chi}}
+\newcommand{\ngammadot}{\dot{N}_{\gamma}}
+\newcommand{\hi}{H {\footnotesize I}~}
+\newcommand{\hii}{H {\footnotesize II}~}
+
+%\newcommand{\mnras}{Mon. Not. R. Astr. Soc.}
+%\newcommand{\araa}{Ann. Rev. Astron. Astrophys.}
+%\newcommand{\apj}{Ap. J.}
+%\newcommand{\apjs}{Ap. J. Supp.}
+%\newcommand{\nat}{Nature}
+\newcommand{\na}{New Astron.}
+%\newcommand{\physrep}{Phys. Reports}
+
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{2ex}
+\textheight 9truein
+\textwidth 6.5truein
+\addtolength{\oddsidemargin}{+0.25in}
+\addtolength{\evensidemargin}{+0.25in}
+\addtolength{\topmargin}{+0.5in}
+
+\begin{document}
+
+%\title{Direct Numerical Simulation of Reionization in Large Cosmological Volumes I: Numerical Methods and Tests}
+\title{Fully-Coupled Simulation of Cosmic Reionization. I: Numerical Methods and Tests}
+
+%\author{Michael L. Norman, Daniel R. Reynolds, Geoffrey C. So, Robert P. Harkness}
+
+\author{Michael L. Norman\altaffilmark{1,3}}
+\author{Daniel R. Reynolds\altaffilmark{4}}
+\author{Geoffrey C. So\altaffilmark{1}}
+\author{Robert P. Harkness\altaffilmark{2,3}}
+\author{John H. Wise\altaffilmark{5}}
+
+\affiliation{
+\altaffilmark{1}CASS, University of California, San Diego, 9500 Gilman Drive La Jolla, CA 92093-0424\\
+\altaffilmark{2}NICS, Oak Ridge National Laboratory, 1 Bethel Valley Rd, Oak Ridge, TN 37831\\
+\altaffilmark{3}SDSC, University of California, San Diego, 9500 Gilman Drive La Jolla, CA 92093-0505\\ 
+\altaffilmark{4}Southern Methodist University, 6425 Boaz Ln, Dallas, TX 75205\\
+\altaffilmark{5}Center for Relativistic Astrophysics, Georgia Institute of Technology, 837 State St, Atlanta, GA 30332 \\
+}
+
+
+
+\begin{abstract}
+We describe an extension of the {\em Enzo} code to enable \st{the direct numerical} {\bf fully-coupled radiation hydrodynamical} simulation 
+of inhomogeneous reionization in large {\bf $\sim (100 Mpc)^3$} cosmological volumes {\bf with thousands to millions of point sources} . \st{By direct we mean} {\bf We solve}
+all dynamical, radiative {\bf transfer, thermal, and ionization processes} \st{and chemical properties} \st{are solved} self-consistently on the same mesh, 
+as opposed to a postprocessing approach which coarse-grains the radiative transfer. We do,
+however, employ a simple subgrid model for star formation which we calibrate to observations. 
+The numerical method presented is a modification of an earlier method presented in Reynolds et al., {\bf differing principally in the operator splitting algorithm we we use to advance the system of equations.} Radiation transport is done in the grey flux-limited diffusion (FLD) approximation, which is solved by
+implicit time integration split off from the gas energy and ionization equations, which are solved
+separately. This results in 
+a faster and more robust scheme for cosmological applications compared to the earlier method. 
+The FLD equation is solved
+using the {\em hypre} optimally scalable geometric multigrid solver from LLNL. 
+By treating the ionizing radiation as a grid field as opposed to rays, our method
+is scalable with respect to the number of ionizing sources, limited only by the parallel scaling
+properties of the radiation solver. We test the speed and accuracy of our approach on a 
+number of standard verification and validation tests.  We show {\bf by direct comparison with {\em Enzo}'s adaptive ray tracing method {\em Moray}} that the well-known 
+inability of FLD to cast a shadow behind opaque clouds \st{has little effect on the 
+photoevaporation timescale of the cloud, or} {\bf has a minor effect on the evolution of ionized volume and mass fractions}
+in a reionization simulation validation test. 
+We illustrate \st{its application} {\bf an application of our method} to the
+problem of inhomogeneous reionization in a \st{20} {\bf80} Mpc comoving box resolved with
+\st{$800^3$} {\bf $3200^3$} Eulerian grid cells and dark matter particles. 
+\end{abstract}
+\keywords{cosmology: theory -- reionization -- methods: numerical -- radiative transfer}
+
+\maketitle
+
+
+\input{introduction.tex}
+\input{mathematical_formulation.tex}
+\input{numerical_methods.tex}
+\input{tests.tex}
+\input{example_simulation.tex}
+\input{conclusions.tex}
+
+
+\bibliography{sources}
+\bibliographystyle{apj}
+\end{document}

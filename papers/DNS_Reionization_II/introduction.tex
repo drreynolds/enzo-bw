@@ -1,0 +1,88 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The Epoch of Reionization (EoR) is an active area of research observationally,
+theoretically, and computationally. Observations constrain the tail end of hydrogen reionization
+to the redshift range $z=6-8$ \citep{RobertsonEtAl2010}. These observations include the presence of Gunn-Peterson
+troughs in the Ly $\alpha$ absorption spectra of high redshift quasars \citep{FanEtAl2006}, and 
+the strong evolution of Lyman $\alpha$ emitter luminosity function (Robertson et al. 2010 and references
+therein.) 
+Observations from the WMAP and Planck satellites tell us that the universe was substantially 
+ionized by $z \approx 10$ but can say little about the
+reionization history or topology \citep{JarosikEtAl2011,Planck2013}. 
+High redshift 21cm observations hold forth great promise of elucidating the details of this transition \citep{BarkanaLoeb2007, PritchardLoeb2012}, but these results are still in the future. 
+
+It is believed that early star forming galaxies provided the bulk of the UV photons responsible for
+reionization \citep{RobertsonEtAl2010,RobertsonEtAl2013}, but early QSOs may have also contributed \citep{MadauEtAl1999, BoltonHaehnelt2007, HaardtMadau2012}.  The ``galaxy reionizer" hypothesis has been greatly strengthened by the recent advances in the study of high redshift galaxies afforded by the IR-sensitive Wide Field Camera 3 (WFC3) aboard the Hubble Space Telescope \citep[e.g.][]{RobertsonEtAl2010, RobertsonEtAl2013, BouwensEtAl2011, BouwensEtAl2011b, OeschEtAl2013}.  Within uncertainties, the luminosity function of $z=6$ Lyman break galaxies (LBGs) appears to be sufficient to account for reionization at that redshift from a photon counting argument \citep{BoltonHaehnelt2007, RobertsonEtAl2010, BouwensEtAl2012}. Among the observational uncertainties are the faint-end slope of the galaxy luminosity function \citep{WiseCen2009,LabbeEtAl2010,BouwensEtAl2012}, the spectral energy distribution of the stellar population \citep{CowieEtAl2009,WillotEtAl2010,HaardtMadau2012}, and the escape fraction of ionizing photons \citep{WyitheEtAl2010, YajimaEtAl2011, MitraEtAl2013}. Among the theoretical uncertainties are the number of ionizing photons per H atom required to bring the neutral IGM to its highly ionized state by $z=6$, the clumping factor correction to the mean IGM recombination time \citep{PawlikEtAl2009, RaicevicTheuns2011, FinlatorEtAl2012, ShullEtAl2012, RobertsonEtAl2013}, 
+and the contribution of Pop III stars and accreting black holes to the early and late stages of reionization \citep{BoltonHaehnelt2007,TracGnedin2011,AhnEtAl2012}. 
+
+When assessing whether an observed population of high-z galaxies is capable of 
+reionizing the universe (e.g., Robertson et al. 2013), observers often use the criterion derived
+by \cite{MadauEtAl1999} for the ionzing photon volume density $\dot{\mathcal{N}}_{ion}$ necessary
+to maintain the clumpy IGM in an ionized state:
+
+\begin{align}
+\label{eq:ndot}
+\dot{\mathcal{N}}_{ion}(z) &= \frac{\bar{n}_\mathrm{H}(0)}{\bar{t}_{rec}(z)} = (10^{51.2}s^{-1}Mpc^{-3})\left(\frac{C}{30}\right) \notag\\
+&\times \left(\frac{1+z}{6}\right)^3 \left(\frac{\Omega_b h_{50}^2}{0.08}\right)^2,
+\end{align}
+
+where $\bar{n}_\mathrm{H}(0)$ is the mean comoving number density of H atoms, $C \equiv \langle n^2_\mathrm{H\,II} \rangle /\langle n_\mathrm{H\,II} \rangle ^2$ is the H {\footnotesize II} clumping factor (angle brackets denote volume average over a suitably large volume that the average is globally meaningful),
+and the rest of the symbols have their usual meaning. 
+The origin of this formula is a simple photon counting argument, which says 
+that in order to maintain ionization at a given redshift $z$, 
+the number of ionizing photons emitted in
+a large volume of the universe multiplied by a characteristic recombination
+time, denoted $\bar{t}_{rec}$,  must equal the number of hydrogen atoms: $\dot{\mathcal{N}}_{ion} \times \bar{t}_{rec} = \bar{n}_\mathrm{H}(0)$.
+The clumping factor enters as a correction factor to account for the density inhomogeneties in the IGM
+induced by structure formation. We note that $\bar{t}_{rec}$ is not the volume average of the local recombination time of the
+ionized plasma, as this would heavily weight regions with the {\em longest} recombination
+times; i.e. voids. A proper derivation of  Equation \eqref{eq:ndot} shows that $\bar{t}_{rec} \propto \langle t_{rec}^{-1} \rangle ^{-1}$, which weights regions
+with the {\em shortest} recombination times; i.e. regions at the mean density and above. 
+
+Equation \eqref{eq:ndot} is based on a number of simplifying assumptions discussed by
+\cite{MadauEtAl1999}, including the assumption $\bar{t}_{rec} \ll t$. It is this assumption that allows history-dependent effects to be ignored, and a quasi-instantaneous analysis of the 
+photon budget for reionization to be done. The validity of this assumption is naturally
+redshift dependent, but it is also dependent upon the adopted definition of $\bar{t}_{rec}$.  A second comment about Equation \eqref{eq:ndot} is that it does not ask how many ionizing photons per H atom are required to convert a neutral IGM to a fully ionized one, only how many are required to {\em maintain} the IGM in an ionized state. Because the recombination time is short at high redshifts, it is expected that this number is greater than one. 
+
+In this paper we examine these and related topics within the context of a direct numerical simulation of cosmic reionization based on a new flux-limited diffusion radiation transport solver installed in the {\em Enzo} code \citep{NormanEtAl2013} (hereafter Paper I).
+Our approach self-consistently couples all the relevant physical processes 
+(gas dynamics, dark matter dynamics, self-gravity, star formation/feedback, 
+radiative transfer, nonequilibrium ionization/recombination, heating and cooling) and evolves the
+system of coupled equations on the same high resolution mesh. We refer to this
+approach as {\em direct numerical simulation} or {\em resolution matched}, in contrast to previous approaches 
+which decouple and coarse-grain the radiative transfer and ionization balance 
+calculations relative to the underlying dynamical calculation.
+Our method is
+scalable with respect to the number of radiation sources, size of the mesh, and the
+number of computer processors employed.
+This scalability permits us to simulate cosmological reionization in large cosmological
+volumes (L $\sim100$ Mpc) while directly modeling the sources and sinks of ionizing 
+radiation,  
+including radiative feedback effects such as photoevaporation of gas from halos, 
+Jeans smoothing of the IGM, and enhanced recombination due to small scale clumping. 
+In this the first of several application papers, we investigate in a volume of modest size (L=$20$ Mpc) the mechanics of reionization from stellar sources forming in high-$z$ galaxies, the role of gas clumping, recombinations, and the photon budget required to complete reionization.
+
+By analyzing this simulation we are able to critically examine the validity of  Equation \eqref{eq:ndot} as a predictor of when the end of EoR will occur, and we can calculate the integrated number of ionizing photons 
+per H atom needed to ionize the simulated volume $\gamma_{ion}/H=\int dt \dot{\mathcal{N}}_{ion} / \bar{n}_\mathrm{H}(0)$. Ignoring recombinations within the virial radii of collapsed halos, we find $\gamma_{ion}/H \approx 2$. This result
+supports the ``photon starved'' reionization scenario discussed by \cite{BoltonHaehnelt2007}.
+We also examine whether modern revisions to Equation \eqref{eq:ndot} using alternatively defined 
+clumping factors \citep{PawlikEtAl2009, RaicevicTheuns2011, FinlatorEtAl2012, ShullEtAl2012} are 
+improvements over the original. We find they systematically overestimate the redshift of reionization completion $z_{reion}$ because the condition $\bar{t}_{rec}/t \ll 1$ is never obeyed.  We study the accuracy and validity of the time-dependent analytic model of \cite{MadauEtAl1999}, and find that while it is in better agreement with the simulation, it also overestimates $z_{reion}$ because it ignores important corrections to the ionization term at early and late times.
+
+This paper is organized as follows: in \S\ref{Method} we discuss the design criteria 
+for the simulation and briefly outline the basic equations and implementation of the FLD radiation transport model, referring the
+reader to Paper I for a more complete description of the numerical algorithms and tests.  
+In \S\ref{GeneralResults},  we present some general features of the simulation and demonstrate its broad consistency with observed star formation rate density and high redshift 
+galaxy luminosity function. 
+%Because we track the ionization fraction of the gas at every point in the volume as a function of time, a more quantitative language is required to say when the simulated volume is X\% ionized; this is provided in \S\ref{QuantitativeLanguage}. 
+%In \S\ref{IOOI} we examine the mechanics of reionization in our simulation, and in particular question whether ``inside-out'' or ``outside-in'' is a better description of certain phases of evolution. 
+In \S\ref{sec:ClumpingFactors} we examine the accuracy of different clumping factor approaches to estimating the redshift of complete reionization.
+In \S\ref{escape} we derive a global estimate for the circumgalactic absorption of ionizing radiation from our simulation. 
+In \S\ref{Qdot} we test a simple analytic model for the evolution of the ionized volume fraction $Q_\mathrm{H\,II}$ and present an improvement to the model which better agrees with our simulation. 
+In \S\ref{Discussion} we
+discuss implications of our results on the current understanding of
+reionization.  And finally, in \S\ref{Conclusions} we end with a
+summary of our main results and conclusions.
+
+

@@ -1,0 +1,219 @@
+Referee report on "DIRECT NUMERICAL SIMULATION OF REIONIZATION IN LARGE
+COSMOLOGICAL VOLUMES I: NUMERICAL METHODS AND TESTS" by M.L. Norman et
+al.
+
+This is an interesting, if by nature fairly technical paper on the
+methodology used in a recently developed radiative-hydrodynamics
+module in the Enzo code and the tests this has been put through for
+verification purposes. I think the paper should be published
+eventually, but there are some corrections and clarifications which
+will need to be done first, as outlined below, roughly in order of
+appearance in the paper: 
+
+1) The introduction needs significant additional work - currently
+there are a number of incorrect or misleading statements, missing or
+incorrect references, all of which should be fixed, specified roughly
+in order of appearance in the text: 
+
+- The paper title is misleading - 20 Mpc comoving volume (~14 Mpc/h?)
+  is not really a large cosmological volume by any standard. This is
+  one of the larger fully coupled radiative-hydrodynamics reionization
+  simulations, but given that the typical reionization simulation
+  volume is ~100 Mpc/h, the one presented here is actually rather
+  small. This is important since it can lead to systematic issues,
+  given that the typical sizes of ionized patches during reionization
+  can be as large or larger than the full volume studied here. It is
+  also somewhat unclear what 'direct simulation' means, fully coupled,
+  or what? I don't think there are any 'indirect' simulations, so this
+  is a somewhat puzzling terminology. 
+
+- The paper abstract mentions an earlier Reynolds et al. paper, but
+  with no proper reference. This should be fixed, esp. given that
+  there are two 'Reynolds at al.' papers in the bibliography.
+
+  DR -- this has been fixed.
+
+- Pars. 1 and 2 of Intro - Trac and Gnedin 2011 is a review paper and
+  does not really have anything to do with deriving the CMB
+  constraints on the reionization redshift (paragraph 1) or the
+  quasars not contributing substantially to reionization (paragraph 2)
+  - for both only relevant references should be given, preferably the
+  first and/or most up-to-date constraints. 
+
+- Par. 6 of Intro: The reionization simulations cited there (Iliev et
+  al. 2006, Trac and Cen 2007, etc.) are all quite old by now and were
+  all done with particle-mesh codes, which of course have low force
+  resolution. However, more recent simulations are typically far
+  better resolved than that, using either P3M (e.g. Iliev et al. 2012,
+  MNRAS, 423, 2222) or tree methods (e.g. Pawlik and Schaye 2011,
+  MNRAS, 412, 1943; Petkova and Springel 2011, MNRAS, 415, 3731),
+  which typically give 1-2 kpc/h or better force resolution, far
+  higher than the 25 kpc one used here. Similarly, there exist already
+  radiative transfer simulations with better resolution than the
+  quoted 250-500 kpc/h.  Furthermore, it is not strictly correct that
+  coarse-grained radiative transfer necessarily does not take into
+  account hydrodynamics effects. More specifically, all above methods,
+  and others, take into account the effect of radiation on the local
+  star formation, resulting e.g. in suppression of low-mass sources. 
+
+- Par. 7 of Intro: the 11,560^3 resolution mentioned for Trac, Cen and
+  Loeb (2008) is misleading - these are grid cells, not
+  particles. Photoevaporation of gas from halos was done by Shapiro et
+  al. 2004 well before Whalen et al. 2008.
+
+- Par. 9 of Intro: the discussion of scaling of radiative transfer
+  methods is rather incomplete. Many methods do not scale at all with
+  the number of sources, others alleviate this scaling by using
+  adaptive rays, short characteristics ray tracing or other
+  techniques. 
+
+2) Mathematical formulation section:
+
+- Par. 2: While I agree that shadows themselves are rarely, if ever,
+  important in cosmological simulations, the gas dynamics can change
+  very considerably between one-sided irradiation and uniform one from
+  all sides.  The FLD method therefore should be very carefully tested
+  in each particular setup to make sure this does not affect the
+  results. I am quite puzzled by the statement that the typical
+  reionization simulations are in the 'low-opacity limit' - low
+  compared to what? The opacity of fully neutral gas is quite large
+  (which is why we need radiative transfer in the first place?).
+
+  DR -- I've modified the 'low-opacity limit' statement to indicate
+  that this is important in later stages of reionization simulations.
+  Perhaps Mike should see if this should be revised in some other
+  manner? 
+
+- It is not very clear to me what is the point of using detailed SED
+  models in combination with grey radiative transfer, given that the
+  latter gives quite unrealistic frequency dependence. 
+
+- Sect. 3.3: statements like 'results that are accurate enough' do not
+  really mean anything. This needs to be specified properly - is it
+  10%, 1%, 10^-8 or what? There are more than one such statements in
+  the paper. 
+
+  DR -- I have made this more precise, though since I was just trying
+  to describe Enzo's old solver, which itself uses highly questionable
+  numerical methods, it is difficult to really state a value with
+  certainty.  I said that Enzo's existing solver is accurate to within
+  10%, which is likely correct since it limits the subcycled time step
+  size to ensure relative change below that amount.
+
+- Tests:
+
+  - General comment - most figure labels are quite small and difficult
+    to read, please fix.
+
+    DR -- I've updated all of the figures that I created to enlarge
+    the labels.  I do not have the sources for Robert's or Geoffrey's
+    figures.
+
+  - Sect. 4.1.1 - is this the same as Test 1 in Iliev et al. 2006? If
+    yes, say so, if not, why not and what is different? Doing the
+    exact same test will make comparisons with other codes easier.
+
+    DR -- I've updated the problem description to clarify this.
+
+    - The HI ionization threshold is 13.6 eV, not 13.5.
+
+      DR -- Typo, sorry.  It is now fixed.
+
+    - what is 'time tolerances', please define.
+  
+      DR -- This is just due to changing terminology within the
+      results section.  I've udpated all 'tolerance' references to
+      specify that they refer to the time step tolerance, and I've
+      updated the introduction of that value to more clearly specify
+      how it is used. 
+
+    - the error of the I-front position in equ. 20 is a rather strange
+      way to do this, a position-by-position error will be much more 
+      informative.
+ 
+      DR -- I have no idea what he's talking about.  For each run, we
+      have the I-front position as a function of time.  In order to
+      show a convergence plot, I need a single number for each
+      tolerance value.  Mike, do you know what he means, or should we
+      just reply with my explanation and ask for clarification if that
+      is not enough? 
+
+    - the tolerance 'sweet spot' discussed at the end of sect. 4.1.1
+      could be problem-dependent.
+
+      DR -- I've updated the text to state this fact, and explained
+      that we use this value as a starting point for other
+      simulations. 
+
+  - sect. 4.1.2: the ionization front in a cosmologically expanding 
+    medium is a nice, but not a particularly demanding test. More
+    interesting and difficult tests (but still with an exact solution)
+    are e.g. expansion from the center of 1/r density profile or 1/r^2
+    density profile with a flat core (see Mellema et al. 2006; Iliev
+    et al. 2006). More generally, why only some of the tests from the
+    Iliev et al. 2006 comparison project were done here?  How were
+    those picked? It would also be useful to compare the results
+    obtained here with those from other codes (available at the code
+    comparison website). Currently only some of the Wise & Abel code
+    tests are compared, and even those only very qualitatively, rather
+    than quantitatively, by e.g. plotting them against each other.
+
+    DR -- It sounds like he wants us to run every Iliev test and every
+    Wise & Abel test using every solver on the code comparison site,
+    and to then overlay plots.  This is insane.  If necessary, I can
+    run the 1/r or 1/r^2 test as well, though given the difficulties
+    we'd had with some of the other comparison tests I can't say how
+    long this will take.  
+
+  - sect. 4.2.2 (Test 7), last paragraph: comparison with WA11 is
+    again done very qualitatively, so it is not clear if the two
+    really agree well. Please show something more quantitative - like
+    the ionized fraction vs. time, or histograms of the ionization and
+    temperature distributions.  
+
+    DR -- These plots are already provided in Figure 8!!  The reviewer
+    needs to read more carefully.
+
+  - sect. 4.3 : the test used to show the parallel scalability of the
+    code is absolutely inadequate for the purpose. Solving 64^3 times
+    exactly the same problem on each MPI node naturally results in a
+    perfect work balance, but basically tells us nothing at all about
+    the code scalability because production runs are nothing like that
+    well balanced, and (if I understand the setup correctly, the
+    explanations are rather short) there is no interaction or
+    communication between sub-domains. If the authors would like to
+    show code scalability this should be done properly, or otherwise
+    this section should be dropped. 
+
+    DR -- The reviewer does not know what he's talking about.  While
+    his statement might be true for a ray-tracing solver, or in fact
+    any solver that uses explicit updates and/or point-to-point
+    communication to handle interactions between subdomains, he is
+    completely incorrect for field-based solvers.  At every time step
+    I solve the fully-coupled linear system over the entire domain,
+    which involves both point-to-point communication of subdomain
+    boundaries at all levels of the multigrid hierarchy, and
+    all-to-all communication of dot products.  This FLD solver
+    therefore inherently couples every subdomain together in every
+    time step, and the fact that we don't see photon fluxes cross
+    subdomain boundaries is completely irrelevant, 
+
+  - sect. 5: why is the Eisenstein and Hu transfer function used for
+    the example simulations? It is quite old by now and not really
+    very accurate.  I am also wondering if the gasdynamics really has
+    much effect here, given that the spatial resolution is quite
+    coarse and those effects mostly show up at smaller scales. 
+
+  - end of Sect 5: the Iliev et al. 2006 and Trac and Cen 2007 are
+    both quite old simulations (and at a different scale), so probably
+    are not the best base for comparison here - more up-to-date
+    simulations could be more appropriate.
+
+- Conclusions: The effect of shadows (3rd par.) is likely not
+  important in cosmological situations, but this is not really shown
+  conclusively here, so should not be claimed. The code scalability
+  (par. 7) is not shown at present, as was discussed above. This
+  requires a proper scalability test. 
+
+- references: need work - some are missing, most ArXiv papers have no
+  numbers, etc. 

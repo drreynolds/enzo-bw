@@ -1,0 +1,44 @@
+#
+#  Iliev et al. 1/r^2 ionization test
+#
+#  Daniel R. Reynolds, reynolds@smu.edu
+#
+#############################
+# 
+# problem and general modules 
+# 
+ProblemType            = 213
+RadiationFieldType     = 0
+RadiationHydrodynamics = 1                 // radiation + hydro
+ImplicitProblem        = 3                 // use gFLDSplit module
+RadHydroParamfile = RHIonizationTest6_sp.gfld
+#
+# grid and boundary 
+#
+TopGridRank                = 3
+TopGridDimensions          = 64 64 64
+LeftFaceBoundaryCondition  = 0 0 0         // reflecting (hydro only)
+RightFaceBoundaryCondition = 0 0 0         // reflecting (hydro only)
+DomainLeftEdge             = 0.0 0.0 0.0
+DomainRightEdge            = 1.0 1.0 1.0
+#
+# runtime and I/O
+#
+#StopTime                   = 2.36682e0     // 75 Myr
+StopTime                   = 0.946728      // 30 Myr
+StopCycle                  = 999999
+dtDataDump                 = 1.57788e-2    // 0.5 Myr
+ParallelRootGridIO         = 1
+#
+#  set hydro parameters
+#
+MultiSpecies               = 1             // color field advection
+CourantSafetyNumber        = 0.05          // default is 0.6
+# 
+# units
+#
+DensityUnits               = 1.0e-25
+LengthUnits                = 2.46856e21    // 0.8 kpc
+TimeUnits                  = 1.0e15
+
+#############################

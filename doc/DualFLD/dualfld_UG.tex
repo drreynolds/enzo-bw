@@ -1,0 +1,860 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage{geometry}   % See geometry.pdf to learn the layout
+                        % options.  There are lots.
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\author{Daniel R. Reynolds}
+\title{{\tt DualFLD}: \\
+A FLD-based X-ray and UV Radiation Solver for ENZO}
+
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\vb}{{\bf v}_b}
+\newcommand{\xvec}{{\bf x}}
+\newcommand{\Omegabar}{\bar{\Omega}}
+\newcommand{\rhob}{\rho_b}
+\newcommand{\dt}{\Delta t}
+\newcommand{\Eot}{E^{OT}}
+\newcommand{\Ef}{E_f}
+\newcommand{\sighat}{\hat{\sigma}}
+\newcommand{\Fnu}{{\bf F}_{\nu}}
+\newcommand{\Pnu}{\overline{\bf P}_{\nu}}
+\newcommand{\R}{I\!\!R}
+\newcommand{\Rthree}{\R^3}
+\newcommand{\eh}{e_h}
+\newcommand{\ec}{e_c}
+\newcommand{\Edd}{\mathcal F}
+\newcommand{\Eddnu}{\Edd_{\nu}}
+\newcommand{\mn}{{\tt n}}
+\newcommand{\mB}{\mathcal B}
+\newcommand{\mC}{{\mathcal C}}
+\newcommand{\mL}{{\mathcal L}}
+\newcommand{\mD}{{\mathcal D}}
+\newcommand{\mDnu}{\mD_{\nu}}
+\newcommand{\mCnu}{\mC_{\nu}}
+\newcommand{\mLnu}{{\mathcal L}_{\nu}}
+\newcommand{\mCe}{\mC_e}
+\newcommand{\mLe}{\mL_e}
+\newcommand{\mCn}{\mC_{\mn}}
+\newcommand{\mLn}{\mL_{\mn}}
+
+
+\textheight 9truein
+\textwidth 6.5truein
+\addtolength{\oddsidemargin}{-0.25in}
+\addtolength{\evensidemargin}{-0.25in}
+\addtolength{\topmargin}{-0.5in}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{2ex}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+This document describes a new, highly scalable,
+field-based dual X-ray and UV radiation solver for Enzo, 
+{\tt DualFLD}.  In this solver, we transport up to two radiation
+fields, hereafter named $E_{Xr}$ and $E_{UV}$.  Both of these are
+assumed to be scalar-valued fields defined throughout the spatial
+domain, and are evolved using a flux-limited diffusion (FLD)
+approximation for the propagation, absorption and dilution of
+radiation in a cosmologically-expanding spatial domain.  Each
+radiation field is assumed to have either a monochromatic SED at a
+specified input frequency, or is treated as an integrated radiation
+energy density with an assumed radiation spectrum.  Separate SED
+choices may be made for both $E_{Xr}$ and $E_{UV}$.  Interaction
+between these radiation fields is assumed to occur only through
+interaction with the baryonic density and total energy fields defined
+in the volume, i.e. there is no direct X-ray to UV radiation coupling.
+The interactions with the baryonic densities and total energy fields
+occurs through four mechanisms:
+\begin{itemize}
+\item[(a)] Absorption of radiation due to the monochromatic or 
+  frequency-integrated opacities valid over the frequency spectrum
+  where each field is valid.
+\item[(b)] Photo-ionization of chemistry fields due to the radiation 
+  present within each spatial cell.
+\item[(c)] Photo-heating of the total energy field due to radiation
+  present within each spatial cell.
+\item[(d)] Secondary ionizations of chemistry fields due to X-ray
+  radiation at frequencies exceeding 100 eV.
+\end{itemize}
+While the {\tt DualFLD} solver handles the propagation of both
+radiation fields, it does not handle steps (b)-(d) directly, and
+instead computes photo-ionization and photo-heating rates that are
+passed to Enzo's built-in chemical ionization and gas heating
+solvers.
+
+The defining characteristics of this solver in comparison
+with the {\tt gFLDSplit} solver are three-fold.  First, similarly to
+{\tt gFLDSplit}, the {\tt DualFLD} solver propagates radiation in a
+separate operator-split step from the chemistry and heating, though in
+this solver the radiation solve itself is split into separate UV and
+X-ray solves (since they are assumed to be non-interacting), and the
+photo-heating and photo-ionization rates are computed afterwards from
+the combined radiation contributions.  Second, the {\tt DualFLD}
+solver itself {\em cannot} perform ionization or heating directly,
+instead relying on Enzo's existing solvers for those physics.  Third,
+the {\tt DualFLD} module {\em only} allows a standard
+chemistry-dependent model (i.e. it does not allow the {\em local
+thermodynamic equilibrium} model that is supported by {\tt
+gFLDSplit}).  
+
+This guide is designed to highlight the solvers and equations
+available in this module.  Additional details on the model derivation,
+numerical methods and verification tests will be provided in
+subsequent publications.  In order to best aid in usage of the {\tt
+DualFLD} solver, we first provide details on how to use the solver
+within an Enzo simulation, and follow the description of those
+parameters with the supporting equations and algorithm description.
+
+
+
+\section{{\tt DualFLD} usage}
+\label{sec:module_usage}
+
+In order to use the {\tt DualFLD} radiation solver module, and to
+allow optimal control over the solver methods used, there are a number
+of parameters that may be supplied to Enzo.  We group these into two
+categories, those associated with the general startup of the module
+via the Enzo infrastructure, and those that may be supplied to the
+{\tt DualFLD} module itself.  However, prior to embarking on a
+description of these parameters, there are a few requirements for any
+problem that wishes to use the {\tt DualFLD} module. 
+
+The Enzo source code is located in the subdirectory {\tt enzo/} of the
+code repository.  Within this directory, the {\tt Makefile} must be
+edited to specify how the code should be run, and where to look for
+machine-specific compilation instructions.  The main parameter
+names within this {\tt Makefile} are self-explanatory, but the
+following four parameters are used to determine the machine-specific
+file to use in compilation:
+\begin{itemize}
+\item {\tt ENZO\_SYSTEM} -- this should hold a description of the
+  machine itself (e.g. ``jaguar'')
+\item {\tt ENZO\_COMPILER} -- this should hold a description of the
+  compilers to use (e.g. ``pgi'')
+\item {\tt ENZO\_MODE} -- this should hold either ``mpi'' or
+  ``hybrid'', corresponding to the parallelization strategy (pure MPI
+  or hybrid MPI/OpenMP, respectively)
+\item {\tt ENZO\_SPEC} -- I'm not sure what this should be used for;
+  in all cases I've seen it holds the word ``test''
+\end{itemize}
+With these definitions, the Enzo {\tt Makefile} will look for
+machine/compiler/parallelism specific definitions within a file
+\begin{verbatim}
+   Make.${ENZO_SYSTEM}_${ENZO_COMPILER}.${ENZO_MODE}_${ENZO_SPEC}
+\end{verbatim}
+located in the {\tt enzo/Macros/} subdirectory of the overall code
+repository.  For example, with the definitions {\tt
+ENZO\_SYSTEM=reynolds}, {\tt ENZO\_COMPILER=intel}, {\tt
+ENZO\_MODE=mpi}, {\tt ENZO\_SPEC=test}, the {\tt Makefile} will read
+the relevant compiler/library definitions from the file {\tt
+Make.reynolds\_intel.mpi\_test}. 
+
+Within this machine-specific file, definitions must be included for
+the parameters:
+\begin{itemize}
+\item {\tt FC} -- MPI-enabled Fortran compiler
+\item {\tt DEFINES} -- Fortran pre-processor definitions
+\item {\tt FC\_OPT} -- Fortran compiler optimization flags
+\item {\tt CC} -- MPI-enabled C compiler
+\item {\tt CC\_DEF} -- C pre-processor definitions
+\item {\tt CC\_OPT} -- C compiler optimization flags
+\item {\tt CCxx} -- MPI-enabled C++ compiler
+\item {\tt CCxx\_DEF} -- C++ pre-processor definitions
+\item {\tt CCxx\_OPT} -- C++ compiler optimization flags
+\item {\tt LDR} -- Program for linking the final executable
+\item {\tt LDR\_OPT} -- Pre-processor definitions for the linker
+\item {\tt LIB} -- Library locations and files to link with ({\bf
+  must} include HYPRE, HDF5 and SZIP)
+\item {\tt INCLUDE} -- Include directories containing relevant header
+  files ({\bf must} include HYPRE and HDF5 header file locations)
+\item {\tt OPTIONS} -- unknown (currently empty)
+\item {\tt OPT} -- combined compilation options for generating {\tt
+  .o} files; currently contains {\tt -c \$\{OPTIONS\} \$\{INCLUDE\}}
+\item {\tt DEBUG} -- unknown (currently empty)
+\end{itemize}
+
+The HYPRE library linked in must be version 2.8.0b or newer.  If a
+user must compile HYPRE themselves to obtain this version, they should
+make note of the HYPRE configuration option {\tt
+--with-no-global-partition}, which must be used for solver scalability
+when using over $\sim\!1000$ processors, but which results in slower
+executables on smaller-scale problems. 
+
+{\bf Final note:} the SVN repository contains a file {\tt
+enzo/mpi\_save.h}.  On most systems, this file is not needed to build
+Enzo, and may be ignored.  However, on some systems Enzo may not
+compile with the native {\tt mpi.h} file, in which case this file
+should be renamed to {\tt enzo/mpi.h}.  It is suggested that you first
+attempt to build Enzo with the file retaining the name {\tt
+enzo/mpi\_save.h}.  If compilation fails due to MPI-related error
+messages, you may then rename the file the {\tt enzo/mpi.h} and try
+compilation again.
+ 
+
+
+\subsection{Startup parameters}
+
+In a user's main problem parameter file, the following parameters
+must be set (their default values are in brackets):
+\begin{itemize}
+\item {\tt RadiationHydrodynamics} [0] -- this specifies to enable one
+  of the FLD solver modules within Enzo's operator-split time-stepping
+  approach.  Allowable values include:
+  \begin{itemize}
+  \item 0 -- disable all FLD solvers
+  \item 1 -- enable FLD solvers, use along-side other Enzo physics modules
+  \item 2 -- enable FLD solvers and disable all other Enzo physics modules
+  \end{itemize}
+\item {\tt ImplicitProblem} [0] -- this specifies the type of FLD
+  solver to use.  The {\tt DualFLD} solver corresponds to {\tt
+  ImplicitProblem = 4}.
+\item {\tt ProblemType} [0] -- as usual, this is problem-dependent.
+  However, for FLD-based solvers in this version of Enzo, the value of
+  ProblemType is typically within the 200's.
+\item {\tt RadiationFieldType} [0] -- this can be any value {\em except}
+  10 or 11, since those use pre-existing background radiation
+  approximations.
+\item {\tt RadiativeCooling} [0] -- a nonzero value enables Enzo's
+  built-in chemistry/heating solvers.
+\item {\tt Multispecies} [0] -- when {\tt RadiativeCooling} is set to
+  1, a nonzero value for {\tt Multispecies} will turn on Enzo's
+  chemical ionization solvers.  The particular value is used to
+  enable various chemistry models, as described in the main Enzo
+  documentation, 
+\item {\tt RadHydroParamfile} [NULL] -- this should contain the filename
+  (with path relative to this parameter file) that contains all
+  module-specific solver parameters (discussed below).  While the 
+  {\tt DualFLD} module parameters may be supplied in the main
+  parameter file, that filename must still be specified here (though
+  it is not recommended, since the {\tt ReadParameterFile.C} routine
+  will complain about all of the `unknown' parameters that are read
+  elsewhere).
+\item {\tt CoolDataParameterFile} [NULL] -- this should contain the
+  filename (with path relative to this parameter file) that contains
+  all CoolData-specific solver parameters.  Typical non-default values
+  include 
+  \begin{itemize}
+  \item {\tt HydrogenFractionByMass} [0.76] -- this gives the fraction of
+    total mass comprised of Hydrogen; it is useful for performing Hydrogen-only
+    simulations.
+  \item {\tt RateDataCaseBRecombination} [0] -- a nonzero value
+    denotes that Enzo should use case-B recombination rates instead of
+    the default case-A rates.
+  \end{itemize}
+\end{itemize}
+
+In addition, if a user wishes to set up a new {\tt ProblemType} that
+uses the {\tt DualFLD} module, they must allocate standard Enzo
+baryon fields having the {\tt FieldType} set to {\tt RadiationFreq0}
+and {\tt RadiationFreq1}.  It is these baryon fields that will be
+evolved by the {\tt DualFLD} module, with {\tt RadiationFreq0}
+corresponding to the X-ray radiation field and {\tt RadiationFreq1}
+corresponding to the UV radiation field. If radiative cooling and
+ionization are to be performed, additional baryon fields must be allocated
+with {\tt FieldType} set to {\tt kphHI} and {\tt PhotoGamma}, as well
+as {\tt kphHeI} and {\tt kphHeII} if Helium is included, and 
+{\tt kdissH2I} if {\tt Multispecies}>1.  All of these fields may be
+initialized to zero.
+
+Furthermore, the {\tt DualFLD} module currently computes its own
+emissivity fields $\eta_{Xray}(\xvec)$ and  $\eta_{UV}(\xvec)$, in the
+routine {\tt DualFLD\_RadiationSource.src90}.  A user may edit this file
+to add in an emissivity field corresponding to their own {\tt
+ProblemType}.  Alternatively, a user may separately fill in the  
+{\tt BaryonField}s {\tt Emissivity0} and {\tt Emissivity1} in other
+Enzo routine(s).  Then, when Enzo is compiled using the pre-processor
+directive {\tt EMISSIVITY} and run with the global parameter {\tt
+StarMakerEmissivity $\ne$ 0}, the {\tt DualFLD} module will look to
+these {\tt BaryonField}s for emissivity values instead of computing
+its own. 
+
+
+
+\subsection{Module parameters}
+
+Once a user has enabled the {\tt DualFLD} module, they have
+complete control over a variety of internal module parameters.  The
+parameters are given here, with their default values specified in
+brackets, and references to the appropriate equations elsewhere in
+this document.
+\begin{itemize}
+\item {\tt DualFLDXrayOnly} [0] -- this parameter disables propagation
+  of the UV radiation field in the solver, and eliminates all
+  $E_{UV}$-related contributions to photo-heating and photo-ionization.
+\item {\tt DualFLDXrayStatic} [0] -- this parameter disables
+  propagation of the X-ray radiation field in the solver, effectively
+  freezing the $E_{Xr}$ field to its initial configuration.  This does
+  not currently deplete the radiation density due to cosmological
+  expansion, although such an enhancement would not be difficult to
+  add to {\tt DualFLD} in the future.
+\item {\tt DualFLDUVStatic} [0] -- this parameter disables
+  propagation of the UV radiation field in the solver, effectively
+  freezing the $E_{UV}$ field to its initial configuration.  This does
+  not currently deplete the radiation density due to cosmological
+  expansion, although such an enhancement would not be difficult to
+  add to {\tt DualFLD} in the future.
+\item {\tt DualFLDXraySpectrum} [-1] -- this parameter chooses the type of
+  assumed X-ray radiation energy spectrum from equation \eqref{eq:spectrumXr}.
+  Allowed values include
+  \begin{itemize}
+  \item[-1.] monochromatic spectrum.
+  \item[0.] power law spectrum,
+    \[
+      \chi(\nu) = \left(\frac{\nu}{\nu_{HI}}\right)^{-1.5}
+    \]
+  \item[1.] $T=10^5$ K blackbody spectrum, 
+    \[
+       \chi(\nu) = \frac{8 \pi h
+         \left(\frac{\nu}{c}\right)^3}{\exp\left(\frac{h\nu}{k_b 10^5}\right)-1}.
+    \]
+  \end{itemize}
+\item {\tt DualFLDUVSpectrum} [-1] -- this has the same options as
+  above, but pertain to the UV radiation field \eqref{eq:spectrumUV}.
+\item {\tt DualFLDXrayFrequency} [500] -- if the X-ray spectrum is
+  monochromatic, this input specifies the frequency of the radiation
+  field (in eV).
+\item {\tt DualFLDUVFrequency} [13.6] -- if the X-ray spectrum is
+  monochromatic, this input specifies the frequency of the radiation
+  field (in eV).
+\item {\tt DualFLDChemistry} [3] -- this parameter controls how many
+  chemical species the solver should interact with (i.e.~for opacity
+  calculations and photo-ionization and photo-heating rates).
+  Allowable values are 
+  \begin{itemize}
+  \item[0.] no chemistry
+  \item[1.] Hydrogen chemistry
+  \item[3.] Hydrogen+Helium chemistry
+  \end{itemize}
+\item {\tt DualFLDHFraction} [0.76] -- this parameter controls the
+  fraction of baryonic matter comprised of Hydrogen that the solver
+  module should assume. Allowable values are $0 \le {\tt
+    RadHydroHFraction} \le 1$.
+\item {\tt DualFLDMaxDt} [$10^{20}$] -- this parameter sets the value of
+  $\dt_{\text{max}}$ from section \ref{sec:dt_selection}; it must be
+  greater than 0.  This value is provided in {\em scaled} time units,   
+  i.e.~$\dt_{\text{physical}} \le \dt_{\text{max}}*\text{TimeUnits}$, 
+  where TimeUnits is Enzo's internal time scaling factor for the
+  simulation.
+\item {\tt DualFLDMinDt} [0] -- this parameter sets the value of
+  $\dt_{\text{min}}$ from section \ref{sec:dt_selection}; it must be
+  non-negative.  This value must also be given in scaled time
+  units.
+\item {\tt DualFLDInitDt} [$10^{20}$] -- this parameter sets the
+  initial time step size for the {\tt DualFLD} module.  We note that
+  since the module will take the smaller of $\dt_{\text{FLD}}$ and
+  $\dt_{\text{Enzo}}$, the default value is never actually used.  This
+  value must also be given in scaled time units.
+\item {\tt DualFLDDtNorm} [2] -- this parameter sets the value
+  of $p$ from equation \eqref{eq:time_error}.  
+  \begin{itemize}
+  \item A value of $0$ implies to use the $\max$ norm, 
+  \item A value $>0$ implies to use the corresponding $p$-norm,
+  \item Values $<0$ are not allowed (reset to the default).
+  \end{itemize}
+\item {\tt DualFLDDtGrowth} [1.1] -- this gives the maximum time step size
+  growth factor per solver step (i.e.~allows an increase of 10\% per step).
+\item {\tt DualFLDDtXrayFac} [$10^{20}$] -- this gives the value
+  of $\tau_{\text{tol}}$ for the variables $E_{Xr}$ from equation
+  \eqref{eq:time_estimate}.  They must be positive; the default
+  essentially specifies no restrictions on $\dt_{\text{FLD}}$. 
+\item {\tt DualFLDDtUVFac} [$10^{20}$] -- this gives the value
+  of $\tau_{\text{tol}}$ for the variables $E_{UV}$ from equation
+  \eqref{eq:time_estimate}.
+\item {\tt DualFLDXrayScaling} [1] -- this gives the scaling 
+  factor $s_{Xr}$ from \eqref{eq:variable_rescaling}; supplied values
+  must be positive. 
+\item {\tt DualFLDUVScaling} [1] -- this gives the scaling 
+  factor $s_{UV}$ from \eqref{eq:variable_rescaling}; supplied values
+  must be positive. 
+\item {\tt DualFLDTheta} [1] -- this parameter specifies the
+  value of $\theta$ in equation \eqref{eq:radiation_PDE_theta};
+  requires $0\le\theta\le 1$.
+\item {\tt DualFLDXrBoundaryX0Faces}, {\tt DualFLDXrBoundaryX1Faces},
+  {\tt DualFLDXrBoundaryX2Faces} [0 0] --  these specify the
+  boundary-condition types from section \ref{sec:boundary_conditions}
+  to use on the lower and upper boundaries in each direction for the
+  X-ray radiation field.  Allowable values are
+  \begin{itemize}
+  \item[0.] periodic (must match on both faces in a given direction)
+  \item[1.] Dirichlet
+  \item[2.] Neumann
+  \end{itemize}
+\item {\tt DualFLDUVBoundaryX0Faces}, {\tt DualFLDUVBoundaryX1Faces},
+  {\tt DualFLDUVBoundaryX2Faces} [0 0] --  these specify the
+  boundary-condition types from section \ref{sec:boundary_conditions}
+  to use on the lower and upper boundaries in each direction for the
+  UV radiation field.  Allowable values are
+  \begin{itemize}
+  \item[0.] periodic (must match on both faces in a given direction)
+  \item[1.] Dirichlet
+  \item[2.] Neumann
+  \end{itemize}
+\item {\tt DualFLDSolToleranceXray} [$10^{-8}$] -- this parameter
+  specifies the linear tolerance $\delta$ from section
+  \ref{sec:rad_solve} for the X-ray solve.  Allowable values must be
+  between $10^{-15}$ and 1. 
+\item {\tt DualFLDSolToleranceUV} [$10^{-8}$] -- this parameter
+  specifies the linear tolerance $\delta$ from section
+  \ref{sec:rad_solve} for the UV solve.  Allowable values must be
+  between $10^{-15}$ and 1. 
+\item {\tt DualFLDMaxMGItersXray} [50] -- this positive parameter
+  specifies the maximum number of multigrid iterations to perform for
+  each radiation field in the MG-CG solver for the X-ray field from section
+  \ref{sec:rad_solve}.
+\item {\tt DualFLDMaxMGItersUV} [50] -- this positive parameter
+  specifies the maximum number of multigrid iterations to perform for
+  each radiation field in the MG-CG solver for the UV field from section
+  \ref{sec:rad_solve}.
+\item {\tt DualFLDMaxPCGItersXray} [50] -- this positive parameter
+  specifies the maximum number of preconditioned conjugate gradient
+  iterations to perform for each radiation field in the MG-CG solver
+  for the X-ray field from section \ref{sec:rad_solve}.
+\item {\tt DualFLDMaxPCGItersUV} [50] -- this positive parameter
+  specifies the maximum number of preconditioned conjugate gradient
+  iterations to perform for each radiation field in the MG-CG solver
+  for the UV field from section \ref{sec:rad_solve}.
+\item {\tt DualFLDMGRelaxTypeXray} [1] -- this parameter specifies the
+  relaxation method used by the multigrid solver for the X-ray field:
+  \begin{itemize}
+  \item[0.] Jacobi
+  \item[1.] Weighted Jacobi
+  \item[2.] Red/Black Gauss-Seidel (symmetric)
+  \item[3.] Red/Black Gauss-Seidel (nonsymmetric)
+  \end{itemize}
+  For more information, see the HYPRE user manual.
+\item {\tt DualFLDMGRelaxTypeUV} [1] -- this parameter specifies the
+  relaxation method used by the multigrid solver for the UV field.
+  The values match those above.
+\item {\tt DualFLDMGPreRelaxXray} [1] -- this positive parameter
+  specifies the number of pre-relaxation sweeps the multigrid solver
+  should use in the MG-CG solver for the X-ray field from section
+  \ref{sec:rad_solve}. 
+\item {\tt DualFLDMGPreRelaxUV} [1] -- this positive parameter
+  specifies the number of pre-relaxation sweeps the multigrid solver
+  should use in the MG-CG solver for the UV field from section
+  \ref{sec:rad_solve}. 
+\item {\tt DualFLDMGPostRelaxXray} [1] -- this positive parameter
+  specifies the number of post-relaxation sweeps the multigrid solver
+  should use in the MG-CG solver for the X-ray field from section
+  \ref{sec:rad_solve}. 
+\item {\tt DualFLDMGPostRelaxUV} [1] -- this positive parameter
+  specifies the number of post-relaxation sweeps the multigrid solver
+  should use in the MG-CG solver for the UV field from section
+  \ref{sec:rad_solve}. 
+\end{itemize}
+
+
+
+
+\section{Flux-limited diffusion radiation model}
+\label{sec:rad_model}
+
+We begin with the equation for flux-limited diffusion radiative
+transfer in a cosmological medium \cite{ReynoldsHayesPaschosNorman2009},
+\begin{equation}
+\label{eq:radiation_PDE}
+  \partial_{t} E_i + \frac1a \nabla\cdot\(E_i\vb\) =
+    \nabla\cdot\(D_i\,\nabla E_i\) - \frac{\dot{a}}{a} E_i - c\kappa_i E_i + \eta_i,
+\end{equation}
+where here the comoving radiation energy density field $E_i$, emissivity
+$\eta_i$ and opacity $\kappa_i$ are functions of space and time, and
+where $i\in\{\text{Xr},\text{UV}\}$.  In this equation, the
+frequency-dependence of the respective radiation energy density field
+has been integrated away, under the premise of an assumed radiation
+energy spectrum, 
+\begin{align}
+  \notag
+  & E_{\nu}(\nu,\xvec,t) = \tilde{E}_{Xr}(\xvec,t) \chi_{Xr}(\nu) +
+     \tilde{E}_{UV}(\xvec,t) \chi_{UV}(\nu), \\ 
+  \notag
+  \Rightarrow & \\
+  \label{eq:spectrumXr}
+  & E_{Xr}(\xvec,t) = \int_{0}^{\infty} E_{\nu}(\nu,\xvec,t)\,\mathrm{d}\nu 
+    = \tilde{E}_{Xr}(\xvec,t) \int_{0}^{\infty}
+    \chi_{Xr}(\nu)\,\mathrm{d}\nu, \\
+  \label{eq:spectrumUV}
+  & E_{UV}(\xvec,t) = \int_{0}^{\infty} E_{\nu}(\nu,\xvec,t)\,\mathrm{d}\nu 
+    = \tilde{E}(\xvec,t) \int_{0}^{\infty} \chi_{UV}(\nu)\,\mathrm{d}\nu,
+\end{align}
+where $\tilde{E}_{Xr}$ and $\tilde{E}_{UV}$ are intermediate
+quantities (for analysis) that are never computed, and where we have
+assumed that the two spectra $\chi_{Xr}(\nu)$ and $\chi_{UV}(\nu)$ do
+not overlap (i.e.~$\chi_{Xr}(\nu)$ disappears in the interval
+$[0,\nu_{1})$ and $\chi_{UV}(\nu)$ disappears in the
+interval $[\nu_{1},\infty)$).  We note that if either assumed spectrum
+is the Dirac delta function, $\chi_i(\nu) = \delta_{\nu_i}(\nu)$, then
+$E_i$ is a monochromatic radiation energy density at the ionization
+threshold $h\nu_i$, and the $-\frac{\dot{a}}{a}E$ term in equation
+\eqref{eq:radiation_PDE}, obtained through integration by parts of the
+redshift term 
+$\frac{\dot{a}}{a}\partial_{\nu}E_{\nu}$, is omitted from
+\eqref{eq:radiation_PDE}. Similarly, the emissivity functions
+$\eta_i(\xvec,t)$ relate to the true emissivity 
+$\eta_{\nu}(\nu,\xvec,t)$ by the formulas
+\begin{equation}
+\label{eq:emissivity}
+  \eta_{Xr}(\xvec,t) =
+  \int_{0}^{\infty}\eta_{\nu}(\nu,\xvec,t)\,\mathrm{d}\nu \\
+\notag
+  \eta_{UV}(\xvec,t) =
+  \int_{0}^{\infty}\eta_{\nu}(\nu,\xvec,t)\,\mathrm{d}\nu.
+\end{equation}
+
+Within equation \eqref{eq:radiation_PDE}, the function
+$D_i$ is the {\em flux limiter} that depends on face-centered values of
+$E_i$, $\nabla E_i$ and the opacity $\kappa_i$ \cite{Morel2000},
+\begin{align}
+  D_i &= \min\left\{c \(9\kappa_{i,f}^2 + R^2\)^{-1/2}, D_{max}\right\},\quad\mbox{and}\quad
+  R = \max\left\{\frac{|\partial_{x} E_i|}{E_{i,f}},R_{min}\right\}.
+\end{align}
+Here the spatial derivative within $R$ is computed using
+non-dimensional units at the computational face adjoining two
+neighboring finite-volume cells, $D_{max}=0.006\,c\,L_{unit}$ and
+$R_{min}=10^{-20}/L_{unit}$ with $L_{unit}$ the length
+non-dimensionalization factor for the simulation, and the 
+face-centered radiation energy density and opacity are computed using
+the arithmetic and harmonic means, respectively,
+\[
+   E_{i,f} = \frac{E_{i,1} + E_{i,2}}{2}, \qquad
+   \kappa_{i,f} = \frac{2\kappa_{i,1} \kappa_{i,2}}{\kappa_{i,1} + \kappa_{i,2}},
+\]
+where here $E_{i,1}$ and $E_{i,2}$ are the two values of $E_i$ in the
+cells adjacent to the face.  Among the many available limiter
+formulations we have tested
+\cite{HayesNorman2003,Morel2000,ReynoldsHayesPaschosNorman2009}, this  
+version performs best at producing causal radiation propgation
+speeds in the low-opacity limit typical of reionization simulations.  
+
+
+
+
+\section{Model couplings}
+\label{sec:chem_model}
+
+In general, radiation calculations in Enzo are used in simulations
+where chemical ionization states are important.  For these situations, 
+we couple the radiation equation \eqref{eq:radiation_PDE} with
+equations for both the conservation of gas energy and primordial
+chemistry ionization/recombination, 
+\begin{align}
+  \label{eq:cons_energy}
+  \partial_t e + \frac1a\vb\cdot\nabla e &=
+    - \frac{2\dot{a}}{a}e
+    - \frac{1}{a\rhob}\nabla\cdot\left(p\vb\right) 
+    - \frac1a\vb\cdot\nabla\phi + G - \Lambda  + \dot{e}_{SF}, \\
+  \label{eq:chemical_ionization}
+  \partial_t \mn_j + \frac{1}{a}\nabla\cdot\(\mn_j\vb\) &=
+    \alpha_{j,k} \mn_e \mn_k - \mn_j \Gamma_{j}^{ph}, \qquad
+    j\in\{\text{HI, HII, HeI, HeII, HeIII}\}. 
+\end{align}
+Here, $\mn_{j}$ is the comoving number density for each chemical
+species, $\mn_k$ corresponds to chemical species that interact with
+species $\mn_j$, and $\mn_e$ is the electron number density.  In these
+equations, all terms are evolved by Enzo's built-in chemistry and gas
+energy solvers, though some of the relevant rates result from
+radiation-dependent couplings. Specifically, the gas can be
+photo-heated by the radiation through the term 
+\begin{align}
+  \label{eq:G}
+  G &= \frac{c\,E_{UV}\,\sum_{j} \mn_j
+    \int_{\nu_{j}}^{\infty} \sigma_{j}\, \chi_{UV}
+    \left(1-\frac{\nu_{j}}{\nu}\right)\,
+    d\nu}{\rhob\,\int_{0}^{\infty} \chi_{UV} d\nu}
+  + \frac{Y_{\Gamma}\,c\,E_{Xr}\,\sum_{j} \mn_j
+    \int_{\nu_{j}}^{\infty} \sigma_{j}\, \chi_{Xr}
+    \left(1-\frac{\nu_{j}}{\nu}\right)\,
+    d\nu}{\rhob\,\int_{0}^{\infty} \chi_{Xr} d\nu},
+\end{align}
+for $j\in\{\text{HI,HeI,HeII}\}$, where the X-ray secondary
+photo-heating coefficient $Y_{\Gamma}$ depends on the electron
+fraction $\xi$ in a cell via the formula 
+\begin{equation}
+\label{eq:Ygamma}
+  Y_{\Gamma} = 0.9971 \left[1 - \left(1-\xi^{0.2663}\right)^{1.3163}\right].
+\end{equation}
+Within the Enzo code base, $G$ is stored in the baryon field
+{\tt PhotoGamma}, for communication between {\tt DualFLD} and Enzo's
+heating/cooling solvers.
+
+Additionally, the photo-ionization rates $\Gamma_{j}^{ph}$ within
+equation \eqref{eq:chemical_ionization} depend on the X-ray and UV
+radiation fields via the formulas
+\begin{align}
+\label{eq:Gamma}
+  \Gamma_j^{ph} &= \frac{Y_{j}\, c\, E_{Xr}\, \int_{\nu_j}^{\infty}
+    \frac{\sigma_j(\nu) \chi_{Xr}(\nu)}{\nu}\,\mathrm d\nu}{h\,
+    \int_{0}^{\infty} \chi_{Xr}(\nu)\,\mathrm d\nu} 
+  + \frac{c\, E_{UV}\, \int_{\nu_j}^{\infty}
+    \frac{\sigma_j(\nu) \chi_{UV}(\nu)}{\nu}\,\mathrm d\nu}{h\,
+    \int_{0}^{\infty} \chi_{UV}(\nu)\,\mathrm d\nu}.
+\end{align}
+In this formula, we employ the X-ray photo-ionization coefficients
+\begin{align}
+\label{eq:YH}
+  Y_{HI} &= 0.3908 \left(1 - \xi^{0.4092}\right)^{1.7592}, \\
+  Y_{HeI} &= 0.0554 \left(1 - \xi^{0.4614}\right)^{1.666}, \\
+  Y_{HeII} &= 0.
+\end{align}
+Within the Enzo code base, the rates $\Gamma_{HI}^{ph}$,
+$\Gamma_{HeI}^{ph}$ and $\Gamma_{HeII}^{ph}$ are held in the baryon fields
+{\tt kphHI}, {\tt kphHeI} and {\tt kphHeII} for communication between
+{\tt DualFLD} and Enzo's chemistry solvers.
+
+Lastly, the frequency-integrated opacities depent on the chemical
+state at each spatial location,
+\begin{align}
+\label{eq:opacityXr}
+  \kappa_{Xr} \ = \ \frac{\sum_{j} 
+  \mn_{j} \int_{\nu_{j}}^{\infty} \chi_{Xr}\,\sigma_{j}\,d\nu}{
+  \int_{0}^{\infty} \chi_{Xr}\,d\nu}, \quad j\in\{\text{HI,HeI,HeII}\}
+  \\
+\label{eq:opacityUV}
+  \kappa_{UV} \ = \ \frac{\sum_{j} 
+  \mn_{j} \int_{\nu_{j}}^{\infty} \chi_{UV}\,\sigma_{j}\,d\nu}
+  {\int_{0}^{\infty} \chi_{UV}\,d\nu}, \quad j\in\{\text{HI,HeI,HeII}\},
+\end{align}
+where these integrals with the assumed radiation spectra $\chi_{Xr}(\nu)$
+and  $\chi_{UV}(\nu)$ handle the change from the original
+frequency-dependent radiation equation to the integrated grey
+radiation equations.
+
+
+Within the {\tt DualFLD} module, the baryon field {\tt kdissH2I}
+is always set to 0. 
+
+
+
+
+
+\section{Numerical solution approach}
+\label{sec:solution_approach}
+
+We evolve these models in an operator-split fashion, wherein we solve
+the radiation equations \eqref{eq:radiation_PDE} separately from the 
+gas energy correction and chemistry equations
+\eqref{eq:cons_energy} and \eqref{eq:chemical_ionization}, 
+which are evolved together.  These solves are coupled to Enzo's
+existing operator-split solver framework in the following manner:
+\begin{itemize}
+\item[(i)] Project the dark matter particles onto the finite-volume
+  mesh to generate a dark-matter density field;
+\item[(ii)] Solve for the gravitational potential and compute the
+  gravitational acceleration field;
+\item[(iii)] Evolve the hydrodynamics equations using an
+  up-to-second-order accurate explicit method, and have the velocity
+  $\vb$ advect both the X-ray and UV radiation fields, $E_{Xr}$ and
+  $E_{UV}$; 
+\item[(iv)] Evolve the coupled gas energy correction and chemistry
+  evolution equations;  
+\item[(v)] Advect the dark matter particles with the Particle-Mesh
+  method;
+\item[(vi)] Evolve the radiation fields implicitly in time using an
+  up-to-second-order accurate method.
+\end{itemize}
+
+The implicit solution approach for step (vi) is similar to the one
+from \cite{NormanReynoldsSoHarkness2013}; here we describe only enough
+to point out the available user parameters, and more fully describe
+some additional options available in the solver.  
+
+In solving the steps (vi) we use a method of lines approach for the
+space-time discretization of \eqref{eq:radiation_PDE}, in that we
+first discretize the equations in space using a second-order-accurate,
+uniform-grid, finite volume discretization, and then evolve the
+resulting system of ODEs in time.
+
+
+\subsection{Radiation subsystem}
+\label{sec:rad_solve}
+
+Assuming that all spatial derivatives are treated using standard
+second-order centered difference approximations on our finite-volume
+grid, we need only discuss the time-discretization of our radiation
+equation \eqref{eq:radiation_PDE}.  Our approach follows a standard
+two-level $\theta$-method, 
+\begin{align}
+  \label{eq:radiation_PDE_theta}
+  E_i^n - E_i^{n-1} &- \theta\dt\left(\nabla\cdot\(D_i^{n-1}\,\nabla E_i^n\)
+    - \frac{\dot{a}}{a} E_i^n - c\kappa_i^n E_i^n + \eta_i^n\right) \\ 
+  \notag
+  & - (1-\theta)\dt\left(\nabla\cdot\(D_i^{n-1}\,\nabla E_i^{n-1}\) -
+    \frac{\dot{a}}{a} E_i^{n-1} - c\kappa_i^{n-1} E_i^{n-1} +
+    \eta_i^{n-1}\right) = 0, 
+\end{align}
+where the parameter $0\le\theta\le 1$ defines the time-discretization,
+and where we have assumed that the advective portions of \eqref{eq:radiation_PDE}
+have already been taken care of through Enzo's hydrodynamics solvers.
+Recommended values of $\theta$ are 1 (backwards Euler) and $\frac12$
+(trapezoidal, a.k.a.~Crank-Nicolson).  
+
+Whichever $\theta$ value we use (as long as it is nonzero), the
+equation \eqref{eq:radiation_PDE_theta} is linearly-implicit in the
+time-evolved radiation energy density $E_i^n$.  We write this in
+predictor-corrector form (for ease of boundary condition
+implementation), which we will write as
+\begin{align}
+\label{eq:linear_system}
+  J s = b, \qquad E_i^n = E_i^{n-1} + s.
+\end{align}
+We approximately solve this linear equation for the update $s$,
+to a tolerance $\delta$,
+\begin{align}
+\label{eq:linear_system_approx}
+  \| J s - b \|_2 \le \delta,
+\end{align}
+using using a multigrid-preconditioned conjugate gradient iteration.  
+
+Both the X-ray and UV fields are solved using the same
+time-discretization parameter $\theta$, and the same multigrid solver
+parameters {\tt DualFLDSolTolerance}, {\tt DualFLDMaxMGIters}, 
+{\tt DualFLDMGRelaxType}, {\tt DualFLDMGPreRelax} and 
+{\tt DualFLDMGPostRelax}; however, it would be trivial to extend the
+current {\tt DualFLD} solver to allow specification of different
+values for each radiation field.
+
+
+
+
+
+\subsection{Time-step selection}
+\label{sec:dt_selection}
+
+Time steps are chosen adaptively in an attempt to control error in the
+calculated solution.  To this end, we first define an heuristic
+measure of the time accuracy error in a radiation field $E_i$ as
+\begin{align}
+\label{eq:time_error}
+  err = \left(\frac1N \sum_{j=1}^N
+    \left(\frac{E_{i,j}^{n}-E_{i,j}^{n-1}}{\omega_j}\right)^p\right)^{1/p}, 
+\end{align}
+where the weighting vector $\omega$ is given by
+\begin{align}
+\label{eq:time_weighting}
+  \omega_j &= \sqrt{E_{i,j}^n E_{i,j}^{n-1}} + 10^{-3}, \quad j=1,\ldots,N.
+\end{align}
+i.e.~we scale the radiation change by the geometric mean
+of the old and new states, adding on a floor value of $10^{-3}$ in case any
+of the states are too close to zero.  This approach works well when
+the internal solution variables are unit-normalized, or at least close
+to unit-normalized, since the difference between the old and new
+solutions, divided by this weighting factor $\omega$, should give a
+reasonable estimate of the number of significant digits that are
+correct in the solution. 
+
+With these error estimates \eqref{eq:time_error} for both $E_{Xr}$ and
+$E_{UV}$, we set the new time step size for each subsystem based on
+the previous time step size and a user-input tolerance $\tau_{\text{tol}}$ as
+\begin{align}
+\label{eq:time_estimate}
+  \dt^{n} = \frac{\tau_{\text{tol}} \dt^{n-1}}{err}.
+\end{align}
+Since $E_{Xr}$ and $E_{UV}$ are evolved separately, we allow either
+solver to subcycle at a faster rate if necessary to allow convergence
+of the underlying linear solver.  However, in general we enforce that
+both fields utilize the same step size,
+\begin{align}
+\label{eq:FLD_time_estimate}
+  \dt^{n} &= \min\{\dt_{Xr}^{n},\dt_{UV}^{n},\dt_{Enzo}^{n}\},
+\end{align}
+where $\dt_{\text{Enzo}}$ is the time step size that Enzo's other
+routines (e.g.~hydrodynamics) would normally take.  We further note
+that the {\tt DualFLD} solver module will force Enzo to similarly take
+this more conservative time step size, due to the tight physical
+coupling between radiation transport and chemical ionization.  
+
+Additionally, a user may override these adaptive time step controls
+with the input parameters $\dt_{\text{max}}$ and $\dt_{\text{min}}$.
+However, even with such controls in place the overall time step will
+still be selected to adhere to the bound required by Enzo's other
+physical modules, i.e.
+\begin{align}
+  \dt^{n} &= \min\{\dt_{\text{min}}^{n},\dt_{Enzo}^{n}\}.
+\end{align}
+
+
+
+
+\subsection{Variable rescaling}
+\label{sec:variable_rescaling}
+
+In case Enzo's standard unit non-dimensionalization using 
+{\tt DensityUnits}, {\tt LengthUnits} and {\tt TimeUnits} is
+insufficient to render the resulting solver values $E_{Xr}$ and
+$E_{UV}$ to have nearly unit magnitude, the user may input additional
+variable scaling factors to be used inside the {\tt DualFLD} module.
+The basic variable non-dimensionalization of these fields is to create
+a non-dimensional radiation field value by dividing the physical value
+(in ergs/cm$^3$) by the factor {\tt DensityUnits * LengthUnits$^2$ *
+TimeUnits$^{-2}$}.  As would be expected, the values of $E_{Xr}$ and
+$E_{UV}$ may differ by orders of magnitude, so it is natural that they
+should be non-dimensionalized differently.
+
+To this end, if we denote these user-input values as $s_{Xr}$, and
+$s_{UV}$, then the {\tt DualFLD} module defines the rescaled variables 
+\begin{align}
+\label{eq:variable_rescaling}
+  \tilde{E}_{Xr} = E_{Xr} / s_{Xr}, \qquad \tilde{E}_{UV} = E_{UV} / s_{UV},
+\end{align}
+and then uses the rescaled variables $\tilde{E}_{Xr}$ and
+$\tilde{E}_{UV}$ in its internal routines instead of Enzo's
+``non-dimensionalized'' internal
+variables $E_{Xr}$ and $E_{UV}$.  If the user does not know
+appropriate values for these scaling factors {\em a-priori}, a
+generally-applicable rule of thumb is to first run their simulation
+for a small number of time steps and investigate Enzo's HDF5 output
+files to see the magnitude of the values stored internally by Enzo; if
+these are far from unit-magnitude, appropriate scaling factors
+$s_{Xr}$ and $s_{UV}$ should be supplied in the {\tt DualFLD}
+parameter input file.
+
+
+
+
+\subsection{Boundary conditions}
+\label{sec:boundary_conditions}
+
+As the radiation equation \eqref{eq:radiation_PDE} is parabolic,
+boundary conditions must be supplied on the radiation field $E_i$.  The
+{\tt DualFLD} module allows three types of boundary conditions to
+be placed on the radiation field:
+\begin{itemize}
+\item[0.] Periodic,
+\item[1.] Dirichlet, i.e.~$E_i(x,t) = g(x), \; x\in\partial\Omega$, and
+\item[2.] Neumann, i.e.~$\nabla E_i(x,t)\cdot n = g(x), \; x\in\partial\Omega$.
+\end{itemize}
+In most cases, the boundary condition types (and values of $g$) are
+problem-dependent.  When adding new problem types, these conditions
+should be set near the bottom of the file {\tt DualFLD\_Initialize.C}, 
+otherwise these will default to either (a) periodic, or (b) will use
+$g=0$, depending on the user input boundary condition type.
+
+
+
+\section{Concluding remarks}
+\label{sec:conclusions}
+
+We wish to remark that the module is not large (one header
+file, 14 C++ files, 2 F90 files), and all files begin with the 
+{\tt DualFLD} prefix.  While we have strived to ensure that the
+module is bug-free, there is still work to be done in enabling
+additional physics, including more advanced time-stepping interactions
+with the rest of Enzo (especially when ionization sources ``turn on''
+abruptly), and adaptive or static mesh refinement.  
+
+Feedback/suggestions to are welcome.
+
+
+\bibliography{sources}
+\bibliographystyle{siam}
+\end{document}

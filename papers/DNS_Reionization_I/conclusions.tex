@@ -1,0 +1,94 @@
+
+\section{Summary and Conclusions}
+\label{sec:conclusions}
+
+%What we presented
+We have described an extension of the {\em Enzo} code to enable the direct numerical simulation 
+of inhomogeneous cosmological ionization in large cosmological volumes. By direct we mean
+all dynamical, radiative, and chemical properties are solved self-consistently on the same mesh, 
+as opposed to a postprocessing approach which coarse-grains the radiative transfer, as is done
+in other works \citep{Iliev06,Zahn07,TracCen2007,TracCenLoeb2008,ShinTracCen2008,Finlator09}. 
+Star formation and feedback are treated through a parameterized
+phenomenological model, which is calibrated to observations. The goal of this work is to achieve a higher
+level of self-consistency in modeling processes occuring outside the virial radii of luminous sources to  
+better understand how recombinations in the clumpy intergalactic medium retard reionization and how
+radiative feedback effects star formation in low mass galaxies. 
+
+%Model limitations
+In its current incarnation, the model has three principal limitiations. First, it is formulated on a fixed
+Eulerian grid, which limits the spatial resolution that can be achieved. With a judicious choice of grid
+sizes and resolutions, one can sample the dark matter halo mass function over a significant range of scales,
+thereby including important sources and sinks of ionizing radiation. One can do a good job resolving the Jeans length 
+in the diffuse IGM, which is important for ``Jeans smoothing" \citep{Gnedin00b}. However one cannot resolve the
+internal structure of halos, which is important for calculating star formation rates and ionizing escape fractions. 
+In this work we do not claim to be modeling these aspects self-consistently, but rather calibrate these unknown
+parameters to observations. In Reynolds et al. (2013) we present the extention of our method to adaptive
+mesh refinement (AMR), which directly addresses the numerical resolution limitation. 
+
+The second model limitation is the use of FLD to model the transport of radiation, as opposed to a higher
+order moment method such as OTVET \citep{GnedinAbel2001,Petkova09}. FLD has the well known deficiency of
+not casting shadows behind opaque objects. However, as we have shown in Sec. \ref{sec:tests}, casting
+shadows is not required to predict the evolution of the ionized volume fraction in a cosmological reionization
+simulation, or to compute the photoevaporation time for an opaque cloud. Our {\em a priori} assumption that
+small scale features like shadows will have little effect on large scale reionization processses are borne out
+by these validation test. For simulating smaller scale processes where shadows may be important, such as the 
+effect of halo substructure on the escape fraction of ionizing radiation, we note that our implicit
+solution methodology is easily 
+extended to higher-order moment methods \citep{HayesNorman2003,Petkova09}. 
+
+The third model limitation is our simplified model for the radiation spectrum, which at the moment consists of 
+monochromatic and grey with an assumed fixed SED. For simulating hydrogen reionization by soft UV radiation
+from stellar sources
+this spectral model is quite adequate compared to a multifrequency model (see RT09, Sec. 4.1). However for
+harder radiation sources, such as Pop III stars and AGN, our model makes I-fronts that are too sharp, and does
+not produce the preheating of gas ahead of the I-front by more penetrating, higher energy photons (``spectral
+hardening"). The principal difference between our model and a multifrequency/multigroup model is in the temperature
+distribution of the gas. Our model will slightly overpredict the temperature inside an HII region, and underpredict
+the temperature outside of it, because all of the radiation energy is absorbed inside the I-front. Another way to
+think about this is that in the multifrequency model in which the highest energy photons leak out of the HII region,
+the characterisitic temperature of the radiation field inside the HII region is lower than outside of it. The standard
+approach for dealing with the limitiations of our spectral model is to move to a multifrequency or multigroup 
+discretization of the radiation field \citep{MirochaEtAl2012}. This is straightforward in practice, however the computational cost
+increases linearly with the number of frequencies/groups. With the speed and memory of modern supercomputers
+is this not a severe limitation, except for the very largest grids. Indeed we have implemented a multigroup FLD 
+version of our method which is undergoing testing at the present time. 
+
+%How well it works
+Despite these limitations, the method is robust and acceptably fast. On verification tests for which analytic 
+solutions are known, we have shown the method to be capable of high accuracy; the accuracy being
+governed by grid resolution and the error tolerance parameter in the radiation diffusion calculation.
+In validation tests, for which no analytic solution exists, we have shown that our method gives results which are 
+qualitatively and quantitatively similar with those obtained with ray tracing and Monte Carlo methods 
+\citep{IlievEtAl2006,IlievEtAl2009,Petkova09,WiseAbel11}, with what differences exist understood to be the result of the geometric
+simplification of the radiation field inherent in FLD, and the difference in radiation spectrum modeling.
+ 
+%How fast it is
+Regarding the speed of our method, we have shown by direct comparison that a radiation hydrodynamic
+simulation of cosmological reionization costs about $8 \times$ that of a corresponding pure hydrodynamic
+model in which the IGM is ionized by a uniform UV background. We have not compared it to a postprocessing
+radiative transfer code using ray tracing, although this would be a useful thing to do. Our method, which 
+exhibits $\mathcal O(N\log N)$ scaling, should be competitive with, and possibly even beat ray tracing methods for 
+very large numbers of sources.
+
+%Potential for scaling up
+Our method is highly scalable, as demonstrated in Sec. 4.3. This is due to two factors: (1) 
+modeling radiation as a {\em field} instead of a collection of rays, which has no explicit dependence on the number
+of point sources; and (2) the implementation of our radiation solver using optimally scalable parallel multigrid algorithms.
+The application of our method to cosmological reionization by stellar sources is briefly discussed in Sec. 5 and 
+graphically illustrated in Fig. 16.  The largest simulation we have completed to date with our method is identical to 
+design, physics, and numerical resolution as that in Fig. 16, but in a volume 64 times as large (80 Mpc vs. 20 Mpc).
+It was carried out on a 
+mesh of size $3200^3$ using 46,875 compute cores on the Cray XT5 architecture {\em Jaguar}. 
+Although the simulation cost many millions of core-hrs to compute, it is
+the first simulation to cover the full range of halo masses thought to contribute to reionization and at the same time
+modeling the gravitational, baryonic and radiative feedback processes self-consistently resolving the Jeans smoothing scale
+in the ionized IGM. The results of this simulation will be presented in forthcoming papers (So et al. 2013a,b). 
+
+This research was partially supported by National Science Foundation grants AST-0808184 and AST-1109243
+and Department of Energy INCITE award AST025 to MLN and DRR. Simulations were performed on the {\em Kraken}
+supercomputer operated for the Extreme Science and Engineering Discovery Environment (XSEDE)
+by the National Institute for Computational Science (NICS), ORNL with support from XRAC allocation MCA-TG98N020 to MLN.
+MLN, DRR and GS would like to especially acknowledge the tireless devotion to this project by our co-author Robert Harkness
+who passed away shortly before this manuscript was completed. 
+
+

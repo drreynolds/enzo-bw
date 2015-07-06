@@ -1,0 +1,37 @@
+#
+# gFLDSplit Parameter File:
+#   Iliev et al. 1/r^2 ionization test
+#
+#  Daniel R. Reynolds, reynolds@smu.edu
+#
+#############################
+#
+# Problem-specific initialization parameters
+# 
+RadHydroVelocity = 0.0 0.0 0.0       // velocity
+RadHydroNumDensity = 3.2             // base number density [cm^{-3}]
+RadHydroDensityRadius = 1.14375e-1   // r0 for density profile [code units]
+RadHydroTemperature = 1.0e2          // temperature (K)
+RadHydroRadiationEnergy = 1.0e-20    // radiation energy [code units]
+RadiationBoundaryX0Faces = 2 2       // set x0 radiation bdry to neumann
+RadiationBoundaryX1Faces = 2 2       // set x1 radiation bdry to neumann
+RadiationBoundaryX2Faces = 2 2       // set x2 radiation bdry to neumann
+NGammaDot = 1.0e50                   // ionization rate (photons/sec)
+EtaRadius = 1.0e0                    // radius for emissivity source (in cells)
+EtaCenter = 0.0e0 0.0e0 0.0e0        // center of emissivity source (normalized)
+#
+# General module and solver parameters
+# 
+#AutomaticScaling     = 0
+RadHydroMaxDt        = 1.0e-2
+RadHydroMinDt        = 1.0e-8
+RadHydroInitDt       = 1.0e-8
+#RadHydroDtGrowth     = 5.0
+RadHydroDtRadFac     = 0.0001        // 0.01% desired change/step
+#RadHydroSolTolerance = 1.0e-6        // linear solver tolerance
+RadHydroSolTolerance = 1.0e-5        // linear solver tolerance
+RadHydroMGRelaxType  = 1             // MG relaxation type (see HYPRE PFMG)
+RadHydroMGPreRelax   = 3             // MG pre-relaxation sweeps
+RadHydroMGPostRelax  = 3             // MG post-relaxation sweeps
+
+#############################

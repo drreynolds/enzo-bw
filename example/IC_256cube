@@ -1,0 +1,36 @@
+#  WMAP7 Cosmology Parameters
+CosmologyOmegaBaryonNow      = 0.047
+CosmologyOmegaMatterNow      = 0.27
+CosmologyOmegaLambdaNow      = 0.73
+CosmologyComovingBoxSize     = 14.0       // in Mpc/h (80 Mpc box)
+CosmologyHubbleConstantNow   = 0.7        // in units of 100 km/s/Mpc
+CosmologyInitialRedshift     = 99
+
+#  Power spectrum Parameters
+PowerSpectrumType            = 11
+PowerSpectrumSigma8          = 0.82
+PowerSpectrumPrimordialIndex = 0.95
+PowerSpectrumRandomSeed      = -17479
+#PowerSpectrumFileNameInitialRedshift =  test_wmap7_z300.xfer
+#PowerSpectrumFileNameRedshiftZero = test_wmap7_z0.xfer
+
+# Grid Info
+Rank                = 3
+GridDims            = 256 256 256
+GridRefinement      = 1
+#  Particle info
+ParticleDims        = 256 256 256
+ParticleRefinement  = 1
+#  Names
+ParticlePositionName = ParticlePositions
+ParticleVelocityName = ParticleVelocities
+GridDensityName      = GridDensity
+GridVelocityName     = GridVelocities
+#
+InitializeGrids     = 1
+#GridDensityOnly     = 1
+#GridVelocitiesOnly  = 0
+#GVdim = 0
+#
+InitializeParticles = 1
+#PVdim = 0

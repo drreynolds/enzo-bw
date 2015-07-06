@@ -1,0 +1,42 @@
+#
+#  Iliev et al. static ionization test
+#
+#  Daniel R. Reynolds, reynolds@smu.edu
+#
+#############################
+# 
+# problem and general modules 
+# 
+ProblemType                = 216
+RadiationFieldType         = 0
+RadiationHydrodynamics     = 2
+ImplicitProblem            = 4             // use DualFLD module
+RadiativeTransfer          = 1             // use photo-{ionization/heating}
+MultiSpecies               = 1             // use Enzo chemistry
+RadiativeCooling           = 1             // use Enzo chemistry
+RadHydroParamfile = OneZone.dfld
+CoolDataParameterFile = CoolDataParameters
+#
+# grid and boundary 
+#
+TopGridRank                = 3
+TopGridDimensions          = 8 8 8
+LeftFaceBoundaryCondition  = 3 3 3         // periodic
+RightFaceBoundaryCondition = 3 3 3
+DomainLeftEdge             = 0.0 0.0 0.0   // (scaled units)
+DomainRightEdge            = 1.0 1.0 1.0
+#
+# runtime and I/O
+#
+StopTime                   = 1.0
+StopCycle                  = 999999
+dtDataDump                 = 1.e-3
+ParallelRootGridIO         = 1
+# 
+# units
+#
+DensityUnits               = 1.0e-26
+LengthUnits                = 2.036562e22   // 6.6 kpc
+TimeUnits                  = 3.1557e16
+
+#############################

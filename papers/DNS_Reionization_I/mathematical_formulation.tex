@@ -1,0 +1,203 @@
+
+\section{Mathematical Formulation}
+\label{sec:math_formulation}
+
+
+%Primordial gas chemistry (do we need more detail here?) No, refer to Bryan et al. (2013)
+
+We solve the coupled equations of multispecies gas dynamics, dark matter dynamics, self-gravity, 
+primordial gas chemistry, radiative transfer, and gas cooling/heating in a comoving volume
+of the expanding universe. In this paper we assume the governing equations are discretized on a cubic uniform Cartesian mesh  in comoving 
+coordinates assuming periodic boundary conditions. In Reynolds et
+al. (in prep.) we generalize our method to adaptive meshes. 
+The background spacetime is assumed to be a FRW model with $\Lambda$CDM cosmological parameters \citep{WMAP7}. In this work we consider only the 5 ionic states of H and He and $e^-$; i.e., the commonly used ``6-species" model of primordial gas \citep{AbelEtAl1997, Anninos97}. Molecular hydrogen chemistry is ignored as we are primarily concerned with the later stages of H reionization driven by star formation in atomic line cooling galaxies. Star formation is modeled phenomenologically through a subgrid model described in the next section. Newly formed stars are sources of UV radiation, and the radiation is transported in the grey flux-limited diffusion approximation. Star formation in spatially distributed galaxies thus sources an inhomogeneous and evolving ionizing radiation field, which is used to calculate the local ionization and thermal state of the gas. This in turn controls the local cooling rate of the gas, and by virtue of the subgrid star formation model, the local star formation rate. We thus have a closed system of equations that we can evolve forward in time subject to the choice of initial conditions. In all but the verification test problems, cosmological initial conditions are generated using standard methods.  
+
+The choice of flux-limited diffusion (FLD) is motivated by its
+simplicity and its ability to smoothly transition between optically
+thin and thick regimes. Its properties as well as its limitations are
+well understood, and efficient numerical methods exist for parallel
+computation (e.g., Hayes et al. 2006). A second motivation is that we
+are interested in modeling reionization in large cosmological volumes
+and field-based solvers scale independently of the number of sources, unlike ray tracing
+methods. In the early stages of reionization, when HII regions are
+largely isolated, FLD provides accurate I-front speeds, as shown by
+our verification tests in Sec. 4.1. At late times, during and after
+overlap, the gas is bathed in a diffuse radiation field arising from
+numerous point sources for which the angular structure of the
+radiation field is unimportant. It is during the early percolation
+phase when several HII regions merge that FLD is inaccurate with
+regard to the angular distribution of the radiation field. This leads
+to some inaccuracies of the shapes of the I-fronts compared to a
+solution obtained using ray tracing (see Sec. 4.3). However we
+consider these shape differences of secondary importance since we are
+interested in globally averaged ionization properties. A well known
+limitation of FLD is that opaque blobs do not cast shadows if they are illuminated from one side (e.g.,
+Hayes \& Norman 2003). Instead, the radiation flows around the
+backside of the irradiated blob. By contrast, a ray tracing method
+will cast a sharp shadow (Iliev et al. 2009, Wise \& Abel 2011). What
+matters for global reionization simulations however is how long the
+opaque blobs remain self-shielded; i.e., their photoevaporation
+times. We have compared the photoevaporation times for identically
+resolved blobs using FLD and the ray tracing method of Wise \& Abel
+(2011), and find them comparable despite the inability of FLD to cast
+a shadow (sec Sec.~\ref{subsubsec:test7}). 
+
+{\bf Finally we comment on the use of a {\em grey} treatment of the radiation field. 
+Grey FLD is an improvement over monochromatic radiative transfer as it provides a formalism for calculating the contributions of higher energy photons above the ionization threshold to the frequency-integrated photoionization rate and photoheating rate. It is not as accurate as multifrequency/multigroup radiative transfer in that it does not model spectral hardening of the radiation field and preionization ahead of the I-front. At present, no large-scale simulations of cosmological reionization include these effects, which are expected to be small for the soft ionizing spectrum of Pop II stars. }
+
+
+
+We consider the coupled system of partial differential equations
+\citep{ReynoldsHayesPaschosNorman2009},
+\begin{align}
+  \label{eq:gravity}
+  \nabla^2 \phi &= \frac{4\pi g}{a}(\rhob + \rho_{dm} - \langle \rho \rangle), \\
+  \label{eq:cons_mass}
+  \partial_t \rhob + \frac1a \vb \cdot \nabla
+    \rhob &= -\frac1a \rhob \nabla\cdot\vb - \dot{\rho}_{SF}, \\
+  \label{eq:cons_momentum}
+  \partial_t \vb + \frac1a\(\vb\cdot\nabla\)\vb &=
+    -\frac{\dot{a}}{a}\vb - \frac{1}{a\rhob}\nabla p - \frac1a
+    \nabla\phi, \\
+  \label{eq:cons_energy}
+  \partial_t e + \frac1a\vb\cdot\nabla e &=
+    - \frac{2\dot{a}}{a}e
+    - \frac{1}{a\rhob}\nabla\cdot\left(p\vb\right) 
+    - \frac1a\vb\cdot\nabla\phi + G - \Lambda  + \dot{e}_{SF} \\
+  \label{eq:chemical_ionization}
+  \partial_t \mn_i + \frac{1}{a}\nabla\cdot\(\mn_i\vb\) &=
+    \alpha_{i,j} \mn_e \mn_j - \mn_i \Gamma_{i}^{ph}, \qquad
+    i=1,\ldots,N_s \\
+  \label{eq:cons_radiation}
+  \partial_t E + \frac1a \nabla\cdot\(E \vb\) &= 
+    \nabla\cdot\(D\nabla E\) - \frac{\dot{a}}{a}E - c \kappa E + \eta.
+\end{align}
+The comoving form of Poisson's equation \eqref{eq:gravity} is used to
+determine the modified gravitational potential, $\phi$, 
+where $g$ is the gravitational constant, $\rhob$ is the comoving
+baryonic density, $\rho_{dm}$ is the dark matter density, and 
+$\langle \rho \rangle$ is the cosmic mean density.  The collisionless
+dark matter density $\rho_{dm}$ is evolved using the Particle-Mesh
+method, as described in
+\cite{HockneyEastwood1988,NormanBryan1999,OSheaEtAl2004}.  The
+conservation equations \eqref{eq:cons_mass}-\eqref{eq:cons_energy}
+correspond to the compressible Euler equations in a comoving
+coordinate system \cite{BryanEtAl1995}.  These relate the density to
+the proper peculiar baryonic velocity $\vb\equiv a(t)\dot{\xvec}$, the
+proper pressure $p$, and the total gas energy per unit mass $e$.   
+The equations \eqref{eq:chemical_ionization} model
+ionizaton processes between the chemical species HI, HII, HeI, HeII,
+HeIII and the electron density.  Here, $\mn_i$ denotes the
+$i^{th}$ comoving elemental species number density, $\mn_e$ is the
+electron number density, $\mn_j$ corresponds to ions that react
+with the species $i$, and $\alpha_{i,j}$ are the reaction rate
+coefficients defining these interactions
+\citep{AbelEtAl1997,HuiGnedin1997}.  The equation
+\eqref{eq:cons_radiation} describes the flux-limited diffusion (FLD)  
+approximation of radiation transport in a cosmological medium
+\citep{HayesNorman2003,Paschos2005}, where $E$ is the comoving grey
+radiation energy density.  Within this equation, the function
+$D$ is the {\em flux limiter} that depends on face-centered values of
+$E$, $\nabla E$ and the opacity $\kappa$ \citep{Morel2000},
+\begin{align}
+  D &= \min\left\{c \(9\kappa^2 + R^2\)^{-1/2}, D_{max}\right\},\quad\mbox{and}\quad
+  R = \max\left\{\frac{|\partial_{x} E|}{E},R_{min}\right\}.
+\end{align}
+Here the spatial derivative within $R$ is computed using
+non-dimensional units at the computational face adjoining two
+neighboring finite-volume cells, $D_{max}=0.006\,c\,L_{unit}$ and
+$R_{min}=10^{-20}/L_{unit}$ with $L_{unit}$ the length
+non-dimensionalization factor for the simulation, and the 
+face-centered radiation energy density and opacity are computed using
+the arithmetic and harmonic means, respectively,
+\[
+   E = \frac{E_1 + E_2}{2}, \qquad
+   \kappa = \frac{2\kappa_1 \kappa_2}{\kappa_1 + \kappa_2}.
+\]
+Among the many available limiter formulations we have tested
+(\citep{HayesNorman2003,Morel2000,ReynoldsHayesPaschosNorman2009}), this 
+version performs best at producing causal radiation propagation
+speeds in the low-opacity limit typical of the late stages of reionization simulations.  
+
+
+Cosmic expansion for a smooth homogeneous background is modeled by the
+function $a(t)\equiv(1+z)^{-1}$ 
+, where the redshift $z$ is a function
+of time. $a(t)$ is obtained from a solution of the Friedmann equation
+for the adopted cosmological parameters. All comoving densities $\rho_i$ relate to the proper
+densities through $\rho_i \equiv \rho_{i,\text{proper}}a(t)^3$. All
+spatial derivatives are taken with respect to the comoving position
+$\xvec\equiv{\bf r}/a(t)$.  We use a standard ideal gas equation of
+state to close the system,
+\begin{equation}
+\label{eq:eos}
+  e = \frac{p}{2 \rhob/3} + \frac12|\vb|^2.
+\end{equation}
+
+
+
+
+\subsection{Model Coupling}
+\label{subsec:equation_coupling}
+
+The equations \eqref{eq:gravity}-\eqref{eq:cons_radiation} are coupled
+through a variety of physical processes.   In defining our grey
+radiation energy density $E$, we allow specification of an assumed
+spectral energy distribution (SED), $\chi_E(\nu)$.  Here, we write
+the frequency-dependent radiation density using the
+decomposition $\Enu(\xvec,t,\nu)=\tilde{E}(\xvec,t)\,\chi_E(\nu)$.  This
+relates to the grey radiation energy density $E$ through the equation
+\begin{equation}
+\label{eq:grey_definition}
+  E(\xvec,t) = \int_{\nu_1}^{\infty} \Enu(\xvec,t,\nu)\,\mathrm d\nu =
+  \tilde{E}(\xvec,t) \int_{\nu_1}^{\infty} \chi_E(\nu)\,\mathrm d\nu,
+\end{equation}
+where $\tilde{E}$ is an intermediate quantity that is never computed.
+We note that this relationship is valid only if the indefinite
+integral of $\chi_E(\nu)$ exists, as is the case for quasar and
+stellar type spectra.  Implemented in {\em Enzo} are a variety of user-selectable
+SEDs including black body, monochromatic, and powerlaw (some of these
+are used for the verification tests; see Sec. 4.2). 
+In our application to cosmic reionization, we utilize the SED for low
+metallicity Pop II stars from \cite{RicottiEtAl2002}.
+
+With this in place, we define the radiation-dependent photoheating
+and photoionization rates \citep{Osterbrock1989},
+\begin{align}
+  \label{eq:photoheating}
+  G &= \frac{c E}{\rho_b} \sum_i^{N_s} \mn_i \left[\int_{\nu_i}^{\infty}
+    \sigma_i(\nu) \chi_E(\nu)\left(1-\frac{\nu_i}{\nu}\right)\,\mathrm
+    d\nu\right]   \bigg /
+  \left[\int_{\nu_1}^{\infty} \chi_E(\nu)\,\mathrm d\nu\right], \\
+  \label{eq:photoionization}
+  \Gamma_i^{ph} &= \frac{c E}{h} \left[\int_{\nu_i}^{\infty}
+    \frac{\sigma_i(\nu) \chi_E(\nu)}{\nu}\,\mathrm d\nu \right]  \bigg /
+  \left[\int_{\nu_1}^{\infty} \chi_E(\nu)\,\mathrm d\nu\right].
+\end{align}
+Here, $\sigma_i(\nu)$ is the ionization cross section for the species 
+$\mn_i$, $h$ is Planck's constant, and $\nu_i$ is the frequency
+ionization threshold for species $\mn_i$ ($h\nu_{HI}$ = 13.6 eV, 
+$h\nu_{HeI}$ = 24.6 eV, $h\nu_{HeII}$ = 54.4 eV).
+
+In addition, gas cooling due to chemical processes occurs through the
+rate $\Lambda$ that depends on both the chemical number densities 
+and current gas temperature \citep{AbelEtAl1997,Anninos97},
+\begin{equation}
+\label{eq:temperature}
+  T = \frac{2\, p\,\mu\, m_p}{3\, \rhob\, k_b},
+\end{equation}
+where $m_p$ corresponds to the mass of a proton, $\mu$ corresponds to
+the local molecular weight, and $k_b$ is Boltzmann's constant.
+In addition, the reaction rates $\alpha_{i,j}$ are highly temperature
+dependent \citep{AbelEtAl1997,HuiGnedin1997}. 
+The opacity $\kappa$ depends on the local ionization states $\mn_i$
+and the assumed SED $\chi_E$, 
+\begin{align}
+  \label{eq:opacity}
+  \kappa &= \sum_{i=1}^{N_s} \mn_i \left[ \int_{\nu_i}^{\infty}
+    \sigma_i(\nu) \chi_E(\nu)\,\mathrm d\nu \right]  \bigg /
+  \left[\int_{\nu_i}^{\infty} \chi_E(\nu)\,\mathrm d\nu\right].
+\end{align}
+The emissivity $\eta$ is based on a star-formation ``recipe'' described below. 
+
+

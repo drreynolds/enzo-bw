@@ -1,0 +1,79 @@
+Our current picture of the mechanics of reionization come mainly from theoretical and computational investigations. Within the past decade a picture has come into focus by combining the known physics of structure formation in a cold dark matter universe with
+ionization front physics \citep{CiardiEtAl2003,IlievEtAl2006,TracGnedin2011}. This picture is referred to
+as ``inside-out" reionization, and there is good agreement on its basic
+features from both detailed numerical simulations and semi-analytic models.
+The name Inside-out refers to the fact that within this picture, ionization fronts propagate
+outward from the densest regions of the universe where the first ionizing
+sources form to less dense regions and finally to the underdense void
+regions far from radiation sources.
+Topologically there are three distinguishable phases: (1) early
+growth of isolated H{\footnotesize II} regions; (2) percolation of H{\footnotesize II} regions as more sources
+turn on and cluster, and (3) complete overlap of H{\footnotesize II} regions. As reviewed by
+\citep{TracGnedin2011}, the details of this depend critically
+on the  detailed properties of the sources and sinks of ionizing radiation which are
+not well characterized observationally. 
+
+Many of the phenomena described above cannot be observed directly
+using the current generation of instruments, therefore scientists
+employ computer simulations to determine many of these details, hoping
+that future telescopes will be able to confirm their findings.  Due to
+the high computational cost of doing fully self-consistent 3D
+simulations of the multi-physics phenomena, there have been many
+efforts to approximate and simplify these complicated processes.
+% Cite 21 cm, JWST, future telescopes here!!!
+
+Around the turn of the century, there arose many semi-analytical 
+attempts to determine some general features of the EoR  
+\citep{ValageasSilk1999, MadauEtAl1999, MiraldaEscudeEtAl2000}.  
+These work often use the clumping factor (can be taken from
+cosmological simulations e.g. \citealt{GnedinOstriker1997}) to
+estimate the recombinations in dense clumps of gas that the radiation
+must overcome in order to keep the region ionized.  They find that if
+emissivity does not increase with redshift for z $>$ 4, then the
+Gunn-Peterson trough should be found at z $\simeq$ 6.  
+
+Others soon followed this methodology; works such as 
+\citep{CiardiEtAl2003, IlievEtAl2006, ZahnEtAl2007} used N-body
+simulations of pure dark matter to locate where these overdense regions
+should be.  Some of them also assumed that baryons follow dark matter on those
+scales ($\sim$100 Mpc/h), determine what
+the resulting clumping factor should be, and then calculate the
+radiation requirement to ionize the entire Universe in a post-process
+step.  While the above method is generally established, others
+(e.g. \citealt{IlievEtAl2006, TracCen2007}) add more detailed physics
+of radiation transport by using ray-tracing or adaptive ray-tracing
+methods.  Some find that complete overlap of the ionizing bubbles
+occurs around z $\simeq$ 11, consistent with WMAP data at the 
+time, while others find an overlap at z $\simeq$ 6 to 6.5.  
+
+Still, there are studies such as \citep{PawlikEtAl2009, RaicevicTheuns2011} 
+that attempt to improve upon the accuracy of recombination count based on the clumping
+factor.  The latter use a local clumping factor to obtain a better estimate
+of how ``clumpy'' the dark matter is in the region, and are able to
+get an improved estimate of the true recombination rate.  Additionally, a trend towards
+more realistic and self consistent treatment of dark matter and
+baryonic matter in fully 3D simulations emerged such as \citep{PetkovaSpringel2011a, 
+PetkovaSpringel2011b}. 
+
+%stated what they did but not what they found, expand on first paragraph, summarizing what they %found
+
+In this work, we propose to use a similar implementation as 
+\citealt{PetkovaSpringel2011b}, by adopting a Flux Limited Diffusion
+(FLD) approximation of radiation transport processes.  Without 
+assuming that baryons are following dark matter, we couple our FLD
+radiation solver to models that separately calculate baryonic and dark
+matter dynamics.  In this way, interactions between dark matter,
+baryons and radiation are all coupled together consistently
+within the calculation, instead of post-processing the radiation transport.
+
+Under the FLD approximation, we do not need to solve the exact
+expensive radiation transport equation, which remain computationally
+infeasible, and we are not limited by the number of radiating sources
+in the simulation, a limitation for ray-tracing methods.  With the
+tools above, we find that the clumping factor is actually a poor
+predictor for the time when the universe is ionized, due to the various
+definitions of clumping factor in the literature, and that its use
+usually neglects radiation effects on the distribution of matter.  By
+consistently simulating radiation hydrodynamics, we are able to
+directly calculate the time when the universe is ionized and further
+explore the details of reionization in a more accurate manner. 
